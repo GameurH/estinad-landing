@@ -5,6 +5,7 @@ import "../globals.css";
 import { Header, type HeaderData } from "@/components/Header";
 import { Footer, type FooterData } from "@/components/Footer";
 import { themeInitScript } from "@/components/ThemeToggle";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { getDict } from "@/lib/i18n";
 import {
   locales,
@@ -63,11 +64,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       siteName: "ESTINAD",
       locale: l,
+      images: [
+        {
+          url: "/images/v2/og.png",
+          width: 1536,
+          height: 1024,
+          alt: "ESTINAD — Software infrastructure",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: d.meta.ogTitle,
       description: d.meta.ogDescription,
+      images: ["/images/v2/og.png"],
     },
     alternates: {
       languages: {
@@ -117,10 +127,12 @@ export default async function LocaleLayout({ children, params }: Props & { child
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="min-h-full flex flex-col bg-base text-ivory">
-        <Header data={headerData} />
-        <main className="flex-1">{children}</main>
-        <Footer data={footerData} />
+      <body className="min-h-full flex flex-col bg-bg text-ink">
+        <SmoothScroll>
+          <Header data={headerData} />
+          <main className="flex-1">{children}</main>
+          <Footer data={footerData} />
+        </SmoothScroll>
       </body>
     </html>
   );

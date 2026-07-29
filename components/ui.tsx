@@ -29,7 +29,7 @@ export function Section({
       id={id}
       className={`${bordered ? "hairline-b" : ""} ${className ?? ""}`}
     >
-      <div className="shell py-20 md:py-28">{children}</div>
+      <div className="shell py-20 md:py-32">{children}</div>
     </section>
   );
 }
@@ -54,15 +54,13 @@ export function Button({
   className,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 h-11 px-5 text-sm font-medium tracking-wide transition-colors duration-200 select-none";
+    "inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-[0.9375rem] font-medium tracking-tight transition-all duration-150 select-none active:scale-[0.98]";
 
   const styles: Record<string, string> = {
-    primary:
-      "bg-accent text-base hover:bg-accent-dim border border-accent",
+    primary: "bg-ink text-bg hover:bg-ink/85",
     secondary:
-      "bg-transparent text-ivory border border-line-strong hover:border-ivory/40 hover:bg-surface-2",
-    ghost:
-      "bg-transparent text-ivory-dim border border-transparent hover:text-ivory",
+      "bg-transparent text-ink border border-line-strong hover:border-ink hover:bg-surface",
+    ghost: "bg-transparent text-ink-secondary hover:text-ink",
   };
 
   return (
@@ -88,11 +86,11 @@ export function SectionHeader({
   return (
     <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-3xl"}>
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h2 className="text-3xl md:text-[2.6rem] leading-[1.1] tracking-tight text-ivory font-semibold">
+      <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.08] tracking-[-0.025em] text-ink font-semibold [text-wrap:balance]">
         {title}
       </h2>
       {intro && (
-        <p className="mt-5 text-base md:text-lg leading-relaxed text-ivory-dim">
+        <p className="mt-6 text-lg leading-relaxed text-ink-secondary">
           {intro}
         </p>
       )}
@@ -111,10 +109,10 @@ export function Card({
 }) {
   return (
     <div
-      className={`relative bg-surface hairline p-6 md:p-8 ${className ?? ""}`}
+      className={`relative bg-card hairline rounded-card shadow-card p-8 md:p-10 transition-all duration-200 ${className ?? ""}`}
     >
       {label && (
-        <span className="eyebrow absolute right-6 top-6">{label}</span>
+        <span className="eyebrow absolute end-6 top-6">{label}</span>
       )}
       {children}
     </div>
@@ -124,23 +122,30 @@ export function Card({
 export function Stat({
   value,
   label,
+  qualifier,
 }: {
   value: string;
   label: string;
+  qualifier?: string;
 }) {
   return (
-    <div className="hairline p-6">
-      <div className="font-mono text-3xl md:text-4xl text-ivory tracking-tight">
+    <div className="hairline rounded-card p-6">
+      <div className="font-mono text-3xl md:text-4xl text-ink tracking-tight">
         {value}
       </div>
-      <div className="mt-2 text-sm text-muted">{label}</div>
+      <div className="mt-2 text-sm text-ink-secondary">{label}</div>
+      {qualifier && (
+        <div className="mt-1 font-mono text-xs uppercase tracking-[0.14em] text-muted">
+          {qualifier}
+        </div>
+      )}
     </div>
   );
 }
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center font-mono text-[0.68rem] uppercase tracking-[0.18em] text-muted hairline px-2.5 py-1">
+    <span className="inline-flex items-center font-mono text-xs uppercase tracking-[0.14em] text-muted border border-line rounded-full px-3 py-1">
       {children}
     </span>
   );

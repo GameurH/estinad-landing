@@ -1,7 +1,7 @@
 import { Home, type HomeData } from "@/components/Home";
 import { getDict } from "@/lib/i18n";
-import { isLocale, productSlugs, type Locale } from "@/lib/i18n-config";
-import { productsList, solutionsList, servicesList } from "@/lib/nav";
+import { isLocale, type Locale } from "@/lib/i18n-config";
+import { productsList } from "@/lib/nav";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -10,17 +10,51 @@ export default async function HomePage({ params }: Props) {
   const l: Locale = isLocale(locale) ? locale : "en";
   const d = getDict(l);
 
-  const products = productsList(d);
-  const productsMap = Object.fromEntries(products.map((p) => [p.slug, p]));
-
   const data: HomeData = {
     locale: l,
-    h: d.home,
-    productSlugs,
-    products: productsMap,
-    solutions: solutionsList(d),
-    services: servicesList(d).map((s) => ({ slug: s.slug, name: s.name, oneLiner: s.oneLiner })),
+    h2: d.homeV2,
+    products: productsList(d),
   };
 
-  return <Home data={data} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://estinad.com/#org",
+        name: "ESTINAD",
+        url: "https://estinad.com",
+        logo: "https://estinad.com/full-logo.png",
+        description: d.meta.ogDescription,
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://estinad.com/#site",
+        url: `https://estinad.com/${l}`,
+        name: "ESTINAD",
+        publisher: { "@id": "https://estinad.com/#org" },
+        inLanguage: l,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: d.homeV2.faq.items.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      <Home data={data} />
+    </>
+  );
 }

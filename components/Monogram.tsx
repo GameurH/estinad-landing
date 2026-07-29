@@ -2,12 +2,12 @@ import Image from "next/image";
 import type { HTMLProps } from "react";
 
 /**
- * ESTINAD monogram — rendered from the official logo asset (public/logo.jpg).
+ * ESTINAD monogram — rendered from the official logo asset (public/logo-pos.jpg).
  *
- * The logo is a cream mark on a pure-black plate. We render it with
- * `mix-blend-mode: screen` so the black background drops out over the site's
- * dark surfaces and only the cream interlocking E/T mark remains — the visual
- * source of truth for the entire system.
+ * The mark is a light plate on a dark background (or vice versa under the
+ * dark theme). The `logo-lockup-image` class keys the blend per theme:
+ * multiply + invert on light grounds, screen on dark grounds — so only the
+ * interlocking E/T geometry remains, true to the monochrome system.
  */
 export function Monogram({
   className,
@@ -23,7 +23,7 @@ export function Monogram({
         alt="ESTINAD monogram"
         fill
         sizes="320px"
-        className="object-contain mix-blend-screen pointer-events-none select-none"
+        className="logo-lockup-image object-contain pointer-events-none select-none"
       />
     </span>
   );

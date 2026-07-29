@@ -37,7 +37,7 @@ export default async function SolutionsPage({ params }: Props) {
               <h2 className="mt-3 text-2xl text-ivory font-semibold">{s.name}</h2>
               <p className="mt-3 text-sm text-ivory-dim leading-relaxed">{s.summary}</p>
               <span className="mt-5 inline-block text-xs text-accent group-hover:translate-x-1 transition-transform">
-                {d.home.solutionsOverview.viewSolution}
+                {d.common.viewSolution}
               </span>
             </Link>
           ))}
