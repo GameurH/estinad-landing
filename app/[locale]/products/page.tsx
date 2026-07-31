@@ -4,8 +4,9 @@ import { PageHero } from "@/components/PageHero";
 import { Section, Eyebrow, Tag } from "@/components/ui";
 import { Monogram } from "@/components/Monogram";
 import { getDict } from "@/lib/i18n";
-import { isLocale, lp, type Locale, type AppStatus, appGroupRestaurant, appGroupPlatform, appGroupPackages } from "@/lib/i18n-config";
+import { isLocale, lp, type Locale, type AppStatus, appGroupPlatform, appGroupPackages } from "@/lib/i18n-config";
 import { productsList, appsList, roadmapList, type AppCard, type RoadmapCard } from "@/lib/nav";
+import { pageMeta } from "@/lib/seo";
 import type { Dictionary } from "@/lib/dictionaries/types";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -38,7 +39,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const l: Locale = isLocale(locale) ? locale : "en";
   const d = getDict(l);
-  return { title: d.nav.products, description: d.products.index.intro };
+  return pageMeta(l, "/products", {
+    title: d.nav.products,
+    description: d.products.index.intro,
+  });
 }
 
 function GroupHeader({ label }: { label: string }) {
@@ -57,7 +61,7 @@ function AppCardItem({ card, idx, locale }: { card: AppCard; idx: Dictionary["ap
   const L = (h: string) => lp(locale, h);
   return (
     <Link
-      href={L(`/products/${card.slug}`)}
+      href={L(`/products/components/${card.slug}`)}
       className="group bg-base p-7 md:p-8 hover:bg-surface-2 transition-colors"
     >
       <div className="flex items-start justify-between">
@@ -65,7 +69,7 @@ function AppCardItem({ card, idx, locale }: { card: AppCard; idx: Dictionary["ap
           <span className="font-mono text-xs text-accent">{card.glyph}</span>
           <h3 className="text-lg text-ivory font-medium">{card.name}</h3>
         </div>
-        <span className="text-muted-2 group-hover:text-ivory group-hover:translate-x-1 transition-all">
+        <span className="text-muted-2 group-hover:text-ivory group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-all">
           →
         </span>
       </div>
@@ -110,9 +114,6 @@ export default async function ProductsPage({ params }: Props) {
   const aidx = d.apps.index;
 
   const apps = appsList(d);
-  const restaurantLines = apps.filter((a) =>
-    (appGroupRestaurant as readonly string[]).includes(a.slug),
-  );
   const platformApps = apps.filter((a) =>
     (appGroupPlatform as readonly string[]).includes(a.slug),
   );
@@ -157,22 +158,9 @@ export default async function ProductsPage({ params }: Props) {
         </div>
       </Section>
 
-      {/* Restaurant product lines */}
-      {restaurantLines.length > 0 && (
-        <Section className="bg-surface">
-          <GroupHeader label={aidx.groupRestaurant} />
-          <div className="grid gap-px md:grid-cols-2 hairline bg-line">
-            {restaurantLines.map((a) => (
-              <AppCardItem key={a.slug} card={a} idx={aidx} locale={l} />
-            ))}
-          </div>
-          <p className="mt-5 text-xs text-muted-2 font-mono">{aidx.pricingNote}</p>
-        </Section>
-      )}
-
-      {/* Platform & companion apps */}
+      {/* Connected components (POS, Waiter, KDS) */}
       {platformApps.length > 0 && (
-        <Section>
+        <Section className="bg-surface">
           <GroupHeader label={aidx.groupPlatform} />
           <div className="grid gap-px md:grid-cols-3 hairline bg-line">
             {platformApps.map((a) => (
@@ -182,9 +170,9 @@ export default async function ProductsPage({ params }: Props) {
         </Section>
       )}
 
-      {/* Shared packages */}
+      {/* Platform foundation packages */}
       {packages.length > 0 && (
-        <Section className="bg-surface">
+        <Section>
           <GroupHeader label={aidx.groupPackages} />
           <div className="grid gap-px md:grid-cols-2 lg:grid-cols-4 hairline bg-line">
             {packages.map((a) => (

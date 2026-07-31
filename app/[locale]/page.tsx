@@ -1,9 +1,24 @@
+import type { Metadata } from "next";
 import { Home, type HomeData } from "@/components/Home";
 import { getDict } from "@/lib/i18n";
-import { isLocale, type Locale } from "@/lib/i18n-config";
-import { productsList } from "@/lib/nav";
+import { isLocale, type Locale, productSlugs } from "@/lib/i18n-config";
+import { pageMeta, absoluteUrl } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const l: Locale = isLocale(locale) ? locale : "en";
+  const d = getDict(l);
+  return pageMeta(l, "", {
+    title: d.meta.title,
+    description: d.meta.description,
+    openGraph: {
+      title: d.homeV2.hero.title,
+      description: d.homeV2.hero.sub,
+    },
+  });
+}
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
@@ -13,7 +28,6 @@ export default async function HomePage({ params }: Props) {
   const data: HomeData = {
     locale: l,
     h2: d.homeV2,
-    products: productsList(d),
   };
 
   const jsonLd = {
@@ -30,19 +44,22 @@ export default async function HomePage({ params }: Props) {
       {
         "@type": "WebSite",
         "@id": "https://estinad.com/#site",
-        url: `https://estinad.com/${l}`,
+        url: absoluteUrl(l, ""),
         name: "ESTINAD",
         publisher: { "@id": "https://estinad.com/#org" },
         inLanguage: l,
       },
-      {
-        "@type": "FAQPage",
-        mainEntity: d.homeV2.faq.items.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
+      ...productSlugs.map((slug) => {
+        const p = d.products.items[slug];
+        return {
+          "@type": "SoftwareApplication",
+          name: p.name,
+          applicationCategory: "BusinessApplication",
+          description: p.oneLiner,
+          url: absoluteUrl(l, `/products/${slug}`),
+          brand: { "@type": "Organization", name: "ESTINAD" },
+        };
+      }),
     ],
   };
 

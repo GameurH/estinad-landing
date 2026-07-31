@@ -5,7 +5,15 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Logo } from "./Monogram";
 import { ThemeToggle, type ThemeLabels } from "./ThemeToggle";
-import { locales, lp, productSlugs, solutionSlugs, serviceSlugs, caseStudySlugs, type Locale } from "@/lib/i18n-config";
+import {
+  locales,
+  lp,
+  productSlugs,
+  solutionSlugs,
+  caseStudySlugs,
+  platformSlugs,
+  type Locale,
+} from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
 
 export type HeaderData = {
@@ -13,17 +21,27 @@ export type HeaderData = {
   nav: Dictionary["nav"];
   productNames: Record<string, string>;
   solutionNames: Record<string, string>;
-  serviceNames: Record<string, string>;
   caseStudyNames: Record<string, string>;
-  resourcesNav: { label: string; href: string; desc?: string }[];
+  platformNames: Record<string, string>;
+  partnerNames: Record<string, string>;
   companyNav: { label: string; href: string; desc?: string }[];
   langLabels: { switchLabel: string; en: string; fr: string; ar: string };
   themeLabels: ThemeLabels;
 };
 
 export function Header({ data }: { data: HeaderData }) {
-  const { locale, nav, productNames, solutionNames, serviceNames, caseStudyNames, companyNav, langLabels, themeLabels } =
-    data;
+  const {
+    locale,
+    nav,
+    productNames,
+    solutionNames,
+    caseStudyNames,
+    platformNames,
+    partnerNames,
+    companyNav,
+    langLabels,
+    themeLabels,
+  } = data;
   const pathname = usePathname();
   const [open, setOpen] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,7 +55,6 @@ export function Header({ data }: { data: HeaderData }) {
     setLangOpen(false);
   };
 
-  /* Auto-hide on scroll down, reveal on scroll up — content-first reading. */
   useEffect(() => {
     lastY.current = window.scrollY;
     const onScroll = () => {
@@ -52,7 +69,6 @@ export function Header({ data }: { data: HeaderData }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Escape closes any open menu. */
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeAll();
@@ -61,7 +77,6 @@ export function Header({ data }: { data: HeaderData }) {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  /* Lock scroll while the mobile sheet is open. */
   useEffect(() => {
     document.documentElement.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -75,30 +90,59 @@ export function Header({ data }: { data: HeaderData }) {
     return pathname === full || pathname.startsWith(full + "/");
   };
 
-  type MegaEntry = { label: string; href: string; desc?: string; group?: string };
+  type MegaEntry = { label: string; href: string; desc?: string };
   const productEntries: MegaEntry[] = productSlugs.map((s) => ({
     label: productNames[s],
     href: `/products/${s}`,
-    desc: "",
   }));
   const solutionEntries: MegaEntry[] = solutionSlugs.map((s) => ({
     label: solutionNames[s],
     href: `/solutions/${s}`,
   }));
-  const serviceEntries: MegaEntry[] = serviceSlugs.map((s) => ({
-    label: serviceNames[s],
-    href: `/services/${s}`,
-  }));
+  const platformEntries: MegaEntry[] = [
+    { label: nav.megaOs, href: "/platform" },
+    ...platformSlugs.map((s) => ({
+      label: platformNames[s],
+      href: `/platform/${s}`,
+    })),
+  ];
   const caseEntries: MegaEntry[] = caseStudySlugs.map((s) => ({
     label: caseStudyNames[s],
     href: `/case-studies/${s}`,
   }));
+  const partnerEntries: MegaEntry[] = [
+    { label: partnerNames.referral, href: "/partners" },
+    { label: partnerNames.resellers, href: "/partners/resellers" },
+    { label: partnerNames.implementers, href: "/partners/implementers" },
+    { label: partnerNames.technology, href: "/partners/technology" },
+  ];
 
   const mega: Record<string, { items: MegaEntry[]; intro: string; footer?: { label: string; href: string } }> = {
-    [nav.products]: { items: productEntries, intro: nav.megaProductsIntro, footer: { label: nav.products, href: "/products" } },
-    [nav.solutions]: { items: solutionEntries, intro: nav.megaSolutionsIntro, footer: { label: nav.solutions, href: "/solutions" } },
-    [nav.services]: { items: serviceEntries, intro: nav.megaServicesIntro, footer: { label: nav.services, href: "/services" } },
-    [nav.caseStudies]: { items: caseEntries, intro: nav.megaCaseIntro, footer: { label: nav.caseStudies, href: "/case-studies" } },
+    [nav.products]: {
+      items: productEntries,
+      intro: nav.megaProductsIntro,
+      footer: { label: nav.products, href: "/products" },
+    },
+    [nav.solutions]: {
+      items: solutionEntries,
+      intro: nav.megaSolutionsIntro,
+      footer: { label: nav.solutions, href: "/solutions" },
+    },
+    [nav.platform]: {
+      items: platformEntries,
+      intro: nav.megaPlatformIntro,
+      footer: { label: nav.platform, href: "/platform" },
+    },
+    [nav.caseStudies]: {
+      items: caseEntries,
+      intro: nav.megaCaseIntro,
+      footer: { label: nav.caseStudies, href: "/case-studies" },
+    },
+    [nav.partners]: {
+      items: partnerEntries,
+      intro: nav.megaPartnersIntro,
+      footer: { label: nav.partners, href: "/partners" },
+    },
     [nav.company]: {
       items: companyNav.map((c) => ({ label: c.label, href: c.href, desc: c.desc })),
       intro: "",
@@ -108,8 +152,9 @@ export function Header({ data }: { data: HeaderData }) {
   const primary = [
     { label: nav.products, href: "/products" },
     { label: nav.solutions, href: "/solutions" },
-    { label: nav.services, href: "/services" },
+    { label: nav.platform, href: "/platform" },
     { label: nav.caseStudies, href: "/case-studies" },
+    { label: nav.partners, href: "/partners" },
     { label: nav.company, href: "/company" },
   ];
 
@@ -138,7 +183,6 @@ export function Header({ data }: { data: HeaderData }) {
             <Logo />
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
             {primary.map((item) => (
               <div
@@ -150,7 +194,7 @@ export function Header({ data }: { data: HeaderData }) {
                 <Link
                   href={lp(locale, item.href)}
                   onClick={() => setOpen(null)}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 text-sm transition-colors ${
+                  className={`flex items-center gap-1.5 px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
                     isActive(item.href) ? "text-ink" : "text-ink-secondary hover:text-ink"
                   }`}
                 >
@@ -185,7 +229,8 @@ export function Header({ data }: { data: HeaderData }) {
                           onClick={() => setOpen(null)}
                           className="mt-1 block px-3 py-2.5 hairline-t text-xs font-mono uppercase tracking-[0.16em] text-ink hover:bg-surface-2 rounded-b-lg transition-colors"
                         >
-                          {mega[item.label].footer!.label} →
+                          {mega[item.label].footer!.label}{" "}
+                          <span className="inline-block rtl:-scale-x-100">→</span>
                         </Link>
                       )}
                     </div>
@@ -198,7 +243,6 @@ export function Header({ data }: { data: HeaderData }) {
           <div className="hidden lg:flex items-center gap-1">
             <ThemeToggle labels={themeLabels} />
 
-            {/* Language switcher */}
             <div
               className="relative"
               onMouseEnter={() => setLangOpen(true)}
@@ -244,7 +288,6 @@ export function Header({ data }: { data: HeaderData }) {
             </Link>
           </div>
 
-          {/* Mobile toggle */}
           <button
             className="lg:hidden flex flex-col gap-1.5 p-3"
             aria-label="Toggle menu"
@@ -258,7 +301,6 @@ export function Header({ data }: { data: HeaderData }) {
         </div>
       </div>
 
-      {/* Mobile sheet */}
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 bg-bg pt-24 overflow-y-auto">
           <div className="shell pb-10 flex flex-col gap-1">
@@ -286,7 +328,6 @@ export function Header({ data }: { data: HeaderData }) {
               </div>
             ))}
 
-            {/* Language switch (mobile) */}
             <div className="py-4 flex items-center gap-2">
               {locales.map((l) => (
                 <Link

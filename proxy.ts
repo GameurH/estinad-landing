@@ -55,6 +55,7 @@ export function proxy(request: NextRequest) {
   return NextResponse.redirect(url);
 }
 
-export const proxyConfig = {
+/** Matcher must be exported as `config` per Next.js 16 proxy docs. */
+export const config = {
   matcher: ["/((?!api|_next|favicon|sitemap.xml|robots.txt|.*\\..*).*)"],
 };

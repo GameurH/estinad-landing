@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Section, SectionHeader, Eyebrow, Button } from "@/components/ui";
 import { getDict } from "@/lib/i18n";
-import { isLocale, lp, serviceSlugs, type Locale } from "@/lib/i18n-config";
+import { isLocale, lp, type Locale } from "@/lib/i18n-config";
 import { servicesList } from "@/lib/nav";
+import { pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -12,7 +13,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const l: Locale = isLocale(locale) ? locale : "en";
   const d = getDict(l);
-  return { title: d.nav.services, description: d.services.index.intro };
+  return pageMeta(l, "/services", {
+    title: d.nav.services,
+    description: d.services.index.intro,
+  });
 }
 
 export default async function ServicesPage({ params }: Props) {

@@ -5,14 +5,14 @@ import {
   serviceSlugs,
   caseStudySlugs,
   platformSlugs,
-  appSlugs,
+  componentSlugs,
+  partnerSlugs,
   roadmapSlugs,
 } from "@/lib/i18n-config";
 
 const resHrefs = [
   "/resources/blog",
   "/resources/guides",
-  "/resources/case-studies",
   "/resources/documentation",
   "/resources/faq",
 ];
@@ -20,7 +20,6 @@ const resHrefs = [
 const companyHrefs = [
   "/company/about",
   "/company/vision",
-  "/company/partners",
   "/company/careers",
   "/company/contact",
 ];
@@ -50,6 +49,27 @@ export function legalNav(d: Dictionary): NavItem[] {
   ];
 }
 
+export function platformNav(d: Dictionary): NavItem[] {
+  return [
+    { label: d.nav.megaOs, href: "/platform", desc: d.nav.megaPlatformIntro },
+    ...platformSlugs.map((s) => ({
+      label: d.platform.sub[s].eyebrow,
+      href: `/platform/${s}`,
+      desc: d.platform.sub[s].intro.slice(0, 80),
+    })),
+  ];
+}
+
+export function partnersNav(d: Dictionary): NavItem[] {
+  const tracks = d.partners.tracks;
+  return [
+    { label: tracks.referral.t, href: "/partners", desc: tracks.referral.d },
+    { label: tracks.resellers.t, href: "/partners/resellers", desc: tracks.resellers.d },
+    { label: tracks.implementers.t, href: "/partners/implementers", desc: tracks.implementers.d },
+    { label: tracks.technology.t, href: "/partners/technology", desc: tracks.technology.d },
+  ];
+}
+
 export function productNames(d: Dictionary): Record<string, string> {
   const out: Record<string, string> = {};
   for (const s of productSlugs) out[s] = d.products.items[s].name;
@@ -71,6 +91,20 @@ export function serviceNames(d: Dictionary): Record<string, string> {
 export function caseStudyNames(d: Dictionary): Record<string, string> {
   const out: Record<string, string> = {};
   for (const s of caseStudySlugs) out[s] = d.caseStudies.items[s].title;
+  return out;
+}
+
+export function platformNames(d: Dictionary): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const s of platformSlugs) out[s] = d.platform.sub[s].eyebrow;
+  return out;
+}
+
+export function partnerNames(d: Dictionary): Record<string, string> {
+  const out: Record<string, string> = {
+    referral: d.partners.tracks.referral.t,
+  };
+  for (const s of partnerSlugs) out[s] = d.partners.tracks[s].t;
   return out;
 }
 
@@ -167,7 +201,7 @@ export type AppCard = {
 };
 
 export function appsList(d: Dictionary): AppCard[] {
-  return appSlugs.map((s) => {
+  return componentSlugs.map((s) => {
     const a = d.apps.items[s];
     return {
       slug: s,
@@ -183,13 +217,13 @@ export function appsList(d: Dictionary): AppCard[] {
 
 export function appNames(d: Dictionary): Record<string, string> {
   const out: Record<string, string> = {};
-  for (const s of appSlugs) out[s] = d.apps.items[s].name;
+  for (const s of componentSlugs) out[s] = d.apps.items[s].name;
   return out;
 }
 
 export function appItem(d: Dictionary, slug: string) {
-  if (!(appSlugs as readonly string[]).includes(slug)) return undefined;
-  return d.apps.items[slug as (typeof appSlugs)[number]];
+  if (!(componentSlugs as readonly string[]).includes(slug)) return undefined;
+  return d.apps.items[slug as (typeof componentSlugs)[number]];
 }
 
 export type RoadmapCard = {

@@ -11,6 +11,7 @@ import {
   type Locale,
 } from "@/lib/i18n-config";
 import { platformCards } from "@/lib/nav";
+import { pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -28,7 +29,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = getDict(l);
   if (!(platformSlugs as readonly string[]).includes(slug)) return {};
   const p = d.platform.sub[slug as (typeof platformSlugs)[number]];
-  return { title: p.title, description: p.intro };
+  return pageMeta(l, `/platform/${slug}`, {
+    title: p.title,
+    description: p.intro,
+  });
 }
 
 export default async function PlatformSubPage({ params }: Props) {
@@ -88,7 +92,7 @@ export default async function PlatformSubPage({ params }: Props) {
             >
               <EyebrowInline>{o.eyebrow}</EyebrowInline>
               <h3 className="mt-2 text-base text-ivory font-medium">{o.title}</h3>
-              <span className="mt-3 inline-block text-xs text-accent group-hover:translate-x-1 transition-transform">
+              <span className="mt-3 inline-block text-xs text-accent group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
                 {d.common.readMore}
               </span>
             </Link>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section, SectionHeader, Eyebrow, Button, Tag, NodeDivider } from "@/components/ui";
 import { Monogram } from "@/components/Monogram";
@@ -18,22 +19,26 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
 
   return (
     <>
+      {/* 1. Product identity */}
       <PageHero
         eyebrow={eyebrow}
-        title={p.oneLiner}
-        intro={p.positioning}
+        title={p.byline}
+        intro={p.oneLiner}
         cta={{ label: c.requestDemoArrow, href: L("/demo") }}
         secondaryCta={{ label: c.viewPricing, href: L(`/products/${slug}/pricing`) }}
       />
 
-      {/* ICP + use cases */}
       <Section>
-        <div className="grid gap-12 lg:grid-cols-2">
+        <p className="max-w-3xl text-lg leading-relaxed text-ivory-dim">{p.positioning}</p>
+      </Section>
+
+      {/* 2. Industry problem */}
+      <Section className="bg-surface">
+        <SectionHeader eyebrow={p.problem.eyebrow} title={p.problem.title} intro={p.problem.body} />
+        <div className="mt-12 grid gap-12 lg:grid-cols-2">
           <div>
             <Eyebrow>{p.icpTitle}</Eyebrow>
-            <h2 className="text-2xl md:text-3xl text-ivory font-semibold tracking-tight">
-              {p.icpHeader}
-            </h2>
+            <h3 className="text-xl text-ivory font-semibold tracking-tight">{p.icpHeader}</h3>
             <ul className="mt-6 flex flex-col gap-3">
               {p.icp.map((i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-ivory-dim">
@@ -45,9 +50,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
           </div>
           <div>
             <Eyebrow>{p.useCasesTitle}</Eyebrow>
-            <h2 className="text-2xl md:text-3xl text-ivory font-semibold tracking-tight">
-              {p.useCasesHeader}
-            </h2>
+            <h3 className="text-xl text-ivory font-semibold tracking-tight">{p.useCasesHeader}</h3>
             <ul className="mt-6 flex flex-col gap-3">
               {p.useCases.map((u) => (
                 <li key={u} className="flex items-start gap-3 text-sm text-ivory-dim">
@@ -57,6 +60,31 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
               ))}
             </ul>
           </div>
+        </div>
+      </Section>
+
+      {/* 3. Solution workflows */}
+      <Section>
+        <SectionHeader eyebrow={p.workflowsEyebrow} title={p.workflowsTitle} intro={p.workflowsIntro} />
+        <div className="mt-12 grid gap-px md:grid-cols-3 hairline bg-line">
+          {p.workflows.map((w, i) => (
+            <div key={w.title} className="bg-base p-7">
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-xs text-accent">0{i + 1}</span>
+                <h3 className="text-lg text-ivory font-medium">{w.title}</h3>
+              </div>
+              <ol className="mt-5 flex flex-col gap-3">
+                {w.steps.map((s, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-ivory-dim">
+                    <span className="font-mono text-[0.65rem] text-muted-2 mt-1">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    {s}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
         </div>
       </Section>
 
@@ -102,7 +130,6 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
                       <div key={i} className="flex-1 bg-line-strong" style={{ height: `${h}%` }} />
                     ))}
                   </div>
-                  <span className="absolute end-4 top-4 h-1.5 w-1.5 rotate-45 border border-accent" />
                 </div>
               </div>
             </div>
@@ -111,32 +138,41 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </div>
       </section>
 
-      {/* Workflows */}
+      {/* 4. Local-first deployment */}
       <Section>
-        <SectionHeader eyebrow={p.workflowsEyebrow} title={p.workflowsTitle} intro={p.workflowsIntro} />
-        <div className="mt-12 grid gap-px md:grid-cols-3 hairline bg-line">
-          {p.workflows.map((w, i) => (
-            <div key={w.title} className="bg-base p-7">
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-xs text-accent">0{i + 1}</span>
-                <h3 className="text-lg text-ivory font-medium">{w.title}</h3>
-              </div>
-              <ol className="mt-5 flex flex-col gap-3">
-                {w.steps.map((s, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-ivory-dim">
-                    <span className="font-mono text-[0.65rem] text-muted-2 mt-1">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    {s}
-                  </li>
-                ))}
-              </ol>
-            </div>
+        <SectionHeader eyebrow={p.localFirst.eyebrow} title={p.localFirst.title} intro={p.localFirst.body} />
+        <ul className="mt-10 grid gap-4 md:grid-cols-3">
+          {p.localFirst.points.map((pt) => (
+            <li key={pt} className="hairline bg-surface p-5 text-sm text-ivory-dim">
+              {pt}
+            </li>
           ))}
+        </ul>
+        <div className="mt-12 grid gap-12 lg:grid-cols-2">
+          <div>
+            <Eyebrow>{p.deployEyebrow}</Eyebrow>
+            <h3 className="text-xl text-ivory font-semibold tracking-tight">{p.deployTitle}</h3>
+            <ul className="mt-6 flex flex-col gap-3">
+              {p.deployment.map((d) => (
+                <li key={d} className="hairline p-4 text-sm text-ivory-dim bg-surface">
+                  {d}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <Eyebrow>{p.integEyebrow}</Eyebrow>
+            <h3 className="text-xl text-ivory font-semibold tracking-tight">{p.integTitle}</h3>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {p.integrations.map((i) => (
+                <Tag key={i}>{i}</Tag>
+              ))}
+            </div>
+          </div>
         </div>
       </Section>
 
-      {/* Feature clusters */}
+      {/* 5. Key capabilities */}
       <Section className="bg-surface">
         <SectionHeader eyebrow={p.featuresEyebrow} title={p.featuresTitle} />
         <div className="mt-12 grid gap-px md:grid-cols-3 hairline bg-line">
@@ -157,36 +193,56 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </div>
       </Section>
 
-      {/* Deployment + integrations */}
+      {/* 6. Works with */}
       <Section>
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <Eyebrow>{p.deployEyebrow}</Eyebrow>
-            <h2 className="text-2xl text-ivory font-semibold tracking-tight">{p.deployTitle}</h2>
-            <ul className="mt-6 flex flex-col gap-3">
-              {p.deployment.map((d) => (
-                <li key={d} className="hairline p-4 text-sm text-ivory-dim bg-surface">
-                  {d}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <Eyebrow>{p.integEyebrow}</Eyebrow>
-            <h2 className="text-2xl text-ivory font-semibold tracking-tight">{p.integTitle}</h2>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {p.integrations.map((i) => (
-                <Tag key={i}>{i}</Tag>
-              ))}
-            </div>
-          </div>
+        <SectionHeader eyebrow={p.worksWith.eyebrow} title={p.worksWith.title} />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {p.worksWith.items.map((item) => (
+            <Link
+              key={item.href}
+              href={L(item.href)}
+              className="group hairline bg-surface p-6 hover:bg-surface-2 transition-colors"
+            >
+              <h3 className="text-base text-ivory font-medium group-hover:underline">{item.name}</h3>
+              <p className="mt-2 text-sm text-muted">{item.role}</p>
+            </Link>
+          ))}
         </div>
+      </Section>
+
+      {/* 7. Multi-location */}
+      <Section className="bg-surface">
+        <SectionHeader
+          eyebrow={p.multiLocation.eyebrow}
+          title={p.multiLocation.title}
+          intro={p.multiLocation.body}
+        />
+      </Section>
+
+      {/* 8. Implementation */}
+      <Section>
+        <SectionHeader eyebrow={p.implementation.eyebrow} title={p.implementation.title} />
+        <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+          {p.implementation.steps.map((s, i) => (
+            <li key={s.t} className="hairline bg-surface p-5">
+              <span className="font-mono text-xs text-accent">0{i + 1}</span>
+              <h3 className="mt-3 text-sm text-ivory font-medium">{s.t}</h3>
+              <p className="mt-2 text-sm text-muted leading-relaxed">{s.d}</p>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      {/* 9. Proof (illustrative) */}
+      <Section className="bg-surface">
+        <Tag>{p.proof.label}</Tag>
+        <SectionHeader eyebrow={p.proof.eyebrow} title={p.proof.title} intro={p.proof.body} />
       </Section>
 
       <NodeDivider />
 
-      {/* FAQ */}
-      <Section className="bg-surface">
+      {/* 10. FAQ */}
+      <Section>
         <SectionHeader eyebrow={p.faqEyebrow} title={p.faqTitle} />
         <div className="mt-12 max-w-3xl">
           <div className="flex flex-col gap-px bg-line hairline">
@@ -200,17 +256,30 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </div>
       </Section>
 
-      {/* CTA */}
+      {/* 11. Dual CTAs */}
       <section className="hairline-b bg-base">
-        <div className="shell py-20 md:py-24 text-center">
-          <h2 className="text-2xl md:text-4xl text-ivory font-semibold tracking-tight">
-            {p.ctaTitle}
-          </h2>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button href={L("/demo")}>{c.requestDemoArrow}</Button>
-            <Button href={L(`/products/${slug}/pricing`)} variant="secondary">
-              {c.viewPricing}
-            </Button>
+        <div className="shell py-20 md:py-24">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <h2 className="text-2xl md:text-3xl text-ivory font-semibold tracking-tight">
+                {p.ctaTitle}
+              </h2>
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Button href={L("/demo")}>{c.requestDemoArrow}</Button>
+                <Button href={L(`/products/${slug}/pricing`)} variant="secondary">
+                  {c.viewPricing}
+                </Button>
+              </div>
+            </div>
+            <div className="hairline bg-surface p-8">
+              <h3 className="text-lg text-ivory font-medium">{p.partnerCta.title}</h3>
+              <p className="mt-3 text-sm text-muted leading-relaxed">{p.partnerCta.body}</p>
+              <div className="mt-6">
+                <Button href={L(p.partnerCta.href)} variant="secondary">
+                  {p.partnerCta.label}
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

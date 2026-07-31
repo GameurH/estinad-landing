@@ -1,5 +1,15 @@
 import type { MetadataRoute } from "next";
-import { locales, defaultLocale, productSlugs, appSlugs, platformSlugs, solutionSlugs, serviceSlugs, caseStudySlugs } from "@/lib/i18n-config";
+import {
+  locales,
+  defaultLocale,
+  productSlugs,
+  componentSlugs,
+  platformSlugs,
+  solutionSlugs,
+  serviceSlugs,
+  caseStudySlugs,
+  partnerSlugs,
+} from "@/lib/i18n-config";
 
 const base = "https://estinad.com";
 
@@ -10,6 +20,8 @@ const staticRoutes = [
   "/solutions",
   "/services",
   "/case-studies",
+  "/partners",
+  "/partners/apply",
   "/resources",
   "/company",
   "/demo",
@@ -18,7 +30,6 @@ const staticRoutes = [
 const resourceRoutes = [
   "/resources/blog",
   "/resources/guides",
-  "/resources/case-studies",
   "/resources/documentation",
   "/resources/faq",
 ];
@@ -26,7 +37,6 @@ const resourceRoutes = [
 const companyRoutes = [
   "/company/about",
   "/company/vision",
-  "/company/partners",
   "/company/careers",
   "/company/contact",
 ];
@@ -42,16 +52,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const add = (path: string, priority: number, changeFrequency: Entry["changeFrequency"]) => {
     for (const locale of locales) {
       const isDefault = locale === defaultLocale;
+      const languages: Record<string, string> = Object.fromEntries(
+        locales.map((l) => [l, `${base}/${l}${path === "" ? "" : path}`]),
+      );
+      languages["x-default"] = `${base}/${defaultLocale}${path === "" ? "" : path}`;
+
       entries.push({
         url: `${base}/${locale}${path === "" ? "" : path}`,
         lastModified: now,
         changeFrequency,
         priority: path === "" ? (isDefault ? 1 : 0.9) : priority,
-        alternates: {
-          languages: Object.fromEntries(
-            locales.map((l) => [l, `${base}/${l}${path === "" ? "" : path}`]),
-          ),
-        },
+        alternates: { languages },
       });
     }
   };
@@ -63,12 +74,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     add(`/products/${s}/pricing`, 0.8, "monthly");
   });
 
-  appSlugs.forEach((s) => add(`/products/${s}`, 0.8, "monthly"));
+  componentSlugs.forEach((s) => add(`/products/components/${s}`, 0.7, "monthly"));
 
   platformSlugs.forEach((s) => add(`/platform/${s}`, 0.7, "monthly"));
   solutionSlugs.forEach((s) => add(`/solutions/${s}`, 0.8, "monthly"));
-  serviceSlugs.forEach((s) => add(`/services/${s}`, 0.8, "monthly"));
-  caseStudySlugs.forEach((s) => add(`/case-studies/${s}`, 0.7, "monthly"));
+  serviceSlugs.forEach((s) => add(`/services/${s}`, 0.7, "monthly"));
+  caseStudySlugs.forEach((s) => add(`/case-studies/${s}`, 0.6, "monthly"));
+  partnerSlugs.forEach((s) => add(`/partners/${s}`, 0.8, "monthly"));
   resourceRoutes.forEach((p) => add(p, 0.6, "weekly"));
   companyRoutes.forEach((p) => add(p, 0.6, "monthly"));
   legalRoutes.forEach((p) => add(p, 0.3, "yearly"));

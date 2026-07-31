@@ -78,7 +78,7 @@ export function ResourceSection({
                 </div>
                 <h3 className="mt-4 text-lg md:text-xl text-ivory font-medium">{it.title}</h3>
                 <p className="mt-2 text-sm text-muted leading-relaxed">{it.excerpt}</p>
-                <span className="mt-4 inline-block text-xs text-accent group-hover:translate-x-1 transition-transform">
+                <span className="mt-4 inline-block text-xs text-accent group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
                   {readLabel}
                 </span>
               </article>

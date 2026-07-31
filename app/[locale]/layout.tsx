@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono, Cairo } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
@@ -19,9 +20,11 @@ import {
   legalNav,
   productNames,
   solutionNames,
-  serviceNames,
   caseStudyNames,
+  platformNames,
+  partnerNames,
 } from "@/lib/nav";
+import { hreflangMeta } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,12 +41,22 @@ const geistMono = Geist_Mono({
 const cairo = Cairo({
   variable: "--font-cairo",
   subsets: ["arabic", "latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f6f3" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0c0c" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+};
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -69,7 +82,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: "/images/v2/og.png",
           width: 1536,
           height: 1024,
-          alt: "ESTINAD — Software infrastructure",
+          alt: "ESTINAD — Business operating systems",
         },
       ],
     },
@@ -79,13 +92,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: d.meta.ogDescription,
       images: ["/images/v2/og.png"],
     },
-    alternates: {
-      languages: {
-        en: "/en",
-        fr: "/fr",
-        ar: "/ar",
-      },
-    },
+    alternates: hreflangMeta(l, ""),
   };
 }
 
@@ -101,9 +108,9 @@ export default async function LocaleLayout({ children, params }: Props & { child
     nav: d.nav,
     productNames: productNames(d),
     solutionNames: solutionNames(d),
-    serviceNames: serviceNames(d),
     caseStudyNames: caseStudyNames(d),
-    resourcesNav: resourcesNav(d),
+    platformNames: platformNames(d),
+    partnerNames: partnerNames(d),
     companyNav: companyNav(d),
     langLabels: d.lang,
     themeLabels: d.theme,
@@ -121,13 +128,13 @@ export default async function LocaleLayout({ children, params }: Props & { child
     <html
       lang={meta.htmlLang}
       dir={meta.dir}
-      className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} ${l === "ar" ? "locale-ar" : ""} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} ${l === "ar" ? `${cairo.className} locale-ar` : ""} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
       <body className="min-h-full flex flex-col bg-bg text-ink">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
         <SmoothScroll>
           <Header data={headerData} />
           <main className="flex-1">{children}</main>

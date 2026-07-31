@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Section, SectionHeader, Eyebrow, Tag, Button, Stat } from "@/components/ui";
+import { CaseStudyViewTracker } from "@/components/AnalyticsTrackers";
 import { getDict } from "@/lib/i18n";
 import {
   isLocale,
@@ -12,6 +13,7 @@ import {
   serviceSlugs,
   type Locale,
 } from "@/lib/i18n-config";
+import { pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -25,7 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = getDict(l);
   if (!(caseStudySlugs as readonly string[]).includes(slug)) return {};
   const c = d.caseStudies.items[slug as (typeof caseStudySlugs)[number]];
-  return { title: c.title, description: c.excerpt };
+  return pageMeta(l, `/case-studies/${slug}`, {
+    title: `${c.title} (${d.common.illustrativeLabel})`,
+    description: c.excerpt,
+  });
 }
 
 export default async function CaseStudyPage({ params }: Props) {
@@ -39,6 +44,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <>
+      <CaseStudyViewTracker slug={slug} />
       <PageHero
         eyebrow={`${d.nav.caseStudies} / ${c.industry}`}
         title={c.title}
@@ -50,6 +56,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <section className="hairline-b">
         <div className="shell py-8">
           <div className="flex flex-wrap gap-2">
+            <Tag>{d.common.illustrativeLabel}</Tag>
             <Tag>{c.industry}</Tag>
             <Tag>{c.type}</Tag>
           </div>

@@ -25,11 +25,13 @@ export function lp(locale: Locale, href: string): string {
 }
 
 export const productSlugs = ["retail", "restaurant", "clinic", "cloud"] as const;
+export type ProductSlug = (typeof productSlugs)[number];
 
-/** Dedicated landing pages for ecosystem apps, companion apps, and shared packages. */
-export const appSlugs = [
-  "restaurant-ecosystem",
-  "restaurant-pos",
+/**
+ * Connected product components (POS, Waiter, KDS, Core, UI, Native, Importer).
+ * Served under /products/components/[slug] — not as sibling product lines.
+ */
+export const componentSlugs = [
   "pos",
   "waiter",
   "kds",
@@ -38,7 +40,11 @@ export const appSlugs = [
   "native",
   "importer",
 ] as const;
-export type AppSlug = (typeof appSlugs)[number];
+export type ComponentSlug = (typeof componentSlugs)[number];
+
+/** @deprecated Use componentSlugs. Kept as alias for gradual migration. */
+export const appSlugs = componentSlugs;
+export type AppSlug = ComponentSlug;
 
 /** Flagged-off / not-yet-shipped apps — listed on the products hub, no dedicated page. */
 export const roadmapSlugs = ["ecosystem-admin", "loyalty-portal"] as const;
@@ -48,9 +54,16 @@ export const appStatuses = ["shipped", "beta", "frozen", "archived", "planned"] 
 export type AppStatus = (typeof appStatuses)[number];
 
 /** Stable slug groupings for the products hub (categories are locale-translated). */
-export const appGroupRestaurant = ["restaurant-ecosystem", "restaurant-pos"] as const;
-export const appGroupPlatform = ["pos", "waiter", "kds"] as const;
-export const appGroupPackages = ["core", "ui", "native", "importer"] as const;
+export const componentGroupPlatform = ["pos", "waiter", "kds"] as const;
+export const componentGroupPackages = ["core", "ui", "native", "importer"] as const;
+
+/** @deprecated Use componentGroupPlatform */
+export const appGroupPlatform = componentGroupPlatform;
+/** @deprecated Use componentGroupPackages */
+export const appGroupPackages = componentGroupPackages;
+/** Restaurant bundles redirected to /products/restaurant — empty for hub. */
+export const appGroupRestaurant = [] as const;
+
 export const solutionSlugs = [
   "retail",
   "restaurants",
@@ -75,3 +88,9 @@ export const caseStudySlugs = [
   "ecosystem-mixed-group",
 ] as const;
 export const platformSlugs = ["architecture", "security", "deployment"] as const;
+
+export const partnerSlugs = ["resellers", "implementers", "technology"] as const;
+export type PartnerSlug = (typeof partnerSlugs)[number];
+
+/** Legacy product-bundle slugs redirected to /products/restaurant. */
+export const legacyBundleSlugs = ["restaurant-ecosystem", "restaurant-pos"] as const;

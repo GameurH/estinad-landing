@@ -1,2327 +1,4269 @@
 import type { Dictionary } from "./types";
 
-/** French dictionary — mirrors the English shape exactly. */
 export const fr: Dictionary = {
-  meta: {
-    title: "ESTINAD — Produits logiciels & solutions logicielles sur mesure",
-    titleTemplate: "%s · ESTINAD",
-    description:
-      "ESTINAD est une entreprise logicielle. Nous créons des produits logiciels métier prêts à l'emploi — caisse, stocks, restauration, RH et facturation — et nous livrons des logiciels sur mesure, des sites web et des écosystèmes numériques complets pour les clients en Algérie et dans la région.",
-    ogTitle: "ESTINAD — Produits logiciels & solutions logicielles sur mesure",
-    ogDescription:
-      "Une entreprise logicielle avec des produits prêts et une capacité de livraison sur mesure. Produits sur le marché. Travaux clients prouvés. Conçu en Algérie pour le MENA et au-delà.",
+  "meta": {
+    "title": "ESTINAD — Produits logiciels & solutions logicielles sur mesure",
+    "titleTemplate": "%s · ESTINAD",
+    "description": "Systèmes d'exploitation métier local-first pour restaurants, commerces, cliniques et organisations multi-sites. Conçu en Algérie.",
+    "ogTitle": "ESTINAD — Produits logiciels & solutions logicielles sur mesure",
+    "ogDescription": "Systèmes d'exploitation métier local-first pour les équipes opérationnelles, avec synchronisation cloud pour une visibilité centralisée."
   },
-
-  lang: {
-    switchLabel: "Langue",
-    en: "English",
-    fr: "Français",
-    ar: "العربية",
+  "lang": {
+    "switchLabel": "Langue",
+    "en": "English",
+    "fr": "Français",
+    "ar": "العربية"
   },
-
-  theme: {
-    toggleLabel: "Changer de thème",
-    light: "Clair",
-    dark: "Sombre",
+  "theme": {
+    "toggleLabel": "Changer de thème",
+    "light": "Clair",
+    "dark": "Sombre"
   },
-
-  common: {
-    requestDemo: "Demander une démo",
-    requestDemoArrow: "Demander une démo →",
-    seePlatform: "Voir la plateforme",
-    explorePlatform: "Explorer la plateforme →",
-    viewPricing: "Voir les tarifs",
-    talkToTeam: "Parler à l'équipe",
-    talkSales: "Contacter le commercial",
-    exploreProducts: "Explorer les produits",
-    exploreProductsArrow: "Explorer les produits →",
-    exploreServices: "Explorer les services →",
-    exploreServicesPlain: "Explorer les services",
-    discussProject: "Discuter de votre projet →",
-    discussProjectPlain: "Discuter de votre projet",
-    seeAllCaseStudies: "Voir toutes les études de cas →",
-    seeAllCaseStudiesPlain: "Voir toutes les études de cas",
-    explore: "Explorer →",
-    readMore: "Lire la suite →",
-    readCaseStudy: "Lire l'étude de cas →",
-    backHome: "Retour à l'accueil →",
-    backToPlatform: "Retour à la plateforme",
-    allSolutions: "Toutes les solutions",
-    allProducts: "Tous les produits",
-    allServices: "Tous les services",
-    pricing: "Tarifs",
-    viewSolution: "Voir la solution →",
-    seeCaseStudies: "Voir les études de cas →",
-    viewService: "Voir le service →",
-    becomePartner: "Devenir partenaire →",
-    applyPartner: "Postuler comme partenaire →",
-    seeOpenRoles: "Voir les postes ouverts ↓",
-    applyOrIntroduce: "Postuler ou se présenter →",
-    readApi: "Lire la référence API →",
-    recommended: "Recommandé",
-    notSureTitle: "Vous hésitez sur le niveau adapté ?",
-    notSureBody:
-      "Indiquez-nous votre nombre de points de vente et vos outils actuels. Nous dimensionnerons le plan adapté à votre échelle.",
+  "common": {
+    "requestDemo": "Demander une démo",
+    "requestDemoArrow": "Demander une démo →",
+    "seePlatform": "Voir la plateforme",
+    "explorePlatform": "Explorer la plateforme →",
+    "viewPricing": "Voir les tarifs",
+    "talkToTeam": "Parler à l'équipe",
+    "talkSales": "Contacter le commercial",
+    "exploreProducts": "Explorer les produits",
+    "exploreProductsArrow": "Explorer les produits →",
+    "exploreServices": "Explorer les services →",
+    "exploreServicesPlain": "Explorer les services",
+    "discussProject": "Discuter de votre projet →",
+    "discussProjectPlain": "Discuter de votre projet",
+    "seeAllCaseStudies": "Voir toutes les études de cas →",
+    "seeAllCaseStudiesPlain": "Voir toutes les études de cas",
+    "explore": "Explorer →",
+    "readMore": "Lire la suite →",
+    "readCaseStudy": "Lire l'étude de cas →",
+    "backHome": "Retour à l'accueil →",
+    "backToPlatform": "Retour à la plateforme",
+    "allSolutions": "Toutes les solutions",
+    "allProducts": "Tous les produits",
+    "allServices": "Tous les services",
+    "pricing": "Tarifs",
+    "viewSolution": "Voir la solution →",
+    "seeCaseStudies": "Voir les études de cas →",
+    "viewService": "Voir le service →",
+    "becomePartner": "Devenir partenaire →",
+    "applyPartner": "Postuler comme partenaire →",
+    "seeOpenRoles": "Voir les postes ouverts ↓",
+    "applyOrIntroduce": "Postuler ou se présenter →",
+    "readApi": "Lire la référence API →",
+    "recommended": "Recommandé",
+    "notSureTitle": "Vous hésitez sur le niveau adapté ?",
+    "notSureBody": "Indiquez-nous votre nombre de points de vente et vos outils actuels. Nous dimensionnerons le plan adapté à votre échelle.",
+    "consentLabel": "J'accepte la politique de confidentialité.",
+    "consentNote": "Nous utilisons vos informations uniquement pour répondre à cette demande.",
+    "errorRetry": "Un problème est survenu. Veuillez réessayer.",
+    "illustrativeLabel": "Exemple illustratif",
+    "plannedLabel": "Prévu",
+    "inDevelopmentLabel": "En développement",
+    "explorePlatformArrow": "Explorer la plateforme →",
+    "sellOrImplement": "Vendre ou implémenter"
   },
-
-  nav: {
-    home: "Accueil",
-    products: "Produits",
-    solutions: "Solutions",
-    services: "Services",
-    caseStudies: "Études de cas",
-    resources: "Ressources",
-    company: "Société",
-    contact: "Contact",
-    requestDemo: "Demander une démo",
-    megaOs: "Le système d'exploitation partagé",
-    megaArchitecture: "Une plateforme, pas des applications juxtaposées",
-    megaSecurity: "La discipline par défaut",
-    megaDeployment: "Cloud, on-premise, hybride",
-    megaProductsIntro: "Produits logiciels prêts, groupés par fonction de l'entreprise.",
-    megaGroupRetail: "Opérations commerce",
-    megaGroupRestaurant: "Opérations restauration",
-    megaGroupAdmin: "Administration",
-    megaGroupWorkforce: "RH & effectifs",
-    megaGroupInvoicing: "Facturation",
-    megaSolutionsIntro: "Des solutions adaptées à votre type et structure d'entreprise.",
-    megaServicesIntro: "Livraison logicielle sur mesure — bâtie de bout en bout.",
-    megaCaseIntro: "Travaux clients réels, par secteur et résultat.",
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "solutions": "Solutions",
+    "services": "Services",
+    "platform": "Plateforme",
+    "partners": "Partenaires",
+    "caseStudies": "Études de cas",
+    "resources": "Ressources",
+    "company": "Société",
+    "contact": "Contact",
+    "requestDemo": "Demander une démo",
+    "megaOs": "Le système d'exploitation partagé",
+    "megaArchitecture": "Une plateforme, pas des applications juxtaposées",
+    "megaSecurity": "La discipline par défaut",
+    "megaDeployment": "Local-first, enrichi par le cloud",
+    "megaProductsIntro": "Produits logiciels prêts, groupés par fonction de l'entreprise.",
+    "megaGroupRetail": "Opérations commerce",
+    "megaGroupRestaurant": "Opérations restauration",
+    "megaGroupAdmin": "Administration",
+    "megaGroupWorkforce": "RH & effectifs",
+    "megaGroupInvoicing": "Facturation",
+    "megaSolutionsIntro": "Des solutions adaptées à votre type et structure d'entreprise.",
+    "megaServicesIntro": "Livraison logicielle sur mesure — bâtie de bout en bout.",
+    "megaPlatformIntro": "Architecture hybride, local-first.",
+    "megaPartnersIntro": "Vendez, déployez, accompagnez ou intégrez ESTINAD.",
+    "megaCaseIntro": "Travaux clients réels, par secteur et résultat."
   },
-
-  footer: {
-    ctaEyebrow: "Produits et logiciel sur mesure",
-    ctaTitle: "Gérez votre entreprise sur du logiciel prêt — ou laissez-nous bâtir le système dont vous avez besoin.",
-    ctaPrimary: "Demander une démo",
-    ctaSecondary: "Explorer les produits",
-    ctaTertiary: "Discuter de votre projet",
-    tagline: "Produits logiciels et solutions logicielles sur mesure. Conçu en Algérie, pensé pour le MENA et les marchés mondiaux.",
-    builtLine: "Conçu en Algérie, pensé pour le MENA et les marchés mondiaux.",
-    rights: "Tous droits réservés.",
-    cols: {
-      products: "Produits",
-      solutions: "Solutions",
-      services: "Services",
-      caseStudies: "Études de cas",
-      resources: "Ressources",
-      company: "Société",
+  "footer": {
+    "ctaEyebrow": "Produits et logiciel sur mesure",
+    "ctaTitle": "Gérez votre entreprise sur du logiciel prêt — ou laissez-nous bâtir le système dont vous avez besoin.",
+    "ctaPrimary": "Demander une démo",
+    "ctaSecondary": "Explorer les produits",
+    "ctaTertiary": "Discuter de votre projet",
+    "tagline": "Produits logiciels et solutions sur mesure. Conçus en Algérie, selon des standards internationaux.",
+    "builtLine": "Conçus en Algérie, selon des standards internationaux.",
+    "rights": "Tous droits réservés.",
+    "cols": {
+      "products": "Produits",
+      "solutions": "Solutions",
+      "services": "Services",
+      "platform": "Plateforme",
+      "partners": "Partenaires",
+      "caseStudies": "Études de cas",
+      "resources": "Ressources",
+      "company": "Société"
     },
-    productLinks: [
-      { label: "ESTINAD Commerce", href: "/products/retail" },
-      { label: "ESTINAD Restauration", href: "/products/restaurant" },
-      { label: "ESTINAD Clinique", href: "/products/clinic" },
-      { label: "ESTINAD Cloud", href: "/products/cloud" },
-    ],
-    solutionLinks: [
-      { label: "Pour le Commerce", href: "/solutions/retail" },
-      { label: "Pour la Restauration", href: "/solutions/restaurants" },
-      { label: "Pour les Cliniques", href: "/solutions/clinics" },
-      { label: "Pour les PME", href: "/solutions/smes" },
-      { label: "Pour le multi-sites", href: "/solutions/multi-branch" },
-    ],
-    serviceLinks: [
-      { label: "Logiciel sur mesure", href: "/services/custom-software" },
-      { label: "Création de sites web", href: "/services/websites" },
-      { label: "Écosystèmes de bout en bout", href: "/services/ecosystems" },
-      { label: "Intégrations", href: "/services/integrations" },
-      { label: "Conseil & architecture", href: "/services/consulting" },
-    ],
-    caseStudyLinks: [
-      { label: "Toutes les études de cas", href: "/case-studies" },
-      { label: "Travaux commerce", href: "/case-studies?industry=retail" },
-      { label: "Travaux restauration", href: "/case-studies?industry=restaurants" },
-      { label: "Logiciel sur mesure", href: "/case-studies?type=custom" },
-    ],
-    platformLinks: [
-      { label: "ESTINAD OS", href: "/platform" },
-      { label: "Architecture", href: "/platform/architecture" },
-      { label: "Sécurité", href: "/platform/security" },
-      { label: "Déploiement", href: "/platform/deployment" },
-    ],
-  },
-
-  notFound: {
-    code: "404",
-    title: "Cette page n'est pas sur la plateforme.",
-    body: "Le chemin que vous avez suivi n'existe pas. Revenons à quelque chose qui existe.",
-    cta1: "Retour à l'accueil →",
-    cta2: "Explorer les produits",
-  },
-
-  homeV2: {
-    hero: {
-      eyebrow: "ESTINAD — Infrastructure logicielle",
-      title: "Une plateforme. Chaque site. Chaque chiffre.",
-      sub: "ESTINAD est le système d'exploitation commun du commerce, de la restauration et des cliniques. Des produits qui partagent un même modèle de données, une même exigence de sécurité et une même discrétion — un logiciel que l'on finit par oublier.",
-      cta1: "Demander une démo",
-      cta2: "Explorer les produits",
-      frameCaption: "ESTINAD OS — Vue des opérations",
-      scroll: "Défiler",
-    },
-    trust: {
-      lead: "Discrètement à l'œuvre dans les commerces, les cuisines et les cliniques d'Algérie et de la région.",
-      sectors: ["Commerce de détail", "Restaurants", "Pharmacies", "Cliniques", "PME", "Groupes multi-sites"],
-    },
-    demo: {
-      eyebrow: "L'interface",
-      title: "Ne nous croyez pas sur parole.",
-      intro: "Le produit est l'argument. Voici ce que votre équipe voit à 8 h — la même interface exigeante dans chaque secteur.",
-      tabs: [
-        { id: "retail", label: "Commerce", headline: "Chaque scan, comptabilisé.", body: "Le stock bouge une fois et il est juste partout — en rayon, au back-office, dans le rapport que vous ouvrez le soir.", metrics: ["Stock en direct, tous les sites", "Flux codes-barres & QR intégrés", "Clôture quotidienne en minutes"] },
-        { id: "restaurant", label: "Restaurant", headline: "Le passe, sans le bruit.", body: "Les commandes circulent de la table à la cuisine puis à l'addition, en un seul mouvement. Une carte, un coût matière, sur chaque site.", metrics: ["Une carte, sur chaque site", "Cadence des services en un regard", "Coût matière, toujours visible"] },
-        { id: "clinic", label: "Clinique", headline: "La journée, en ordre.", body: "Rendez-vous, salles et dossiers restent à leur place — visibles par qui en a besoin, invisibles pour les autres.", metrics: ["Des plannings sans collision", "Salles et file d'attente en une vue", "Dossiers avec historique complet"] },
-      ],
-      frameCaptions: { retail: "Étude d'interface — Commerce", restaurant: "Étude d'interface — Restaurant", clinic: "Étude d'interface — Clinique" },
-    },
-    showcase: {
-      eyebrow: "Produits",
-      title: "Choisissez votre produit.",
-      intro: "Chaque produit ESTINAD est conçu pour un métier et unifié par une même plateforme. Commencez avec un. Ajoutez-en un autre sans tout reconstruire.",
-      viewAll: "Tous les produits",
-      linkLabel: "Voir le produit",
-    },
-    platform: {
-      eyebrow: "Plateforme",
-      title: "Un seul système, sous tout.",
-      lead: "Les produits ESTINAD ne sont pas des applications disparates rafistolées. Ce sont cinq couches disciplinées d'un même système — c'est pourquoi un deuxième site, ou un deuxième produit, tient de l'après-midi et non du projet.",
-      layers: [
-        { n: "01", t: "Interface", d: "Un langage commun à tous les produits. Apprenez-en un, connaissez-les tous." },
-        { n: "02", t: "Données", d: "Un modèle, une exigence d'intégrité. Un chiffre signifie la même chose partout." },
-        { n: "03", t: "Succursale", d: "Le multi-sites est le défaut, pas l'option. Synchronisation et permissions intégrées." },
-        { n: "04", t: "Cloud", d: "Cloud, sur site ou hybride — déployé selon vos conditions, pas notre convenance." },
-        { n: "05", t: "Sécurité", d: "La discipline par défaut : rôles, pistes d'audit et reprise comme fonctions de premier ordre." },
-      ],
-      link: "Explorer la plateforme",
-    },
-    philosophy: {
-      eyebrow: "Philosophie",
-      title: "La lumière, séparant la lumière.",
-      body1: "Nous croyons qu'un logiciel métier doit se comporter comme une bonne infrastructure : présent, fiable et silencieux. Il ne doit ni réclamer l'attention, ni exiger des tutoriels, ni se célébrer lui-même. Il doit simplement fonctionner — au comptoir, en cuisine, à la clinique — chaque jour, sans cérémonie.",
-      body2: "Nous avons donc retiré tout ce qui ne sert pas cette idée. Ce qui reste est ce que vous voyez : structure, précision et retenue. Nous publions ce que font nos produits, pas des adjectifs à leur sujet. Nous montrons l'interface, pas des slogans.",
-      arLine: "لا نتكلف في مدح أنفسنا",
-      arNote: "Nous n'exagérons pas dans l'éloge de nous-mêmes.",
-      signoff: "La règle à laquelle ce site est tenu.",
-    },
-    sectors: {
-      eyebrow: "Secteurs",
-      title: "Conçu pour votre métier.",
-      intro: "Trois métiers, une même discipline. Chaque secteur reçoit un produit façonné pour sa journée — pas un outil générique rebadgé.",
-      cards: [
-        { key: "retail", caption: "Étude de lumière 01 — L'ordre, compté.", role: "Pour les commerces", body: "Vente au code-barres, stock en direct et une clôture quotidienne en minutes — sur un site ou vingt.", href: "/solutions/retail", link: "Solutions commerce" },
-        { key: "restaurants", caption: "Étude de lumière 02 — Le passe, en ordre.", role: "Pour les équipes de salle et de cuisine", body: "Une carte unique sur tous les sites, la cadence en un regard et le coût matière toujours visible.", href: "/solutions/restaurants", link: "Solutions restauration" },
-        { key: "clinics", caption: "Étude de lumière 03 — La journée, planifiée.", role: "Pour les cliniques", body: "Des rendez-vous sans collision, salles et files en une vue, des dossiers avec piste d'audit complète.", href: "/solutions/clinics", link: "Solutions cliniques" },
-      ],
-    },
-    founder: {
-      label: "Mot du fondateur",
-      quote: "Un logiciel doit fonctionner comme l'électricité — invisible, constant, essentiel. Nous n'avons pas cherché à bâtir un logiciel impressionnant. Nous avons cherché à bâtir un logiciel qui n'est jamais le problème.",
-      name: "Fondateur & CEO",
-      company: "ESTINAD",
-    },
-    cases: {
-      eyebrow: "Études de cas",
-      title: "Le produit, sur le terrain.",
-      intro: "Des clients réels et une adoption réelle — mesurée à ce qui a changé dès le lendemain du lancement.",
-      viewAll: "Toutes les études de cas",
-      items: [
-        { sector: "Commerce · 6 sites", result: "Clôture quotidienne ramenée de 90 à 15 minutes", body: "Une enseigne de prêt-à-porter a migré six points de vente vers ESTINAD Commerce et ESTINAD Cloud, retirant trois installations de caisse distinctes et une réconciliation Excel nocturne.", metric: "−83 %", metricLabel: "de temps de clôture quotidienne", tag: "Adoption produit" },
-        { sector: "Restauration · 4 sites", result: "Carte centrale et visibilité des marges en une vue", body: "Un groupe de restauration rapide a unifié le contrôle de la carte et le coût matière sur quatre sites, remplaçant tickets papier et caisses déconnectées par un flux unique.", metric: "1 carte", metricLabel: "sur tous les sites", tag: "Adoption produit" },
-        { sector: "Sur mesure · PME", result: "Une plateforme opérationnelle sur mesure, livrée de bout en bout", body: "Nous avons conçu et bâti une plateforme opérationnelle sur mesure pour une PME multi-sites qu'aucun produit standard ne couvrait — du cahier des charges au lancement et au support.", metric: "De bout en bout", metricLabel: "bâti & supporté", tag: "Logiciel sur mesure" },
-      ],
-    },
-    performance: {
-      eyebrow: "Performance",
-      title: "Rapide. Puis plus rapide.",
-      intro: "Nous mesurons le produit comme vos clients le vivront — sur du matériel ordinaire, en conditions réelles. Voici les objectifs que nous nous imposons.",
-      stats: [
-        { value: "98", suffix: "/100", label: "Performance Lighthouse", qualifier: "Objectif d'ingénierie" },
-        { value: "99,9", suffix: "%", label: "Disponibilité plateforme", qualifier: "Objectif de conception" },
-        { value: "<90", suffix: "ms", label: "Réponse API, p95", qualifier: "Budget d'architecture" },
-        { value: "0", suffix: "ms", label: "Coût d'animation du thread principal", qualifier: "Discipline du mouvement" },
-      ],
-      note: "Des chiffres exprimés en objectifs, audités à chaque version — jamais en marketing.",
-      imageAlt: "Un monolithe noir dressé dans le vide, une fine ligne de lumière longeant son arête.",
-    },
-    faq: {
-      eyebrow: "Questions",
-      title: "Demandé, répondu.",
-      intro: "Six questions qui reviennent à chaque premier échange. La FAQ complète se trouve dans Ressources.",
-      moreLink: "Plus de questions",
-      items: [
-        { q: "Combien de temps prend l'implémentation ?", a: "Un site unique est généralement en ligne en quelques jours, pas en mois. Les déploiements multi-sites se planifient site par site : le premier travaille pendant que les autres se préparent." },
-        { q: "ESTINAD fonctionne-t-il hors ligne ?", a: "Oui. La vente continue quand la connexion tombe. Les données se synchronisent automatiquement à son retour — sans double saisie ni tickets perdus." },
-        { q: "Sur quels appareils fonctionne-t-il ?", a: "Sur du matériel standard : les ordinateurs, tablettes et imprimantes que vous possédez déjà. Si vous avez besoin de terminaux ou de scanners, nous les spécifions et les sourçons avec vous." },
-        { q: "Comment fonctionne la tarification ?", a: "Un abonnement clair par site, intégration incluse. Pas de surprises d'installation, pas de frais au ticket, pas de fonctionnalités retenues derrière des paliers opaques." },
-        { q: "Peut-on migrer depuis notre système actuel ?", a: "Oui. Produits, clients, stock et historique sont importés depuis vos tableurs ou votre logiciel existant. La plupart des migrations sont terminées avant le jour du lancement." },
-        { q: "Quel support après le lancement ?", a: "Un accès direct à l'équipe qui a construit le produit — pas une file de tickets. Support, mises à jour et formation font partie de l'abonnement." },
-      ],
-    },
-    finalCta: {
-      eyebrow: "Prochaine étape",
-      title: "Voyez-le fonctionner. Puis décidez.",
-      sub: "Une démo est une session de travail, pas un diaporama. Apportez une journée chargée de votre activité ; nous vous montrerons à quoi elle ressemble sur ESTINAD.",
-      cta1: "Demander une démo",
-      cta2: "Explorer les produits",
-    },
-  },
-
-  platform: {
-    overview: {
-      eyebrow: "Plateforme / ESTINAD OS",
-      title: "Le système d'exploitation derrière chaque produit ESTINAD.",
-      intro:
-        "ESTINAD OS est une fondation partagée : un registre unique, une identité unique, un moteur de synchro unique. Les produits verticaux tournent au-dessus — conçus pour chaque secteur, unifiés en dessous.",
-      cta1: "Demander une démo →",
-      cta2: "Voir les produits",
-      pillarsEyebrow: "Ce que la plateforme apporte",
-      pillarsTitle: "Trois choses dont chaque produit hérite.",
-      pillarsIntro:
-        "Chaque produit vertical est une couche concentrée au-dessus d'ESTINAD OS. Aucun ne réinvente la fondation — tous s'appuient dessus.",
-      pillars: [
-        { t: "Un seul registre", d: "Ventes, stocks, plannings et facturation alimentent un registre unique et fiable, partagé entre produits et points de vente. Un chiffre, partout." },
-        { t: "Une seule identité", d: "Un modèle d'accès unique couvre tous les produits. Les rôles sont définis par point de vente, marque et fonction — une fois, de façon cohérente." },
-        { t: "Un seul moteur de synchro", d: "Un moteur tolérant aux coupures réconcilie le travail on-premise avec le cloud, pour que les pannes ne deviennent jamais des transactions perdues." },
-      ],
-      stackEyebrow: "La stack",
-      stackTitle: "Vertical sur partagé. De la précision là où ça compte.",
-      stackVertical: "Produits verticaux",
-      stackShared: "Services partagés",
-      stackOs: "ESTINAD OS",
-      stackServices: ["Identité", "Catalogue", "Documents", "Reporting"],
-      stackOsLine: "Un registre · Un moteur de synchro · Un modèle d'accès",
-      deepEyebrow: "Aller plus loin",
-      deepTitle: "Comment la plateforme est construite.",
-      deepCta: "Demander une démo →",
-    },
-    sub: {
-      architecture: {
-        eyebrow: "Plateforme / Architecture",
-        title: "Conçue comme une plateforme, pas comme des apps juxtaposées.",
-        intro:
-          "ESTINAD OS est une fondation partagée : un modèle de données, une identité, un moteur de synchro — avec les produits verticaux au-dessus. Chaque produit hérite de la fiabilité de la plateforme au lieu de la réinventer.",
-        principles: [
-          { t: "Un seul registre", d: "Ventes, stocks, plannings et facturation alimentent un registre unique et fiable, partagé entre produits et points de vente." },
-          { t: "Vertical sur partagé", d: "Chaque produit est une couche concentrée au-dessus de la plateforme — conçu pour un secteur, unifié en dessous." },
-          { t: "Tolérant à la synchro", d: "Le système est conçu pour la connectivité réelle, pas idéale. Les points de vente continuent, puis se réconcilient." },
-        ],
-        details: [
-          { heading: "Modèle de données partagé", body: "Produits, tiers, documents et argent reposent sur un modèle commun, pour qu'un point de vente, un client ou un paiement signifient la même chose partout." },
-          { heading: "Identité et accès", body: "Une identité couvre tous les produits. Les rôles limitent l'accès par point de vente, marque et fonction — une fois, de façon cohérente." },
-          { heading: "Moteur de synchro", body: "Un moteur tolérant aux coupures réconcilie le travail on-premise avec le cloud, pour que les pannes ne deviennent pas des transactions perdues." },
-        ],
+    "productLinks": [
+      {
+        "label": "ESTINAD Commerce",
+        "href": "/products/retail"
       },
-      security: {
-        eyebrow: "Plateforme / Sécurité",
-        title: "La discipline par défaut, le contrôle à la demande.",
-        intro:
-          "ESTINAD est conçu pour des entreprises qui ne peuvent pas se permettre de perdre des données ou la confiance. La sécurité est structurelle — chiffrement, contrôle d'accès et audit — pas un après-coup.",
-        principles: [
-          { t: "Chiffré partout", d: "Les données sont chiffrées en transit et au repos, sur la plateforme et ses sauvegardes." },
-          { t: "Moindre privilège", d: "L'accès par rôles limite ce que chacun peut voir et faire, par point de vente et fonction." },
-          { t: "Auditable", d: "Chaque action significative est journalisée — qui, quoi, quand — conservée et exportable." },
-        ],
-        details: [
-          { heading: "Contrôle d'accès", body: "Des rôles et portées précis permettent d'accorder exactement l'accès nécessaire — et de le révoquer aussi proprement." },
-          { heading: "Sauvegarde et restauration", body: "Une sauvegarde continue avec restauration à un instant t fait qu'une erreur ou un incident est réversible, pas fatal." },
-          { heading: "Résidence", body: "La résidence régionale et le déploiement hybride sont disponibles pour les cliniques et entreprises en marchés régulés." },
-        ],
+      {
+        "label": "ESTINAD Restauration",
+        "href": "/products/restaurant"
       },
-      deployment: {
-        eyebrow: "Plateforme / Déploiement",
-        title: "Cloud, on-premise ou hybride — votre réalité, votre choix.",
-        intro:
-          "La connectivité algérienne n'est pas une note de bas de page ; c'est une contrainte de conception. ESTINAD se déploie comme chaque point de vente fonctionne réellement, puis unifie tout dans une plateforme.",
-        principles: [
-          { t: "Cloud par défaut", d: "Hébergement géré sur ESTINAD Cloud pour le contrôle central, la sauvegarde et la vue multi-sites." },
-          { t: "On-premise au besoin", d: "Une appliance pour les sites à connectivité instable, qui garde la caisse en vie." },
-          { t: "Hybride par nature", d: "La plupart des opérateurs font les deux — on-premise en bordure, cloud comme source de vérité." },
-        ],
-        details: [
-          { heading: "Résilience en bordure", body: "Le mode on-premise garde les flux caisse, cuisine et clinique en hors ligne, puis se synchronise proprement à la reconnexion." },
-          { heading: "Contrôle central", body: "ESTINAD Cloud reste le plan de gestion — points de vente, utilisateurs, catalogue et reporting — quel que soit le déploiement en bordure." },
-          { heading: "Déploiement progressif", body: "Les nouveaux points de vente et produits se déploient progressivement avec un accès contrôlé, sans risque de big-bang." },
-        ],
+      {
+        "label": "ESTINAD Clinique",
+        "href": "/products/clinic"
       },
-    },
-    moreEyebrow: "Plus sur la plateforme",
-    moreTitle: "Continuer l'exploration.",
-    subLabels: {
-      principlesEyebrow: "Principes",
-      principlesTitle: "Ce que cette partie de la plateforme défend.",
-      detailEyebrow: "En détail",
-      detailTitle: "Comment ça marche en pratique.",
-    },
+      {
+        "label": "ESTINAD Cloud",
+        "href": "/products/cloud"
+      }
+    ],
+    "solutionLinks": [
+      {
+        "label": "Pour le Commerce",
+        "href": "/solutions/retail"
+      },
+      {
+        "label": "Pour la Restauration",
+        "href": "/solutions/restaurants"
+      },
+      {
+        "label": "Pour les Cliniques",
+        "href": "/solutions/clinics"
+      },
+      {
+        "label": "Pour les PME",
+        "href": "/solutions/smes"
+      },
+      {
+        "label": "Pour le multi-sites",
+        "href": "/solutions/multi-branch"
+      }
+    ],
+    "serviceLinks": [
+      {
+        "label": "Logiciel sur mesure",
+        "href": "/services/custom-software"
+      },
+      {
+        "label": "Création de sites web",
+        "href": "/services/websites"
+      },
+      {
+        "label": "Écosystèmes de bout en bout",
+        "href": "/services/ecosystems"
+      },
+      {
+        "label": "Intégrations",
+        "href": "/services/integrations"
+      },
+      {
+        "label": "Conseil & architecture",
+        "href": "/services/consulting"
+      }
+    ],
+    "caseStudyLinks": [
+      {
+        "label": "Toutes les études de cas",
+        "href": "/case-studies"
+      },
+      {
+        "label": "Travaux commerce",
+        "href": "/case-studies?industry=retail"
+      },
+      {
+        "label": "Travaux restauration",
+        "href": "/case-studies?industry=restaurants"
+      },
+      {
+        "label": "Logiciel sur mesure",
+        "href": "/case-studies?type=custom"
+      }
+    ],
+    "platformLinks": [
+      {
+        "label": "ESTINAD OS",
+        "href": "/platform"
+      },
+      {
+        "label": "Architecture",
+        "href": "/platform/architecture"
+      },
+      {
+        "label": "Sécurité",
+        "href": "/platform/security"
+      },
+      {
+        "label": "Déploiement",
+        "href": "/platform/deployment"
+      }
+    ],
+    "partnerLinks": [
+      {
+        "label": "Programme partenaires",
+        "href": "/partners"
+      },
+      {
+        "label": "Revendeurs",
+        "href": "/partners/resellers"
+      },
+      {
+        "label": "Intégrateurs",
+        "href": "/partners/implementers"
+      },
+      {
+        "label": "Partenaires technologiques",
+        "href": "/partners/technology"
+      },
+      {
+        "label": "Postuler",
+        "href": "/partners/apply"
+      }
+    ]
   },
-
-  products: {
-    index: {
-      eyebrow: "Produits",
-      title: "Quatre produits. Une plateforme.",
-      intro:
-        "Chaque produit ESTINAD est conçu pour un secteur et unifié par ESTINAD OS en dessous. Commencez avec un. Ajoutez-en un autre sans re-platformer.",
-      tagVertical: "Vertical",
-      tagDeploy: "Options de déploiement",
-      tagPricing: "Tarifs dédiés",
+  "notFound": {
+    "code": "404",
+    "title": "Cette page n'est pas sur la plateforme.",
+    "body": "Le chemin que vous avez suivi n'existe pas. Revenons à quelque chose qui existe.",
+    "cta1": "Retour à l'accueil →",
+    "cta2": "Explorer les produits"
+  },
+  "homeV2": {
+    "hero": {
+      "eyebrow": "ESTINAD / BUSINESS SOFTWARE COMPANY",
+      "title": "Des standards mondiaux. Un savoir-faire algérien. Des logiciels sur lesquels compter.",
+      "sub": "Des produits prêts à l'emploi pour structurer et soutenir chaque dimension de votre activité — avec des solutions sur mesure lorsque le besoin va plus loin.",
+      "cta1": "Demander une démo",
+      "cta2": "Découvrir les produits",
+      "supporting": "Des produits, pas des outils · Pensés avec rigueur, pas assemblés · Conçus en Algérie"
     },
-    items: {
-      retail: {
-        glyph: "ER",
-        vertical: "Commerce",
-        name: "ESTINAD Commerce",
-        short: "Commerce",
-        oneLiner:
-          "Le système d'exploitation du commerce de prêt-à-porter et multi-catégories — stocks, caisse et performance magasin dans un seul registre.",
-        positioning:
-          "ESTINAD Commerce unifie la caisse, les stocks et l'analytique magasin dans un registre unique et fiable. Conçu pour les détaillants de prêt-à-porter et les magasins multi-catégories qui ont besoin d'un contrôle précis des stocks, d'une caisse rapide et d'une visibilité claire sur tous les points de vente.",
-        icpTitle: "Pour qui",
-        icpHeader: "Pour les opérateurs qui sentent les limites de leurs outils.",
-        icp: [
+    "whoWeAre": {
+      "title": "Une entreprise de produits, pas une société de services.",
+      "body": "Nous n'assemblons pas des outils existants et nous ne vendons pas des heures de développement. Nous concevons des logiciels complets, nous les faisons évoluer en continu, et nous les assumons partout où ils sont déployés. C'est la différence entre acheter un logiciel et investir dans un engagement durable."
+    },
+    "products": {
+      "title": "Nos produits",
+      "body": "Une famille de logiciels métiers construits sur une même base d'ingénierie — conçus pour fonctionner ensemble ou séparément avec le même niveau d'exigence.",
+      "cta": "Découvrir les produits"
+    },
+    "why": {
+      "title": "La qualité est le point de départ, pas un argument différenciant.",
+      "body": "Pour nous, la qualité d'un logiciel ne se mesure pas au nombre de fonctionnalités, mais à ce qu'il apporte au quotidien : rapidité d'usage, stabilité sous pression, et continuité lorsque les conditions ne sont pas idéales. Chaque produit que nous lançons répond au même niveau d'exigence — parce qu'il porte notre nom.",
+      "points": [
+        "Pensés pour les conditions réelles d'exploitation, pas pour les démonstrations",
+        "Améliorés en continu, pas livrés puis oubliés",
+        "Développés sur une base technique commune, pour mieux fonctionner ensemble",
+        "Lancés avec responsabilité — chaque produit engage notre nom"
+      ]
+    },
+    "finalCta": {
+      "title": "Vous voulez voir ce que nous construisons dans votre contexte ?",
+      "body": "Demandez une démonstration pour découvrir comment nos produits peuvent soutenir vos opérations, que vous gériez un seul site ou plusieurs implantations.",
+      "cta": "Demander une démo"
+    }
+  },
+  "platform": {
+    "overview": {
+      "eyebrow": "Plateforme / ESTINAD OS",
+      "title": "Le système d'exploitation derrière chaque produit ESTINAD.",
+      "intro": "ESTINAD OS est une fondation hybride local-first. Chaque produit repose sur le même modèle : un serveur local auto-hébergé dédié comme source de vérité autoritaire, des appareils connectés au LAN pour un travail local rapide, et une couche cloud qui synchronise les données sélectionnées pour l'accès à distance et la gestion centrale.",
+      "cta1": "Demander une démo →",
+      "cta2": "Voir les produits",
+      "pillarsEyebrow": "Ce que la plateforme apporte",
+      "pillarsTitle": "Trois choses dont chaque produit hérite.",
+      "pillarsIntro": "Chaque produit vertical est une couche concentrée au-dessus d'ESTINAD OS. Aucun ne réinvente la fondation — tous s'appuient dessus.",
+      "pillars": [
+        {
+          "t": "Opérations local-first",
+          "d": "Un serveur local auto-hébergé dédié et une base de données locale constituent la source de vérité principale à chaque site — entièrement capable de fonctionner hors ligne."
+        },
+        {
+          "t": "Appareils connectés au LAN",
+          "d": "Ordinateurs, portables, tablettes et smartphones fonctionnent sur le réseau local pour des performances à faible latence, proches du natif."
+        },
+        {
+          "t": "Synchronisation enrichie par le cloud",
+          "d": "Les données sélectionnées se synchronisent en ligne pour l'accès à distance, la visibilité multi-sites, l'analytique, les sauvegardes et la future IA — sans rendre le cloud une dépendance."
+        }
+      ],
+      "stackEyebrow": "La stack",
+      "stackTitle": "Vertical sur partagé. De la précision là où ça compte.",
+      "stackVertical": "Produits verticaux",
+      "stackShared": "Services partagés",
+      "stackOs": "ESTINAD OS",
+      "stackServices": [
+        "Identité",
+        "Catalogue",
+        "Documents",
+        "Reporting"
+      ],
+      "stackOsLine": "Un registre · Un moteur de synchro · Un modèle d'accès",
+      "deepEyebrow": "Aller plus loin",
+      "deepTitle": "Comment la plateforme est construite.",
+      "deepCta": "Demander une démo →"
+    },
+    "sub": {
+      "architecture": {
+        "eyebrow": "Plateforme / Architecture",
+        "title": "Hybride edge + cloud. Autorité locale.",
+        "intro": "Chaque produit ESTINAD suit la même architecture de déploiement hybride : des serveurs locaux auto-hébergés pour la fiabilité et la propriété, avec une couche de synchronisation cloud pour l'accès à distance et la gestion centrale — pas une base opérationnelle SaaS partagée.",
+        "principles": [
+          {
+            "t": "Local-first & offline-first",
+            "d": "Chaque site possède un serveur local auto-hébergé dédié et une base de données locale. Les opérations métier essentielles continuent sans internet."
+          },
+          {
+            "t": "Enrichi par le cloud, pas dépendant du cloud",
+            "d": "Le cloud synchronise les modules sélectionnés pour l'accès à distance, l'usage mobile hors LAN, l'analytique, les tableaux de bord, les notifications, les sauvegardes et les futurs services IA."
+          },
+          {
+            "t": "Isolation stricte des tenants",
+            "d": "Chaque tenant dispose d'un serveur local dédié, d'une base de données locale dédiée et d'un espace cloud dédié — isolation complète des autres clients."
+          }
+        ],
+        "details": [
+          {
+            "heading": "Serveur local auto-hébergé",
+            "body": "Le serveur local est la source de vérité autoritaire. Les appareils communiquent via le LAN pour une exploitation rapide, fluide et à faible latence."
+          },
+          {
+            "heading": "Couche de synchronisation cloud",
+            "body": "La synchronisation cloud s'exécute automatiquement lorsque la connexion est disponible. Elle ne remplace jamais le serveur local pour les opérations quotidiennes."
+          },
+          {
+            "heading": "Support multi-sites",
+            "body": "Chaque site physique possède son propre serveur local et sa base de données indépendants. Le cloud consolide les données synchronisées pour que le siège puisse superviser et piloter l'organisation."
+          }
+        ]
+      },
+      "security": {
+        "eyebrow": "Plateforme / Sécurité",
+        "title": "Propriété par conception. Isolation par défaut.",
+        "intro": "ESTINAD n'est pas un SaaS opérationnel multi-tenant partagé. Chaque client possède une infrastructure locale dédiée et un espace cloud dédié, avec configuration, licences et synchronisation maintenues indépendamment.",
+        "principles": [
+          {
+            "t": "Infrastructure dédiée par tenant",
+            "d": "Un serveur local auto-hébergé, une base de données locale et un espace cloud par tenant — pas de base opérationnelle partagée entre clients."
+          },
+          {
+            "t": "Périmètres d'accès",
+            "d": "L'accès par rôles limite ce que chaque personne voit et fait, par site et fonction, lorsque configuré."
+          },
+          {
+            "t": "Configuration et licences indépendantes",
+            "d": "La configuration, les licences et le périmètre de synchronisation de chaque tenant sont indépendants de tout autre tenant."
+          }
+        ],
+        "details": [
+          {
+            "heading": "Isolation des données",
+            "body": "Les données d'un tenant ne partagent jamais une base opérationnelle avec d'autres clients. Les espaces locaux et cloud restent dédiés."
+          },
+          {
+            "heading": "Protection des données",
+            "body": "Les contrôles de protection, les dispositifs de sauvegarde et les procédures de reprise sont définis par le produit déployé et le périmètre commercial."
+          },
+          {
+            "heading": "Revue de déploiement",
+            "body": "L'infrastructure locale, le réseau et les exigences de traitement des données sont examinés lors de l'implémentation."
+          }
+        ]
+      },
+      "deployment": {
+        "eyebrow": "Plateforme / Déploiement",
+        "title": "Auto-hébergé par défaut. Cloud quand il apporte de la valeur.",
+        "intro": "La connectivité en Algérie et dans la région MENA est une contrainte de conception. ESTINAD déploie un serveur local auto-hébergé comme système principal à chaque site, le cloud servant de couche de synchronisation, d'accès à distance et de gestion.",
+        "principles": [
+          {
+            "t": "Auto-hébergé par défaut",
+            "d": "Chaque site client exécute un serveur local dédié comme déploiement principal — possédé et exploité pour cette entreprise."
+          },
+          {
+            "t": "Communication LAN rapide",
+            "d": "Ordinateurs, portables, tablettes et smartphones se connectent localement pour des flux à faible latence, proches du natif, sans exiger internet."
+          },
+          {
+            "t": "Synchronisation automatique",
+            "d": "Lorsque internet est disponible, les données sélectionnées se synchronisent vers l'espace cloud du tenant pour un accès à distance sécurisé et une gestion centrale."
+          }
+        ],
+        "details": [
+          {
+            "heading": "Continuité locale",
+            "body": "Commandes, ventes, rendez-vous et autres flux essentiels continuent via le serveur local pendant les interruptions de connectivité."
+          },
+          {
+            "heading": "Gestion centrale",
+            "body": "ESTINAD Cloud est une couche de gestion synchronisée pour les utilisateurs autorisés — analytique, tableaux de bord, notifications, sauvegardes et accès à distance — pas un remplacement du serveur local."
+          },
+          {
+            "heading": "Déploiement progressif",
+            "body": "Les nouveaux sites se déploient avec leur propre serveur local et configuration de synchronisation — expansion progressive, pas risque de big-bang."
+          }
+        ]
+      }
+    },
+    "moreEyebrow": "Plus sur la plateforme",
+    "moreTitle": "Continuer l'exploration.",
+    "subLabels": {
+      "principlesEyebrow": "Principes",
+      "principlesTitle": "Ce que cette partie de la plateforme défend.",
+      "detailEyebrow": "En détail",
+      "detailTitle": "Comment ça marche en pratique."
+    }
+  },
+  "products": {
+    "index": {
+      "eyebrow": "Produits",
+      "title": "Quatre produits. Une plateforme.",
+      "intro": "Chaque produit ESTINAD est conçu pour un secteur et unifié par ESTINAD OS en dessous. Commencez avec un. Ajoutez-en un autre sans re-platformer.",
+      "tagVertical": "Vertical",
+      "tagDeploy": "Déploiement hybride",
+      "tagPricing": "Tarifs dédiés"
+    },
+    "items": {
+      "retail": {
+        "glyph": "ER",
+        "vertical": "Commerce",
+        "name": "ESTINAD Commerce",
+        "short": "Commerce",
+        "oneLiner": "Le système d'exploitation du commerce de prêt-à-porter et multi-catégories — stocks, caisse et performance magasin dans un seul registre.",
+        "positioning": "ESTINAD Commerce unifie la caisse, les stocks et l'analytique magasin dans un registre unique et fiable. Conçu pour les détaillants de prêt-à-porter et les magasins multi-catégories qui ont besoin d'un contrôle précis des stocks, d'une caisse rapide et d'une visibilité claire sur tous les points de vente.",
+        "byline": "ESTINAD Retail par ESTINAD",
+        "problem": {
+          "eyebrow": "Le problème métier",
+          "title": "Des opérations réparties entre plusieurs outils.",
+          "body": "Les équipes peuvent avoir du mal à coordonner leurs flux lorsque les outils locaux et centraux sont déconnectés."
+        },
+        "localFirst": {
+          "eyebrow": "Déploiement local-first",
+          "title": "Gardez les opérations sur le réseau local.",
+          "body": "Les flux locaux passent par le serveur du site et les appareils connectés au LAN.",
+          "points": [
+            "Flux de travail local",
+            "Appareils connectés au réseau local",
+            "Synchronisation cloud lorsque disponible"
+          ]
+        },
+        "worksWith": {
+          "eyebrow": "Fonctionne avec",
+          "title": "Composants ESTINAD connectés.",
+          "items": [
+            {
+              "name": "ESTINAD POS",
+              "href": "/products/components/pos",
+              "role": "Counter operations"
+            },
+            {
+              "name": "ESTINAD Cloud",
+              "href": "/products/cloud",
+              "role": "Central visibility"
+            },
+            {
+              "name": "ESTINAD Importer",
+              "href": "/products/components/importer",
+              "role": "Catalog migration"
+            }
+          ]
+        },
+        "multiLocation": {
+          "eyebrow": "Multi-sites",
+          "title": "Opérer localement, suivre de manière centralisée.",
+          "body": "Chaque site garde son environnement local tandis que les données sélectionnées se synchronisent pour les équipes autorisées."
+        },
+        "implementation": {
+          "eyebrow": "Implémentation",
+          "title": "Un déploiement progressif.",
+          "steps": [
+            {
+              "t": "Découverte",
+              "d": "Cartographier les sites et les flux."
+            },
+            {
+              "t": "Installation",
+              "d": "Préparer le serveur local et les appareils."
+            },
+            {
+              "t": "Configuration",
+              "d": "Définir les rôles et règles opérationnelles."
+            },
+            {
+              "t": "Formation",
+              "d": "Former les équipes concernées."
+            },
+            {
+              "t": "Support",
+              "d": "Définir les modalités de support continu."
+            }
+          ]
+        },
+        "partnerCta": {
+          "title": "Vous vendez ou implémentez des logiciels Retail ?",
+          "body": "Travaillez avec ESTINAD pour présenter et déployer des opérations local-first.",
+          "label": "Devenir partenaire ESTINAD",
+          "href": "/partners"
+        },
+        "proof": {
+          "eyebrow": "Références",
+          "title": "Conçu pour les flux opérationnels.",
+          "body": "Des exemples illustratifs présentent les résultats opérationnels que ce produit ESTINAD est conçu pour accompagner.",
+          "label": "Exemple illustratif"
+        },
+        "icpTitle": "Pour qui",
+        "icpHeader": "Pour les opérateurs qui sentent les limites de leurs outils.",
+        "icp": [
           "Détaillants de prêt-à-porter et de mode",
           "Magasins multi-catégories de 1 à 20 points de vente",
-          "Dirigeants remplaçant caisse + Excel + WhatsApp éparpillés",
+          "Dirigeants remplaçant caisse + Excel + WhatsApp éparpillés"
         ],
-        useCasesTitle: "Cas d'usage principaux",
-        useCasesHeader: "Le travail qu'il remplace en premier.",
-        useCases: [
+        "useCasesTitle": "Cas d'usage principaux",
+        "useCasesHeader": "Le travail qu'il remplace en premier.",
+        "useCases": [
           "Stocks par variantes taille/couleur sur les saisons",
           "Caisse en magasin rapide avec reçus et retours",
           "Transferts de stock et inventaires multi-sites",
           "Réconciliation de caisse et rapports de poste par employé",
-          "Commandes fournisseurs et réception d'achats",
+          "Commandes fournisseurs et réception d'achats"
         ],
-        visualEyebrow: "Concept visuel",
-        visualTitle: "Une console. Un registre. Une vue calme de l'opération.",
-        visualCaption: "Concept d'interface illustratif · ESTINAD Commerce",
-        visualSidebar: ["Tableau de bord", "Commerce", "Registre", "Rapports", "Points de vente", "Réglages"],
-        visualKpis: ["Aujourd'hui", "Cette semaine", "MTD"],
-        visualChart: "Performance",
-        workflowsEyebrow: "Flux clés",
-        workflowsTitle: "Trois flux qui font la journée.",
-        workflowsIntro: "La boucle cœur du métier, en séquence claire — pas un labyrinthe d'écrans.",
-        workflows: [
-          { title: "Vendre", steps: ["Scanner ou chercher un produit à variante exacte", "Appliquer remise, client ou fidélité en un seul passage", "Clôturer la vente en espèces, carte ou paiement mixte", "Imprimer le reçu et poster dans le registre en direct"] },
-          { title: "Réapprovisionner", steps: ["Les alertes de stock bas remontent au tableau de bord", "Créer une commande d'achat au fournisseur", "Réceptionner les marchandises contre la commande avec écarts", "Le stock se met à jour sur tous les points de vente instantanément"] },
-          { title: "Réconcilier", steps: ["Clôturer le poste et compter la caisse", "Le système compare caisse attendue vs comptée", "Écart signalé pour revue", "Le dirigeant voit un récap quotidien propre par point de vente"] },
+        "visualEyebrow": "Concept visuel",
+        "visualTitle": "Une console. Un registre. Une vue calme de l'opération.",
+        "visualCaption": "Concept d'interface illustratif · ESTINAD Commerce",
+        "visualSidebar": [
+          "Tableau de bord",
+          "Commerce",
+          "Registre",
+          "Rapports",
+          "Points de vente",
+          "Réglages"
         ],
-        featuresEyebrow: "Groupes de fonctionnalités",
-        featuresTitle: "Organisés par ce que fait l'entreprise, pas par listes de fonctions.",
-        featureClusters: [
-          { title: "Caisse", description: "Un comptoir qui reste rapide sous pression.", points: ["Caisse tolérante au hors ligne", "Grille produit par variantes (taille / couleur)", "Mises de côté, retours et échanges", "Paiements mixtes et divisés"] },
-          { title: "Registre de stocks", description: "Une source de vérité pour chaque unité.", points: ["Stock en temps réel sur tous les points de vente", "Transférer, recevoir et ajuster avec piste d'audit", "Seuils de stock bas et réapprovisionnement", "Traçabilité série/lot quand nécessaire"] },
-          { title: "Performance magasin", description: "Voir l'entreprise d'en haut.", points: ["Ventes par site, catégorie et employé", "Analyse des marges et remises", "Meilleures et pires ventes du jour", "Rapports programmés par e-mail ou WhatsApp"] },
+        "visualKpis": [
+          "Aujourd'hui",
+          "Cette semaine",
+          "MTD"
         ],
-        deployEyebrow: "Options de déploiement",
-        deployTitle: "Déployez comme chaque point de vente fonctionne réellement.",
-        deployment: [
-          "Cloud (hébergé sur ESTINAD Cloud)",
-          "Appliance on-premise pour les sites à connectivité instable",
-          "Hybride — caisse on-premise synchronisée au cloud",
+        "visualChart": "Performance",
+        "workflowsEyebrow": "Flux clés",
+        "workflowsTitle": "Trois flux qui font la journée.",
+        "workflowsIntro": "La boucle cœur du métier, en séquence claire — pas un labyrinthe d'écrans.",
+        "workflows": [
+          {
+            "title": "Vendre",
+            "steps": [
+              "Scanner ou chercher un produit à variante exacte",
+              "Appliquer remise, client ou fidélité en un seul passage",
+              "Clôturer la vente en espèces, carte ou paiement mixte",
+              "Imprimer le reçu et poster dans le registre en direct"
+            ]
+          },
+          {
+            "title": "Réapprovisionner",
+            "steps": [
+              "Les alertes de stock bas remontent au tableau de bord",
+              "Créer une commande d'achat au fournisseur",
+              "Réceptionner les marchandises contre la commande avec écarts",
+              "Le stock se met à jour sur tous les points de vente instantanément"
+            ]
+          },
+          {
+            "title": "Réconcilier",
+            "steps": [
+              "Clôturer le poste et compter la caisse",
+              "Le système compare caisse attendue vs comptée",
+              "Écart signalé pour revue",
+              "Le dirigeant voit un récap quotidien propre par point de vente"
+            ]
+          }
         ],
-        integEyebrow: "Intégrations",
-        integTitle: "Se connecte au matériel et canaux que vous utilisez déjà.",
-        integrations: [
+        "featuresEyebrow": "Groupes de fonctionnalités",
+        "featuresTitle": "Organisés par ce que fait l'entreprise, pas par listes de fonctions.",
+        "featureClusters": [
+          {
+            "title": "Caisse",
+            "description": "Un comptoir qui reste rapide sous pression.",
+            "points": [
+              "Caisse tolérante au hors ligne",
+              "Grille produit par variantes (taille / couleur)",
+              "Mises de côté, retours et échanges",
+              "Paiements mixtes et divisés"
+            ]
+          },
+          {
+            "title": "Registre de stocks",
+            "description": "Une source de vérité pour chaque unité.",
+            "points": [
+              "Mises à jour de stock synchronisées lorsque la connexion est disponible",
+              "Transférer, recevoir et ajuster avec piste d'audit",
+              "Seuils de stock bas et réapprovisionnement",
+              "Traçabilité série/lot quand nécessaire"
+            ]
+          },
+          {
+            "title": "Performance magasin",
+            "description": "Voir l'entreprise d'en haut.",
+            "points": [
+              "Ventes par site, catégorie et employé",
+              "Analyse des marges et remises",
+              "Meilleures et pires ventes du jour",
+              "Rapports programmés par e-mail ou WhatsApp"
+            ]
+          }
+        ],
+        "deployEyebrow": "Déploiement hybride",
+        "deployTitle": "Auto-hébergé en local. Enrichi par le cloud quand la connexion est là.",
+        "deployment": [
+          "Serveur local dédié et auto-hébergé à chaque point de vente",
+          "Caisse et appareils opérationnels connectés au LAN",
+          "Données sélectionnées synchronisées vers ESTINAD Cloud lorsque disponible"
+        ],
+        "integEyebrow": "Intégrations",
+        "integTitle": "Se connecte au matériel et canaux que vous utilisez déjà.",
+        "integrations": [
           "Imprimantes de reçus thermiques et A4",
           "Lecteurs de codes-barres et tiroirs-caisses",
           "Terminaux de paiement (acquéreurs locaux)",
-          "Livraison de rapports via WhatsApp Business",
+          "Livraison de rapports via WhatsApp Business"
         ],
-        faqEyebrow: "FAQ",
-        faqTitle: "Les questions que se posent d'abord les dirigeants.",
-        faq: [
-          { q: "La caisse continue-t-elle si internet tombe ?", a: "Oui. ESTINAD Commerce dispose d'un mode on-premise qui garde le comptoir en vie pendant les coupures et se synchronise au cloud dès le retour de la connexion." },
-          { q: "Puis-je gérer finement les variantes taille et couleur ?", a: "Chaque produit porte une matrice de variantes complète. Stock, prix et reporting fonctionnent au niveau de la variante, pour des chiffres exacts." },
-          { q: "Combien de temps pour ouvrir un nouveau point de vente ?", a: "Un site standard est opérationnel en une journée : configurer le catalogue, apparier le matériel, ouvrir le poste." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les questions que se posent d'abord les dirigeants.",
+        "faq": [
+          {
+            "q": "La caisse continue-t-elle si internet tombe ?",
+            "a": "Oui. Le serveur local auto-hébergé est le système principal — la caisse reste active pendant les coupures. Les données sélectionnées se synchronisent vers le cloud au retour de la connexion."
+          },
+          {
+            "q": "Puis-je gérer finement les variantes taille et couleur ?",
+            "a": "Chaque produit porte une matrice de variantes complète. Stock, prix et reporting fonctionnent au niveau de la variante, pour des chiffres exacts."
+          },
+          {
+            "q": "Combien de temps pour ouvrir un nouveau point de vente ?",
+            "a": "Un site standard est opérationnel en une journée : configurer le catalogue, apparier le matériel, ouvrir le poste."
+          },
+          {
+            "q": "Quelle infrastructure locale est requise ?",
+            "a": "Chaque magasin est évalué pour un serveur local dédié, le réseau et les appareils opérationnels."
+          },
+          {
+            "q": "Quels appareils fonctionnent avec Commerce ?",
+            "a": "Caisses, scanners, imprimantes et appareils connectés compatibles sont examinés lors de l'implémentation."
+          },
+          {
+            "q": "Comment les sites partagent-ils les informations ?",
+            "a": "Les données opérationnelles sélectionnées se synchronisent vers le cloud lorsque la connexion est disponible."
+          },
+          {
+            "q": "Comment se déroule l'implémentation ?",
+            "a": "Découverte, installation, configuration, formation et support sont planifiés avec votre équipe."
+          },
+          {
+            "q": "Comment sont gérés la tarification et la propriété ?",
+            "a": "Les conditions commerciales dépendent des sites, de l'infrastructure, du périmètre d'implémentation et du support continu."
+          }
         ],
-        ctaTitle: "Mettez ESTINAD Commerce sur vos opérations.",
+        "ctaTitle": "Mettez ESTINAD Commerce sur vos opérations."
       },
-      restaurant: {
-        glyph: "RS",
-        vertical: "Restauration",
-        name: "ESTINAD Restauration",
-        short: "Restauration",
-        oneLiner:
-          "Le système d'exploitation des restaurants — cuisine, salle et commandes dans un flux calme et rapide.",
-        positioning:
-          "ESTINAD Restauration coordonne la salle, la cuisine et la caisse comme un seul flux. Conçu pour les restaurants comptoir et à table qui ont besoin de vitesse au comptoir, de clarté en cuisine et de chiffres propres à la clôture.",
-        icpTitle: "Pour qui",
-        icpHeader: "Pour les opérateurs qui sentent les limites de leurs outils.",
-        icp: [
+      "restaurant": {
+        "glyph": "RS",
+        "vertical": "Restauration",
+        "name": "ESTINAD Restauration",
+        "short": "Restauration",
+        "oneLiner": "Le système d'exploitation des restaurants — cuisine, salle et commandes dans un flux calme et rapide.",
+        "positioning": "ESTINAD Restauration coordonne la salle, la cuisine et la caisse comme un seul flux. Conçu pour les restaurants comptoir et à table qui ont besoin de vitesse au comptoir, de clarté en cuisine et de chiffres propres à la clôture.",
+        "byline": "ESTINAD Restaurant par ESTINAD",
+        "problem": {
+          "eyebrow": "Le problème métier",
+          "title": "Des opérations réparties entre plusieurs outils.",
+          "body": "Les équipes peuvent avoir du mal à coordonner leurs flux lorsque les outils locaux et centraux sont déconnectés."
+        },
+        "localFirst": {
+          "eyebrow": "Déploiement local-first",
+          "title": "Gardez les opérations sur le réseau local.",
+          "body": "Les flux locaux passent par le serveur du site et les appareils connectés au LAN.",
+          "points": [
+            "Flux de travail local",
+            "Appareils connectés au réseau local",
+            "Synchronisation cloud lorsque disponible"
+          ]
+        },
+        "worksWith": {
+          "eyebrow": "Fonctionne avec",
+          "title": "Composants ESTINAD connectés.",
+          "items": [
+            {
+              "name": "ESTINAD POS",
+              "href": "/products/components/pos",
+              "role": "Counter operations"
+            },
+            {
+              "name": "ESTINAD Waiter",
+              "href": "/products/components/waiter",
+              "role": "Tableside ordering"
+            },
+            {
+              "name": "ESTINAD KDS",
+              "href": "/products/components/kds",
+              "role": "Kitchen workflow"
+            },
+            {
+              "name": "ESTINAD Cloud",
+              "href": "/products/cloud",
+              "role": "Central visibility"
+            }
+          ]
+        },
+        "multiLocation": {
+          "eyebrow": "Multi-sites",
+          "title": "Opérer localement, suivre de manière centralisée.",
+          "body": "Chaque site garde son environnement local tandis que les données sélectionnées se synchronisent pour les équipes autorisées."
+        },
+        "implementation": {
+          "eyebrow": "Implémentation",
+          "title": "Un déploiement progressif.",
+          "steps": [
+            {
+              "t": "Découverte",
+              "d": "Cartographier les sites et les flux."
+            },
+            {
+              "t": "Installation",
+              "d": "Préparer le serveur local et les appareils."
+            },
+            {
+              "t": "Configuration",
+              "d": "Définir les rôles et règles opérationnelles."
+            },
+            {
+              "t": "Formation",
+              "d": "Former les équipes concernées."
+            },
+            {
+              "t": "Support",
+              "d": "Définir les modalités de support continu."
+            }
+          ]
+        },
+        "partnerCta": {
+          "title": "Vous vendez ou implémentez des logiciels Restaurant ?",
+          "body": "Travaillez avec ESTINAD pour présenter et déployer des opérations local-first.",
+          "label": "Devenir partenaire ESTINAD",
+          "href": "/partners"
+        },
+        "proof": {
+          "eyebrow": "Références",
+          "title": "Conçu pour les flux opérationnels.",
+          "body": "Des exemples illustratifs présentent les résultats opérationnels que ce produit ESTINAD est conçu pour accompagner.",
+          "label": "Exemple illustratif"
+        },
+        "icpTitle": "Pour qui",
+        "icpHeader": "Pour les opérateurs qui sentent les limites de leurs outils.",
+        "icp": [
           "Restaurateurs comptoir et à table",
           "Cafés et marques de restauration multi-sites",
-          "Opérateurs remplaçant tickets papier et caisse déconnectée",
+          "Opérateurs remplaçant tickets papier et caisse déconnectée"
         ],
-        useCasesTitle: "Cas d'usage principaux",
-        useCasesHeader: "Le travail qu'il remplace en premier.",
-        useCases: [
+        "useCasesTitle": "Cas d'usage principaux",
+        "useCasesHeader": "Le travail qu'il remplace en premier.",
+        "useCases": [
           "Commande comptoir et service à table depuis une carte",
           "Affichage cuisine et routage des tickets",
           "Coût par modificateur et par recette",
           "Clôture de poste et réconciliation de caisse",
-          "Contrôle central de la carte et des prix multi-sites",
+          "Contrôle central de la carte et des prix multi-sites"
         ],
-        visualEyebrow: "Concept visuel",
-        visualTitle: "Une console. Un registre. Une vue calme de l'opération.",
-        visualCaption: "Concept d'interface illustratif · ESTINAD Restauration",
-        visualSidebar: ["Tableau de bord", "Restauration", "Registre", "Rapports", "Points de vente", "Réglages"],
-        visualKpis: ["Aujourd'hui", "Cette semaine", "MTD"],
-        visualChart: "Performance",
-        workflowsEyebrow: "Flux clés",
-        workflowsTitle: "Trois flux qui font la journée.",
-        workflowsIntro: "La boucle cœur du métier, en séquence claire — pas un labyrinthe d'écrans.",
-        workflows: [
-          { title: "Commander", steps: ["Prendre la commande au comptoir ou à table", "Appliquer modificateurs, menus et notes", "Envoyer les tickets au bon poste de cuisine", "Imprimer ou afficher instantanément en cuisine"] },
-          { title: "Servir", steps: ["La cuisine marque les plats prêts dans l'ordre", "La salle voit le statut sans quitter la table", "Ajouter, fusionner ou diviser des plats en service", "Le statut se synchronise au comptoir en temps réel"] },
-          { title: "Clôturer", steps: ["Régler l'addition par table ou au comptoir", "Réconcilier espèces et carte en fin de poste", "Coût matière et pertes saisis par recette", "Le dirigeant voit la marge, pas seulement le CA"] },
+        "visualEyebrow": "Concept visuel",
+        "visualTitle": "Une console. Un registre. Une vue calme de l'opération.",
+        "visualCaption": "Concept d'interface illustratif · ESTINAD Restauration",
+        "visualSidebar": [
+          "Tableau de bord",
+          "Restauration",
+          "Registre",
+          "Rapports",
+          "Points de vente",
+          "Réglages"
         ],
-        featuresEyebrow: "Groupes de fonctionnalités",
-        featuresTitle: "Organisés par ce que fait l'entreprise, pas par listes de fonctions.",
-        featureClusters: [
-          { title: "Flux de commandes", description: "De la commande à la cuisine sans friction.", points: ["Modes comptoir et service à table", "Modificateurs, menus et commandes en attente", "Diviser, fusionner et transférer des tables", "Cadencement de plats et déclenchement à la demande"] },
-          { title: "Cuisine", description: "De la clarté sur la ligne, pas du bruit.", points: ["Affichage cuisine ou tickets imprimés", "Routage par poste et files de préparation", "Signalements allergies et modificateurs", "Minutage des tickets et alertes de goulots"] },
-          { title: "Coût et carte", description: "Pilotez la marge depuis la recette.", points: ["Coût matière par recette", "Carte et prix centraux sur tous les sites", "Suivi des pertes et annulations", "Rapports de mix produits et ingénierie de menu"] },
+        "visualKpis": [
+          "Aujourd'hui",
+          "Cette semaine",
+          "MTD"
         ],
-        deployEyebrow: "Options de déploiement",
-        deployTitle: "Déployez comme chaque point de vente fonctionne réellement.",
-        deployment: [
-          "Cloud (hébergé sur ESTINAD Cloud)",
-          "Appliance on-premise pour les cuisines à faible connectivité",
-          "Hybride — caisse + KDS on-premise synchronisés au cloud",
+        "visualChart": "Performance",
+        "workflowsEyebrow": "Flux clés",
+        "workflowsTitle": "Trois flux qui font la journée.",
+        "workflowsIntro": "La boucle cœur du métier, en séquence claire — pas un labyrinthe d'écrans.",
+        "workflows": [
+          {
+            "title": "Commander",
+            "steps": [
+              "Prendre la commande au comptoir ou à table",
+              "Appliquer modificateurs, menus et notes",
+              "Envoyer les tickets au bon poste de cuisine",
+              "Imprimer ou afficher instantanément en cuisine"
+            ]
+          },
+          {
+            "title": "Servir",
+            "steps": [
+              "La cuisine marque les plats prêts dans l'ordre",
+              "La salle voit le statut sans quitter la table",
+              "Ajouter, fusionner ou diviser des plats en service",
+              "Le statut se synchronise au comptoir en temps réel"
+            ]
+          },
+          {
+            "title": "Clôturer",
+            "steps": [
+              "Régler l'addition par table ou au comptoir",
+              "Réconcilier espèces et carte en fin de poste",
+              "Coût matière et pertes saisis par recette",
+              "Le dirigeant voit la marge, pas seulement le CA"
+            ]
+          }
         ],
-        integEyebrow: "Intégrations",
-        integTitle: "Se connecte au matériel et canaux que vous utilisez déjà.",
-        integrations: [
+        "featuresEyebrow": "Groupes de fonctionnalités",
+        "featuresTitle": "Organisés par ce que fait l'entreprise, pas par listes de fonctions.",
+        "featureClusters": [
+          {
+            "title": "Flux de commandes",
+            "description": "De la commande à la cuisine sans friction.",
+            "points": [
+              "Modes comptoir et service à table",
+              "Modificateurs, menus et commandes en attente",
+              "Diviser, fusionner et transférer des tables",
+              "Cadencement de plats et déclenchement à la demande"
+            ]
+          },
+          {
+            "title": "Cuisine",
+            "description": "De la clarté sur la ligne, pas du bruit.",
+            "points": [
+              "Affichage cuisine ou tickets imprimés",
+              "Routage par poste et files de préparation",
+              "Signalements allergies et modificateurs",
+              "Minutage des tickets et alertes de goulots"
+            ]
+          },
+          {
+            "title": "Coût et carte",
+            "description": "Pilotez la marge depuis la recette.",
+            "points": [
+              "Coût matière par recette",
+              "Carte et prix centraux sur tous les sites",
+              "Suivi des pertes et annulations",
+              "Rapports de mix produits et ingénierie de menu"
+            ]
+          }
+        ],
+        "deployEyebrow": "Déploiement hybride",
+        "deployTitle": "Auto-hébergé en local. Enrichi par le cloud quand la connexion est là.",
+        "deployment": [
+          "Serveur local dédié et auto-hébergé à chaque site",
+          "Caisse, serveur et appareils cuisine connectés au LAN",
+          "Données sélectionnées synchronisées vers ESTINAD Cloud lorsque disponible"
+        ],
+        "integEyebrow": "Intégrations",
+        "integTitle": "Se connecte au matériel et canaux que vous utilisez déjà.",
+        "integrations": [
           "Systèmes d'affichage cuisine et imprimantes de tickets",
           "Tiroirs-caisses et écrans de commande",
           "Terminaux de paiement (acquéreurs locaux)",
-          "Adaptateurs d'agrégateurs de livraison (selon disponibilité)",
+          "Adaptateurs d'agrégateurs de livraison (selon disponibilité)"
         ],
-        faqEyebrow: "FAQ",
-        faqTitle: "Les questions que se posent d'abord les dirigeants.",
-        faq: [
-          { q: "La cuisine continue-t-elle pendant une coupure ?", a: "Oui. Le mode on-premise garde le flux de commandes et les tickets cuisine en hors ligne, puis se réconcilie au cloud au retour de la connexion." },
-          { q: "Puis-je contrôler une seule carte sur tous les sites ?", a: "Cartes, prix et recettes sont gérés centralement et poussés vers chaque site, avec des dérogations locales où vous l'autorisez." },
-          { q: "Gérez-vous le comptoir et le service à table ?", a: "Les deux. Un même site peut tenir comptoir et service à table côte à côte, sur une carte et un registre partagés." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les questions que se posent d'abord les dirigeants.",
+        "faq": [
+          {
+            "q": "La cuisine continue-t-elle pendant une coupure ?",
+            "a": "Oui. Le flux de commandes et les tickets cuisine s'exécutent sur le serveur local auto-hébergé via le LAN. Les données sélectionnées se réconcilient vers le cloud au retour de la connexion."
+          },
+          {
+            "q": "Puis-je contrôler une seule carte sur tous les sites ?",
+            "a": "Cartes, prix et recettes sont gérés centralement et poussés vers chaque site, avec des dérogations locales où vous l'autorisez."
+          },
+          {
+            "q": "Gérez-vous le comptoir et le service à table ?",
+            "a": "Les deux. Un même site peut tenir comptoir et service à table côte à côte, sur une carte et un registre partagés."
+          },
+          {
+            "q": "Que fonctionne localement dans un restaurant ?",
+            "a": "Le serveur local et les appareils connectés au LAN prennent en charge les flux de commande, cuisine et caisse."
+          },
+          {
+            "q": "Quels appareils peuvent se connecter ?",
+            "a": "Terminaux de caisse, tablettes, imprimantes et écrans cuisine compatibles sont évalués lors de l'implémentation."
+          },
+          {
+            "q": "Comment fonctionne la gestion multi-sites ?",
+            "a": "Les sites fonctionnent localement tandis que les données sélectionnées peuvent se synchroniser pour une visibilité centrale autorisée."
+          },
+          {
+            "q": "Comment se déroule l'implémentation ?",
+            "a": "Découverte, installation, configuration, formation et support sont planifiés autour des horaires de service."
+          },
+          {
+            "q": "Comment sont définis la tarification et le support ?",
+            "a": "Les conditions dépendent des sites, appareils, périmètre d'implémentation et modalités de support."
+          }
         ],
-        ctaTitle: "Mettez ESTINAD Restauration sur vos opérations.",
+        "ctaTitle": "Mettez ESTINAD Restauration sur vos opérations."
       },
-      clinic: {
-        glyph: "CL",
-        vertical: "Clinique",
-        name: "ESTINAD Clinique",
-        short: "Clinique",
-        oneLiner:
-          "Le système d'exploitation des cliniques — planning, dossiers et facturation dans un système calme et conforme.",
-        positioning:
-          "ESTINAD Clinique réunit le planning, les dossiers patients et la facturation dans un système discipliné. Conçu pour les cliniques qui ont besoin d'un flux d'accueil calme, de dossiers fiables et d'un reporting financier propre, sans le bruit d'un logiciel générique.",
-        icpTitle: "Pour qui",
-        icpHeader: "Pour les opérateurs qui sentent les limites de leurs outils.",
-        icp: [
+      "clinic": {
+        "glyph": "CL",
+        "vertical": "Clinique",
+        "name": "ESTINAD Clinique",
+        "short": "Clinique",
+        "oneLiner": "Le système d'exploitation des cliniques — planning, dossiers et facturation dans un système calme et conforme.",
+        "positioning": "ESTINAD Clinique réunit le planning, les dossiers patients et la facturation dans un système discipliné. Conçu pour les cliniques qui ont besoin d'un flux d'accueil calme, de dossiers fiables et d'un reporting financier propre, sans le bruit d'un logiciel générique.",
+        "byline": "ESTINAD Clinic par ESTINAD",
+        "problem": {
+          "eyebrow": "Le problème métier",
+          "title": "Des opérations réparties entre plusieurs outils.",
+          "body": "Les équipes peuvent avoir du mal à coordonner leurs flux lorsque les outils locaux et centraux sont déconnectés."
+        },
+        "localFirst": {
+          "eyebrow": "Déploiement local-first",
+          "title": "Gardez les opérations sur le réseau local.",
+          "body": "Les flux locaux passent par le serveur du site et les appareils connectés au LAN.",
+          "points": [
+            "Flux de travail local",
+            "Appareils connectés au réseau local",
+            "Synchronisation cloud lorsque disponible"
+          ]
+        },
+        "worksWith": {
+          "eyebrow": "Fonctionne avec",
+          "title": "Composants ESTINAD connectés.",
+          "items": [
+            {
+              "name": "ESTINAD Cloud",
+              "href": "/products/cloud",
+              "role": "Authorized central visibility"
+            },
+            {
+              "name": "ESTINAD Core",
+              "href": "/products/components/core",
+              "role": "Shared platform foundation"
+            }
+          ]
+        },
+        "multiLocation": {
+          "eyebrow": "Multi-sites",
+          "title": "Opérer localement, suivre de manière centralisée.",
+          "body": "Chaque site garde son environnement local tandis que les données sélectionnées se synchronisent pour les équipes autorisées."
+        },
+        "implementation": {
+          "eyebrow": "Implémentation",
+          "title": "Un déploiement progressif.",
+          "steps": [
+            {
+              "t": "Découverte",
+              "d": "Cartographier les sites et les flux."
+            },
+            {
+              "t": "Installation",
+              "d": "Préparer le serveur local et les appareils."
+            },
+            {
+              "t": "Configuration",
+              "d": "Définir les rôles et règles opérationnelles."
+            },
+            {
+              "t": "Formation",
+              "d": "Former les équipes concernées."
+            },
+            {
+              "t": "Support",
+              "d": "Définir les modalités de support continu."
+            }
+          ]
+        },
+        "partnerCta": {
+          "title": "Vous vendez ou implémentez des logiciels Clinic ?",
+          "body": "Travaillez avec ESTINAD pour présenter et déployer des opérations local-first.",
+          "label": "Devenir partenaire ESTINAD",
+          "href": "/partners"
+        },
+        "proof": {
+          "eyebrow": "Références",
+          "title": "Conçu pour les flux opérationnels.",
+          "body": "Des exemples illustratifs présentent les résultats opérationnels que ce produit ESTINAD est conçu pour accompagner.",
+          "label": "Exemple illustratif"
+        },
+        "icpTitle": "Pour qui",
+        "icpHeader": "Pour les opérateurs qui sentent les limites de leurs outils.",
+        "icp": [
           "Dirigeants et gestionnaires de cliniques",
           "Cliniques médicales et dentaires mono et multi-sites",
-          "Opérateurs remplaçant dossiers papier et facturation fragmentée",
+          "Opérateurs remplaçant dossiers papier et facturation fragmentée"
         ],
-        useCasesTitle: "Cas d'usage principaux",
-        useCasesHeader: "Le travail qu'il remplace en premier.",
-        useCases: [
+        "useCasesTitle": "Cas d'usage principaux",
+        "useCasesHeader": "Le travail qu'il remplace en premier.",
+        "useCases": [
           "Prise de rendez-vous et flux patients",
           "Dossiers patients et historique de visites",
           "Facturation des actes, factures et paiements",
           "Plannings des praticiens et occupation des salles",
-          "Reporting patients et financier multi-sites",
+          "Reporting patients et financier multi-sites"
         ],
-        visualEyebrow: "Concept visuel",
-        visualTitle: "Une console. Un registre. Une vue calme de l'opération.",
-        visualCaption: "Concept d'interface illustratif · ESTINAD Clinique",
-        visualSidebar: ["Tableau de bord", "Clinique", "Registre", "Rapports", "Points de vente", "Réglages"],
-        visualKpis: ["Aujourd'hui", "Cette semaine", "MTD"],
-        visualChart: "Performance",
-        workflowsEyebrow: "Flux clés",
-        workflowsTitle: "Trois flux qui font la journée.",
-        workflowsIntro: "La boucle cœur du métier, en séquence claire — pas un labyrinthe d'écrans.",
-        workflows: [
-          { title: "Planifier", steps: ["Prendre le RDV avec praticien et salle", "Le patient reçoit une confirmation automatique", "L'accueil voit le flux du jour d'un coup d'œil", "Conflits et temps d'attente signalés tôt"] },
-          { title: "Soigner", steps: ["Ouvrir le dossier patient à l'arrivée", "Saisir notes de visite, diagnostic et traitement", "Joindre ordonnances et suivi", "Le dossier reste complet d'une visite à l'autre"] },
-          { title: "Facturer", steps: ["Actes et articles postés sur la facture", "Appliquer le règlement assurance ou patient", "Reçu et relevé émis", "Clôture financière quotidienne par praticien"] },
+        "visualEyebrow": "Concept visuel",
+        "visualTitle": "Une console. Un registre. Une vue calme de l'opération.",
+        "visualCaption": "Concept d'interface illustratif · ESTINAD Clinique",
+        "visualSidebar": [
+          "Tableau de bord",
+          "Clinique",
+          "Registre",
+          "Rapports",
+          "Points de vente",
+          "Réglages"
         ],
-        featuresEyebrow: "Groupes de fonctionnalités",
-        featuresTitle: "Organisés par ce que fait l'entreprise, pas par listes de fonctions.",
-        featureClusters: [
-          { title: "Planning", description: "Un accueil calme et prévisible.", points: ["Agendas praticiens et salles", "Rappels patients automatisés", "Liste d'attente et rappels", "Vue de disponibilité multi-sites"] },
-          { title: "Dossiers", description: "Un historique patient fiable, prêt pour la visite.", points: ["Notes de visite structurées et historique", "Ordonnances et plans de traitement", "Accès par rôles pour le personnel", "Piste d'audit sur chaque modification de dossier"] },
-          { title: "Facturation", description: "De l'argent propre, des dossiers propres.", points: ["Facturation des actes et articles", "Règlement assurance et patient", "Relevés et suivi des impayés", "Reporting financier par praticien et site"] },
+        "visualKpis": [
+          "Aujourd'hui",
+          "Cette semaine",
+          "MTD"
         ],
-        deployEyebrow: "Options de déploiement",
-        deployTitle: "Déployez comme chaque point de vente fonctionne réellement.",
-        deployment: [
-          "Cloud (hébergé sur ESTINAD Cloud, recommandé)",
-          "On-premise pour les cliniques exigeant une résidence locale",
-          "Hybride — cache local des dossiers avec sauvegarde cloud",
+        "visualChart": "Performance",
+        "workflowsEyebrow": "Flux clés",
+        "workflowsTitle": "Trois flux qui font la journée.",
+        "workflowsIntro": "La boucle cœur du métier, en séquence claire — pas un labyrinthe d'écrans.",
+        "workflows": [
+          {
+            "title": "Planifier",
+            "steps": [
+              "Prendre le RDV avec praticien et salle",
+              "Le patient reçoit une confirmation automatique",
+              "L'accueil voit le flux du jour d'un coup d'œil",
+              "Conflits et temps d'attente signalés tôt"
+            ]
+          },
+          {
+            "title": "Soigner",
+            "steps": [
+              "Ouvrir le dossier patient à l'arrivée",
+              "Saisir notes de visite, diagnostic et traitement",
+              "Joindre ordonnances et suivi",
+              "Le dossier reste complet d'une visite à l'autre"
+            ]
+          },
+          {
+            "title": "Facturer",
+            "steps": [
+              "Actes et articles postés sur la facture",
+              "Appliquer le règlement assurance ou patient",
+              "Reçu et relevé émis",
+              "Clôture financière quotidienne par praticien"
+            ]
+          }
         ],
-        integEyebrow: "Intégrations",
-        integTitle: "Se connecte au matériel et canaux que vous utilisez déjà.",
-        integrations: [
+        "featuresEyebrow": "Groupes de fonctionnalités",
+        "featuresTitle": "Organisés par ce que fait l'entreprise, pas par listes de fonctions.",
+        "featureClusters": [
+          {
+            "title": "Planning",
+            "description": "Un accueil calme et prévisible.",
+            "points": [
+              "Agendas praticiens et salles",
+              "Rappels patients automatisés",
+              "Liste d'attente et rappels",
+              "Vue de disponibilité multi-sites"
+            ]
+          },
+          {
+            "title": "Dossiers",
+            "description": "Un historique patient fiable, prêt pour la visite.",
+            "points": [
+              "Notes de visite structurées et historique",
+              "Ordonnances et plans de traitement",
+              "Accès par rôles pour le personnel",
+              "Piste d'audit sur chaque modification de dossier"
+            ]
+          },
+          {
+            "title": "Facturation",
+            "description": "De l'argent propre, des dossiers propres.",
+            "points": [
+              "Facturation des actes et articles",
+              "Règlement assurance et patient",
+              "Relevés et suivi des impayés",
+              "Reporting financier par praticien et site"
+            ]
+          }
+        ],
+        "deployEyebrow": "Déploiement hybride",
+        "deployTitle": "Auto-hébergé en local. Enrichi par le cloud quand la connexion est là.",
+        "deployment": [
+          "Serveur local dédié et auto-hébergé à chaque clinique",
+          "Appareils connectés au LAN pour les flux locaux",
+          "Données sélectionnées synchronisées vers ESTINAD Cloud lorsque disponible"
+        ],
+        "integEyebrow": "Intégrations",
+        "integTitle": "Se connecte au matériel et canaux que vous utilisez déjà.",
+        "integrations": [
           "Imprimantes thermiques et A4 pour reçus et ordonnances",
           "Terminaux de paiement (acquéreurs locaux)",
           "Rappels SMS et WhatsApp",
-          "Export d'agenda pour les praticiens",
+          "Export d'agenda pour les praticiens"
         ],
-        faqEyebrow: "FAQ",
-        faqTitle: "Les questions que se posent d'abord les dirigeants.",
-        faq: [
-          { q: "Les données patients sont-elles privées et auditées ?", a: "Les dossiers sont à accès par rôles et chaque modification est journalisée. Les options de déploiement permettent de garder les données dans le pays quand la résidence l'exige." },
-          { q: "Puis-je voir les disponibilités sur plusieurs cliniques ?", a: "Oui. Le planning couvre tous les sites, l'accueil peut donc inscrire un patient chez le bon praticien et au bon endroit en une vue." },
-          { q: "Gérez-vous l'assurance et le paiement patient ?", a: "Les factures gèrent le règlement assurance et patient, avec suivi des impayés et relevés propres pour chacun." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les questions que se posent d'abord les dirigeants.",
+        "faq": [
+          {
+            "q": "Les données patients sont-elles privées et auditées ?",
+            "a": "Les dossiers sont à accès par rôles et chaque modification est journalisée. Les options de déploiement permettent de garder les données dans le pays quand la résidence l'exige."
+          },
+          {
+            "q": "Puis-je voir les disponibilités sur plusieurs cliniques ?",
+            "a": "Oui. Le planning couvre tous les sites, l'accueil peut donc inscrire un patient chez le bon praticien et au bon endroit en une vue."
+          },
+          {
+            "q": "Gérez-vous l'assurance et le paiement patient ?",
+            "a": "Les factures gèrent le règlement assurance et patient, avec suivi des impayés et relevés propres pour chacun."
+          },
+          {
+            "q": "Que se passe-t-il en cas de coupure internet ?",
+            "a": "Les flux locaux de la clinique continuent via le serveur du site ; les données sélectionnées se synchronisent lorsque la connexion est disponible."
+          },
+          {
+            "q": "Qu'est-ce qui est installé à chaque clinique ?",
+            "a": "L'implémentation évalue le serveur local, le réseau, les appareils et les exigences d'exploitation pour chaque site."
+          },
+          {
+            "q": "Comment fonctionne la gestion multi-cliniques ?",
+            "a": "Les équipes autorisées peuvent consulter les informations synchronisées sélectionnées entre les sites."
+          },
+          {
+            "q": "Comment se déroule l'implémentation ?",
+            "a": "Découverte, installation, configuration, formation et support sont planifiés avec les équipes de la clinique."
+          },
+          {
+            "q": "Comment sont gérés la tarification et la propriété ?",
+            "a": "Les conditions commerciales dépendent des sites, de l'infrastructure, du périmètre d'implémentation et du support."
+          }
         ],
-        ctaTitle: "Mettez ESTINAD Clinique sur vos opérations.",
+        "ctaTitle": "Mettez ESTINAD Clinique sur vos opérations."
       },
-      cloud: {
-        glyph: "CD",
-        vertical: "Plateforme",
-        name: "ESTINAD Cloud",
-        short: "Cloud",
-        oneLiner:
-          "L'ossature contrôlée de chaque produit ESTINAD — hébergement, synchro, sauvegarde et accès en un seul endroit.",
-        positioning:
-          "ESTINAD Cloud est l'ossature partagée qui héberge, synchronise et protège chaque produit ESTINAD. Elle offre aux dirigeants un seul endroit pour gérer sites, utilisateurs, sauvegardes et accès — avec le contrôle qu'attendent les entreprises et la simplicité dont ont besoin les PME.",
-        icpTitle: "Pour qui",
-        icpHeader: "Pour les opérateurs qui sentent les limites de leurs outils.",
-        icp: [
-          "Dirigeants opérant deux points de vente ou plus",
-          "Opérateurs multi-marques se consolidant sur une plateforme",
-          "Acheteurs entreprise exigeant un accès contrôlé et auditable",
+      "cloud": {
+        "glyph": "CD",
+        "vertical": "Plateforme",
+        "name": "ESTINAD Cloud",
+        "short": "Cloud",
+        "oneLiner": "Synchronisation, accès à distance et gestion centrale — sans remplacer votre serveur local.",
+        "positioning": "ESTINAD Cloud est l'espace cloud dédié de chaque tenant. Il n'héberge pas les opérations quotidiennes et n'est pas une base opérationnelle SaaS partagée. Il synchronise les modules sélectionnés en ligne, permet un accès mobile et à distance sécurisé hors LAN, et prend en charge l'analytique, les tableaux de bord, les notifications, les sauvegardes et la future IA — tandis que le serveur local reste la source de vérité autoritaire.",
+        "byline": "ESTINAD Cloud par ESTINAD",
+        "problem": {
+          "eyebrow": "Le problème métier",
+          "title": "Le siège manque d'une vue connectée.",
+          "body": "Les organisations multi-sites peinent à superviser et piloter chaque site lorsque chaque site doit rester opérationnel hors ligne — et les systèmes exclusivement cloud échouent quand la connectivité chute."
+        },
+        "localFirst": {
+          "eyebrow": "Enrichi par le cloud, pas dépendant du cloud",
+          "title": "Le cloud complète les opérations locales.",
+          "body": "ESTINAD Cloud est une couche de synchronisation et de gestion. Les serveurs locaux possèdent les opérations ; le cloud ajoute l'accès à distance et la visibilité centrale.",
+          "points": [
+            "Synchronisation de modules sélectionnés",
+            "Accès mobile et à distance sécurisé",
+            "Le serveur local reste autoritaire"
+          ]
+        },
+        "worksWith": {
+          "eyebrow": "Fonctionne avec",
+          "title": "Composants ESTINAD connectés.",
+          "items": [
+            {
+              "name": "ESTINAD Retail",
+              "href": "/products/retail",
+              "role": "Retail operations"
+            },
+            {
+              "name": "ESTINAD Restaurant",
+              "href": "/products/restaurant",
+              "role": "Restaurant operations"
+            },
+            {
+              "name": "ESTINAD Clinic",
+              "href": "/products/clinic",
+              "role": "Clinic operations"
+            }
+          ]
+        },
+        "multiLocation": {
+          "eyebrow": "Multi-sites",
+          "title": "Une interface pour chaque site.",
+          "body": "Chaque site conserve son propre serveur local et sa base de données. La synchronisation cloud consolide les données sélectionnées pour que le siège puisse superviser et piloter l'organisation depuis une interface centralisée."
+        },
+        "implementation": {
+          "eyebrow": "Implémentation",
+          "title": "Un déploiement connecté par étapes.",
+          "steps": [
+            {
+              "t": "Découverte",
+              "d": "Définir les sites et les besoins de reporting."
+            },
+            {
+              "t": "Installation",
+              "d": "Préparer les serveurs locaux dédiés à chaque site."
+            },
+            {
+              "t": "Configuration",
+              "d": "Définir le périmètre de synchronisation et l'accès pour l'espace tenant."
+            },
+            {
+              "t": "Formation",
+              "d": "Former les utilisateurs de gestion autorisés."
+            },
+            {
+              "t": "Support",
+              "d": "Définir les modalités de support continu."
+            }
+          ]
+        },
+        "partnerCta": {
+          "title": "Vous vendez ou implémentez des logiciels métier connectés ?",
+          "body": "Travaillez avec ESTINAD pour présenter et déployer la plateforme hybride local-first.",
+          "label": "Devenir partenaire ESTINAD Cloud",
+          "href": "/partners"
+        },
+        "proof": {
+          "eyebrow": "Références",
+          "title": "Conçu pour la gestion connectée.",
+          "body": "Des exemples illustratifs présentent les résultats qu'ESTINAD Cloud est conçu pour accompagner.",
+          "label": "Exemple illustratif"
+        },
+        "icpTitle": "Pour qui",
+        "icpHeader": "Pour les opérateurs qui ont besoin de fiabilité locale et de visibilité centrale.",
+        "icp": [
+          "Dirigeants opérant deux sites ou plus",
+          "Opérateurs multi-marques consolidant le reporting sans dépendance exclusive au cloud",
+          "Équipes ayant besoin d'un accès à distance tout en gardant des opérations local-first"
         ],
-        useCasesTitle: "Cas d'usage principaux",
-        useCasesHeader: "Le travail qu'il remplace en premier.",
-        useCases: [
-          "Gestion centrale des points de vente et utilisateurs",
-          "Sauvegarde automatique et restauration à un instant t",
-          "Accès par rôles et audit sur toute l'organisation",
-          "Analytique cross-produits et reporting consolidé",
-          "Déploiement contrôlé des produits vers de nouveaux sites",
+        "useCasesTitle": "Cas d'usage principaux",
+        "useCasesHeader": "À quoi sert la couche cloud.",
+        "useCases": [
+          "Accès à distance sécurisé lorsque les utilisateurs sont hors du réseau local",
+          "Supervision et gestion centrales de tous les sites",
+          "Analytique, tableaux de bord et notifications à partir des données synchronisées",
+          "Sauvegardes et reprise des modules synchronisés sélectionnés",
+          "Fondation pour de futurs services IA sur le contexte métier synchronisé"
         ],
-        visualEyebrow: "Concept visuel",
-        visualTitle: "Une console. Un registre. Une vue calme de l'opération.",
-        visualCaption: "Concept d'interface illustratif · ESTINAD Cloud",
-        visualSidebar: ["Tableau de bord", "Cloud", "Registre", "Rapports", "Points de vente", "Réglages"],
-        visualKpis: ["Aujourd'hui", "Cette semaine", "MTD"],
-        visualChart: "Performance",
-        workflowsEyebrow: "Flux clés",
-        workflowsTitle: "Trois flux qui font la journée.",
-        workflowsIntro: "La boucle cœur du métier, en séquence claire — pas un labyrinthe d'écrans.",
-        workflows: [
-          { title: "Gouverner", steps: ["Définir sites, marques et entités juridiques", "Attribuer rôles et accès limités au personnel", "Chaque action journalisée : qui, quoi, quand", "Les dirigeants gardent un seul point de contrôle"] },
-          { title: "Protéger", steps: ["Sauvegarde continue sur tous les produits", "Restauration à un instant t au besoin", "Chiffré en transit et au repos", "Options de résidence pour marchés régulés"] },
-          { title: "Dimensionner", steps: ["Ajouter un site ou un produit en minutes", "Synchroniser catalogue, carte ou planning centralement", "Déployer progressivement avec accès contrôlé", "Reporting consolidé sur toute l'organisation"] },
+        "visualEyebrow": "Concept visuel",
+        "visualTitle": "Une console pour la visibilité synchronisée — les serveurs locaux font toujours tourner la journée.",
+        "visualCaption": "Concept d'interface illustratif · ESTINAD Cloud",
+        "visualSidebar": [
+          "Tableau de bord",
+          "Cloud",
+          "Registre",
+          "Rapports",
+          "Points de vente",
+          "Réglages"
         ],
-        featuresEyebrow: "Groupes de fonctionnalités",
-        featuresTitle: "Organisés par ce que fait l'entreprise, pas par listes de fonctions.",
-        featureClusters: [
-          { title: "Contrôle organisationnel", description: "Une console pour tout le parc.", points: ["Sites, marques et entités", "Accès par rôles et portées", "Piste d'audit complète cross-produits", "Gestion centrale des utilisateurs et appareils"] },
-          { title: "Fiabilité", description: "Conçu pour ne pas perdre vos données.", points: ["Sauvegarde chiffrée continue", "Restauration à un instant t", "Modèle de synchro tolérant au hors ligne", "Contrôles de résidence et rétention"] },
-          { title: "Vision", description: "Toute l'entreprise, en une vue.", points: ["Reporting consolidé cross-produits", "Comparaison par site et marque", "Exports et intégrations programmés", "Tableaux de bord exécutifs pour les dirigeants"] },
+        "visualKpis": [
+          "Aujourd'hui",
+          "Cette semaine",
+          "MTD"
         ],
-        deployEyebrow: "Options de déploiement",
-        deployTitle: "Déployez comme chaque point de vente fonctionne réellement.",
-        deployment: [
-          "Cloud géré (par défaut)",
-          "Résidence régionale quand requis",
-          "Hybride avec appliances on-premise",
+        "visualChart": "Performance",
+        "workflowsEyebrow": "Flux clés",
+        "workflowsTitle": "Trois flux que la couche cloud prend en charge.",
+        "workflowsIntro": "Le cloud ne fait pas tourner la caisse. Il connecte les sites, protège les données synchronisées et donne au siège une vue calme.",
+        "workflows": [
+          {
+            "title": "Synchroniser",
+            "steps": [
+              "Les serveurs locaux restent autoritaires à chaque site",
+              "Les modules sélectionnés se synchronisent lorsque la connexion est disponible",
+              "La synchronisation reprend automatiquement après les coupures",
+              "Chaque tenant conserve un espace cloud dédié"
+            ]
+          },
+          {
+            "title": "Accéder à distance",
+            "steps": [
+              "Accès sécurisé via internet hors du LAN",
+              "Accès mobile pour les utilisateurs autorisés en déplacement",
+              "Vues limitées par rôle, site et fonction",
+              "Les opérations locales continuent si le cloud est inaccessible"
+            ]
+          },
+          {
+            "title": "Gérer centralement",
+            "steps": [
+              "Superviser chaque site depuis une interface",
+              "Analytique, tableaux de bord et notifications",
+              "Sauvegardes des données synchronisées",
+              "Fondation pour de futurs services IA"
+            ]
+          }
         ],
-        integEyebrow: "Intégrations",
-        integTitle: "Se connecte au matériel et canaux que vous utilisez déjà.",
-        integrations: [
+        "featuresEyebrow": "Groupes de fonctionnalités",
+        "featuresTitle": "Organisés par ce que fait la couche cloud — pas en prétendant que c'est la caisse.",
+        "featureClusters": [
+          {
+            "title": "Synchronisation",
+            "description": "Données sélectionnées, automatiques en ligne.",
+            "points": [
+              "Synchronisation de modules sélectionnés uniquement",
+              "Synchronisation automatique au retour de la connexion",
+              "Espace dédié par tenant",
+              "Le serveur local reste toujours autoritaire"
+            ]
+          },
+          {
+            "title": "Accès à distance & gestion",
+            "description": "Siège et mobile, sans opérations exclusivement cloud.",
+            "points": [
+              "Accès à distance sécurisé hors LAN",
+              "Supervision centrale de tous les sites",
+              "Accès et périmètres par rôles",
+              "Visibilité utilisateurs et appareils lorsque configurée"
+            ]
+          },
+          {
+            "title": "Visibilité & continuité",
+            "description": "Analytique, sauvegardes et future IA.",
+            "points": [
+              "Tableaux de bord et reporting consolidé",
+              "Notifications à partir d'événements synchronisés",
+              "Dispositifs de sauvegarde pour les données synchronisées",
+              "Voie vers la future IA sur le contexte métier"
+            ]
+          }
+        ],
+        "deployEyebrow": "Comment s'inscrit le modèle hybride",
+        "deployTitle": "Le cloud est la couche de synchronisation et de gestion — jamais le déploiement principal.",
+        "deployment": [
+          "Le serveur local auto-hébergé dédié reste principal à chaque site",
+          "Espace cloud dédié par tenant pour les données synchronisées sélectionnées",
+          "Accès à distance, analytique et sauvegardes — enrichi par le cloud, pas dépendant du cloud"
+        ],
+        "integEyebrow": "Intégrations",
+        "integTitle": "Se connecte aux produits ESTINAD déjà en service localement.",
+        "integrations": [
           "Tous les produits ESTINAD (natif)",
           "Livraison de rapports WhatsApp et e-mail",
           "Exports de données programmés",
-          "SSO pour l'entreprise (sur offre)",
+          "SSO pour l'entreprise (sur offre)"
         ],
-        faqEyebrow: "FAQ",
-        faqTitle: "Les questions que se posent d'abord les dirigeants.",
-        faq: [
-          { q: "ESTINAD Cloud est-il requis pour utiliser les produits ?", a: "Les produits peuvent tourner on-premise, mais ESTINAD Cloud débloque le contrôle centralisé, la sauvegarde et la vue multi-sites. La plupart des opérateurs multi-sites l'adoptent dès le départ." },
-          { q: "Pouvons-nous garder les données dans le pays ?", a: "Oui. La résidence régionale et le déploiement hybride sont pris en charge pour les opérateurs en marchés régulés." },
-          { q: "Comment l'accès est-il contrôlé entre sites ?", a: "Les rôles sont limités par site, marque et fonction, avec une piste d'audit complète sur chaque action significative." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les questions que se posent d'abord les dirigeants.",
+        "faq": [
+          {
+            "q": "ESTINAD Cloud est-il requis pour les opérations locales ?",
+            "a": "Non. Les opérations essentielles tournent sur le serveur local auto-hébergé sans internet. Le cloud débloque l'accès à distance, la visibilité multi-sites, l'analytique et les sauvegardes des données synchronisées."
+          },
+          {
+            "q": "Cloud remplace-t-il le serveur local ?",
+            "a": "Non. Le serveur local est toujours la source de vérité autoritaire. Cloud est une couche de synchronisation et de gestion."
+          },
+          {
+            "q": "Les données d'un tenant sont-elles partagées avec d'autres clients ?",
+            "a": "Non. Chaque tenant dispose d'un serveur local dédié, d'une base de données locale dédiée et d'un espace cloud dédié."
+          },
+          {
+            "q": "Quelles données se synchronisent ?",
+            "a": "Uniquement les modules et données sélectionnés, configurés par organisation — pas l'ensemble de la base opérationnelle par défaut."
+          },
+          {
+            "q": "Peut-on accéder au système hors du réseau local ?",
+            "a": "Oui. L'accès mobile et à distance sécurisé utilise la couche de synchronisation cloud lorsque les utilisateurs sont hors LAN."
+          },
+          {
+            "q": "Quels produits se connectent à Cloud ?",
+            "a": "Commerce, Restauration et Clinique utilisent le même modèle hybride avec ESTINAD Cloud comme couche de synchronisation et de gestion."
+          },
+          {
+            "q": "Comment se déroule l'implémentation ?",
+            "a": "Infrastructure locale, périmètre de synchronisation, accès, formation et support sont planifiés ensemble."
+          },
+          {
+            "q": "Comment sont gérés la tarification et la propriété ?",
+            "a": "Les conditions commerciales dépendent des produits, sites, infrastructure et support continu. Vous possédez votre infrastructure opérationnelle locale."
+          }
         ],
-        ctaTitle: "Mettez ESTINAD Cloud sur vos opérations.",
-      },
-    },
+        "ctaTitle": "Mettez ESTINAD Cloud sur vos opérations."
+      }
+    }
   },
-
-  apps: {
-    index: {
-      eyebrow: "Écosystème",
-      title: "Une plateforme. Chaque application qui la fait tourner.",
-      intro:
-        "ESTINAD, ce sont plus de quatre produits. En dessous se trouvent un moteur partagé, des applications compagnons qui étendent le flux restaurant, et les paquets qui donnent à chaque application sa vitesse, son apparence et sa fiabilité. Explorez chaque pièce de l'écosystème.",
-      groupProducts: "Produits grand public",
-      groupRestaurant: "Lignes produit restaurant",
-      groupPlatform: "Applications plateforme & compagnons",
-      groupPackages: "Paquets partagés",
-      groupRoadmap: "Feuille de route & interne",
-      tagCategory: "Catégorie",
-      tagStatus: "Statut",
-      statusShipped: "Livré",
-      statusBeta: "Bêta",
-      statusFrozen: "Gelé",
-      statusArchived: "Archivé",
-      statusPlanned: "Planifié",
-      statusRoadmap: "Sur la feuille de route",
-      viewApp: "Explorer",
-      explorePlatform: "Explorer la plateforme",
-      backToProducts: "Retour aux produits",
-      pricingNote: "Les lignes produit restaurant partagent la tarification ESTINAD Restaurant.",
+  "apps": {
+    "index": {
+      "eyebrow": "Écosystème",
+      "title": "Une plateforme. Chaque application qui la fait tourner.",
+      "intro": "ESTINAD, ce sont plus de quatre produits. En dessous se trouvent un moteur partagé, des applications compagnons qui étendent le flux restaurant, et les paquets qui donnent à chaque application sa vitesse, son apparence et sa fiabilité. Explorez chaque pièce de l'écosystème.",
+      "groupProducts": "Produits grand public",
+      "groupRestaurant": "Lignes produit restaurant",
+      "groupPlatform": "Applications plateforme & compagnons",
+      "groupPackages": "Paquets partagés",
+      "groupRoadmap": "Feuille de route & interne",
+      "tagCategory": "Catégorie",
+      "tagStatus": "Statut",
+      "statusShipped": "Livré",
+      "statusBeta": "Bêta",
+      "statusFrozen": "Gelé",
+      "statusArchived": "Archivé",
+      "statusPlanned": "Planifié",
+      "statusRoadmap": "Sur la feuille de route",
+      "viewApp": "Explorer",
+      "explorePlatform": "Explorer la plateforme",
+      "backToProducts": "Retour aux produits",
+      "pricingNote": "Les lignes produit restaurant partagent la tarification ESTINAD Restaurant."
     },
-    items: {
+    "items": {
       "restaurant-ecosystem": {
-        glyph: "RE",
-        name: "ESTINAD Restaurant — Écosystème complet",
-        short: "Écosystème restaurant",
-        category: "Ligne produit restaurant",
-        status: "shipped",
-        oneLiner:
-          "La pile restaurant de bout en bout — POS caisse, tablettes de serveur et affichage cuisine, synchronisés en temps réel sur votre réseau local.",
-        positioning:
-          "ESTINAD Restaurant Écosystème complet relie la caisse, la salle et la cuisine en un seul flux. POS caisse, tablettes de serveur en salle et tableau de cuisine vivant partagent une même base locale — les commandes voyagent de la table à la cuisine sans aucun ticket papier. Conçu pour les restaurants avec service, les cafés et le restauration rapide qui veulent des tickets numériques de la commande à l'assiette.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [
-            { app: "ESTINAD POS", role: "Caisse, back-office, hub de routage d'impression", platform: "Windows / Linux" },
-            { app: "ESTINAD Waiter", role: "Commande en salle sur tablettes", platform: "Android" },
-            { app: "ESTINAD KDS", role: "Tableau de tickets cuisine", platform: "Android / Web" },
-          ],
+        "glyph": "RE",
+        "name": "ESTINAD Restaurant — Écosystème complet",
+        "short": "Écosystème restaurant",
+        "category": "Ligne produit restaurant",
+        "status": "shipped",
+        "oneLiner": "La pile restaurant de bout en bout — POS caisse, tablettes de serveur et affichage cuisine, synchronisés en temps réel sur votre réseau local.",
+        "positioning": "ESTINAD Restaurant Écosystème complet relie la caisse, la salle et la cuisine en un seul flux. POS caisse, tablettes de serveur en salle et tableau de cuisine vivant partagent une même base locale — les commandes voyagent de la table à la cuisine sans aucun ticket papier. Conçu pour les restaurants avec service, les cafés et le restauration rapide qui veulent des tickets numériques de la commande à l'assiette.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": [
+            {
+              "app": "ESTINAD POS",
+              "role": "Caisse, back-office, hub de routage d'impression",
+              "platform": "Windows / Linux"
+            },
+            {
+              "app": "ESTINAD Waiter",
+              "role": "Commande en salle sur tablettes",
+              "platform": "Android"
+            },
+            {
+              "app": "ESTINAD KDS",
+              "role": "Tableau de tickets cuisine",
+              "platform": "Android / Web"
+            }
+          ]
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "Trois applications, un service connecté.",
-        capabilitiesIntro:
-          "Chaque pièce est conçue pour son poste — et les trois dialoguent avec le même serveur local sur la machine POS. Aucun cloud requis pendant le service.",
-        capabilities: [
-          { title: "Gestion des tables", description: "Plan de salle visuel avec statut des tables — liez les commandes aux tables et suivez le service sur place." },
-          { title: "Encaissement complet", description: "Modificateurs, paiements partagés, pourboires et commandes en attente/rappel — pensé pour les tickets restaurant complexes." },
-          { title: "Routage d'impression multi-destination", description: "Acheminez les articles vers les imprimantes cuisine, bar ou caisse — le hub qui alimente tickets papier et affichage cuisine." },
-          { title: "Commande en salle", description: "Les serveurs prennent les commandes à table sur tablettes Android — les articles se synchronisent instantanément vers POS et cuisine." },
-          { title: "Plan des tables visuel", description: "Statuts des tables codés couleur — libre, occupée, addition demandée — pour que l'équipe de salle sache où aller." },
-          { title: "Découverte auto du POS", description: "Les tablettes trouvent la caisse sur le réseau via mDNS — connexion en secondes, sans saisie d'IP." },
-          { title: "Tickets cuisine en direct", description: "Les commandes apparaissent à l'écran cuisine en temps réel — remplacez les tickets papier par un tableau numérique." },
-          { title: "Bump, rappel et minuteurs d'urgence", description: "Marquez les tickets terminés, rappelant les erreurs, avec minuteurs vert → jaune → rouge pour ne rien laisser traîner." },
-          { title: "Filtres par poste & alertes sonores", description: "Affichez uniquement les articles grill, bar ou froid et émettez un son à chaque nouvelle commande." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "Trois applications, un service connecté.",
+        "capabilitiesIntro": "Chaque pièce est conçue pour son poste — et les trois dialoguent avec le même serveur local sur la machine POS. Aucun cloud requis pendant le service.",
+        "capabilities": [
+          {
+            "title": "Gestion des tables",
+            "description": "Plan de salle visuel avec statut des tables — liez les commandes aux tables et suivez le service sur place."
+          },
+          {
+            "title": "Encaissement complet",
+            "description": "Modificateurs, paiements partagés, pourboires et commandes en attente/rappel — pensé pour les tickets restaurant complexes."
+          },
+          {
+            "title": "Routage d'impression multi-destination",
+            "description": "Acheminez les articles vers les imprimantes cuisine, bar ou caisse — le hub qui alimente tickets papier et affichage cuisine."
+          },
+          {
+            "title": "Commande en salle",
+            "description": "Les serveurs prennent les commandes à table sur tablettes Android — les articles se synchronisent instantanément vers POS et cuisine."
+          },
+          {
+            "title": "Plan des tables visuel",
+            "description": "Statuts des tables codés couleur — libre, occupée, addition demandée — pour que l'équipe de salle sache où aller."
+          },
+          {
+            "title": "Découverte auto du POS",
+            "description": "Les tablettes trouvent la caisse sur le réseau via mDNS — connexion en secondes, sans saisie d'IP."
+          },
+          {
+            "title": "Tickets cuisine en direct",
+            "description": "Les commandes apparaissent à l'écran cuisine en temps réel — remplacez les tickets papier par un tableau numérique."
+          },
+          {
+            "title": "Bump, rappel et minuteurs d'urgence",
+            "description": "Marquez les tickets terminés, rappelant les erreurs, avec minuteurs vert → jaune → rouge pour ne rien laisser traîner."
+          },
+          {
+            "title": "Filtres par poste & alertes sonores",
+            "description": "Affichez uniquement les articles grill, bar ou froid et émettez un son à chaque nouvelle commande."
+          }
         ],
-        workflows: {
-          eyebrow: "Flux de service",
-          title: "De la table à la cuisine, entièrement connecté.",
-          intro: "La commande voyage dans un sens — table, cuisine, caisse — sans aucun aller-retour.",
-          groups: [
-            { title: "Commander", steps: ["Le serveur ouvre la table sur la tablette", "Construit la commande avec modificateurs et notes", "Une touche envoie vers POS et cuisine", "Les tickets apparaissent sur le KDS et les imprimantes"] },
-            { title: "Servir", steps: ["La cuisine voit les tickets avec minuteurs d'urgence", "Bump des articles quand ils quittent la ligne", "La salle voit le statut sans quitter la table", "Ajout ou fusion d'articles en cours de service"] },
-            { title: "Clôturer", steps: ["Réglez l'addition par table ou à la caisse", "Paiements partagés entre méthodes", "Rapprochement espèces et carte en fin de service", "Le dirigeant voit la marge, pas seulement le chiffre"] },
-          ],
+        "workflows": {
+          "eyebrow": "Flux de service",
+          "title": "De la table à la cuisine, entièrement connecté.",
+          "intro": "La commande voyage dans un sens — table, cuisine, caisse — sans aucun aller-retour.",
+          "groups": [
+            {
+              "title": "Commander",
+              "steps": [
+                "Le serveur ouvre la table sur la tablette",
+                "Construit la commande avec modificateurs et notes",
+                "Une touche envoie vers POS et cuisine",
+                "Les tickets apparaissent sur le KDS et les imprimantes"
+              ]
+            },
+            {
+              "title": "Servir",
+              "steps": [
+                "La cuisine voit les tickets avec minuteurs d'urgence",
+                "Bump des articles quand ils quittent la ligne",
+                "La salle voit le statut sans quitter la table",
+                "Ajout ou fusion d'articles en cours de service"
+              ]
+            },
+            {
+              "title": "Clôturer",
+              "steps": [
+                "Réglez l'addition par table ou à la caisse",
+                "Paiements partagés entre méthodes",
+                "Rapprochement espèces et carte en fin de service",
+                "Le dirigeant voit la marge, pas seulement le chiffre"
+              ]
+            }
+          ]
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Fonctionne avec le matériel déjà en cuisine.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Fonctionne avec le matériel déjà en cuisine.",
+        "integrations": [
           "Imprimantes thermiques ESC/POS",
           "Imprimantes de tickets cuisine (multi-postes)",
           "Tablettes Android (serveur & KDS)",
           "Tiroirs-caisses et écrans de commande",
-          "Serveur PocketBase local sur la machine POS",
+          "Serveur PocketBase local sur la machine POS"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "Où cela s'intègre dans ESTINAD.",
-        ecosystem: [
-          { t: "Construit sur ESTINAD POS", d: "Le hub caisse et back-office est le même moteur POS qui alimente le retail et la ligne restaurant imprimante-only — configuré pour le service complet." },
-          { t: "Étendu par les applications compagnons", d: "ESTINAD Waiter et ESTINAD KDS rejoignent uniquement ce bundle. Ils partagent une carte, un grand livre et une base locale avec le POS." },
-          { t: "Hors-ligne par conception", d: "Les trois applications dialoguent avec le PocketBase local sur la machine POS. La perte d'internet n'arrête pas le service — la sync reprend au retour du réseau." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "Où cela s'intègre dans ESTINAD.",
+        "ecosystem": [
+          {
+            "t": "Construit sur ESTINAD POS",
+            "d": "Le hub caisse et back-office est le même moteur POS qui alimente le retail et la ligne restaurant imprimante-only — configuré pour le service complet."
+          },
+          {
+            "t": "Étendu par les applications compagnons",
+            "d": "ESTINAD Waiter et ESTINAD KDS rejoignent uniquement ce bundle. Ils partagent une carte, un grand livre et une base locale avec le POS."
+          },
+          {
+            "t": "Hors-ligne par conception",
+            "d": "Les trois applications dialoguent avec le PocketBase local sur la machine POS. La perte d'internet n'arrête pas le service — la sync reprend au retour du réseau."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Temps réel, même sans internet.",
-        tech: "Les commandes transitent par PocketBase SSE sur votre réseau local, donc les mises à jour de tickets sont sub-seconde et le service ne dépend jamais du cloud.",
-        notIncluded: {
-          title: "Ce n'est pas ce qu'il vous faut ?",
-          intro: "Si vous n'avez besoin que d'une caisse avec imprimantes cuisine — sans tablettes, sans écran cuisine — il existe un bundle plus léger.",
-          items: [],
-          ctaLabel: "Voir ESTINAD Restaurant — POS avec imprimantes",
-          ctaHref: "/products/restaurant-pos",
+        "techEyebrow": "Point technique",
+        "techTitle": "Temps réel, même sans internet.",
+        "tech": "Les commandes transitent par PocketBase SSE sur votre réseau local, donc les mises à jour de tickets sont sub-seconde et le service ne dépend jamais du cloud.",
+        "notIncluded": {
+          "title": "Ce n'est pas ce qu'il vous faut ?",
+          "intro": "Si vous n'avez besoin que d'une caisse avec imprimantes cuisine — sans tablettes, sans écran cuisine — il existe un bundle plus léger.",
+          "items": [],
+          "ctaLabel": "Voir ESTINAD Restaurant — POS avec imprimantes",
+          "ctaHref": "/products/restaurant-pos"
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des exploitants.",
-        faq: [
-          { q: "Faut-il internet pendant le service ?", a: "Non. Les trois applications se connectent à une instance PocketBase locale sur la machine POS. Le service tourne entièrement hors-ligne et se synchronise au cloud au retour de la connexion." },
-          { q: "Comment les tablettes trouvent-elles le POS ?", a: "Le POS s'annonce sur le réseau local via mDNS, les tablettes le découvrent automatiquement — sans saisie d'IP sur la plupart des réseaux." },
-          { q: "L'affichage cuisine est-il prêt pour la production ?", a: "ESTINAD KDS est en bêta. Il est livré dans le bundle aujourd'hui et fait déjà vivre des tickets ; nous le durcissons avec nos partenaires restaurants." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des exploitants.",
+        "faq": [
+          {
+            "q": "Faut-il internet pendant le service ?",
+            "a": "Non. Les trois applications se connectent à une instance PocketBase locale sur la machine POS. Le service tourne entièrement hors-ligne et se synchronise au cloud au retour de la connexion."
+          },
+          {
+            "q": "Comment les tablettes trouvent-elles le POS ?",
+            "a": "Le POS s'annonce sur le réseau local via mDNS, les tablettes le découvrent automatiquement — sans saisie d'IP sur la plupart des réseaux."
+          },
+          {
+            "q": "L'affichage cuisine est-il prêt pour la production ?",
+            "a": "ESTINAD KDS est en bêta. Il est livré dans le bundle aujourd'hui et fait déjà vivre des tickets ; nous le durcissons avec nos partenaires restaurants."
+          }
         ],
-        ctaTitle: "Faites tourner votre restaurant sur l'écosystème complet.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Voir la tarification restaurant",
-        secondaryHref: "/products/restaurant/pricing",
+        "ctaTitle": "Faites tourner votre restaurant sur l'écosystème complet.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Voir la tarification restaurant",
+        "secondaryHref": "/products/restaurant/pricing"
       },
       "restaurant-pos": {
-        glyph: "RP",
-        name: "ESTINAD Restaurant — POS avec imprimantes",
-        short: "POS restaurant",
-        category: "Ligne produit restaurant",
-        status: "shipped",
-        oneLiner:
-          "Une seule caisse qui route les commandes vers des imprimantes thermiques — sans tablettes, sans écran cuisine. Coût matériel réduit, même moteur hors-ligne.",
-        positioning:
-          "Une configuration restaurant allégée pour les cafés, les points de vente rapides et les cuisines qui veulent une seule caisse routant les commandes vers des imprimantes thermiques. Conçu pour le service au comptoir et les petits restaurants qui reposent sur les tickets papier — sans l'empreinte matérielle des tablettes et des écrans cuisine.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [
-            { app: "ESTINAD POS", role: "Caisse, back-office, routage impression cuisine", platform: "Windows / Linux" },
-          ],
+        "glyph": "RP",
+        "name": "ESTINAD Restaurant — POS avec imprimantes",
+        "short": "POS restaurant",
+        "category": "Ligne produit restaurant",
+        "status": "shipped",
+        "oneLiner": "Une seule caisse qui route les commandes vers des imprimantes thermiques — sans tablettes, sans écran cuisine. Coût matériel réduit, même moteur hors-ligne.",
+        "positioning": "Une configuration restaurant allégée pour les cafés, les points de vente rapides et les cuisines qui veulent une seule caisse routant les commandes vers des imprimantes thermiques. Conçu pour le service au comptoir et les petits restaurants qui reposent sur les tickets papier — sans l'empreinte matérielle des tablettes et des écrans cuisine.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": [
+            {
+              "app": "ESTINAD POS",
+              "role": "Caisse, back-office, routage impression cuisine",
+              "platform": "Windows / Linux"
+            }
+          ]
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "Une borne, des tickets vers chaque poste.",
-        capabilitiesIntro:
-          "Tout pour faire tourner un restaurant au comptoir depuis un seul PC — avec la possibilité de passer à l'écosystème complet plus tard.",
-        capabilities: [
-          { title: "Encaissement rapide", description: "POS plein écran avec navigation par catégorie, modificateurs, attente/rappel et paiements partagés — réglé pour le comptoir et la table." },
-          { title: "Routage impression cuisine & bar", description: "Envoyez chaque article vers la bonne imprimante — grill, bar, froid, caisse — pour que la ligne reçoive les tickets automatiquement." },
-          { title: "Impression de reçus thermiques", description: "Imprimez les reçus clients et ouvrez le tiroir-caisse au paiement, avec du matériel ESC/POS compatible." },
-          { title: "Gestion des tables (optionnel)", description: "Suivez les tables sur place et liez les commandes pour un contrôle de salle minimal sans tablettes." },
-          { title: "Carte avec modificateurs", description: "Construisez catégories, produits et modificateurs — tailles, extras et personnalisations par article." },
-          { title: "Attente & rappel de commandes", description: "Parquez un ticket au rush et reprenez-le plus tard dans le panier — sans ressaisie." },
-          { title: "Paiements multi-méthodes", description: "Espèces, CIB, Edahabia et paiements partagés avec calcul automatique de la monnaie." },
-          { title: "Contrôle de caisse et de service", description: "Ouvrez et fermez les services avec comptages, X-report et Z-report pour le rapprochement quotidien." },
-          { title: "Stock & alertes de rupture", description: "Suivez le stock d'ingrédients et de produits avec ajustements et notifications de niveaux bas." },
-          { title: "Fidélité client", description: "Programme de points avec gain et utilisation à l'encaissement — sans portail séparé." },
-          { title: "PIN, rôles & validation manager", description: "Accès staff sécurisé avec permissions fines et validation pour les annulations et actions sensibles." },
-          { title: "Hors-ligne avec sync cloud", description: "La base locale garde la caisse en activité sans internet ; sync et sauvegarde au retour de la connexion." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "Une borne, des tickets vers chaque poste.",
+        "capabilitiesIntro": "Tout pour faire tourner un restaurant au comptoir depuis un seul PC — avec la possibilité de passer à l'écosystème complet plus tard.",
+        "capabilities": [
+          {
+            "title": "Encaissement rapide",
+            "description": "POS plein écran avec navigation par catégorie, modificateurs, attente/rappel et paiements partagés — réglé pour le comptoir et la table."
+          },
+          {
+            "title": "Routage impression cuisine & bar",
+            "description": "Envoyez chaque article vers la bonne imprimante — grill, bar, froid, caisse — pour que la ligne reçoive les tickets automatiquement."
+          },
+          {
+            "title": "Impression de reçus thermiques",
+            "description": "Imprimez les reçus clients et ouvrez le tiroir-caisse au paiement, avec du matériel ESC/POS compatible."
+          },
+          {
+            "title": "Gestion des tables (optionnel)",
+            "description": "Suivez les tables sur place et liez les commandes pour un contrôle de salle minimal sans tablettes."
+          },
+          {
+            "title": "Carte avec modificateurs",
+            "description": "Construisez catégories, produits et modificateurs — tailles, extras et personnalisations par article."
+          },
+          {
+            "title": "Attente & rappel de commandes",
+            "description": "Parquez un ticket au rush et reprenez-le plus tard dans le panier — sans ressaisie."
+          },
+          {
+            "title": "Paiements multi-méthodes",
+            "description": "Espèces, CIB, Edahabia et paiements partagés avec calcul automatique de la monnaie."
+          },
+          {
+            "title": "Contrôle de caisse et de service",
+            "description": "Ouvrez et fermez les services avec comptages, X-report et Z-report pour le rapprochement quotidien."
+          },
+          {
+            "title": "Stock & alertes de rupture",
+            "description": "Suivez le stock d'ingrédients et de produits avec ajustements et notifications de niveaux bas."
+          },
+          {
+            "title": "Fidélité client",
+            "description": "Programme de points avec gain et utilisation à l'encaissement — sans portail séparé."
+          },
+          {
+            "title": "PIN, rôles & validation manager",
+            "description": "Accès staff sécurisé avec permissions fines et validation pour les annulations et actions sensibles."
+          },
+          {
+            "title": "Hors-ligne avec sync cloud",
+            "description": "La base locale garde la caisse en activité sans internet ; sync et sauvegarde au retour de la connexion."
+          }
         ],
-        workflows: {
-          eyebrow: "Flux de service",
-          title: "Encaisser, router, rapprocher — depuis une borne.",
-          intro: "La caisse est le hub. Chaque commande est routée vers la bonne imprimante à l'enregistrement.",
-          groups: [
-            { title: "Encaisser", steps: ["Ouvrez le terminal POS et construitez la commande", "Appliquez modificateurs, formules et notes", "Mettre en attente ou rappeler au rush", "Envoyez les articles vers la bonne imprimante cuisine"] },
-            { title: "Payer", steps: ["Espèces, CIB, Edahabia ou paiement partagé", "Imprimez le reçu et ouvrez le tiroir", "Appliquez les points fidélité à l'encaissement", "Clôturez le ticket dans le grand livre"] },
-            { title: "Rapprocher", steps: ["Fermez le service et comptez le tiroir", "Lancez les X et Z reports du jour", "Écarts signalés pour revue", "Ventes et ventilation des paiements prêts"] },
-          ],
+        "workflows": {
+          "eyebrow": "Flux de service",
+          "title": "Encaisser, router, rapprocher — depuis une borne.",
+          "intro": "La caisse est le hub. Chaque commande est routée vers la bonne imprimante à l'enregistrement.",
+          "groups": [
+            {
+              "title": "Encaisser",
+              "steps": [
+                "Ouvrez le terminal POS et construitez la commande",
+                "Appliquez modificateurs, formules et notes",
+                "Mettre en attente ou rappeler au rush",
+                "Envoyez les articles vers la bonne imprimante cuisine"
+              ]
+            },
+            {
+              "title": "Payer",
+              "steps": [
+                "Espèces, CIB, Edahabia ou paiement partagé",
+                "Imprimez le reçu et ouvrez le tiroir",
+                "Appliquez les points fidélité à l'encaissement",
+                "Clôturez le ticket dans le grand livre"
+              ]
+            },
+            {
+              "title": "Rapprocher",
+              "steps": [
+                "Fermez le service et comptez le tiroir",
+                "Lancez les X et Z reports du jour",
+                "Écarts signalés pour revue",
+                "Ventes et ventilation des paiements prêts"
+              ]
+            }
+          ]
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Se connecte au matériel que vous utilisez déjà.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Se connecte au matériel que vous utilisez déjà.",
+        "integrations": [
           "Imprimantes thermiques ESC/POS",
           "Imprimantes de tickets cuisine multi-postes",
           "Scanners de codes-barres et tiroirs-caisses",
-          "Terminaux de paiement (CIB, Edahabia, acquéreurs locaux)",
+          "Terminaux de paiement (CIB, Edahabia, acquéreurs locaux)"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "Où cela s'intègre dans ESTINAD.",
-        ecosystem: [
-          { t: "Même moteur POS", d: "Tourne sur la même application ESTINAD POS que l'écosystème complet — simplement sans les devices waiter et KDS sur le réseau." },
-          { t: "Prêt à évoluer", d: "Ajoutez des tablettes Waiter et un écran KDS plus tard en passant au bundle Écosystème complet. Même application POS, devices en plus — pas de remise de plateforme." },
-          { t: "Hors-ligne par conception", d: "Le routage d'impression tourne depuis une seule borne Windows ou Linux, la cuisine reçoit les tickets même sans internet." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "Où cela s'intègre dans ESTINAD.",
+        "ecosystem": [
+          {
+            "t": "Même moteur POS",
+            "d": "Tourne sur la même application ESTINAD POS que l'écosystème complet — simplement sans les devices waiter et KDS sur le réseau."
+          },
+          {
+            "t": "Prêt à évoluer",
+            "d": "Ajoutez des tablettes Waiter et un écran KDS plus tard en passant au bundle Écosystème complet. Même application POS, devices en plus — pas de remise de plateforme."
+          },
+          {
+            "t": "Hors-ligne par conception",
+            "d": "Le routage d'impression tourne depuis une seule borne Windows ou Linux, la cuisine reçoit les tickets même sans internet."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Une borne, tous les postes.",
-        tech: "Le routage d'impression envoie les commandes vers plusieurs imprimantes ESC/POS depuis une seule borne Windows ou Linux — sans logiciel cuisine séparé.",
-        notIncluded: {
-          title: "Vous voulez le flux complet salle-cuisine ?",
-          intro: "Passez au bundle Écosystème complet pour ajouter des tablettes de serveur et un affichage cuisine vivant.",
-          items: [],
-          ctaLabel: "Voir ESTINAD Restaurant — Écosystème complet",
-          ctaHref: "/products/restaurant-ecosystem",
+        "techEyebrow": "Point technique",
+        "techTitle": "Une borne, tous les postes.",
+        "tech": "Le routage d'impression envoie les commandes vers plusieurs imprimantes ESC/POS depuis une seule borne Windows ou Linux — sans logiciel cuisine séparé.",
+        "notIncluded": {
+          "title": "Vous voulez le flux complet salle-cuisine ?",
+          "intro": "Passez au bundle Écosystème complet pour ajouter des tablettes de serveur et un affichage cuisine vivant.",
+          "items": [],
+          "ctaLabel": "Voir ESTINAD Restaurant — Écosystème complet",
+          "ctaHref": "/products/restaurant"
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des exploitants.",
-        faq: [
-          { q: "Puis-je passer à l'écosystème complet plus tard ?", a: "Oui. Waiter et KDS sont pilotés par drapeau fonctionnel selon le type de business, pas des codes distincts. Ajoutez tablettes et écran cuisine et passez au bundle complet — même application POS." },
-          { q: "Faut-il un ordinateur cuisine séparé ?", a: "Non. Le routage d'impression pilote toutes les imprimantes cuisine et bar depuis la seule borne caisse sous Windows ou Linux." },
-          { q: "La caisse reste-t-elle active hors-ligne ?", a: "Oui. La base locale garde la caisse en activité pendant les coupures, sync et sauvegarde reprennent au retour de la connexion." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des exploitants.",
+        "faq": [
+          {
+            "q": "Puis-je passer à l'écosystème complet plus tard ?",
+            "a": "Oui. Waiter et KDS sont pilotés par drapeau fonctionnel selon le type de business, pas des codes distincts. Ajoutez tablettes et écran cuisine et passez au bundle complet — même application POS."
+          },
+          {
+            "q": "Faut-il un ordinateur cuisine séparé ?",
+            "a": "Non. Le routage d'impression pilote toutes les imprimantes cuisine et bar depuis la seule borne caisse sous Windows ou Linux."
+          },
+          {
+            "q": "La caisse reste-t-elle active hors-ligne ?",
+            "a": "Oui. La base locale garde la caisse en activité pendant les coupures, sync et sauvegarde reprennent au retour de la connexion."
+          }
         ],
-        ctaTitle: "Faites tourner votre service au comptoir sur ESTINAD.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Voir la tarification restaurant",
-        secondaryHref: "/products/restaurant/pricing",
+        "ctaTitle": "Faites tourner votre service au comptoir sur ESTINAD.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Voir la tarification restaurant",
+        "secondaryHref": "/products/restaurant/pricing"
       },
-      pos: {
-        glyph: "PS",
-        name: "ESTINAD POS",
-        short: "POS",
-        category: "Application plateforme",
-        status: "shipped",
-        oneLiner:
-          "Le moteur caisse et back-office partagé derrière chaque encaissement ESTINAD — un codebase qui alimente retail et restaurant.",
-        positioning:
-          "ESTINAD POS est le moteur technique de l'écosystème : un seul codebase Flutter qui alimente plusieurs lignes produit, configuré à l'installation selon le type de business. Le retail masque tables, KDS et modules waiter ; le restaurant active le routage cuisine et optionnellement les applications de l'écosystème. Une application, plusieurs verticales — sans fork.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [],
+      "pos": {
+        "glyph": "PS",
+        "name": "ESTINAD POS",
+        "short": "POS",
+        "category": "Application plateforme",
+        "status": "shipped",
+        "oneLiner": "Le moteur caisse et back-office partagé derrière chaque encaissement ESTINAD — un codebase qui alimente retail et restaurant.",
+        "positioning": "ESTINAD POS est le moteur technique de l'écosystème : un seul codebase Flutter qui alimente plusieurs lignes produit, configuré à l'installation selon le type de business. Le retail masque tables, KDS et modules waiter ; le restaurant active le routage cuisine et optionnellement les applications de l'écosystème. Une application, plusieurs verticales — sans fork.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": []
         },
-        capabilitiesEyebrow: "Capacités plateforme",
-        capabilitiesTitle: "Tout ce que chaque ligne produit hérite.",
-        capabilitiesIntro:
-          "Ces capacités sont livrées dans l'application pour toutes les lignes produit — certaines pilotées par type de business afin que chaque verticale ne voit que ce dont elle a besoin.",
-        capabilities: [
-          { title: "Tableau de bord", description: "Ventes du jour, nombre de commandes et statut du service d'un coup d'œil — le premier écran de chaque borne." },
-          { title: "Boîte d'alertes", description: "Une boîte dédiée remonte les alertes de stock, de sync et d'exploitation pour que rien n'échappe à l'équipe." },
-          { title: "Rapports & analytique", description: "Ventes, produits phares et ventilation des paiements par point de vente et par période — le socle reporting back-office." },
-          { title: "Gestion du catalogue", description: "Catégories, produits et variantes avec photos, références, codes-barres et prix sur un modèle cohérent." },
-          { title: "Import produit en masse", description: "Chargez tout un catalogue depuis un CSV en un seul flux — idéal pour les ouvertures et les changements de saison." },
-          { title: "Suivi de stock", description: "Niveaux de stock en temps réel, ajustements et alertes de rupture sur produits et variantes." },
-          { title: "Clients & fidélité", description: "Une base clients avec contacts, historique d'achats et programme de points pour la rétention." },
-          { title: "Terminal de caisse", description: "Un comptoir rapide et clavier-friendly pensé pour les volumes élevés, code-barres comme service à table." },
-          { title: "Contrôle de service", description: "Ouvrez et fermez les services avec comptages, X-report et Z-report pour le rapprochement de fin de journée." },
-          { title: "PIN, rôles & permissions", description: "Connexion staff par PIN ; permissions fines sur qui peut annuler, remiser ou ajuster le stock." },
-          { title: "Sync cloud & sauvegarde", description: "Base locale hors-ligne avec sync cloud et sauvegardes planifiées — la caisse continue sans internet." },
-          { title: "Palette de commandes (Ctrl+K)", description: "Trouvez produits, clients, commandes et réglages en millisecondes — pensé pour le comptoir." },
-          { title: "Assistant IA", description: "Un assistant in-app lit le contexte commandes, clients et produits pour répondre en langage courant." },
+        "capabilitiesEyebrow": "Capacités plateforme",
+        "capabilitiesTitle": "Tout ce que chaque ligne produit hérite.",
+        "capabilitiesIntro": "Ces capacités sont livrées dans l'application pour toutes les lignes produit — certaines pilotées par type de business afin que chaque verticale ne voit que ce dont elle a besoin.",
+        "capabilities": [
+          {
+            "title": "Tableau de bord",
+            "description": "Ventes du jour, nombre de commandes et statut du service d'un coup d'œil — le premier écran de chaque borne."
+          },
+          {
+            "title": "Boîte d'alertes",
+            "description": "Une boîte dédiée remonte les alertes de stock, de sync et d'exploitation pour que rien n'échappe à l'équipe."
+          },
+          {
+            "title": "Rapports & analytique",
+            "description": "Ventes, produits phares et ventilation des paiements par point de vente et par période — le socle reporting back-office."
+          },
+          {
+            "title": "Gestion du catalogue",
+            "description": "Catégories, produits et variantes avec photos, références, codes-barres et prix sur un modèle cohérent."
+          },
+          {
+            "title": "Import produit en masse",
+            "description": "Chargez tout un catalogue depuis un CSV en un seul flux — idéal pour les ouvertures et les changements de saison."
+          },
+          {
+            "title": "Suivi de stock",
+            "description": "Niveaux de stock en temps réel, ajustements et alertes de rupture sur produits et variantes."
+          },
+          {
+            "title": "Clients & fidélité",
+            "description": "Une base clients avec contacts, historique d'achats et programme de points pour la rétention."
+          },
+          {
+            "title": "Terminal de caisse",
+            "description": "Un comptoir rapide et clavier-friendly pensé pour les volumes élevés, code-barres comme service à table."
+          },
+          {
+            "title": "Contrôle de service",
+            "description": "Ouvrez et fermez les services avec comptages, X-report et Z-report pour le rapprochement de fin de journée."
+          },
+          {
+            "title": "PIN, rôles & permissions",
+            "description": "Connexion staff par PIN ; permissions fines sur qui peut annuler, remiser ou ajuster le stock."
+          },
+          {
+            "title": "Sync cloud & sauvegarde",
+            "description": "Base locale hors-ligne avec sync cloud et sauvegardes planifiées — la caisse continue sans internet."
+          },
+          {
+            "title": "Palette de commandes (Ctrl+K)",
+            "description": "Trouvez produits, clients, commandes et réglages en millisecondes — pensé pour le comptoir."
+          },
+          {
+            "title": "Assistant IA",
+            "description": "Un assistant in-app lit le contexte commandes, clients et produits pour répondre en langage courant."
+          }
         ],
-        workflows: {
-          eyebrow: "",
-          title: "",
-          intro: "",
-          groups: [],
+        "workflows": {
+          "eyebrow": "",
+          "title": "",
+          "intro": "",
+          "groups": []
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Matériel et canaux connectés.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Matériel et canaux connectés.",
+        "integrations": [
           "Imprimantes thermiques et à étiquettes ESC/POS",
           "Scanners de codes-barres et tiroirs-caisses",
           "Terminaux de paiement (CIB, Edahabia, acquéreurs locaux)",
           "PocketBase (local) et Supabase (cloud)",
-          "Livraison de rapports WhatsApp Business",
+          "Livraison de rapports WhatsApp Business"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "Le moteur sur lequel tourne chaque produit.",
-        ecosystem: [
-          { t: "Alimente les lignes produit", d: "ESTINAD Retail et les deux lignes Restaurant sont cette même application, configurée par type de business à l'installation." },
-          { t: "Héberge les compagnons", d: "Sur les réseaux restaurant, le POS est le hub que les tablettes Waiter et les écrans KDS découvrent et synchronisent." },
-          { t: "S'appuie sur les paquets partagés", d: "ESTINAD Core, UI, Native et Importer vivent dans cette application — chaque verticale hérite de la même fondation." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "Le moteur sur lequel tourne chaque produit.",
+        "ecosystem": [
+          {
+            "t": "Alimente les lignes produit",
+            "d": "ESTINAD Retail et les deux lignes Restaurant sont cette même application, configurée par type de business à l'installation."
+          },
+          {
+            "t": "Héberge les compagnons",
+            "d": "Sur les réseaux restaurant, le POS est le hub que les tablettes Waiter et les écrans KDS découvrent et synchronisent."
+          },
+          {
+            "t": "S'appuie sur les paquets partagés",
+            "d": "ESTINAD Core, UI, Native et Importer vivent dans cette application — chaque verticale hérite de la même fondation."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Un codebase, plusieurs verticales.",
-        tech: "BusinessTypeFeatures active plus de 40 drapeaux fonctionnels afin qu'une application serve le retail et le restaurant avec service complet sans forker le dépôt.",
-        notIncluded: {
-          title: "",
-          intro: "",
-          items: [],
-          ctaLabel: "",
-          ctaHref: "",
+        "techEyebrow": "Point technique",
+        "techTitle": "Un codebase, plusieurs verticales.",
+        "tech": "BusinessTypeFeatures active plus de 40 drapeaux fonctionnels afin qu'une application serve le retail et le restaurant avec service complet sans forker le dépôt.",
+        "notIncluded": {
+          "title": "",
+          "intro": "",
+          "items": [],
+          "ctaLabel": "",
+          "ctaHref": ""
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des acheteurs techniques.",
-        faq: [
-          { q: "ESTINAD POS est-il un produit séparé de Retail et Restaurant ?", a: "C'est l'application partagée en dessous. Vous n'achetez pas « POS » séparément — vous achetez une ligne produit, et ce moteur l'alimente." },
-          { q: "Une installation peut-elle changer de verticale ?", a: "Les fonctions sont sélectionnées par type de business à l'installation. Changer de verticale est une décision de configuration, pas une réinstallation." },
-          { q: "Fonctionne-t-il hors-ligne ?", a: "Oui. La base PocketBase locale est la source de vérité pendant le service ; la sync cloud est le backup et le pont multi-sites, pas une dépendance dure." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des acheteurs techniques.",
+        "faq": [
+          {
+            "q": "ESTINAD POS est-il un produit séparé de Retail et Restaurant ?",
+            "a": "C'est l'application partagée en dessous. Vous n'achetez pas « POS » séparément — vous achetez une ligne produit, et ce moteur l'alimente."
+          },
+          {
+            "q": "Une installation peut-elle changer de verticale ?",
+            "a": "Les fonctions sont sélectionnées par type de business à l'installation. Changer de verticale est une décision de configuration, pas une réinstallation."
+          },
+          {
+            "q": "Fonctionne-t-il hors-ligne ?",
+            "a": "Oui. La base PocketBase locale est la source de vérité pendant le service ; la sync cloud est le backup et le pont multi-sites, pas une dépendance dure."
+          }
         ],
-        ctaTitle: "Voyez ce que le moteur peut faire pour votre activité.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Explorer la plateforme",
-        secondaryHref: "/platform",
+        "ctaTitle": "Voyez ce que le moteur peut faire pour votre activité.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Explorer la plateforme",
+        "secondaryHref": "/platform"
       },
-      waiter: {
-        glyph: "WT",
-        name: "ESTINAD Waiter",
-        short: "Waiter",
-        category: "Application compagnon",
-        status: "shipped",
-        oneLiner:
-          "L'application de commande en salle pour tablettes Android — partie de l'écosystème ESTINAD Restaurant complet uniquement.",
-        positioning:
-          "ESTINAD Waiter met la carte dans les mains du serveur. Conçu pour tablettes Android et pour la salle, il permet de parcourir la carte, de construire la commande à table et de l'envoyer directement à la cuisine et au POS — sans configuration serveur manuelle sur la plupart des réseaux. Disponible uniquement dans le bundle Écosystème complet.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [],
+      "waiter": {
+        "glyph": "WT",
+        "name": "ESTINAD Waiter",
+        "short": "Waiter",
+        "category": "Application compagnon",
+        "status": "shipped",
+        "oneLiner": "L'application de commande en salle pour tablettes Android — partie de l'écosystème ESTINAD Restaurant complet uniquement.",
+        "positioning": "ESTINAD Waiter met la carte dans les mains du serveur. Conçu pour tablettes Android et pour la salle, il permet de parcourir la carte, de construire la commande à table et de l'envoyer directement à la cuisine et au POS — sans configuration serveur manuelle sur la plupart des réseaux. Disponible uniquement dans le bundle Écosystème complet.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": []
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "Pensé pour la salle, pas pour le comptoir.",
-        capabilitiesIntro:
-          "Chaque fonction est réglée pour le travail en salle pendant un service chargé — rapide, tactile et toujours synchronisé avec le POS.",
-        capabilities: [
-          { title: "Découverte auto du POS", description: "L'application trouve votre ESTINAD POS sur le réseau local via mDNS — connexion en secondes sans saisir d'IP." },
-          { title: "Connexion manuelle", description: "Si la découverte auto échoue, le staff peut saisir l'adresse du serveur POS manuellement en repli." },
-          { title: "Connexion PIN", description: "Les serveurs se connectent avec le même PIN que le POS pour des passages de service rapides et sûrs." },
-          { title: "Verrouillage auto", description: "Après inactivité, la tablette se verrouille et exige le PIN — protégeant les tables ouvertes quand le serveur s'éloigne." },
-          { title: "Plan des tables visuel", description: "Toutes les tables sur un plan codé couleur — libre, occupée, addition demandée — pour savoir où aller." },
-          { title: "Filtre par zone", description: "Filtrez la vue par zone — terrasse, salle principale, VIP — pour vous concentrer sur une section aux heures d'affluence." },
-          { title: "Ouvrir & gérer les tables", description: "Touchez une table libre pour l'ouvrir, ou une table occupée pour voir l'addition et ajouter des articles." },
-          { title: "Navigation & commande", description: "Parcourez catégories et produits avec choix de variantes et modificateurs — la même carte que le POS, optimisée tactile." },
-          { title: "Panier en salle", description: "Construisez la commande localement avec quantités, notes et total en direct avant l'envoi cuisine." },
-          { title: "Envoyer en cuisine", description: "Une touche envoie la commande au POS et à la cuisine — les articles apparaissent sur le KDS et les imprimantes." },
-          { title: "Bandeau de connexion", description: "Un indicateur clair signale la perte de contact avec le POS, et l'envoi est bloqué jusqu'au retour du lien." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "Pensé pour la salle, pas pour le comptoir.",
+        "capabilitiesIntro": "Chaque fonction est réglée pour le travail en salle pendant un service chargé — rapide, tactile et toujours synchronisé avec le POS.",
+        "capabilities": [
+          {
+            "title": "Découverte auto du POS",
+            "description": "L'application trouve votre ESTINAD POS sur le réseau local via mDNS — connexion en secondes sans saisir d'IP."
+          },
+          {
+            "title": "Connexion manuelle",
+            "description": "Si la découverte auto échoue, le staff peut saisir l'adresse du serveur POS manuellement en repli."
+          },
+          {
+            "title": "Connexion PIN",
+            "description": "Les serveurs se connectent avec le même PIN que le POS pour des passages de service rapides et sûrs."
+          },
+          {
+            "title": "Verrouillage auto",
+            "description": "Après inactivité, la tablette se verrouille et exige le PIN — protégeant les tables ouvertes quand le serveur s'éloigne."
+          },
+          {
+            "title": "Plan des tables visuel",
+            "description": "Toutes les tables sur un plan codé couleur — libre, occupée, addition demandée — pour savoir où aller."
+          },
+          {
+            "title": "Filtre par zone",
+            "description": "Filtrez la vue par zone — terrasse, salle principale, VIP — pour vous concentrer sur une section aux heures d'affluence."
+          },
+          {
+            "title": "Ouvrir & gérer les tables",
+            "description": "Touchez une table libre pour l'ouvrir, ou une table occupée pour voir l'addition et ajouter des articles."
+          },
+          {
+            "title": "Navigation & commande",
+            "description": "Parcourez catégories et produits avec choix de variantes et modificateurs — la même carte que le POS, optimisée tactile."
+          },
+          {
+            "title": "Panier en salle",
+            "description": "Construisez la commande localement avec quantités, notes et total en direct avant l'envoi cuisine."
+          },
+          {
+            "title": "Envoyer en cuisine",
+            "description": "Une touche envoie la commande au POS et à la cuisine — les articles apparaissent sur le KDS et les imprimantes."
+          },
+          {
+            "title": "Bandeau de connexion",
+            "description": "Un indicateur clair signale la perte de contact avec le POS, et l'envoi est bloqué jusqu'au retour du lien."
+          }
         ],
-        workflows: {
-          eyebrow: "Flux de salle",
-          title: "De la table à la cuisine en une touche.",
-          intro: "Le serveur ne quitte jamais la table — la commande voyage seule vers la cuisine et la caisse.",
-          groups: [
-            { title: "Connecter", steps: ["La tablette découvre le POS via mDNS", "Le serveur se connecte par PIN", "Le plan de salle se charge avec le statut des tables", "Choisir une zone ou une table pour démarrer"] },
-            { title: "Commander", steps: ["Ouvrir la table et parcourir la carte", "Ajouter articles avec variantes et modificateurs", "Revoir le panier et le total", "Ajouter des notes pour la cuisine"] },
-            { title: "Envoyer", steps: ["Une touche envoie au POS et au KDS", "Les tickets s'impriment aux bons postes", "Le statut de la table passe à occupée", "Ajouter des articles en cours de service"] },
-          ],
+        "workflows": {
+          "eyebrow": "Flux de salle",
+          "title": "De la table à la cuisine en une touche.",
+          "intro": "Le serveur ne quitte jamais la table — la commande voyage seule vers la cuisine et la caisse.",
+          "groups": [
+            {
+              "title": "Connecter",
+              "steps": [
+                "La tablette découvre le POS via mDNS",
+                "Le serveur se connecte par PIN",
+                "Le plan de salle se charge avec le statut des tables",
+                "Choisir une zone ou une table pour démarrer"
+              ]
+            },
+            {
+              "title": "Commander",
+              "steps": [
+                "Ouvrir la table et parcourir la carte",
+                "Ajouter articles avec variantes et modificateurs",
+                "Revoir le panier et le total",
+                "Ajouter des notes pour la cuisine"
+              ]
+            },
+            {
+              "title": "Envoyer",
+              "steps": [
+                "Une touche envoie au POS et au KDS",
+                "Les tickets s'impriment aux bons postes",
+                "Le statut de la table passe à occupée",
+                "Ajouter des articles en cours de service"
+              ]
+            }
+          ]
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Joue avec le reste de l'écosystème.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Joue avec le reste de l'écosystème.",
+        "integrations": [
           "ESTINAD POS (serveur local)",
           "ESTINAD KDS (tickets cuisine)",
           "Tablettes Android",
-          "PocketBase local sur la machine POS",
+          "PocketBase local sur la machine POS"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "Partie de l'écosystème complet uniquement.",
-        ecosystem: [
-          { t: "Écosystème restaurant uniquement", d: "ESTINAD Waiter n'est pas inclus dans ESTINAD Retail ni le bundle POS avec imprimantes. Il rejoint uniquement l'Écosystème complet." },
-          { t: "Partage la carte du POS", d: "Le serveur voit la même carte, modificateurs et prix que la caisse — un catalogue, maintenu une fois." },
-          { t: "Temps réel avec la salle", d: "Les mises à jour de statut via les abonnements PocketBase gardent le plan de salle synchronisé avec le POS." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "Partie de l'écosystème complet uniquement.",
+        "ecosystem": [
+          {
+            "t": "Écosystème restaurant uniquement",
+            "d": "ESTINAD Waiter n'est pas inclus dans ESTINAD Retail ni le bundle POS avec imprimantes. Il rejoint uniquement l'Écosystème complet."
+          },
+          {
+            "t": "Partage la carte du POS",
+            "d": "Le serveur voit la même carte, modificateurs et prix que la caisse — un catalogue, maintenu une fois."
+          },
+          {
+            "t": "Temps réel avec la salle",
+            "d": "Les mises à jour de statut via les abonnements PocketBase gardent le plan de salle synchronisé avec le POS."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Salle temps réel, sans config serveur.",
-        tech: "Les mises à jour de statut des tables via les abonnements PocketBase gardent le plan de salle synchronisé avec le POS au fil des commandes.",
-        notIncluded: {
-          title: "",
-          intro: "",
-          items: [],
-          ctaLabel: "",
-          ctaHref: "",
+        "techEyebrow": "Point technique",
+        "techTitle": "Salle temps réel, sans config serveur.",
+        "tech": "Les mises à jour de statut des tables via les abonnements PocketBase gardent le plan de salle synchronisé avec le POS au fil des commandes.",
+        "notIncluded": {
+          "title": "",
+          "intro": "",
+          "items": [],
+          "ctaLabel": "",
+          "ctaHref": ""
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des exploitants.",
-        faq: [
-          { q: "Puis-je utiliser Waiter avec ESTINAD Retail ?", a: "Non. Waiter fait partie de l'écosystème Restaurant complet uniquement — les types de business retail désactivent le module waiter." },
-          { q: "Et si la découverte auto ne trouve pas le POS ?", a: "Le staff peut saisir manuellement l'adresse du serveur POS depuis l'écran de découverte." },
-          { q: "Que se passe-t-il en perte de connexion ?", a: "Un bandeau signale l'état déconnecté et l'envoi est bloqué jusqu'au retour du lien POS, aucune commande n'est perdue silencieusement." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des exploitants.",
+        "faq": [
+          {
+            "q": "Puis-je utiliser Waiter avec ESTINAD Retail ?",
+            "a": "Non. Waiter fait partie de l'écosystème Restaurant complet uniquement — les types de business retail désactivent le module waiter."
+          },
+          {
+            "q": "Et si la découverte auto ne trouve pas le POS ?",
+            "a": "Le staff peut saisir manuellement l'adresse du serveur POS depuis l'écran de découverte."
+          },
+          {
+            "q": "Que se passe-t-il en perte de connexion ?",
+            "a": "Un bandeau signale l'état déconnecté et l'envoi est bloqué jusqu'au retour du lien POS, aucune commande n'est perdue silencieusement."
+          }
         ],
-        ctaTitle: "Mettez la commande en salle sur votre plan.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Explorer la plateforme",
-        secondaryHref: "/platform",
+        "ctaTitle": "Mettez la commande en salle sur votre plan.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Explorer la plateforme",
+        "secondaryHref": "/platform"
       },
-      kds: {
-        glyph: "KD",
-        name: "ESTINAD KDS",
-        short: "KDS",
-        category: "Application compagnon",
-        status: "beta",
-        oneLiner:
-          "L'affichage cuisine — un tableau numérique vivant qui remplace les tickets papier. Partie de l'écosystème complet uniquement.",
-        positioning:
-          "ESTINAD KDS transforme la ligne de cuisine en tableau vivant. Les nouvelles commandes apparaissent dès que les serveurs et caissiers les valident, avec minuteurs d'urgence, filtres par poste et alertes sonores pour ne rien laisser traîner. Tourne sur tablettes Android, téléviseurs ou écrans muraux — partie de l'écosystème Restaurant complet, actuellement en bêta.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [],
+      "kds": {
+        "glyph": "KD",
+        "name": "ESTINAD KDS",
+        "short": "KDS",
+        "category": "Application compagnon",
+        "status": "beta",
+        "oneLiner": "L'affichage cuisine — un tableau numérique vivant qui remplace les tickets papier. Partie de l'écosystème complet uniquement.",
+        "positioning": "ESTINAD KDS transforme la ligne de cuisine en tableau vivant. Les nouvelles commandes apparaissent dès que les serveurs et caissiers les valident, avec minuteurs d'urgence, filtres par poste et alertes sonores pour ne rien laisser traîner. Tourne sur tablettes Android, téléviseurs ou écrans muraux — partie de l'écosystème Restaurant complet, actuellement en bêta.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": []
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "Chaque commande visible, rien d'oublié.",
-        capabilitiesIntro:
-          "La cuisine voit un tableau propre et priorisé au lieu d'une pile de tickets papier — et reste synchronisée avec le POS en temps réel.",
-        capabilities: [
-          { title: "Tickets en direct", description: "Les nouvelles lignes apparaissent à l'écran en temps réel à la validation — sans délai d'impression ni ticket perdu." },
-          { title: "Bump pour terminer", description: "Touchez pour marquer un ticket terminé et l'effacer de la file active — une vue propre de ce qui cuisine encore." },
-          { title: "Rappel des tickets bumpés", description: "Bumpé trop tôt ? Ouvrez le mode rappel pour remettre les tickets récents sur le tableau." },
-          { title: "Minuteurs d'urgence couleur", description: "Chaque ticket affiche le temps écoulé en vert → jaune → rouge pour savoir ce qui attend le plus." },
-          { title: "Alertes sonores", description: "Émettez un son à chaque nouvelle commande pour l'entendre même sans regarder l'écran." },
-          { title: "Filtre par poste", description: "Affichez uniquement les tickets de votre poste — grill, bar, froid — selon le routage d'impression du POS." },
-          { title: "Affichage permanent", description: "L'écran reste éveillé en mode immersif pendant le service pour que les tickets soient toujours visibles." },
-          { title: "Reconnexion auto", description: "Si le lien avec le POS tombe, le KDS se reconnecte automatiquement avec statut visible — pas de redémarrage manuel." },
-          { title: "Réglages serveur & affichage", description: "Configurez l'URL PocketBase, les filtres de poste, le son et la langue depuis un écran de réglages." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "Chaque commande visible, rien d'oublié.",
+        "capabilitiesIntro": "La cuisine voit un tableau propre et priorisé au lieu d'une pile de tickets papier — et reste synchronisée avec le POS en temps réel.",
+        "capabilities": [
+          {
+            "title": "Tickets en direct",
+            "description": "Les nouvelles lignes apparaissent à l'écran en temps réel à la validation — sans délai d'impression ni ticket perdu."
+          },
+          {
+            "title": "Bump pour terminer",
+            "description": "Touchez pour marquer un ticket terminé et l'effacer de la file active — une vue propre de ce qui cuisine encore."
+          },
+          {
+            "title": "Rappel des tickets bumpés",
+            "description": "Bumpé trop tôt ? Ouvrez le mode rappel pour remettre les tickets récents sur le tableau."
+          },
+          {
+            "title": "Minuteurs d'urgence couleur",
+            "description": "Chaque ticket affiche le temps écoulé en vert → jaune → rouge pour savoir ce qui attend le plus."
+          },
+          {
+            "title": "Alertes sonores",
+            "description": "Émettez un son à chaque nouvelle commande pour l'entendre même sans regarder l'écran."
+          },
+          {
+            "title": "Filtre par poste",
+            "description": "Affichez uniquement les tickets de votre poste — grill, bar, froid — selon le routage d'impression du POS."
+          },
+          {
+            "title": "Affichage permanent",
+            "description": "L'écran reste éveillé en mode immersif pendant le service pour que les tickets soient toujours visibles."
+          },
+          {
+            "title": "Reconnexion auto",
+            "description": "Si le lien avec le POS tombe, le KDS se reconnecte automatiquement avec statut visible — pas de redémarrage manuel."
+          },
+          {
+            "title": "Réglages serveur & affichage",
+            "description": "Configurez l'URL PocketBase, les filtres de poste, le son et la langue depuis un écran de réglages."
+          }
         ],
-        workflows: {
-          eyebrow: "Flux cuisine",
-          title: "Voir, cuire, bumper.",
-          intro: "Le tableau mémorise — la ligne cuisine dans l'ordre et bump quand un ticket est prêt.",
-          groups: [
-            { title: "Recevoir", steps: ["Un nouveau ticket apparaît instantanément", "Alerte sonore pour les commandes entrantes", "Le minuteur d'urgence démarre", "Le filtre de poste montre uniquement vos articles"] },
-            { title: "Cuire", steps: ["Tickets triés par temps d'attente et statut", "La couleur passe vert → jaune → rouge", "Rappeler un ticket en cas d'erreur", "Rester concentré sur son poste"] },
-            { title: "Bumper", steps: ["Toucher pour marquer terminé", "Le ticket sort de la file active", "La salle et le POS voient la mise à jour", "Vue propre de ce qui reste à cuire"] },
-          ],
+        "workflows": {
+          "eyebrow": "Flux cuisine",
+          "title": "Voir, cuire, bumper.",
+          "intro": "Le tableau mémorise — la ligne cuisine dans l'ordre et bump quand un ticket est prêt.",
+          "groups": [
+            {
+              "title": "Recevoir",
+              "steps": [
+                "Un nouveau ticket apparaît instantanément",
+                "Alerte sonore pour les commandes entrantes",
+                "Le minuteur d'urgence démarre",
+                "Le filtre de poste montre uniquement vos articles"
+              ]
+            },
+            {
+              "title": "Cuire",
+              "steps": [
+                "Tickets triés par temps d'attente et statut",
+                "La couleur passe vert → jaune → rouge",
+                "Rappeler un ticket en cas d'erreur",
+                "Rester concentré sur son poste"
+              ]
+            },
+            {
+              "title": "Bumper",
+              "steps": [
+                "Toucher pour marquer terminé",
+                "Le ticket sort de la file active",
+                "La salle et le POS voient la mise à jour",
+                "Vue propre de ce qui reste à cuire"
+              ]
+            }
+          ]
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Joue avec le reste de l'écosystème.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Joue avec le reste de l'écosystème.",
+        "integrations": [
           "ESTINAD POS (destinations de routage)",
           "ESTINAD Waiter (source des commandes)",
           "Tablettes Android, téléviseurs et écrans muraux",
-          "PocketBase local sur la machine POS",
+          "PocketBase local sur la machine POS"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "Partie de l'écosystème complet uniquement.",
-        ecosystem: [
-          { t: "Écosystème restaurant uniquement", d: "KDS n'est pas inclus dans ESTINAD Retail ni le bundle POS avec imprimantes — ceux-ci utilisent des imprimantes thermiques." },
-          { t: "Lit le routage du POS", d: "Les filtres de poste suivent les destinations configurées sur le POS, grill, bar et froid voient chacun leurs articles." },
-          { t: "Actuellement en bêta", d: "ESTINAD KDS est en bêta et fait déjà vivre des tickets. Il est livré dans le bundle complet et durci avec nos partenaires restaurants." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "Partie de l'écosystème complet uniquement.",
+        "ecosystem": [
+          {
+            "t": "Écosystème restaurant uniquement",
+            "d": "KDS n'est pas inclus dans ESTINAD Retail ni le bundle POS avec imprimantes — ceux-ci utilisent des imprimantes thermiques."
+          },
+          {
+            "t": "Lit le routage du POS",
+            "d": "Les filtres de poste suivent les destinations configurées sur le POS, grill, bar et froid voient chacun leurs articles."
+          },
+          {
+            "t": "Actuellement en bêta",
+            "d": "ESTINAD KDS est en bêta et fait déjà vivre des tickets. Il est livré dans le bundle complet et durci avec nos partenaires restaurants."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Tickets sub-seconde sur le réseau local.",
-        tech: "Double abonnement SSE aux commandes et lignes de commande avec cache local assure des mises à jour sub-seconde sur le réseau local.",
-        notIncluded: {
-          title: "",
-          intro: "",
-          items: [],
-          ctaLabel: "",
-          ctaHref: "",
+        "techEyebrow": "Point technique",
+        "techTitle": "Tickets sub-seconde sur le réseau local.",
+        "tech": "Double abonnement SSE aux commandes et lignes de commande avec cache local assure des mises à jour sub-seconde sur le réseau local.",
+        "notIncluded": {
+          "title": "",
+          "intro": "",
+          "items": [],
+          "ctaLabel": "",
+          "ctaHref": ""
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des exploitants.",
-        faq: [
-          { q: "ESTINAD KDS est-il prêt pour la production ?", a: "Il est en bêta. L'affichage live, le bump/rappel, les minuteurs d'urgence et les filtres de poste sont implémentés et actifs ; nous le durcissons avec nos partenaires." },
-          { q: "Puis-je utiliser tickets papier et KDS ensemble ?", a: "Oui. Le POS route les articles vers imprimantes et KDS, la cuisine peut tourner un tableau numérique à côté des tickets papier pendant la transition." },
-          { q: "Sur quel matériel le KDS tourne-t-il ?", a: "Toute tablette Android, écran TV ou afficheur mural qui peut joindre le serveur POS sur le réseau local." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des exploitants.",
+        "faq": [
+          {
+            "q": "ESTINAD KDS est-il prêt pour la production ?",
+            "a": "Il est en bêta. L'affichage live, le bump/rappel, les minuteurs d'urgence et les filtres de poste sont implémentés et actifs ; nous le durcissons avec nos partenaires."
+          },
+          {
+            "q": "Puis-je utiliser tickets papier et KDS ensemble ?",
+            "a": "Oui. Le POS route les articles vers imprimantes et KDS, la cuisine peut tourner un tableau numérique à côté des tickets papier pendant la transition."
+          },
+          {
+            "q": "Sur quel matériel le KDS tourne-t-il ?",
+            "a": "Toute tablette Android, écran TV ou afficheur mural qui peut joindre le serveur POS sur le réseau local."
+          }
         ],
-        ctaTitle: "Apportez un tableau vivant à votre cuisine.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Explorer la plateforme",
-        secondaryHref: "/platform",
+        "ctaTitle": "Apportez un tableau vivant à votre cuisine.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Explorer la plateforme",
+        "secondaryHref": "/platform"
       },
-      core: {
-        glyph: "CR",
-        name: "ESTINAD Core",
-        short: "Core",
-        category: "Paquet partagé",
-        status: "shipped",
-        oneLiner:
-          "La bibliothèque fondation partagée de l'écosystème — un cerveau qui alimente chaque application ESTINAD.",
-        positioning:
-          "ESTINAD Core est la fondation partagée sur laquelle tournent chaque POS, waiter et cuisine : les mêmes modèles métier, le même accès aux données et le même moteur de sync. Les commandes, le stock et les clients restent cohérents entre appareils parce qu'ils parlent la même langue en dessous.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [],
+      "core": {
+        "glyph": "CR",
+        "name": "ESTINAD Core",
+        "short": "Core",
+        "category": "Paquet partagé",
+        "status": "shipped",
+        "oneLiner": "La bibliothèque fondation partagée de l'écosystème — un cerveau qui alimente chaque application ESTINAD.",
+        "positioning": "ESTINAD Core est la fondation partagée sur laquelle tournent chaque POS, waiter et cuisine : les mêmes modèles métier, le même accès aux données et le même moteur de sync. Les commandes, le stock et les clients restent cohérents entre appareils parce qu'ils parlent la même langue en dessous.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": []
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "Le cerveau partagé de l'écosystème.",
-        capabilitiesIntro:
-          "Core est l'endroit où les promesses de la plateforme — un grand livre, une identité, un moteur de sync — vivent réellement dans le code.",
-        capabilities: [
-          { title: "Modèles métier unifiés", description: "Commandes, produits, clients, paiements, services, tables et fidélité partagent un schéma — les données ont le même sens partout." },
-          { title: "Couche repository", description: "Accès aux données prêt à l'emploi pour commandes, stock, clients, paiements, services et tables — les apps font l'UI, pas la plomberie." },
-          { title: "Moteur de sync hors-ligne", description: "Sync bidirectionnelle entre PocketBase local et Supabase avec file, gestion des conflits et reprise par point de contrôle." },
-          { title: "Découverte réseau auto", description: "mDNS/Bonjour permet aux appareils compagnons de trouver le POS sur le LAN sans configuration manuelle." },
-          { title: "Provisioning multi-tenant", description: "Onboarding de devices par licence, empreinte matérielle et configuration tenant pour les déploiements SaaS multi-sites." },
-          { title: "Mises à jour auto", description: "Vérifiez, téléchargez et appliquez les mises à jour avec gestion de version — gardez les bornes à jour sereinement." },
-          { title: "Moteur de routage d'impression", description: "Routez reçus et tickets cuisine vers la bonne imprimante ou le bon poste selon le produit — partagé par POS et KDS." },
-          { title: "Permissions par rôle", description: "Définitions de permissions fines pour un contrôle d'accès cohérent entre caisse, manager et admin." },
-          { title: "Contexte IA métier", description: "Des fournisseurs de contexte structurent les données commandes, clients et produits pour l'assistant IA in-app." },
-          { title: "Schémas d'import produit", description: "Schémas d'import CSV déclaratifs et sinks PocketBase/Supabase pour le chargement de catalogues en masse." },
-          { title: "Journalisation d'erreurs", description: "Capturez et conservez les erreurs applicatives dans la base locale pour le support et le diagnostic." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "Le cerveau partagé de l'écosystème.",
+        "capabilitiesIntro": "Core est l'endroit où les promesses de la plateforme — un grand livre, une identité, un moteur de sync — vivent réellement dans le code.",
+        "capabilities": [
+          {
+            "title": "Modèles métier unifiés",
+            "description": "Commandes, produits, clients, paiements, services, tables et fidélité partagent un schéma — les données ont le même sens partout."
+          },
+          {
+            "title": "Couche repository",
+            "description": "Accès aux données prêt à l'emploi pour commandes, stock, clients, paiements, services et tables — les apps font l'UI, pas la plomberie."
+          },
+          {
+            "title": "Moteur de sync hors-ligne",
+            "description": "Sync bidirectionnelle entre PocketBase local et Supabase avec file, gestion des conflits et reprise par point de contrôle."
+          },
+          {
+            "title": "Découverte réseau auto",
+            "description": "mDNS/Bonjour permet aux appareils compagnons de trouver le POS sur le LAN sans configuration manuelle."
+          },
+          {
+            "title": "Provisioning multi-tenant",
+            "description": "Onboarding d'appareils par licence, empreinte matérielle et configuration par tenant pour des déploiements hybrides isolés — serveurs locaux dédiés et espaces cloud dédiés, pas une base opérationnelle partagée."
+          },
+          {
+            "title": "Mises à jour auto",
+            "description": "Vérifiez, téléchargez et appliquez les mises à jour avec gestion de version — gardez les bornes à jour sereinement."
+          },
+          {
+            "title": "Moteur de routage d'impression",
+            "description": "Routez reçus et tickets cuisine vers la bonne imprimante ou le bon poste selon le produit — partagé par POS et KDS."
+          },
+          {
+            "title": "Permissions par rôle",
+            "description": "Définitions de permissions fines pour un contrôle d'accès cohérent entre caisse, manager et admin."
+          },
+          {
+            "title": "Contexte IA métier",
+            "description": "Des fournisseurs de contexte structurent les données commandes, clients et produits pour l'assistant IA in-app."
+          },
+          {
+            "title": "Schémas d'import produit",
+            "description": "Schémas d'import CSV déclaratifs et sinks PocketBase/Supabase pour le chargement de catalogues en masse."
+          },
+          {
+            "title": "Journalisation d'erreurs",
+            "description": "Capturez et conservez les erreurs applicatives dans la base locale pour le support et le diagnostic."
+          }
         ],
-        workflows: {
-          eyebrow: "",
-          title: "",
-          intro: "",
-          groups: [],
+        "workflows": {
+          "eyebrow": "",
+          "title": "",
+          "intro": "",
+          "groups": []
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "La couche de données connectée.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "La couche de données connectée.",
+        "integrations": [
           "PocketBase (source de vérité locale)",
           "Supabase (sync cloud & multi-sites)",
           "mDNS / Bonjour (découverte LAN)",
-          "Routage d'impression ESC/POS",
+          "Routage d'impression ESC/POS"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "La fondation que chaque application hérite.",
-        ecosystem: [
-          { t: "Dans chaque application", d: "ESTINAD POS, Waiter, KDS et Clinic lient Core — ils partagent modèles, sync et permissions par construction, pas par convention." },
-          { t: "Garde les données cohérentes", d: "Un schéma unique sur l'écosystème : un client ou un paiement a le même sens au comptoir, en salle et à la cuisine." },
-          { t: "Pensé hors-ligne", d: "PocketBase local est la source de vérité pendant le service ; la sync cloud est le backup et le pont multi-sites, pas une dépendance dure." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "La fondation que chaque application hérite.",
+        "ecosystem": [
+          {
+            "t": "Dans chaque application",
+            "d": "ESTINAD POS, Waiter, KDS et Clinic lient Core — ils partagent modèles, sync et permissions par construction, pas par convention."
+          },
+          {
+            "t": "Garde les données cohérentes",
+            "d": "Un schéma unique sur l'écosystème : un client ou un paiement a le même sens au comptoir, en salle et à la cuisine."
+          },
+          {
+            "t": "Pensé hors-ligne",
+            "d": "PocketBase local est la source de vérité pendant le service ; la sync cloud est le backup et le pont multi-sites, pas une dépendance dure."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Un grand livre, par construction.",
-        tech: "Pensé hors-ligne : PocketBase local est la source de vérité pendant le service ; la sync cloud est le backup et le pont multi-sites, pas une dépendance dure.",
-        notIncluded: {
-          title: "",
-          intro: "",
-          items: [],
-          ctaLabel: "",
-          ctaHref: "",
+        "techEyebrow": "Point technique",
+        "techTitle": "Un grand livre, par construction.",
+        "tech": "Pensé hors-ligne : PocketBase local est la source de vérité pendant le service ; la sync cloud est le backup et le pont multi-sites, pas une dépendance dure.",
+        "notIncluded": {
+          "title": "",
+          "intro": "",
+          "items": [],
+          "ctaLabel": "",
+          "ctaHref": ""
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des acheteurs techniques.",
-        faq: [
-          { q: "ESTINAD Core est-il un produit que j'achète ?", a: "Non. Core est un paquet partagé dans la plateforme. Vous achetez une ligne produit, et chaque produit hérite des modèles, sync et permissions de Core." },
-          { q: "Comment la sync gère-t-elle une connexion instable ?", a: "Le moteur de sync file les changements localement, gère les conflits et utilise une reprise par point de contrôle — les coupures ne deviennent jamais des transactions perdues." },
-          { q: "Core impose-t-il le contrôle d'accès ?", a: "Oui. Les définitions de permissions et de rôles dans Core alimentent un contrôle d'accès cohérent dans chaque application qui le lie." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des acheteurs techniques.",
+        "faq": [
+          {
+            "q": "ESTINAD Core est-il un produit que j'achète ?",
+            "a": "Non. Core est un paquet partagé dans la plateforme. Vous achetez une ligne produit, et chaque produit hérite des modèles, sync et permissions de Core."
+          },
+          {
+            "q": "Comment la sync gère-t-elle une connexion instable ?",
+            "a": "Le moteur de sync file les changements localement, gère les conflits et utilise une reprise par point de contrôle — les coupures ne deviennent jamais des transactions perdues."
+          },
+          {
+            "q": "Core impose-t-il le contrôle d'accès ?",
+            "a": "Oui. Les définitions de permissions et de rôles dans Core alimentent un contrôle d'accès cohérent dans chaque application qui le lie."
+          }
         ],
-        ctaTitle: "Voyez la fondation sous chaque produit.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Explorer la plateforme",
-        secondaryHref: "/platform",
+        "ctaTitle": "Voyez la fondation sous chaque produit.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Explorer la plateforme",
+        "secondaryHref": "/platform"
       },
-      ui: {
-        glyph: "UI",
-        name: "ESTINAD UI",
-        short: "UI",
-        category: "Paquet partagé",
-        status: "shipped",
-        oneLiner:
-          "Le design system ESTINAD — une bibliothèque de composants style Linear pour un rendu cohérent, dense et clavier-friendly.",
-        positioning:
-          "ESTINAD UI est le design system derrière chaque application de l'écosystème : une bibliothèque de composants style Linear pensée pour les longs services à la caisse et au back-office. Thèmes sombre et clair, un shell applicatif et des composants denses gardent les interfaces rapides et cohérentes entre POS, waiter et clinic.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [],
+      "ui": {
+        "glyph": "UI",
+        "name": "ESTINAD UI",
+        "short": "UI",
+        "category": "Paquet partagé",
+        "status": "shipped",
+        "oneLiner": "Le design system ESTINAD — une bibliothèque de composants style Linear pour un rendu cohérent, dense et clavier-friendly.",
+        "positioning": "ESTINAD UI est le design system derrière chaque application de l'écosystème : une bibliothèque de composants style Linear pensée pour les longs services à la caisse et au back-office. Thèmes sombre et clair, un shell applicatif et des composants denses gardent les interfaces rapides et cohérentes entre POS, waiter et clinic.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": []
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "Des interfaces pro qui ne se mettent pas en travers.",
-        capabilitiesIntro:
-          "Des composants opinionnés pour les écrans qui comptent pendant un service — tableaux de bord, listes, formulaires et tables back-office à fort volume.",
-        capabilities: [
-          { title: "Thèmes sombre & clair", description: "Thèmes clair et sombre prêts pour la production, palette zinc, typographie Inter et espacement cohérent — changez de mode sans redessiner." },
-          { title: "Shell applicatif", description: "Navigation latérale, barre supérieure, zone à onglets et layout repliable — le cadre standard des applications desktop ESTINAD." },
-          { title: "Boutons & champs", description: "Boutons et champs optimisés tactile et clavier pour la saisie rapide pendant le service." },
-          { title: "Cartes & surfaces", description: "Cartes compactes et conteneurs pour tableaux de bord, réglages et vues détaillées sans élévation Material lourde." },
-          { title: "Tables & grilles", description: "Tables triables et grilles de données pour listes de produits, clients, historique de service et back-office à fort volume." },
-          { title: "Barre de filtres", description: "Chips, listes déroulantes et recherche composables pour les pages de liste — le pattern d'inventaire, clients et rapports." },
-          { title: "Modales & sheets", description: "Dialogues et bottom sheets pour confirmations, éditions rapides et actions mobile sans casser le flux." },
-          { title: "États de page liste", description: "États vide, chargement et erreur intégrés pour que chaque liste gère les cas limites de façon cohérente." },
-          { title: "Barre de sauvegarde", description: "Une barre collante sauvegarder/annuler pour les formulaires — le staff sait toujours quand des modifications ne sont pas validées." },
-          { title: "Palette de commandes", description: "Items de commande recherchables et infrastructure de palette alimentant le Ctrl+K d'ESTINAD POS." },
-          { title: "Assistants multi-étapes", description: "Scaffolding de wizards pour les flux de configuration guidés comme l'import de produits." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "Des interfaces pro qui ne se mettent pas en travers.",
+        "capabilitiesIntro": "Des composants opinionnés pour les écrans qui comptent pendant un service — tableaux de bord, listes, formulaires et tables back-office à fort volume.",
+        "capabilities": [
+          {
+            "title": "Thèmes sombre & clair",
+            "description": "Thèmes clair et sombre prêts pour la production, palette zinc, typographie Inter et espacement cohérent — changez de mode sans redessiner."
+          },
+          {
+            "title": "Shell applicatif",
+            "description": "Navigation latérale, barre supérieure, zone à onglets et layout repliable — le cadre standard des applications desktop ESTINAD."
+          },
+          {
+            "title": "Boutons & champs",
+            "description": "Boutons et champs optimisés tactile et clavier pour la saisie rapide pendant le service."
+          },
+          {
+            "title": "Cartes & surfaces",
+            "description": "Cartes compactes et conteneurs pour tableaux de bord, réglages et vues détaillées sans élévation Material lourde."
+          },
+          {
+            "title": "Tables & grilles",
+            "description": "Tables triables et grilles de données pour listes de produits, clients, historique de service et back-office à fort volume."
+          },
+          {
+            "title": "Barre de filtres",
+            "description": "Chips, listes déroulantes et recherche composables pour les pages de liste — le pattern d'inventaire, clients et rapports."
+          },
+          {
+            "title": "Modales & sheets",
+            "description": "Dialogues et bottom sheets pour confirmations, éditions rapides et actions mobile sans casser le flux."
+          },
+          {
+            "title": "États de page liste",
+            "description": "États vide, chargement et erreur intégrés pour que chaque liste gère les cas limites de façon cohérente."
+          },
+          {
+            "title": "Barre de sauvegarde",
+            "description": "Une barre collante sauvegarder/annuler pour les formulaires — le staff sait toujours quand des modifications ne sont pas validées."
+          },
+          {
+            "title": "Palette de commandes",
+            "description": "Items de commande recherchables et infrastructure de palette alimentant le Ctrl+K d'ESTINAD POS."
+          },
+          {
+            "title": "Assistants multi-étapes",
+            "description": "Scaffolding de wizards pour les flux de configuration guidés comme l'import de produits."
+          }
         ],
-        workflows: {
-          eyebrow: "",
-          title: "",
-          intro: "",
-          groups: [],
+        "workflows": {
+          "eyebrow": "",
+          "title": "",
+          "intro": "",
+          "groups": []
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Où il est livré.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Où il est livré.",
+        "integrations": [
           "ESTINAD POS (shell & composants complets)",
           "ESTINAD Waiter (écrans tactiles)",
           "ESTINAD KDS (tableau immersif)",
-          "Flutter (la plateforme sur laquelle il est construit)",
+          "Flutter (la plateforme sur laquelle il est construit)"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "Un rendu unique sur toutes les applications.",
-        ecosystem: [
-          { t: "Partagé par toutes", d: "POS, Waiter, KDS et Clinic s'appuient sur ESTINAD UI — le staff qui change d'appareil retrouve les mêmes patterns partout." },
-          { t: "Réglé pour les services", d: "Densité, raccourcis clavier et animations retenues sont pensés pour des heures de saisie rapide, pas pour la navigation occasionnelle." },
-          { t: "Anti-patterns par politique", d: "Pas de menus hamburger ni d'ombres lourdes — des interfaces rapides et denses, plus proches de Linear ou Raycast que des apps Material classiques." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "Un rendu unique sur toutes les applications.",
+        "ecosystem": [
+          {
+            "t": "Partagé par toutes",
+            "d": "POS, Waiter, KDS et Clinic s'appuient sur ESTINAD UI — le staff qui change d'appareil retrouve les mêmes patterns partout."
+          },
+          {
+            "t": "Réglé pour les services",
+            "d": "Densité, raccourcis clavier et animations retenues sont pensés pour des heures de saisie rapide, pas pour la navigation occasionnelle."
+          },
+          {
+            "t": "Anti-patterns par politique",
+            "d": "Pas de menus hamburger ni d'ombres lourdes — des interfaces rapides et denses, plus proches de Linear ou Raycast que des apps Material classiques."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Dense par conception, rapide par défaut.",
-        tech: "Des anti-patterns opinionnés — pas de menus hamburger, pas d'ombres lourdes — gardent les interfaces rapides et denses, plus proches de Linear ou Raycast que des apps Material classiques.",
-        notIncluded: {
-          title: "",
-          intro: "",
-          items: [],
-          ctaLabel: "",
-          ctaHref: "",
+        "techEyebrow": "Point technique",
+        "techTitle": "Dense par conception, rapide par défaut.",
+        "tech": "Des anti-patterns opinionnés — pas de menus hamburger, pas d'ombres lourdes — gardent les interfaces rapides et denses, plus proches de Linear ou Raycast que des apps Material classiques.",
+        "notIncluded": {
+          "title": "",
+          "intro": "",
+          "items": [],
+          "ctaLabel": "",
+          "ctaHref": ""
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des acheteurs techniques.",
-        faq: [
-          { q: "ESTINAD UI s'achète-t-il séparément ?", a: "Non. C'est le design system partagé dans la plateforme. Chaque produit hérite de ses composants et de ses thèmes." },
-          { q: "Gère-t-il le clair et le sombre ?", a: "Oui — les deux sont prêts pour la production, palette zinc cohérente et typographie Inter, et les écrans changent de mode sans redessiner." },
-          { q: "Optimisé tactile ou clavier ?", a: "Les deux. Les composants sont réglés pour le tactile au comptoir et le clavier au back-office, avec la palette Ctrl+K intégrée." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des acheteurs techniques.",
+        "faq": [
+          {
+            "q": "ESTINAD UI s'achète-t-il séparément ?",
+            "a": "Non. C'est le design system partagé dans la plateforme. Chaque produit hérite de ses composants et de ses thèmes."
+          },
+          {
+            "q": "Gère-t-il le clair et le sombre ?",
+            "a": "Oui — les deux sont prêts pour la production, palette zinc cohérente et typographie Inter, et les écrans changent de mode sans redessiner."
+          },
+          {
+            "q": "Optimisé tactile ou clavier ?",
+            "a": "Les deux. Les composants sont réglés pour le tactile au comptoir et le clavier au back-office, avec la palette Ctrl+K intégrée."
+          }
         ],
-        ctaTitle: "Voyez le langage d'interface de la plateforme.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Explorer la plateforme",
-        secondaryHref: "/platform",
+        "ctaTitle": "Voyez le langage d'interface de la plateforme.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Explorer la plateforme",
+        "secondaryHref": "/platform"
       },
-      native: {
-        glyph: "NV",
-        name: "ESTINAD Native",
-        short: "Native",
-        category: "Paquet partagé",
-        status: "shipped",
-        oneLiner:
-          "Une couche FFI native qui accélère les opérations Windows critiques d'ESTINAD POS — connexions plus rapides, sécurité renforcée.",
-        positioning:
-          "ESTINAD Native est une bibliothèque FFI native qui accélère les opérations qui comptent sur une borne Windows : identité du device, cycle de vie de la base locale et gestion sécurisée des fichiers. L'utilisateur final gagne en vitesse de connexion et en fiabilité locale ; les développeurs disposent d'une couche de performance prête à l'emploi.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [],
+      "native": {
+        "glyph": "NV",
+        "name": "ESTINAD Native",
+        "short": "Native",
+        "category": "Paquet partagé",
+        "status": "shipped",
+        "oneLiner": "Une couche FFI native qui accélère les opérations Windows critiques d'ESTINAD POS — connexions plus rapides, sécurité renforcée.",
+        "positioning": "ESTINAD Native est une bibliothèque FFI native qui accélère les opérations qui comptent sur une borne Windows : identité du device, cycle de vie de la base locale et gestion sécurisée des fichiers. L'utilisateur final gagne en vitesse de connexion et en fiabilité locale ; les développeurs disposent d'une couche de performance prête à l'emploi.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": []
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "La couche de performance sous le POS.",
-        capabilitiesIntro:
-          "Du code natif pour les quelques opérations où l'écart de vitesse et de sécurité avec les approches shell compte vraiment.",
-        capabilities: [
-          { title: "Empreinte instantanée", description: "Identifiez et liez chaque borne à sa licence en millisecondes au lieu de secondes — provisioning plus rapide, copies non autorisées bloquées." },
-          { title: "Démarrage base fiable", description: "Démarrez et arrêtez le serveur PocketBase embarqué avec les Windows Job Objects — la base ne tourne jamais orpheline après la fermeture du POS." },
-          { title: "Dossiers de données sécurisés", description: "Créez des dossiers locaux accessibles au seul utilisateur — les données sensibles ne sont pas exposées aux autres comptes de la machine." },
-          { title: "Copies vérifiées", description: "Copiez les exécutables avec vérification de signature Authenticode avant lancement — réduit le risque de fichiers locaux altérés." },
-          { title: "Écritures atomiques", description: "Enregistrez config et états atomiquement — un crash en cours d'écriture ne corrompt jamais la base ou les réglages." },
-          { title: "Parsing CSV haute vitesse", description: "Tokenisation CSV native et empreinte de lignes accélèrent les imports en masse sur les gros catalogues." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "La couche de performance sous le POS.",
+        "capabilitiesIntro": "Du code natif pour les quelques opérations où l'écart de vitesse et de sécurité avec les approches shell compte vraiment.",
+        "capabilities": [
+          {
+            "title": "Empreinte instantanée",
+            "description": "Identifiez et liez chaque borne à sa licence en millisecondes au lieu de secondes — provisioning plus rapide, copies non autorisées bloquées."
+          },
+          {
+            "title": "Démarrage base fiable",
+            "description": "Démarrez et arrêtez le serveur PocketBase embarqué avec les Windows Job Objects — la base ne tourne jamais orpheline après la fermeture du POS."
+          },
+          {
+            "title": "Dossiers de données sécurisés",
+            "description": "Créez des dossiers locaux accessibles au seul utilisateur — les données sensibles ne sont pas exposées aux autres comptes de la machine."
+          },
+          {
+            "title": "Copies vérifiées",
+            "description": "Copiez les exécutables avec vérification de signature Authenticode avant lancement — réduit le risque de fichiers locaux altérés."
+          },
+          {
+            "title": "Écritures atomiques",
+            "description": "Enregistrez config et états atomiquement — un crash en cours d'écriture ne corrompt jamais la base ou les réglages."
+          },
+          {
+            "title": "Parsing CSV haute vitesse",
+            "description": "Tokenisation CSV native et empreinte de lignes accélèrent les imports en masse sur les gros catalogues."
+          }
         ],
-        workflows: {
-          eyebrow: "",
-          title: "",
-          intro: "",
-          groups: [],
+        "workflows": {
+          "eyebrow": "",
+          "title": "",
+          "intro": "",
+          "groups": []
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Où il se branche.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Où il se branche.",
+        "integrations": [
           "ESTINAD POS (bornes Windows)",
           "PocketBase (cycle de vie base locale)",
           "ESTINAD Importer (parsing CSV natif)",
-          "Windows FFI / DLL native",
+          "Windows FFI / DLL native"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "La couche vitesse et sécurité pour Windows.",
-        ecosystem: [
-          { t: "Dans ESTINAD POS", d: "Native accélère l'empreinte, le cycle de vie de la base et la gestion des fichiers sur les bornes Windows — le matériel le plus courant dans les comptoirs algériens." },
-          { t: "Alimente l'importer", d: "Quand la DLL native est présente, ESTINAD Importer bascule sur le chemin CSV natif rapide ; un repli pure Dart garde les imports ailleurs." },
-          { t: "Repli pure Dart", d: "Sans la DLL native, l'écosystème bascule en pure Dart — les fonctions marchent, sans l'accélération." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "La couche vitesse et sécurité pour Windows.",
+        "ecosystem": [
+          {
+            "t": "Dans ESTINAD POS",
+            "d": "Native accélère l'empreinte, le cycle de vie de la base et la gestion des fichiers sur les bornes Windows — le matériel le plus courant dans les comptoirs algériens."
+          },
+          {
+            "t": "Alimente l'importer",
+            "d": "Quand la DLL native est présente, ESTINAD Importer bascule sur le chemin CSV natif rapide ; un repli pure Dart garde les imports ailleurs."
+          },
+          {
+            "t": "Repli pure Dart",
+            "d": "Sans la DLL native, l'écosystème bascule en pure Dart — les fonctions marchent, sans l'accélération."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Des vérifications de licence imperceptibles.",
-        tech: "L'empreinte matérielle tourne environ 100× plus vite que les approches shell legacy — ~5 ms contre ~500 ms — rendant les vérifications de licence imperceptibles à la connexion.",
-        notIncluded: {
-          title: "",
-          intro: "",
-          items: [],
-          ctaLabel: "",
-          ctaHref: "",
+        "techEyebrow": "Point technique",
+        "techTitle": "Des vérifications de licence imperceptibles.",
+        "tech": "L'empreinte matérielle tourne environ 100× plus vite que les approches shell legacy — ~5 ms contre ~500 ms — rendant les vérifications de licence imperceptibles à la connexion.",
+        "notIncluded": {
+          "title": "",
+          "intro": "",
+          "items": [],
+          "ctaLabel": "",
+          "ctaHref": ""
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des acheteurs techniques.",
-        faq: [
-          { q: "ESTINAD Native est-il requis pour le POS ?", a: "Non. Sans la DLL native, la plateforme bascule en pure Dart — les fonctions marchent, sans l'accélération." },
-          { q: "Quelles plateformes en profitent le plus ?", a: "Les bornes Windows : empreinte plus rapide à la connexion, cycle de vie PocketBase fiable et dossiers locaux sécurisés." },
-          { q: "Améliore-t-il aussi les imports ?", a: "Oui. La tokenisation CSV native accélère les imports en masse sur les gros catalogues quand la DLL est présente." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des acheteurs techniques.",
+        "faq": [
+          {
+            "q": "ESTINAD Native est-il requis pour le POS ?",
+            "a": "Non. Sans la DLL native, la plateforme bascule en pure Dart — les fonctions marchent, sans l'accélération."
+          },
+          {
+            "q": "Quelles plateformes en profitent le plus ?",
+            "a": "Les bornes Windows : empreinte plus rapide à la connexion, cycle de vie PocketBase fiable et dossiers locaux sécurisés."
+          },
+          {
+            "q": "Améliore-t-il aussi les imports ?",
+            "a": "Oui. La tokenisation CSV native accélère les imports en masse sur les gros catalogues quand la DLL est présente."
+          }
         ],
-        ctaTitle: "Voyez la couche de performance de la plateforme.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Explorer la plateforme",
-        secondaryHref: "/platform",
+        "ctaTitle": "Voyez la couche de performance de la plateforme.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Explorer la plateforme",
+        "secondaryHref": "/platform"
       },
-      importer: {
-        glyph: "IM",
-        name: "ESTINAD Importer",
-        short: "Importer",
-        category: "Paquet partagé",
-        status: "shipped",
-        oneLiner:
-          "Un moteur d'import CSV haute performance — chargez tout un catalogue en un seul flux, sans figer la caisse.",
-        positioning:
-          "ESTINAD Importer est le moteur d'import CSV de l'écosystème. Restaurants et retailers migrant depuis un tableur ou un autre POS peuvent charger tout un catalogue en un seul flux — validation, déduplication et progression en direct — pendant que la caisse continue de tourner.",
-        bundle: {
-          title: "Ce qui est dans le bundle",
-          appHeader: "Application",
-          roleHeader: "Rôle",
-          platformHeader: "Plateforme",
-          rows: [],
+      "importer": {
+        "glyph": "IM",
+        "name": "ESTINAD Importer",
+        "short": "Importer",
+        "category": "Paquet partagé",
+        "status": "shipped",
+        "oneLiner": "Un moteur d'import CSV haute performance — chargez tout un catalogue en un seul flux, sans figer la caisse.",
+        "positioning": "ESTINAD Importer est le moteur d'import CSV de l'écosystème. Restaurants et retailers migrant depuis un tableur ou un autre POS peuvent charger tout un catalogue en un seul flux — validation, déduplication et progression en direct — pendant que la caisse continue de tourner.",
+        "bundle": {
+          "title": "Ce qui est dans le bundle",
+          "appHeader": "Application",
+          "roleHeader": "Rôle",
+          "platformHeader": "Plateforme",
+          "rows": []
         },
-        capabilitiesEyebrow: "Capacités",
-        capabilitiesTitle: "Gros catalogues, importés proprement.",
-        capabilitiesIntro:
-          "Pensé pour le vrai moment de migration — des milliers de références depuis un tableur ou un POS legacy, chargées sans arrêter le comptoir.",
-        capabilities: [
-          { title: "Streaming des gros fichiers", description: "Lisez des CSV de toute taille par passages fragmentés — la mémoire reste bornée même sur un million de lignes." },
-          { title: "Validation par schéma", description: "Des schémas déclaratifs forcent les types, valident les champs et dédupliquent les lignes avant l'écriture en base." },
-          { title: "Progression en direct", description: "Chaque job expose un flux de progression — lignes lues, débit et statut — visible dans l'écran d'import du POS." },
-          { title: "Imports annulables", description: "Les jobs longs peuvent être annulés en cours sans laisser la base dans un état incohérent." },
-          { title: "Sink produit PocketBase", description: "Les lignes validées s'écrivent directement dans le catalogue local — déjà câblé dans l'import produit d'ESTINAD POS." },
-          { title: "Parsing accéléré natif", description: "Quand la DLL native est là, parsing et hachage prennent le chemin natif rapide ; le repli pure Dart marche partout ailleurs." },
-          { title: "Validation parallèle (option)", description: "La validation multi-isolate s'active pour les schémas lourds — désactivée par défaut pour les imports POS courants." },
+        "capabilitiesEyebrow": "Capacités",
+        "capabilitiesTitle": "Gros catalogues, importés proprement.",
+        "capabilitiesIntro": "Pensé pour le vrai moment de migration — des milliers de références depuis un tableur ou un POS legacy, chargées sans arrêter le comptoir.",
+        "capabilities": [
+          {
+            "title": "Streaming des gros fichiers",
+            "description": "Lisez des CSV de toute taille par passages fragmentés — la mémoire reste bornée même sur un million de lignes."
+          },
+          {
+            "title": "Validation par schéma",
+            "description": "Des schémas déclaratifs forcent les types, valident les champs et dédupliquent les lignes avant l'écriture en base."
+          },
+          {
+            "title": "Progression en direct",
+            "description": "Chaque job expose un flux de progression — lignes lues, débit et statut — visible dans l'écran d'import du POS."
+          },
+          {
+            "title": "Imports annulables",
+            "description": "Les jobs longs peuvent être annulés en cours sans laisser la base dans un état incohérent."
+          },
+          {
+            "title": "Sink produit PocketBase",
+            "description": "Les lignes validées s'écrivent directement dans le catalogue local — déjà câblé dans l'import produit d'ESTINAD POS."
+          },
+          {
+            "title": "Parsing accéléré natif",
+            "description": "Quand la DLL native est là, parsing et hachage prennent le chemin natif rapide ; le repli pure Dart marche partout ailleurs."
+          },
+          {
+            "title": "Validation parallèle (option)",
+            "description": "La validation multi-isolate s'active pour les schémas lourds — désactivée par défaut pour les imports POS courants."
+          }
         ],
-        workflows: {
-          eyebrow: "Flux d'import",
-          title: "Du tableur au catalogue live en minutes.",
-          intro: "Un job guidé en flux — valider, dédupliquer, écrire — avec la progression visible du début à la fin.",
-          groups: [
-            { title: "Préparer", steps: ["Exportez votre catalogue en CSV depuis un tableur ou un POS legacy", "Mappez les colonnes au schéma produit ESTINAD", "Le schéma déclaratif force les types et valide", "Les doublons sont signalés avant l'import"] },
-            { title: "Importer", steps: ["Le flux garde la mémoire bornée sur les gros fichiers", "Le flux de progression montre lignes lues et débit", "Le parsing natif accélère le job si disponible", "Annuler en cours sans corrompre les données"] },
-            { title: "Passer live", steps: ["Les lignes validées s'écrivent dans le catalogue PocketBase", "Les produits apparaissent immédiatement dans le POS", "La caisse continue de tourner", "Revue des lignes rejetées après le job"] },
-          ],
+        "workflows": {
+          "eyebrow": "Flux d'import",
+          "title": "Du tableur au catalogue live en minutes.",
+          "intro": "Un job guidé en flux — valider, dédupliquer, écrire — avec la progression visible du début à la fin.",
+          "groups": [
+            {
+              "title": "Préparer",
+              "steps": [
+                "Exportez votre catalogue en CSV depuis un tableur ou un POS legacy",
+                "Mappez les colonnes au schéma produit ESTINAD",
+                "Le schéma déclaratif force les types et valide",
+                "Les doublons sont signalés avant l'import"
+              ]
+            },
+            {
+              "title": "Importer",
+              "steps": [
+                "Le flux garde la mémoire bornée sur les gros fichiers",
+                "Le flux de progression montre lignes lues et débit",
+                "Le parsing natif accélère le job si disponible",
+                "Annuler en cours sans corrompre les données"
+              ]
+            },
+            {
+              "title": "Passer live",
+              "steps": [
+                "Les lignes validées s'écrivent dans le catalogue PocketBase",
+                "Les produits apparaissent immédiatement dans le POS",
+                "La caisse continue de tourner",
+                "Revue des lignes rejetées après le job"
+              ]
+            }
+          ]
         },
-        integrationsEyebrow: "Intégrations",
-        integrationsTitle: "Où il se branche.",
-        integrations: [
+        "integrationsEyebrow": "Intégrations",
+        "integrationsTitle": "Où il se branche.",
+        "integrations": [
           "ESTINAD POS (écran d'import produit)",
           "PocketBase (catalogue produit local)",
           "ESTINAD Native (parsing CSV rapide)",
-          "Sources CSV / tableurs",
+          "Sources CSV / tableurs"
         ],
-        ecosystemEyebrow: "Place dans l'écosystème",
-        ecosystemTitle: "Le moteur de migration de la plateforme.",
-        ecosystem: [
-          { t: "Câblé dans le POS", d: "L'écran d'import produit d'ESTINAD POS utilise Importer directement — nouvelles boutiques et changements de saison à un job près." },
-          { t: "Accéléré par Native", d: "Quand la DLL native est présente, parsing et hachage prennent le chemin natif ; sinon un repli pure Dart garde les imports actifs." },
-          { t: "Sur les schémas Core", d: "Les schémas CSV déclaratifs et les sinks PocketBase/Supabase viennent d'ESTINAD Core, pour des règles d'import cohérentes dans l'écosystème." },
+        "ecosystemEyebrow": "Place dans l'écosystème",
+        "ecosystemTitle": "Le moteur de migration de la plateforme.",
+        "ecosystem": [
+          {
+            "t": "Câblé dans le POS",
+            "d": "L'écran d'import produit d'ESTINAD POS utilise Importer directement — nouvelles boutiques et changements de saison à un job près."
+          },
+          {
+            "t": "Accéléré par Native",
+            "d": "Quand la DLL native est présente, parsing et hachage prennent le chemin natif ; sinon un repli pure Dart garde les imports actifs."
+          },
+          {
+            "t": "Sur les schémas Core",
+            "d": "Les schémas CSV déclaratifs et les sinks PocketBase/Supabase viennent d'ESTINAD Core, pour des règles d'import cohérentes dans l'écosystème."
+          }
         ],
-        techEyebrow: "Point technique",
-        techTitle: "Des centaines de milliers de lignes par seconde.",
-        tech: "Mesuré à environ 390 000 lignes par seconde en mode série sur le matériel de dev pour des schémas produit à 5 champs — les migrations de gros catalogues se font en secondes, pas en heures.",
-        notIncluded: {
-          title: "Sur la feuille de route",
-          intro: "Deux capacités d'Importer sont planifiées mais pas encore livrées.",
-          items: [
+        "techEyebrow": "Point technique",
+        "techTitle": "Des centaines de milliers de lignes par seconde.",
+        "tech": "Mesuré à environ 390 000 lignes par seconde en mode série sur le matériel de dev pour des schémas produit à 5 champs — les migrations de gros catalogues se font en secondes, pas en heures.",
+        "notIncluded": {
+          "title": "Sur la feuille de route",
+          "intro": "Deux capacités d'Importer sont planifiées mais pas encore livrées.",
+          "items": [
             "Sink en masse Supabase (SupabaseBulkSink, phase 4)",
-            "Assistant ESTINAD Import Wizard dans ESTINAD UI (phase 3)",
+            "Assistant ESTINAD Import Wizard dans ESTINAD UI (phase 3)"
           ],
-          ctaLabel: "",
-          ctaHref: "",
+          "ctaLabel": "",
+          "ctaHref": ""
         },
-        faqEyebrow: "FAQ",
-        faqTitle: "Les premières questions des exploitants.",
-        faq: [
-          { q: "L'import va-t-il figer ma caisse ?", a: "Non. Importer traite par passages fragmentés à mémoire bornée, le POS continue de servir pendant le chargement." },
-          { q: "Puis-je annuler un job en cours ?", a: "Oui. Les jobs longs peuvent être annulés en cours sans laisser la base dans un état incohérent." },
-          { q: "Comment sont gérées les mauvaises lignes ?", a: "Un schéma déclaratif valide les types et déduplique les lignes avant écriture, moins de mauvais enregistrements à nettoyer ensuite." },
+        "faqEyebrow": "FAQ",
+        "faqTitle": "Les premières questions des exploitants.",
+        "faq": [
+          {
+            "q": "L'import va-t-il figer ma caisse ?",
+            "a": "Non. Importer traite par passages fragmentés à mémoire bornée, le POS continue de servir pendant le chargement."
+          },
+          {
+            "q": "Puis-je annuler un job en cours ?",
+            "a": "Oui. Les jobs longs peuvent être annulés en cours sans laisser la base dans un état incohérent."
+          },
+          {
+            "q": "Comment sont gérées les mauvaises lignes ?",
+            "a": "Un schéma déclaratif valide les types et déduplique les lignes avant écriture, moins de mauvais enregistrements à nettoyer ensuite."
+          }
         ],
-        ctaTitle: "Déplacez votre catalogue en un seul job.",
-        ctaPrimary: "Demander une démo →",
-        ctaSecondary: "Explorer la plateforme",
-        secondaryHref: "/platform",
-      },
+        "ctaTitle": "Déplacez votre catalogue en un seul job.",
+        "ctaPrimary": "Demander une démo →",
+        "ctaSecondary": "Explorer la plateforme",
+        "secondaryHref": "/platform"
+      }
     },
-    roadmap: {
+    "roadmap": {
       "ecosystem-admin": {
-        name: "ESTINAD Ecosystem Admin",
-        status: "archived",
-        summary:
-          "Une console web Next.js pour opérer la plateforme SaaS ESTINAD — onboarding des tenants, contrôle des licences et visibilité d'audit. Actuellement archivée et considérée comme outil interne, pas comme produit client.",
+        "name": "ESTINAD Ecosystem Admin",
+        "status": "archived",
+        "summary": "Une console web Next.js pour l'exploitation opérationnelle des tenants sur la plateforme hybride ESTINAD — onboarding des tenants, contrôle des licences et visibilité d'audit. Actuellement archivée et considérée comme outil interne, pas comme produit client."
       },
       "loyalty-portal": {
-        name: "ESTINAD Loyalty Portal",
-        status: "planned",
-        summary:
-          "Un portail web mobile-first planifié où les clients consultent leurs points fidélité et leur historique depuis un QR code sur le reçu. Spécifié par un PRD uniquement — aucun code applicatif n'existe encore. Le gain et l'utilisation des points fonctionnent déjà dans ESTINAD POS.",
-      },
-    },
+        "name": "ESTINAD Loyalty Portal",
+        "status": "planned",
+        "summary": "Un portail web mobile-first planifié où les clients consultent leurs points fidélité et leur historique depuis un QR code sur le reçu. Spécifié par un PRD uniquement — aucun code applicatif n'existe encore. Le gain et l'utilisation des points fonctionnent déjà dans ESTINAD POS."
+      }
+    }
   },
-
-  pricing: {
-    logicNote:
-      "Les tarifs suivent le nombre de points de vente, pas le nombre de comptes. Chaque niveau tourne sur la même plateforme — vous ne la dépasserez jamais.",
-    includedTitle: "Inclus à tous les niveaux",
-    included: [
+  "pricing": {
+    "logicNote": "Les tarifs suivent le nombre de points de vente, pas le nombre de comptes. Chaque niveau tourne sur la même plateforme — vous ne la dépasserez jamais.",
+    "includedTitle": "Inclus à tous les niveaux",
+    "included": [
       "La plateforme ESTINAD OS complète en dessous",
       "Synchro tolérante au hors ligne et sauvegarde continue",
       "Accès par rôles et piste d'audit",
-      "Reporting par site et consolidé",
+      "Reporting par site et consolidé"
     ],
-    payingTitle: "Ce pour quoi vous payez",
-    paying: [
+    "payingTitle": "Ce pour quoi vous payez",
+    "paying": [
       "Une plateforme qui tient quand ça compte",
       "Des chiffres qui concordent entre sites et produits",
       "Une voie claire pour ajouter sites et produits",
-      "Un contrôle entreprise quand la croissance l'exige",
+      "Un contrôle entreprise quand la croissance l'exige"
     ],
-    faqEyebrow: "FAQ tarifs",
-    faqTitle: "Comment fonctionnent les tarifs ESTINAD.",
-    faqs: [
-      { q: "Les tarifs sont-ils par site ou par organisation ?", a: "La plupart des produits ESTINAD sont facturés par point de vente (ou site/clinique), mensuellement. ESTINAD Cloud est inclus avec toute offre multi-sites et propose des niveaux par organisation pour les opérateurs plus importants." },
-      { q: "Que se passe-t-il quand j'ajoute un point de vente ?", a: "Vous ajoutez le site dans ESTINAD Cloud et il hérite de votre offre. La facturation s'ajuste par site au cycle suivant — sans re-platformer, sans nouveau contrat." },
-      { q: "Proposez-vous des contrats annuels ?", a: "Oui. Les niveaux Entreprise sont annuels et incluent résidence, SSO et onboarding dédié. Les offres multi-sites peuvent être facturées mensuellement ou annuellement." },
-      { q: "Existe-t-il une version d'essai ?", a: "Nous proposons des démos guidées et des pilotes cadrés plutôt que des inscriptions ouvertes, afin de caler la plateforme sur vos opérations avant tout engagement." },
+    "faqEyebrow": "FAQ tarifs",
+    "faqTitle": "Comment fonctionnent les tarifs ESTINAD.",
+    "faqs": [
+      {
+        "q": "Les tarifs sont-ils par site ou par organisation ?",
+        "a": "La plupart des produits ESTINAD sont facturés par point de vente (ou site/clinique), mensuellement. ESTINAD Cloud est inclus avec toute offre multi-sites et propose des niveaux par organisation pour les opérateurs plus importants."
+      },
+      {
+        "q": "Que se passe-t-il quand j'ajoute un point de vente ?",
+        "a": "Vous ajoutez le site dans ESTINAD Cloud et il hérite de votre offre. La facturation s'ajuste par site au cycle suivant — sans re-platformer, sans nouveau contrat."
+      },
+      {
+        "q": "Proposez-vous des contrats annuels ?",
+        "a": "Oui. Les niveaux Entreprise sont annuels et incluent résidence, SSO et onboarding dédié. Les offres multi-sites peuvent être facturées mensuellement ou annuellement."
+      },
+      {
+        "q": "Existe-t-il une version d'essai ?",
+        "a": "Nous proposons des démos guidées et des pilotes cadrés plutôt que des inscriptions ouvertes, afin de caler la plateforme sur vos opérations avant tout engagement."
+      }
     ],
-    tiers: {
-      retail: [
-        { name: "Site unique", price: "4 900 DZD", cadence: "/ mois · par site", positioning: "Pour un magasin sortant d'outils éparpillés.", features: ["1 site, caisses illimitées", "Caisse + registre de stocks", "Matrice de variantes (taille / couleur)", "Rapports quotidiens", "Support e-mail"], cta: "Demander une démo", emphasized: false },
-        { name: "Multi-sites", price: "9 900 DZD", cadence: "/ mois · par site", positioning: "Pour les détaillants qui passent à plusieurs sites.", features: ["Tout du Site unique", "Transferts de stock entre sites", "Catalogue et prix centraux", "Reporting employés et postes", "Support prioritaire"], cta: "Demander une démo", emphasized: true },
-        { name: "Entreprise", price: "Sur devis", cadence: "contrat annuel", positioning: "Pour les groupes nécessitant contrôle et résidence.", features: ["Tout de Multi-sites", "Contrôle organisationnel ESTINAD Cloud", "Contrôles de résidence et rétention", "SSO et exports d'audit", "Onboarding dédié"], cta: "Contacter le commercial", emphasized: false },
+    "tiers": {
+      "retail": [
+        {
+          "name": "Site unique",
+          "price": "4 900 DZD",
+          "cadence": "/ mois · par site",
+          "positioning": "Pour un magasin sortant d'outils éparpillés.",
+          "features": [
+            "1 site, caisses illimitées",
+            "Caisse + registre de stocks",
+            "Matrice de variantes (taille / couleur)",
+            "Rapports quotidiens",
+            "Support e-mail"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": false
+        },
+        {
+          "name": "Multi-sites",
+          "price": "9 900 DZD",
+          "cadence": "/ mois · par site",
+          "positioning": "Pour les détaillants qui passent à plusieurs sites.",
+          "features": [
+            "Tout du Site unique",
+            "Transferts de stock entre sites",
+            "Catalogue et prix centraux",
+            "Reporting employés et postes",
+            "Support prioritaire"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": true
+        },
+        {
+          "name": "Entreprise",
+          "price": "Sur devis",
+          "cadence": "contrat annuel",
+          "positioning": "Pour les groupes nécessitant contrôle et résidence.",
+          "features": [
+            "Tout de Multi-sites",
+            "Contrôle organisationnel ESTINAD Cloud",
+            "Contrôles de résidence et rétention",
+            "SSO et exports d'audit",
+            "Onboarding dédié"
+          ],
+          "cta": "Contacter le commercial",
+          "emphasized": false
+        }
       ],
-      restaurant: [
-        { name: "Site unique", price: "5 900 DZD", cadence: "/ mois · par site", positioning: "Pour un restaurant ou café.", features: ["1 site, comptoir + service à table", "Flux de commande + tickets cuisine", "Gestion de la carte et modificateurs", "Clôture de poste et réconciliation de caisse", "Support e-mail"], cta: "Demander une démo", emphasized: false },
-        { name: "Multi-sites", price: "11 900 DZD", cadence: "/ mois · par site", positioning: "Pour les marques de restauration à plusieurs sites.", features: ["Tout du Site unique", "Carte centrale sur tous les sites", "Support affichage cuisine", "Coût matière et suivi des pertes", "Support prioritaire"], cta: "Demander une démo", emphasized: true },
-        { name: "Entreprise", price: "Sur devis", cadence: "contrat annuel", positioning: "Pour les groupes nécessitant un contrôle central.", features: ["Tout de Multi-sites", "Contrôle organisationnel ESTINAD Cloud", "Reporting consolidé des marges", "Résidence et exports d'audit", "Onboarding dédié"], cta: "Contacter le commercial", emphasized: false },
+      "restaurant": [
+        {
+          "name": "Site unique",
+          "price": "5 900 DZD",
+          "cadence": "/ mois · par site",
+          "positioning": "Pour un restaurant ou café.",
+          "features": [
+            "1 site, comptoir + service à table",
+            "Flux de commande + tickets cuisine",
+            "Gestion de la carte et modificateurs",
+            "Clôture de poste et réconciliation de caisse",
+            "Support e-mail"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": false
+        },
+        {
+          "name": "Multi-sites",
+          "price": "11 900 DZD",
+          "cadence": "/ mois · par site",
+          "positioning": "Pour les marques de restauration à plusieurs sites.",
+          "features": [
+            "Tout du Site unique",
+            "Carte centrale sur tous les sites",
+            "Support affichage cuisine",
+            "Coût matière et suivi des pertes",
+            "Support prioritaire"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": true
+        },
+        {
+          "name": "Entreprise",
+          "price": "Sur devis",
+          "cadence": "contrat annuel",
+          "positioning": "Pour les groupes nécessitant un contrôle central.",
+          "features": [
+            "Tout de Multi-sites",
+            "Contrôle organisationnel ESTINAD Cloud",
+            "Reporting consolidé des marges",
+            "Résidence et exports d'audit",
+            "Onboarding dédié"
+          ],
+          "cta": "Contacter le commercial",
+          "emphasized": false
+        }
       ],
-      clinic: [
-        { name: "Clinique unique", price: "6 900 DZD", cadence: "/ mois · par clinique", positioning: "Pour un cabinet qui se numérise.", features: ["1 clinique, praticiens illimités", "Planning + dossiers patients", "Facturation des actes et factures", "Accès par rôles", "Support e-mail"], cta: "Demander une démo", emphasized: false },
-        { name: "Multi-cliniques", price: "12 900 DZD", cadence: "/ mois · par clinique", positioning: "Pour les cabinets à plusieurs sites.", features: ["Tout de Clinique unique", "Planning cross-cliniques", "Reporting financier consolidé", "Rappels patients (SMS / WhatsApp)", "Support prioritaire"], cta: "Demander une démo", emphasized: true },
-        { name: "Entreprise", price: "Sur devis", cadence: "contrat annuel", positioning: "Pour les réseaux avec besoins de résidence.", features: ["Tout de Multi-cliniques", "Contrôle organisationnel ESTINAD Cloud", "Options de résidence des données", "SSO et exports d'audit", "Onboarding dédié"], cta: "Contacter le commercial", emphasized: false },
+      "clinic": [
+        {
+          "name": "Clinique unique",
+          "price": "6 900 DZD",
+          "cadence": "/ mois · par clinique",
+          "positioning": "Pour un cabinet qui se numérise.",
+          "features": [
+            "1 clinique, praticiens illimités",
+            "Planning + dossiers patients",
+            "Facturation des actes et factures",
+            "Accès par rôles",
+            "Support e-mail"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": false
+        },
+        {
+          "name": "Multi-cliniques",
+          "price": "12 900 DZD",
+          "cadence": "/ mois · par clinique",
+          "positioning": "Pour les cabinets à plusieurs sites.",
+          "features": [
+            "Tout de Clinique unique",
+            "Planning cross-cliniques",
+            "Reporting financier consolidé",
+            "Rappels patients (SMS / WhatsApp)",
+            "Support prioritaire"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": true
+        },
+        {
+          "name": "Entreprise",
+          "price": "Sur devis",
+          "cadence": "contrat annuel",
+          "positioning": "Pour les réseaux avec besoins de résidence.",
+          "features": [
+            "Tout de Multi-cliniques",
+            "Contrôle organisationnel ESTINAD Cloud",
+            "Options de résidence des données",
+            "SSO et exports d'audit",
+            "Onboarding dédié"
+          ],
+          "cta": "Contacter le commercial",
+          "emphasized": false
+        }
       ],
-      cloud: [
-        { name: "Opérateur", price: "Inclus", cadence: "avec toute offre multi-sites", positioning: "Contrôle central pour opérateurs en croissance.", features: ["Gestion des sites et utilisateurs", "Sauvegarde chiffrée continue", "Reporting cross-produits", "Accès par rôles", "Support e-mail"], cta: "Demander une démo", emphasized: false },
-        { name: "Organisation", price: "À partir de 19 900 DZD", cadence: "/ mois · par organisation", positioning: "Pour les opérateurs multi-marques se consolidant.", features: ["Tout d'Opérateur", "Marques et entités juridiques", "Tableaux de bord exécutifs consolidés", "Exports programmés", "Support prioritaire"], cta: "Demander une démo", emphasized: true },
-        { name: "Entreprise", price: "Sur devis", cadence: "contrat annuel", positioning: "Pour le contrôle entreprise et la résidence.", features: ["Tout d'Organisation", "SSO et audit avancé", "Résidence et rétention régionales", "Déploiement hybride", "Gestionnaire de succès dédié"], cta: "Contacter le commercial", emphasized: false },
-      ],
-    },
+      "cloud": [
+        {
+          "name": "Opérateur",
+          "price": "Inclus",
+          "cadence": "avec toute offre multi-sites",
+          "positioning": "Contrôle central pour opérateurs en croissance.",
+          "features": [
+            "Gestion des sites et utilisateurs",
+            "Sauvegarde chiffrée continue",
+            "Reporting cross-produits",
+            "Accès par rôles",
+            "Support e-mail"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": false
+        },
+        {
+          "name": "Organisation",
+          "price": "À partir de 19 900 DZD",
+          "cadence": "/ mois · par organisation",
+          "positioning": "Pour les opérateurs multi-marques se consolidant.",
+          "features": [
+            "Tout d'Opérateur",
+            "Marques et entités juridiques",
+            "Tableaux de bord exécutifs consolidés",
+            "Exports programmés",
+            "Support prioritaire"
+          ],
+          "cta": "Demander une démo",
+          "emphasized": true
+        },
+        {
+          "name": "Entreprise",
+          "price": "Sur devis",
+          "cadence": "contrat annuel",
+          "positioning": "Pour le contrôle entreprise et la résidence.",
+          "features": [
+            "Tout d'Organisation",
+            "SSO et audit avancé",
+            "Résidence et rétention régionales",
+            "Déploiement hybride",
+            "Gestionnaire de succès dédié"
+          ],
+          "cta": "Contacter le commercial",
+          "emphasized": false
+        }
+      ]
+    }
   },
-
-  solutions: {
-    index: {
-      eyebrow: "Solutions",
-      title: "Conçu pour la façon dont votre entreprise fonctionne réellement.",
-      intro: "ESTINAD rejoint chaque opérateur là où il en est — par secteur, par taille, par structure. Une plateforme, adaptée à votre réalité.",
+  "solutions": {
+    "index": {
+      "eyebrow": "Solutions",
+      "title": "Conçu pour la façon dont votre entreprise fonctionne réellement.",
+      "intro": "ESTINAD rejoint chaque opérateur là où il en est — par secteur, par taille, par structure. Une plateforme, adaptée à votre réalité."
     },
-    items: {
-      retail: {
-        name: "Pour le Commerce",
-        audience: "Détaillants de prêt-à-porter et multi-catégories",
-        summary:
-          "Arrêtez de réconcilier caisse, Excel et WhatsApp à la main. ESTINAD donne au commerce un registre sur tous les points de vente.",
-        painsLabel: "Ce qui est difficile aujourd'hui",
-        shiftsLabel: "Ce qui change avec ESTINAD",
-        pains: [
+    "items": {
+      "retail": {
+        "name": "Pour le Commerce",
+        "audience": "Détaillants de prêt-à-porter et multi-catégories",
+        "summary": "Arrêtez de réconcilier caisse, Excel et WhatsApp à la main. ESTINAD donne au commerce un registre sur tous les points de vente.",
+        "painsLabel": "Ce qui est difficile aujourd'hui",
+        "shiftsLabel": "Ce qui change avec ESTINAD",
+        "pains": [
           "Un stock par variantes qui ne correspond jamais au rayon",
           "Aucune vue d'ensemble des points de vente",
           "Clôture lente, réconciliation de caisse manuelle",
-          "Des remises et marges que personne ne peut auditer",
+          "Des remises et marges que personne ne peut auditer"
         ],
-        shifts: [
+        "shifts": [
           "Un registre exact par variantes en temps réel",
           "Performance des sites et employés en une vue",
           "Clôture quotidienne propre avec signalements d'écarts",
-          "Analyse des marges et remises à la demande",
+          "Analyse des marges et remises à la demande"
         ],
-        relatedEyebrow: "Produits recommandés",
-        relatedTitle: "Les produits ESTINAD sur lesquels cette solution s'appuie.",
-        related: ["retail", "cloud"],
+        "relatedEyebrow": "Produits recommandés",
+        "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
+        "related": [
+          "retail",
+          "cloud"
+        ]
       },
-      restaurants: {
-        name: "Pour la Restauration",
-        audience: "Opérateurs comptoir et service à table",
-        summary:
-          "Remplacez tickets papier et caisse déconnectée par un flux calme, de la commande à la cuisine jusqu'à la clôture.",
-        painsLabel: "Ce qui est difficile aujourd'hui",
-        shiftsLabel: "Ce qui change avec ESTINAD",
-        pains: [
+      "restaurants": {
+        "name": "Pour la Restauration",
+        "audience": "Opérateurs comptoir et service à table",
+        "summary": "Remplacez tickets papier et caisse déconnectée par un flux calme, de la commande à la cuisine jusqu'à la clôture.",
+        "painsLabel": "Ce qui est difficile aujourd'hui",
+        "shiftsLabel": "Ce qui change avec ESTINAD",
+        "pains": [
           "Tickets cuisine perdus ou mal routés",
           "Dérive de la carte entre sites",
           "Aucune visibilité sur le coût matière et les pertes",
-          "Clôture de poste lente et error-prone",
+          "Clôture de poste lente et error-prone"
         ],
-        shifts: [
+        "shifts": [
           "Routage fiable des tickets au bon poste",
           "Contrôle central de la carte et des prix",
           "Coût par recette et suivi des pertes",
-          "Clôture de poste rapide et réconciliée",
+          "Clôture de poste rapide et réconciliée"
         ],
-        relatedEyebrow: "Produits recommandés",
-        relatedTitle: "Les produits ESTINAD sur lesquels cette solution s'appuie.",
-        related: ["restaurant", "cloud"],
+        "relatedEyebrow": "Produits recommandés",
+        "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
+        "related": [
+          "restaurant",
+          "cloud"
+        ]
       },
-      clinics: {
-        name: "Pour les Cliniques",
-        audience: "Dirigeants et gestionnaires de cliniques",
-        summary:
-          "Réunissez planning, dossiers et facturation dans un système discipliné et auditable, que votre personnel peut confiance.",
-        painsLabel: "Ce qui est difficile aujourd'hui",
-        shiftsLabel: "Ce qui change avec ESTINAD",
-        pains: [
+      "clinics": {
+        "name": "Pour les Cliniques",
+        "audience": "Dirigeants et gestionnaires de cliniques",
+        "summary": "Réunissez planning, dossiers et facturation dans un système discipliné et auditable, que votre personnel peut confiance.",
+        "painsLabel": "Ce qui est difficile aujourd'hui",
+        "shiftsLabel": "Ce qui change avec ESTINAD",
+        "pains": [
           "Dossiers papier et historique manquant",
           "Praticiens et salles en double réservation",
           "Facturation fragmentée et suivi des impayés",
-          "Aucun contrôle sur qui voit quoi",
+          "Aucun contrôle sur qui voit quoi"
         ],
-        shifts: [
+        "shifts": [
           "Dossiers patients prêts pour la visite, d'une visite à l'autre",
           "Planning praticiens et salles sans conflits",
           "Facturation propre avec assurance et règlement patient",
-          "Accès par rôles et piste d'audit complète",
+          "Accès par rôles et piste d'audit complète"
         ],
-        relatedEyebrow: "Produits recommandés",
-        relatedTitle: "Les produits ESTINAD sur lesquels cette solution s'appuie.",
-        related: ["clinic", "cloud"],
+        "relatedEyebrow": "Produits recommandés",
+        "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
+        "related": [
+          "clinic",
+          "cloud"
+        ]
       },
-      smes: {
-        name: "Pour les PME",
-        audience: "Dirigeants de PME en Algérie",
-        summary:
-          "De la discipline de grade entreprise sans la complexité entreprise. ESTINAD est le système sur lequel une PME sérieuse s'appuie.",
-        painsLabel: "Ce qui est difficile aujourd'hui",
-        shiftsLabel: "Ce qui change avec ESTINAD",
-        pains: [
+      "smes": {
+        "name": "Pour les PME",
+        "audience": "Dirigeants de PME en Algérie",
+        "summary": "De la discipline de grade entreprise sans la complexité entreprise. ESTINAD est le système sur lequel une PME sérieuse s'appuie.",
+        "painsLabel": "Ce qui est difficile aujourd'hui",
+        "shiftsLabel": "Ce qui change avec ESTINAD",
+        "pains": [
           "Des outils qui ne se parlent pas",
           "Des dirigeants portant toute l'opération dans leur tête",
           "Un logiciel qui semble conçu pour quelqu'un d'autre",
-          "Aucune voie claire pour ajouter sites ou produits",
+          "Aucune voie claire pour ajouter sites ou produits"
         ],
-        shifts: [
+        "shifts": [
           "Une plateforme sur les produits et points de vente",
           "Des tableaux de bord clairs qui remplacent la mémoire",
           "Conçu pour les opérations algériennes, prêt pour le MENA",
-          "Ajouter un site ou un produit sans re-platformer",
+          "Ajouter un site ou un produit sans re-platformer"
         ],
-        relatedEyebrow: "Produits recommandés",
-        relatedTitle: "Les produits ESTINAD sur lesquels cette solution s'appuie.",
-        related: ["retail", "restaurant", "clinic", "cloud"],
+        "relatedEyebrow": "Produits recommandés",
+        "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
+        "related": [
+          "retail",
+          "restaurant",
+          "clinic",
+          "cloud"
+        ]
       },
       "multi-branch": {
-        name: "Pour les multi-points de vente",
-        audience: "Opérateurs gérant deux sites ou plus",
-        summary:
-          "Gérez chaque site sur un registre, avec contrôle central, reporting consolidé et déploiements contrôlés.",
-        painsLabel: "Ce qui est difficile aujourd'hui",
-        shiftsLabel: "Ce qui change avec ESTINAD",
-        pains: [
+        "name": "Pour les multi-points de vente",
+        "audience": "Opérateurs gérant deux sites ou plus",
+        "summary": "Gérez chaque site sur un registre, avec contrôle central, reporting consolidé et déploiements contrôlés.",
+        "painsLabel": "Ce qui est difficile aujourd'hui",
+        "shiftsLabel": "Ce qui change avec ESTINAD",
+        "pains": [
           "Chaque site sur ses propres outils",
           "Aucune vue consolidée du parc",
           "Catalogue, carte ou prix incohérents",
-          "Aucun moyen contrôlé d'ajouter des sites",
+          "Aucun moyen contrôlé d'ajouter des sites"
         ],
-        shifts: [
+        "shifts": [
           "Chaque site sur une plateforme partagée",
           "Reporting consolidé sur toute l'organisation",
           "Contrôle central du catalogue, de la carte et des prix",
-          "Ajouter des sites en minutes avec accès limité",
+          "Ajouter des sites en minutes avec accès limité"
         ],
-        relatedEyebrow: "Produits recommandés",
-        relatedTitle: "Les produits ESTINAD sur lesquels cette solution s'appuie.",
-        related: ["cloud", "retail", "restaurant", "clinic"],
-      },
-    },
+        "relatedEyebrow": "Produits recommandés",
+        "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
+        "related": [
+          "cloud",
+          "retail",
+          "restaurant",
+          "clinic"
+        ]
+      }
+    }
   },
-
-  services: {
-    index: {
-      eyebrow: "Services",
-      title: "Logiciel sur mesure, sites web et écosystèmes — bâtis de bout en bout.",
-      intro:
-        "ESTINAD est aussi une entreprise de livraison logicielle sur mesure. Quand un produit prêt ne suffit pas, nous concevons et bâtissons l'application, le site ou le système numérique complet dont votre entreprise a besoin — avec la même discipline d'ingénierie que nos produits.",
-      productsNoteEyebrow: "Produits vs. services",
-      productsNoteTitle: "Deux façons de travailler avec ESTINAD.",
-      productsNoteBody:
-        "Adoptez un produit prêt de notre catalogue, ou commandez un build sur mesure. Beaucoup de clients font les deux — nos produits là où ils conviennent, et nous bâtissons ce qui leur est propre.",
-      ctaTitle: "Un projet en tête ?",
-      ctaBody: "Dites-nous ce que vous devez bâtir. Nous le cadrerons et proposerons la bonne voie.",
-      cta: "Discuter de votre projet →",
+  "services": {
+    "index": {
+      "eyebrow": "Services",
+      "title": "Logiciel sur mesure, sites web et écosystèmes — bâtis de bout en bout.",
+      "intro": "ESTINAD est aussi une entreprise de livraison logicielle sur mesure. Quand un produit prêt ne suffit pas, nous concevons et bâtissons l'application, le site ou le système numérique complet dont votre entreprise a besoin — avec la même discipline d'ingénierie que nos produits.",
+      "productsNoteEyebrow": "Produits vs. services",
+      "productsNoteTitle": "Deux façons de travailler avec ESTINAD.",
+      "productsNoteBody": "Adoptez un produit prêt de notre catalogue, ou commandez un build sur mesure. Beaucoup de clients font les deux — nos produits là où ils conviennent, et nous bâtissons ce qui leur est propre.",
+      "ctaTitle": "Un projet en tête ?",
+      "ctaBody": "Dites-nous ce que vous devez bâtir. Nous le cadrerons et proposerons la bonne voie.",
+      "cta": "Discuter de votre projet →"
     },
-    items: {
+    "items": {
       "custom-software": {
-        glyph: "CS",
-        name: "Développement logiciel sur mesure",
-        short: "Logiciel sur mesure",
-        oneLiner:
-          "Des applications métier sur mesure bâties pour vos flux, vos utilisateurs et votre échelle.",
-        positioning:
-          "Quand aucun produit prêt ne convient, ESTINAD conçoit et bâtis un logiciel sur mesure adapté à votre opération — des outils internes et tableaux de bord opérationnels aux applications métier complètes. Bâti avec la même discipline d'ingénierie que nos produits : stable, sécurisé et fait pour durer.",
-        forTitle: "Pour qui",
-        forHeader: "Pour les entreprises qui ont besoin de quelque chose qui n'existe pas encore.",
-        forList: [
+        "glyph": "CS",
+        "name": "Développement logiciel sur mesure",
+        "short": "Logiciel sur mesure",
+        "oneLiner": "Des applications métier sur mesure bâties pour vos flux, vos utilisateurs et votre échelle.",
+        "positioning": "Quand aucun produit prêt ne convient, ESTINAD conçoit et bâtis un logiciel sur mesure adapté à votre opération — des outils internes et tableaux de bord opérationnels aux applications métier complètes. Bâti avec la même discipline d'ingénierie que nos produits : stable, sécurisé et fait pour durer.",
+        "forTitle": "Pour qui",
+        "forHeader": "Pour les entreprises qui ont besoin de quelque chose qui n'existe pas encore.",
+        "forList": [
           "Entreprises avec des flux qu'aucun produit du marché ne couvre",
           "Opérateurs qui ont dépassé les tableurs et les outils génériques",
-          "Sociétés qui ont besoin d'un système adapté à leur façon de travailler",
+          "Sociétés qui ont besoin d'un système adapté à leur façon de travailler"
         ],
-        capabilitiesTitle: "Ce que nous bâtissons",
-        capabilities: [
+        "capabilitiesTitle": "Ce que nous bâtissons",
+        "capabilities": [
           "Applications métier internes et outils opérationnels",
           "Systèmes de gestion multi-sites et multi-rôles",
           "Flux, validations et circuits de documents sur mesure",
-          "Tableaux de bord et reporting bâtis sur vos données réelles",
+          "Tableaux de bord et reporting bâtis sur vos données réelles"
         ],
-        processEyebrow: "Comment nous livrons",
-        processTitle: "Du cahier des charges au support — une seule équipe responsable.",
-        process: [
-          { t: "Découverte & cahier des charges", d: "Nous cartographions le problème, les utilisateurs et les contraintes — et écrivons un cahier des charges clair avant tout code." },
-          { t: "Architecture & conception", d: "Nous concevons le modèle de données, les flux et l'interface — validés avec vous avant le build." },
-          { t: "Build & itération", d: "Nous bâtissons en cycles courts et revus, pour voir un logiciel fonctionnel tôt et souvent." },
-          { t: "Déploiement & support", d: "Nous livrons, formons votre équipe et restons — support et évolution du système après le lancement." },
+        "processEyebrow": "Comment nous livrons",
+        "processTitle": "Du cahier des charges au support — une seule équipe responsable.",
+        "process": [
+          {
+            "t": "Découverte & cahier des charges",
+            "d": "Nous cartographions le problème, les utilisateurs et les contraintes — et écrivons un cahier des charges clair avant tout code."
+          },
+          {
+            "t": "Architecture & conception",
+            "d": "Nous concevons le modèle de données, les flux et l'interface — validés avec vous avant le build."
+          },
+          {
+            "t": "Build & itération",
+            "d": "Nous bâtissons en cycles courts et revus, pour voir un logiciel fonctionnel tôt et souvent."
+          },
+          {
+            "t": "Déploiement & support",
+            "d": "Nous livrons, formons votre équipe et restons — support et évolution du système après le lancement."
+          }
         ],
-        techEyebrow: "Comment nous bâtissons",
-        techTitle: "De la discipline d'ingénierie, pas de l'improvisation.",
-        tech: [
+        "techEyebrow": "Comment nous bâtissons",
+        "techTitle": "De la discipline d'ingénierie, pas de l'improvisation.",
+        "tech": [
           "Stacks modernes et maintenables, choisies pour le problème",
           "Sécurisé par conception — contrôle d'accès, audit et chiffrement",
           "Tolérant au hors ligne là où l'opération l'exige",
-          "Documenté, versionné et bâti pour être transmis",
+          "Documenté, versionné et bâti pour être transmis"
         ],
-        ctaTitle: "Dites-nous ce que vous devez bâtir.",
+        "ctaTitle": "Dites-nous ce que vous devez bâtir."
       },
-      websites: {
-        glyph: "WB",
-        name: "Création de sites web",
-        short: "Sites web",
-        oneLiner:
-          "Des sites web premium, rapides et multilingues — de la présence d'entreprise aux plateformes complexes.",
-        positioning:
-          "ESTINAD conçoit et bâtis des sites web à la hauteur de l'entreprise derrière. De la présence d'entreprise à un site marketing multilingue ou une plateforme transactionnelle complexe, nous livrons rapide, propre et évolutif — en arabe, français et anglais avec un vrai RTL.",
-        forTitle: "Pour qui",
-        forHeader: "Pour les entreprises qui ont besoin d'un site web qui signifie du sérieux.",
-        forList: [
+      "websites": {
+        "glyph": "WB",
+        "name": "Création de sites web",
+        "short": "Sites web",
+        "oneLiner": "Des sites web premium, rapides et multilingues — de la présence d'entreprise aux plateformes complexes.",
+        "positioning": "ESTINAD conçoit et bâtis des sites web à la hauteur de l'entreprise derrière. De la présence d'entreprise à un site marketing multilingue ou une plateforme transactionnelle complexe, nous livrons rapide, propre et évolutif — en arabe, français et anglais avec un vrai RTL.",
+        "forTitle": "Pour qui",
+        "forHeader": "Pour les entreprises qui ont besoin d'un site web qui signifie du sérieux.",
+        "forList": [
           "Sociétés qui ont besoin d'une présence web premium et professionnelle",
           "Marques qui exigent l'arabe, le français et l'anglais avec un vrai RTL",
-          "Entreprises qui ont besoin de plus qu'un prospectus — une vraie plateforme",
+          "Entreprises qui ont besoin de plus qu'un prospectus — une vraie plateforme"
         ],
-        capabilitiesTitle: "Ce que nous bâtissons",
-        capabilities: [
+        "capabilitiesTitle": "Ce que nous bâtissons",
+        "capabilities": [
           "Sites d'entreprise et de marque",
           "Sites multilingues (AR / FR / EN) avec support RTL complet",
           "Catalogues, capture de leads et portails clients",
-          "Rapides, orientés SEO et éditables par votre équipe",
+          "Rapides, orientés SEO et éditables par votre équipe"
         ],
-        processEyebrow: "Comment nous livrons",
-        processTitle: "Concevoir, bâtir et lancer — sans le désordre habituel.",
-        process: [
-          { t: "Stratégie & structure", d: "Nous définissons le message, l'audience et l'architecture d'information avant le design." },
-          { t: "Design", d: "Nous concevons une interface distinctive et premium — pas un template générique." },
-          { t: "Build", d: "Nous bâtissons rapide, accessible, multilingue et facile à maintenir." },
-          { t: "Lancer & évoluer", d: "Nous lançons, mesurons et gardons le site à jour au fil de la croissance." },
+        "processEyebrow": "Comment nous livrons",
+        "processTitle": "Concevoir, bâtir et lancer — sans le désordre habituel.",
+        "process": [
+          {
+            "t": "Stratégie & structure",
+            "d": "Nous définissons le message, l'audience et l'architecture d'information avant le design."
+          },
+          {
+            "t": "Design",
+            "d": "Nous concevons une interface distinctive et premium — pas un template générique."
+          },
+          {
+            "t": "Build",
+            "d": "Nous bâtissons rapide, accessible, multilingue et facile à maintenir."
+          },
+          {
+            "t": "Lancer & évoluer",
+            "d": "Nous lançons, mesurons et gardons le site à jour au fil de la croissance."
+          }
         ],
-        techEyebrow: "Comment nous bâtissons",
-        techTitle: "Moderne, rapide et maintenable.",
-        tech: [
+        "techEyebrow": "Comment nous bâtissons",
+        "techTitle": "Moderne, rapide et maintenable.",
+        "tech": [
           "Frameworks web modernes avec d'excellents core web vitals",
           "Activé CMS pour que votre équipe édite le contenu",
           "Multilingue et RTL natif, pas rajouté",
-          "SEO, analytique et performance intégrés",
+          "SEO, analytique et performance intégrés"
         ],
-        ctaTitle: "Un site web à bâtir ?",
+        "ctaTitle": "Un site web à bâtir ?"
       },
-      ecosystems: {
-        glyph: "EC",
-        name: "Écosystèmes numériques de bout en bout",
-        short: "Écosystèmes",
-        oneLiner:
-          "Des systèmes numériques complets qui connectent produits, builds sur mesure et outils en un tout cohérent.",
-        positioning:
-          "ESTINAD bâtis des écosystèmes numériques complets — le type de système où un produit, une application sur mesure, un site web et vos outils existants fonctionnent comme un seul. Nous connectons les briques, unifions les données et donnons à l'entreprise un système cohérent au lieu d'un patchwork. C'est là que notre double identité paie : nous pouvons à la fois utiliser nos produits et bâtir ce qui manque.",
-        forTitle: "Pour qui",
-        forHeader: "Pour les opérateurs qui ont besoin du système entier, pas d'une app.",
-        forList: [
+      "ecosystems": {
+        "glyph": "EC",
+        "name": "Écosystèmes numériques de bout en bout",
+        "short": "Écosystèmes",
+        "oneLiner": "Des systèmes numériques complets qui connectent produits, builds sur mesure et outils en un tout cohérent.",
+        "positioning": "ESTINAD bâtis des écosystèmes numériques complets — le type de système où un produit, une application sur mesure, un site web et vos outils existants fonctionnent comme un seul. Nous connectons les briques, unifions les données et donnons à l'entreprise un système cohérent au lieu d'un patchwork. C'est là que notre double identité paie : nous pouvons à la fois utiliser nos produits et bâtir ce qui manque.",
+        "forTitle": "Pour qui",
+        "forHeader": "Pour les opérateurs qui ont besoin du système entier, pas d'une app.",
+        "forList": [
           "Opérateurs multi-sites se consolidant sur un seul système",
           "Entreprises avec un mix de produits, d'outils sur mesure et de travail manuel",
-          "Sociétés en pleine transformation numérique",
+          "Sociétés en pleine transformation numérique"
         ],
-        capabilitiesTitle: "Ce que nous bâtissons",
-        capabilities: [
+        "capabilitiesTitle": "Ce que nous bâtissons",
+        "capabilities": [
           "Un système unifié sur sites, produits et builds sur mesure",
           "Une source de vérité pour les données de toute l'opération",
           "Intégrations avec paiements, comptabilité, livraison et plus",
-          "Une plateforme que l'entreprise étend au lieu de remplacer",
+          "Une plateforme que l'entreprise étend au lieu de remplacer"
         ],
-        processEyebrow: "Comment nous livrons",
-        processTitle: "Nous connectons les briques — et possédons le résultat.",
-        process: [
-          { t: "Cartographier le parc", d: "Nous inventorions vos sites, outils, données et lacunes — et concevons le système cible." },
-          { t: "Connecter & unifier", d: "Nous déployons les produits là où ils conviennent, bâtissons ce qui manque et intégrons le reste." },
-          { t: "Migrer & déployer", d: "Nous déplaçons données et gens par étapes contrôlées — sans risque de big-bang." },
-          { t: "Opérer & grandir", d: "Nous exploitons, surveillons et étendons l'écosystème au fil de la croissance." },
+        "processEyebrow": "Comment nous livrons",
+        "processTitle": "Nous connectons les briques — et possédons le résultat.",
+        "process": [
+          {
+            "t": "Cartographier le parc",
+            "d": "Nous inventorions vos sites, outils, données et lacunes — et concevons le système cible."
+          },
+          {
+            "t": "Connecter & unifier",
+            "d": "Nous déployons les produits là où ils conviennent, bâtissons ce qui manque et intégrons le reste."
+          },
+          {
+            "t": "Migrer & déployer",
+            "d": "Nous déplaçons données et gens par étapes contrôlées — sans risque de big-bang."
+          },
+          {
+            "t": "Opérer & grandir",
+            "d": "Nous exploitons, surveillons et étendons l'écosystème au fil de la croissance."
+          }
         ],
-        techEyebrow: "Comment nous bâtissons",
-        techTitle: "Un système, pas un patchwork.",
-        tech: [
+        "techEyebrow": "Comment nous bâtissons",
+        "techTitle": "Un système, pas un patchwork.",
+        "tech": [
           "Un modèle de données partagé sur produits et builds sur mesure",
           "Intégrations par API, webhooks et synchro programmée",
           "Accès par rôles couvrant tout l'écosystème",
-          "Conçu pour la connectivité instable et les conditions réelles",
+          "Conçu pour la connectivité instable et les conditions réelles"
         ],
-        ctaTitle: "Plus qu'une app à bâtir ? Parlons systèmes.",
+        "ctaTitle": "Plus qu'une app à bâtir ? Parlons systèmes."
       },
-      integrations: {
-        glyph: "IG",
-        name: "Intégrations",
-        short: "Intégrations",
-        oneLiner:
-          "Connectez ESTINAD à vos outils existants — paiements, comptabilité, livraison et plus.",
-        positioning:
-          "ESTINAD s'intègre aux outils que votre entreprise utilise déjà. Que vous adoptiez nos produits ou lanciez un build sur mesure, nous connectons paiements, comptabilité, agrégateurs de livraison, messagerie et reporting pour que votre logiciel fonctionne comme un seul système au lieu d'îlots isolés.",
-        forTitle: "Pour qui",
-        forHeader: "Pour les entreprises qui ont déjà des outils qui doivent se parler.",
-        forList: [
+      "integrations": {
+        "glyph": "IG",
+        "name": "Intégrations",
+        "short": "Intégrations",
+        "oneLiner": "Connectez ESTINAD à vos outils existants — paiements, comptabilité, livraison et plus.",
+        "positioning": "ESTINAD s'intègre aux outils que votre entreprise utilise déjà. Que vous adoptiez nos produits ou lanciez un build sur mesure, nous connectons paiements, comptabilité, agrégateurs de livraison, messagerie et reporting pour que votre logiciel fonctionne comme un seul système au lieu d'îlots isolés.",
+        "forTitle": "Pour qui",
+        "forHeader": "Pour les entreprises qui ont déjà des outils qui doivent se parler.",
+        "forList": [
           "Opérateurs connectant la caisse à la comptabilité et aux paiements",
           "Entreprises routant les données vers la livraison et la messagerie",
-          "Sociétés remplaçant l'export/import manuel par une vraie intégration",
+          "Sociétés remplaçant l'export/import manuel par une vraie intégration"
         ],
-        capabilitiesTitle: "Ce que nous connectons",
-        capabilities: [
+        "capabilitiesTitle": "Ce que nous connectons",
+        "capabilities": [
           "Terminaux de paiement et acquéreurs locaux",
           "Logiciels de comptabilité et de facturation",
           "Agrégateurs de livraison et outils logistiques",
-          "WhatsApp, e-mail et pipelines de reporting",
+          "WhatsApp, e-mail et pipelines de reporting"
         ],
-        processEyebrow: "Comment nous livrons",
-        processTitle: "Connecter, tester et maintenir.",
-        process: [
-          { t: "Auditer", d: "Nous cartographions les outils que vous utilisez et les données qui devraient circuler entre eux." },
-          { t: "Bâtir", d: "Nous bâtissons les intégrations avec des API documentées et une synchro robuste." },
-          { t: "Tester", d: "Nous testons sur des données réelles et les cas limites avant la mise en production." },
-          { t: "Maintenir", d: "Nous surveillons et maintenons les intégrations au fil de l'évolution des outils." },
+        "processEyebrow": "Comment nous livrons",
+        "processTitle": "Connecter, tester et maintenir.",
+        "process": [
+          {
+            "t": "Auditer",
+            "d": "Nous cartographions les outils que vous utilisez et les données qui devraient circuler entre eux."
+          },
+          {
+            "t": "Bâtir",
+            "d": "Nous bâtissons les intégrations avec des API documentées et une synchro robuste."
+          },
+          {
+            "t": "Tester",
+            "d": "Nous testons sur des données réelles et les cas limites avant la mise en production."
+          },
+          {
+            "t": "Maintenir",
+            "d": "Nous surveillons et maintenons les intégrations au fil de l'évolution des outils."
+          }
         ],
-        techEyebrow: "Comment nous bâtissons",
-        techTitle: "Robuste, documenté et surveillé.",
-        tech: [
+        "techEyebrow": "Comment nous bâtissons",
+        "techTitle": "Robuste, documenté et surveillé.",
+        "tech": [
           "API REST et webhooks, versionnés et documentés",
           "Synchro programmée pour les outils sans API temps réel",
           "Gestion d'erreurs et retry pour ne rien perdre silencieusement",
-          "Supervision pour le savoir avant vous",
+          "Supervision pour le savoir avant vous"
         ],
-        ctaTitle: "Connectez vos outils en un seul système.",
+        "ctaTitle": "Connectez vos outils en un seul système."
       },
-      consulting: {
-        glyph: "CO",
-        name: "Conseil & architecture",
-        short: "Conseil",
-        oneLiner:
-          "Stratégie, architecture et feuille de route — avant de bâtir ou d'acheter.",
-        positioning:
-          "ESTINAD aide les entreprises à prendre les bonnes décisions logicielles avant de dépenser. Nous auditons vos outils actuels, concevons l'architecture cible et recommandons une feuille de route build-vs-buy — pour que vous investissiez dans un logiciel adapté à votre opération et votre échelle, pas un logiciel que vous dépasserez ou abandonnerez.",
-        forTitle: "Pour qui",
-        forHeader: "Pour les dirigeants qui décident quoi bâtir, acheter ou remplacer.",
-        forList: [
+      "consulting": {
+        "glyph": "CO",
+        "name": "Conseil & architecture",
+        "short": "Conseil",
+        "oneLiner": "Stratégie, architecture et feuille de route — avant de bâtir ou d'acheter.",
+        "positioning": "ESTINAD aide les entreprises à prendre les bonnes décisions logicielles avant de dépenser. Nous auditons vos outils actuels, concevons l'architecture cible et recommandons une feuille de route build-vs-buy — pour que vous investissiez dans un logiciel adapté à votre opération et votre échelle, pas un logiciel que vous dépasserez ou abandonnerez.",
+        "forTitle": "Pour qui",
+        "forHeader": "Pour les dirigeants qui décident quoi bâtir, acheter ou remplacer.",
+        "forList": [
           "Dirigeants et cadres planifiant un investissement logiciel",
           "Entreprises incertaines entre acheter un produit ou bâtir sur mesure",
-          "Sociétés qui ont besoin d'une architecture et d'une feuille de route claires",
+          "Sociétés qui ont besoin d'une architecture et d'une feuille de route claires"
         ],
-        capabilitiesTitle: "Ce que nous livrons",
-        capabilities: [
+        "capabilitiesTitle": "Ce que nous livrons",
+        "capabilities": [
           "Audit de l'état actuel des outils, données et flux",
           "Architecture cible et conception du système",
           "Recommandations build-vs-buy et feuille de route",
-          "Aide à la sélection de produits et de prestataires",
+          "Aide à la sélection de produits et de prestataires"
         ],
-        processEyebrow: "Comment nous livrons",
-        processTitle: "De la réflexion claire avant des décisions coûteuses.",
-        process: [
-          { t: "Auditer", d: "Nous étudions votre opération, vos outils et vos points de douleur en profondeur." },
-          { t: "Concevoir", d: "Nous concevons l'architecture cible et le chemin pour y arriver." },
-          { t: "Recommander", d: "Nous donnons une recommandation build-vs-buy claire et honnête." },
-          { t: "Planifier", d: "Nous produisons une feuille de route par phases avec un périmètre et un coût réalistes." },
+        "processEyebrow": "Comment nous livrons",
+        "processTitle": "De la réflexion claire avant des décisions coûteuses.",
+        "process": [
+          {
+            "t": "Auditer",
+            "d": "Nous étudions votre opération, vos outils et vos points de douleur en profondeur."
+          },
+          {
+            "t": "Concevoir",
+            "d": "Nous concevons l'architecture cible et le chemin pour y arriver."
+          },
+          {
+            "t": "Recommander",
+            "d": "Nous donnons une recommandation build-vs-buy claire et honnête."
+          },
+          {
+            "t": "Planifier",
+            "d": "Nous produisons une feuille de route par phases avec un périmètre et un coût réalistes."
+          }
         ],
-        techEyebrow: "Comment nous bâtissons",
-        techTitle: "Une architecture qui résiste à la réalité.",
-        tech: [
+        "techEyebrow": "Comment nous bâtissons",
+        "techTitle": "Une architecture qui résiste à la réalité.",
+        "tech": [
           "Des conceptions qui tiennent compte de la connectivité, de l'échelle et du coût",
           "Sécurité et accès modélisés dès le départ",
           "Build-vs-buy ancré dans vos contraintes réelles",
-          "Des feuilles de route réalisables, pas aspiratives",
+          "Des feuilles de route réalisables, pas aspiratives"
         ],
-        ctaTitle: "Vous décidez quoi bâtir ou acheter ?",
-      },
-    },
+        "ctaTitle": "Vous décidez quoi bâtir ou acheter ?"
+      }
+    }
   },
-
-  caseStudies: {
-    index: {
-      eyebrow: "Études de cas",
-      title: "Produits adoptés. Systèmes bâtis. Écosystèmes livrés.",
-      intro:
-        "Travaux clients réels et adoption produit réelle — des applications sur mesure et des sites web aux écosystèmes numériques complets bâtis de bout en bout. ESTINAD est une entreprise logicielle avec des preuves des deux côtés.",
-      filterAll: "Tout",
-      filterIndustry: "Par secteur",
-      filterType: "Par type de projet",
-      industries: ["Commerce", "Restauration", "Pharmacies", "Cliniques", "PME", "Multi-sites"],
-      types: ["Adoption produit", "Logiciel sur mesure", "Sites web", "Écosystèmes", "Transformation numérique"],
-      ctaTitle: "Votre projet pourrait être le prochain.",
-      ctaBody: "Que vous vouliez un produit prêt ou un build sur mesure, nous voulons en entendre parler.",
-      cta: "Discuter de votre projet →",
+  "caseStudies": {
+    "index": {
+      "eyebrow": "Études de cas",
+      "title": "Produits adoptés. Systèmes bâtis. Écosystèmes livrés.",
+      "intro": "Travaux clients réels et adoption produit réelle — des applications sur mesure et des sites web aux écosystèmes numériques complets bâtis de bout en bout. ESTINAD est une entreprise logicielle avec des preuves des deux côtés.",
+      "illustrativeLabel": "Illustrative example",
+      "filterAll": "Tout",
+      "filterIndustry": "Par secteur",
+      "filterType": "Par type de projet",
+      "industries": [
+        "Commerce",
+        "Restauration",
+        "Pharmacies",
+        "Cliniques",
+        "PME",
+        "Multi-sites"
+      ],
+      "types": [
+        "Adoption produit",
+        "Logiciel sur mesure",
+        "Sites web",
+        "Écosystèmes",
+        "Transformation numérique"
+      ],
+      "ctaTitle": "Votre projet pourrait être le prochain.",
+      "ctaBody": "Que vous vouliez un produit prêt ou un build sur mesure, nous voulons en entendre parler.",
+      "cta": "Discuter de votre projet →"
     },
-    items: {
+    "items": {
       "retail-six-branches": {
-        glyph: "R1",
-        title: "Détaillant de prêt-à-porter · 6 sites sur un seul registre",
-        industry: "Commerce",
-        type: "Adoption produit",
-        meta: "Commerce · −83 % temps de clôture",
-        excerpt:
-          "Un détaillant multi-sites a abandonné trois installs de caisse et une réconciliation Excel nocturne en passant à ESTINAD Commerce et ESTINAD Cloud.",
-        contextTitle: "Le contexte",
-        context:
-          "Un détaillant de prêt-à-porter opérant six sites tournait sur trois systèmes de caisse différents et une réconciliation Excel nocturne. Les stocks ne correspondaient jamais au rayon, le dirigeant portait l'opération dans sa tête, et la clôture quotidienne prenait 90 minutes.",
-        needTitle: "Le besoin",
-        need:
-          "Un seul système fiable sur tous les sites — des stocks exacts par variantes, une caisse rapide et une clôture quotidienne propre sans réconciliation manuelle.",
-        approachTitle: "L'approche",
-        approach:
-          "Nous avons déployé ESTINAD Commerce sur les six sites avec ESTINAD Cloud comme plan de contrôle central. Catalogue, prix et rôles ont été configurés centralement ; le mode on-premise gardait chaque caisse en vie pendant les coupures.",
-        resultTitle: "Le résultat",
-        result:
-          "La clôture quotidienne est passée de 90 à 15 minutes, les stocks par variantes sont devenus exacts en temps réel, et le dirigeant a gagné une vue unique de la performance des sites et des employés — la mémoire remplacée par un tableau de bord.",
-        outcomes: [
-          { metric: "−83 %", label: "temps de clôture quotidienne" },
-          { metric: "6", label: "sites sur un registre" },
-          { metric: "0", label: "réconciliation Excel manuelle" },
+        "glyph": "R1",
+        "title": "Détaillant de prêt-à-porter · 6 sites sur un seul registre",
+        "industry": "Commerce",
+        "type": "Adoption produit",
+        "meta": "Commerce · −83 % temps de clôture",
+        "excerpt": "Un détaillant multi-sites a abandonné trois installs de caisse et une réconciliation Excel nocturne en passant à ESTINAD Commerce et ESTINAD Cloud.",
+        "contextTitle": "Le contexte",
+        "context": "Un détaillant de prêt-à-porter opérant six sites tournait sur trois systèmes de caisse différents et une réconciliation Excel nocturne. Les stocks ne correspondaient jamais au rayon, le dirigeant portait l'opération dans sa tête, et la clôture quotidienne prenait 90 minutes.",
+        "needTitle": "Le besoin",
+        "need": "Un seul système fiable sur tous les sites — des stocks exacts par variantes, une caisse rapide et une clôture quotidienne propre sans réconciliation manuelle.",
+        "approachTitle": "L'approche",
+        "approach": "Nous avons déployé un serveur local auto-hébergé dédié sur chacun des six sites, avec ESTINAD Cloud comme couche de synchronisation et de gestion. Catalogue, prix et rôles ont été configurés pour une visibilité centrale ; chaque caisse a continué de fonctionner localement pendant les coupures.",
+        "resultTitle": "Le résultat",
+        "result": "La clôture quotidienne est passée de 90 à 15 minutes, les stocks par variantes sont devenus exacts en temps réel, et le dirigeant a gagné une vue unique de la performance des sites et des employés — la mémoire remplacée par un tableau de bord.",
+        "outcomes": [
+          {
+            "metric": "−83 %",
+            "label": "temps de clôture quotidienne"
+          },
+          {
+            "metric": "6",
+            "label": "sites sur un registre"
+          },
+          {
+            "metric": "0",
+            "label": "réconciliation Excel manuelle"
+          }
         ],
-        relatedEyebrow: "Bâti sur",
-        related: ["retail", "cloud"],
+        "relatedEyebrow": "Bâti sur",
+        "related": [
+          "retail",
+          "cloud"
+        ]
       },
       "restaurant-four-locations": {
-        glyph: "R2",
-        title: "Groupe de restauration · 4 sites, une carte",
-        industry: "Restauration",
-        type: "Adoption produit",
-        meta: "Restauration · 1 carte, 4 sites",
-        excerpt:
-          "Une marque a unifié la carte et le coût matière sur quatre sites, remplaçant tickets papier et caisses déconnectées par un seul flux.",
-        contextTitle: "Le contexte",
-        context:
-          "Un groupe de restauration rapide avec quatre sites tournait sur tickets cuisine papier et une caisse différente par site. La dérive de la carte entre sites rendait les marges impossibles à suivre et la cuisine sujette aux erreurs.",
-        needTitle: "Le besoin",
-        need:
-          "Contrôle central de la carte et des prix, routage cuisine fiable, et une vraie visibilité sur le coût matière et les pertes sur tous les sites.",
-        approachTitle: "L'approche",
-        approach:
-          "Nous avons déployé ESTINAD Restauration avec support d'affichage cuisine sur chaque site et une carte centrale gérée depuis ESTINAD Cloud. Le coût par recette a été configuré pour que la marge devienne une variable contrôlée, pas une estimation.",
-        resultTitle: "Le résultat",
-        result:
-          "Une carte sur quatre sites, un routage fiable des tickets, et une visibilité de marge que le dirigeant n'avait jamais eue — avec une clôture de poste rapide et réconciliée.",
-        outcomes: [
-          { metric: "1 menu", label: "sur tous les sites" },
-          { metric: "4", label: "sites unifiés" },
-          { metric: "Live", label: "visibilité du coût matière" },
+        "glyph": "R2",
+        "title": "Groupe de restauration · 4 sites, une carte",
+        "industry": "Restauration",
+        "type": "Adoption produit",
+        "meta": "Restauration · 1 carte, 4 sites",
+        "excerpt": "Une marque a unifié la carte et le coût matière sur quatre sites, remplaçant tickets papier et caisses déconnectées par un seul flux.",
+        "contextTitle": "Le contexte",
+        "context": "Un groupe de restauration rapide avec quatre sites tournait sur tickets cuisine papier et une caisse différente par site. La dérive de la carte entre sites rendait les marges impossibles à suivre et la cuisine sujette aux erreurs.",
+        "needTitle": "Le besoin",
+        "need": "Contrôle central de la carte et des prix, routage cuisine fiable, et une vraie visibilité sur le coût matière et les pertes sur tous les sites.",
+        "approachTitle": "L'approche",
+        "approach": "Nous avons déployé ESTINAD Restauration avec support d'affichage cuisine sur chaque site et une carte centrale gérée depuis ESTINAD Cloud. Le coût par recette a été configuré pour que la marge devienne une variable contrôlée, pas une estimation.",
+        "resultTitle": "Le résultat",
+        "result": "Une carte sur quatre sites, un routage fiable des tickets, et une visibilité de marge que le dirigeant n'avait jamais eue — avec une clôture de poste rapide et réconciliée.",
+        "outcomes": [
+          {
+            "metric": "1 menu",
+            "label": "sur tous les sites"
+          },
+          {
+            "metric": "4",
+            "label": "sites unifiés"
+          },
+          {
+            "metric": "Live",
+            "label": "visibilité du coût matière"
+          }
         ],
-        relatedEyebrow: "Bâti sur",
-        related: ["restaurant", "cloud"],
+        "relatedEyebrow": "Bâti sur",
+        "related": [
+          "restaurant",
+          "cloud"
+        ]
       },
       "custom-operations-sme": {
-        glyph: "C1",
-        title: "Plateforme opérationnelle sur mesure pour une PME multi-sites",
-        industry: "PME",
-        type: "Logiciel sur mesure",
-        meta: "Build sur mesure · livré de bout en bout",
-        excerpt:
-          "Nous avons conçu et bâtis une plateforme opérationnelle sur mesure pour une PME multi-sites dont les besoins n'étaient couverts par aucun produit du marché — du cahier des charges au lancement au support.",
-        contextTitle: "Le contexte",
-        context:
-          "Une PME multi-sites avait des flux opérationnels qu'aucun produit prêt du marché ne couvrait. Elle tournait sur un mix de tableurs, de messageries et d'un outil générique qui ne correspondait pas à sa façon de travailler.",
-        needTitle: "Le besoin",
-        need:
-          "Un système opérationnel sur mesure bâti autour de ses vrais flux — multi-sites, multi-rôles, et fait pour durer au fil de la croissance.",
-        approachTitle: "L'approche",
-        approach:
-          "Nous avons mené une découverte et un cahier des charges complets, conçu le modèle de données et les flux avec le client, puis bâtis la plateforme en cycles revus — déployée progressivement sur les sites avec formation et support.",
-        resultTitle: "Le résultat",
-        result:
-          "Une plateforme opérationnelle sur mesure qui correspond exactement à l'entreprise, remplaçant un patchwork d'outils par un seul système responsable — et un partenaire resté après le lancement.",
-        outcomes: [
-          { metric: "De bout en bout", label: "bâti & supporté" },
-          { metric: "1", label: "système remplaçant plusieurs" },
-          { metric: "En cours", label: "support & évolution" },
+        "glyph": "C1",
+        "title": "Plateforme opérationnelle sur mesure pour une PME multi-sites",
+        "industry": "PME",
+        "type": "Logiciel sur mesure",
+        "meta": "Build sur mesure · livré de bout en bout",
+        "excerpt": "Nous avons conçu et bâtis une plateforme opérationnelle sur mesure pour une PME multi-sites dont les besoins n'étaient couverts par aucun produit du marché — du cahier des charges au lancement au support.",
+        "contextTitle": "Le contexte",
+        "context": "Une PME multi-sites avait des flux opérationnels qu'aucun produit prêt du marché ne couvrait. Elle tournait sur un mix de tableurs, de messageries et d'un outil générique qui ne correspondait pas à sa façon de travailler.",
+        "needTitle": "Le besoin",
+        "need": "Un système opérationnel sur mesure bâti autour de ses vrais flux — multi-sites, multi-rôles, et fait pour durer au fil de la croissance.",
+        "approachTitle": "L'approche",
+        "approach": "Nous avons mené une découverte et un cahier des charges complets, conçu le modèle de données et les flux avec le client, puis bâtis la plateforme en cycles revus — déployée progressivement sur les sites avec formation et support.",
+        "resultTitle": "Le résultat",
+        "result": "Une plateforme opérationnelle sur mesure qui correspond exactement à l'entreprise, remplaçant un patchwork d'outils par un seul système responsable — et un partenaire resté après le lancement.",
+        "outcomes": [
+          {
+            "metric": "De bout en bout",
+            "label": "bâti & supporté"
+          },
+          {
+            "metric": "1",
+            "label": "système remplaçant plusieurs"
+          },
+          {
+            "metric": "En cours",
+            "label": "support & évolution"
+          }
         ],
-        relatedEyebrow: "Services utilisés",
-        related: ["custom-software"],
+        "relatedEyebrow": "Services utilisés",
+        "related": [
+          "custom-software"
+        ]
       },
       "pharmacy-network": {
-        glyph: "P1",
-        title: "Réseau de pharmacies · stocks et conformité",
-        industry: "Pharmacies",
-        type: "Adoption produit",
-        meta: "Pharmacie · stocks & conformité",
-        excerpt:
-          "Un réseau de pharmacies a gagné des stocks exacts, le suivi des péremptions et des dossiers conformes sur tous les sites avec ESTINAD.",
-        contextTitle: "Le contexte",
-        context:
-          "Un réseau de pharmacies en croissance luttait avec l'exactitude des stocks, le suivi des péremptions et la cohérence des dossiers entre sites — critiques pour la marge comme pour la conformité réglementaire.",
-        needTitle: "Le besoin",
-        need:
-          "Des stocks exacts par site avec suivi des lots et péremptions, un accès contrôlé et des dossiers auditables sur le réseau.",
-        approachTitle: "L'approche",
-        approach:
-          "Nous avons déployé ESTINAD avec le suivi des variantes et des lots configuré pour les stocks pharmaceutiques, l'accès par rôles pour le personnel, et un reporting central depuis ESTINAD Cloud.",
-        resultTitle: "Le résultat",
-        result:
-          "Des stocks en temps réel exacts avec visibilité des péremptions, des dossiers conformes et auditables, et une vue consolidée sur le réseau — les sites restant en vie pendant les coupures.",
-        outcomes: [
-          { metric: "Live", label: "suivi lots & péremptions" },
-          { metric: "Auditable", label: "dossiers sur tous les sites" },
-          { metric: "1", label: "registre pour le réseau" },
+        "glyph": "P1",
+        "title": "Réseau de pharmacies · stocks et conformité",
+        "industry": "Pharmacies",
+        "type": "Adoption produit",
+        "meta": "Pharmacie · stocks & conformité",
+        "excerpt": "Un réseau de pharmacies a gagné des stocks exacts, le suivi des péremptions et des dossiers conformes sur tous les sites avec ESTINAD.",
+        "contextTitle": "Le contexte",
+        "context": "Un réseau de pharmacies en croissance luttait avec l'exactitude des stocks, le suivi des péremptions et la cohérence des dossiers entre sites — critiques pour la marge comme pour la conformité réglementaire.",
+        "needTitle": "Le besoin",
+        "need": "Des stocks exacts par site avec suivi des lots et péremptions, un accès contrôlé et des dossiers auditables sur le réseau.",
+        "approachTitle": "L'approche",
+        "approach": "Nous avons déployé ESTINAD avec le suivi des variantes et des lots configuré pour les stocks pharmaceutiques, l'accès par rôles pour le personnel, et un reporting central depuis ESTINAD Cloud.",
+        "resultTitle": "Le résultat",
+        "result": "Des stocks en temps réel exacts avec visibilité des péremptions, des dossiers conformes et auditables, et une vue consolidée sur le réseau — les sites restant en vie pendant les coupures.",
+        "outcomes": [
+          {
+            "metric": "Live",
+            "label": "suivi lots & péremptions"
+          },
+          {
+            "metric": "Auditable",
+            "label": "dossiers sur tous les sites"
+          },
+          {
+            "metric": "1",
+            "label": "registre pour le réseau"
+          }
         ],
-        relatedEyebrow: "Bâti sur",
-        related: ["retail", "cloud"],
+        "relatedEyebrow": "Bâti sur",
+        "related": [
+          "retail",
+          "cloud"
+        ]
       },
       "clinic-three-locations": {
-        glyph: "C2",
-        title: "Cabinet multi-cliniques · dossiers et facturation unifiés",
-        industry: "Cliniques",
-        type: "Adoption produit",
-        meta: "Clinique · 0 dossier perdu",
-        excerpt:
-          "Un cabinet a numérisé planning, dossiers et facturation avec accès par rôles et résidence des données sensibles.",
-        contextTitle: "Le contexte",
-        context:
-          "Un cabinet multi-cliniques tournait sur dossiers papier et facturation fragmentée. L'historique patient était dur à retrouver, les praticiens en double réservation, et les impayés difficiles à suivre.",
-        needTitle: "Le besoin",
-        need:
-          "Des dossiers patients prêts pour la visite, un planning sans conflits, une facturation propre avec assurance et règlement patient, et un accès contrôlé aux données sensibles.",
-        approachTitle: "L'approche",
-        approach:
-          "Nous avons déployé ESTINAD Clinique sur trois sites avec planning praticiens et salles, accès aux dossiers par rôles et piste d'audit complète — avec options de résidence pour les données sensibles.",
-        resultTitle: "Le résultat",
-        result:
-          "Des dossiers patients complets d'une visite à l'autre, plus de double réservation, une facturation propre et zéro dossier papier perdu — avec un accès contrôlé et chaque modification journalisée.",
-        outcomes: [
-          { metric: "0", label: "dossier papier perdu" },
-          { metric: "3", label: "cliniques sur un système" },
-          { metric: "Audité", label: "chaque modification de dossier" },
+        "glyph": "C2",
+        "title": "Cabinet multi-cliniques · dossiers et facturation unifiés",
+        "industry": "Cliniques",
+        "type": "Adoption produit",
+        "meta": "Clinique · 0 dossier perdu",
+        "excerpt": "Un cabinet a numérisé planning, dossiers et facturation avec accès par rôles et résidence des données sensibles.",
+        "contextTitle": "Le contexte",
+        "context": "Un cabinet multi-cliniques tournait sur dossiers papier et facturation fragmentée. L'historique patient était dur à retrouver, les praticiens en double réservation, et les impayés difficiles à suivre.",
+        "needTitle": "Le besoin",
+        "need": "Des dossiers patients prêts pour la visite, un planning sans conflits, une facturation propre avec assurance et règlement patient, et un accès contrôlé aux données sensibles.",
+        "approachTitle": "L'approche",
+        "approach": "Nous avons déployé ESTINAD Clinique sur trois sites avec planning praticiens et salles, accès aux dossiers par rôles et piste d'audit complète — avec options de résidence pour les données sensibles.",
+        "resultTitle": "Le résultat",
+        "result": "Des dossiers patients complets d'une visite à l'autre, plus de double réservation, une facturation propre et zéro dossier papier perdu — avec un accès contrôlé et chaque modification journalisée.",
+        "outcomes": [
+          {
+            "metric": "0",
+            "label": "dossier papier perdu"
+          },
+          {
+            "metric": "3",
+            "label": "cliniques sur un système"
+          },
+          {
+            "metric": "Audité",
+            "label": "chaque modification de dossier"
+          }
         ],
-        relatedEyebrow: "Bâti sur",
-        related: ["clinic", "cloud"],
+        "relatedEyebrow": "Bâti sur",
+        "related": [
+          "clinic",
+          "cloud"
+        ]
       },
       "brand-website-multilingual": {
-        glyph: "W1",
-        title: "Site web de marque multilingue pour une société régionale",
-        industry: "PME",
-        type: "Sites web",
-        meta: "Site web · AR / FR / EN · RTL",
-        excerpt:
-          "Nous avons conçu et bâtis un site web d'entreprise trilingue premium avec un vrai RTL arabe — rapide, éditable et orienté SEO.",
-        contextTitle: "Le contexte",
-        context:
-          "Une société régionale avait besoin d'une présence web à la hauteur de son sérieux — en arabe, français et anglais — que son équipe puisse maintenir sans un développeur à chaque modification.",
-        needTitle: "Le besoin",
-        need:
-          "Un site web premium et multilingue avec un vrai RTL, de fortes performances, et un CMS que son équipe puisse éditer.",
-        approachTitle: "L'approche",
-        approach:
-          "Nous avons mené une phase de stratégie et d'architecture d'information, conçu une interface distinctive, et bâtis le site avec un CMS, un vrai RTL arabe, et SEO et analytique intégrés.",
-        resultTitle: "Le résultat",
-        result:
-          "Un site web trilingue premium et rapide que l'équipe édite elle-même — présentant la société avec crédibilité sur les marchés régionaux et internationaux.",
-        outcomes: [
-          { metric: "3", label: "langues, RTL complet" },
-          { metric: "CMS", label: "éditable par l'équipe" },
-          { metric: "Rapide", label: "core web vitals" },
+        "glyph": "W1",
+        "title": "Site web de marque multilingue pour une société régionale",
+        "industry": "PME",
+        "type": "Sites web",
+        "meta": "Site web · AR / FR / EN · RTL",
+        "excerpt": "Nous avons conçu et bâtis un site web d'entreprise trilingue premium avec un vrai RTL arabe — rapide, éditable et orienté SEO.",
+        "contextTitle": "Le contexte",
+        "context": "Une société régionale avait besoin d'une présence web à la hauteur de son sérieux — en arabe, français et anglais — que son équipe puisse maintenir sans un développeur à chaque modification.",
+        "needTitle": "Le besoin",
+        "need": "Un site web premium et multilingue avec un vrai RTL, de fortes performances, et un CMS que son équipe puisse éditer.",
+        "approachTitle": "L'approche",
+        "approach": "Nous avons mené une phase de stratégie et d'architecture d'information, conçu une interface distinctive, et bâtis le site avec un CMS, un vrai RTL arabe, et SEO et analytique intégrés.",
+        "resultTitle": "Le résultat",
+        "result": "Un site web trilingue premium et rapide que l'équipe édite elle-même — présentant la société avec crédibilité sur les marchés régionaux et internationaux.",
+        "outcomes": [
+          {
+            "metric": "3",
+            "label": "langues, RTL complet"
+          },
+          {
+            "metric": "CMS",
+            "label": "éditable par l'équipe"
+          },
+          {
+            "metric": "Rapide",
+            "label": "core web vitals"
+          }
         ],
-        relatedEyebrow: "Services utilisés",
-        related: ["websites"],
+        "relatedEyebrow": "Services utilisés",
+        "related": [
+          "websites"
+        ]
       },
       "ecosystem-mixed-group": {
-        glyph: "E1",
-        title: "Groupe mixte · écosystème commerce + restauration",
-        industry: "Multi-sites",
-        type: "Écosystèmes",
-        meta: "Écosystème · une plateforme, deux marques",
-        excerpt:
-          "Un opérateur gérant des marques commerce et restauration s'est consolidé sur ESTINAD Cloud avec un reporting consolidé par entité.",
-        contextTitle: "Le contexte",
-        context:
-          "Un opérateur gérait une marque commerce et une marque restauration sur des systèmes séparés, sans vue consolidée du parc et des données incohérentes entre entités.",
-        needTitle: "Le besoin",
-          need:
-          "Un système cohérent couvrant deux marques et plusieurs sites — avec un reporting consolidé et un contrôle central.",
-        approachTitle: "L'approche",
-        approach:
-          "Nous avons déployé ESTINAD Commerce et ESTINAD Restauration sur ESTINAD Cloud, unifié les entités et rôles, et connecté la comptabilité pour que le groupe ait une seule source de vérité.",
-        resultTitle: "Le résultat",
-        result:
-          "Deux marques sur une plateforme, un reporting exécutif consolidé, et un système que le groupe étend au lieu de remplacer — un véritable écosystème de bout en bout.",
-        outcomes: [
-          { metric: "1", label: "plateforme, deux marques" },
-          { metric: "Consolidé", label: "reporting de groupe" },
-          { metric: "Évolutif", label: "ajouter marques & sites" },
+        "glyph": "E1",
+        "title": "Groupe mixte · écosystème commerce + restauration",
+        "industry": "Multi-sites",
+        "type": "Écosystèmes",
+        "meta": "Écosystème · une plateforme, deux marques",
+        "excerpt": "Un opérateur gérant des marques commerce et restauration s'est consolidé sur ESTINAD avec un reporting consolidé par entité via la synchronisation cloud.",
+        "contextTitle": "Le contexte",
+        "context": "Un opérateur gérait une marque commerce et une marque restauration sur des systèmes séparés, sans vue consolidée du parc et des données incohérentes entre entités.",
+        "needTitle": "Le besoin",
+        "need": "Un système cohérent couvrant deux marques et plusieurs sites — avec un reporting consolidé et un contrôle central.",
+        "approachTitle": "L'approche",
+        "approach": "Nous avons déployé ESTINAD Commerce et ESTINAD Restauration avec des serveurs locaux dédiés à chaque site, synchronisé les données sélectionnées vers ESTINAD Cloud, unifié les entités et rôles, et connecté la comptabilité pour une visibilité cohérente — chaque site restant sa propre source de vérité opérationnelle.",
+        "resultTitle": "Le résultat",
+        "result": "Deux marques sur une plateforme, un reporting exécutif consolidé, et un système que le groupe étend au lieu de remplacer — un véritable écosystème de bout en bout.",
+        "outcomes": [
+          {
+            "metric": "1",
+            "label": "plateforme, deux marques"
+          },
+          {
+            "metric": "Consolidé",
+            "label": "reporting de groupe"
+          },
+          {
+            "metric": "Évolutif",
+            "label": "ajouter marques & sites"
+          }
         ],
-        relatedEyebrow: "Bâti sur",
-        related: ["cloud", "retail", "restaurant"],
+        "relatedEyebrow": "Bâti sur",
+        "related": [
+          "cloud",
+          "retail",
+          "restaurant"
+        ]
+      }
+    }
+  },
+  "resources": {
+    "index": {
+      "eyebrow": "Ressources",
+      "title": "Stratégie, guides pratiques et preuves.",
+      "intro": "Tout ce que nous publions sur la gestion d'entreprises opérationnelles sur une plateforme disciplinée.",
+      "nav": [
+        {
+          "label": "Blog",
+          "desc": "Stratégie et réflexion produit."
+        },
+        {
+          "label": "Guides",
+          "desc": "Guides pratiques pour les opérateurs."
+        },
+        {
+          "label": "Documentation",
+          "desc": "Installation, API et opérations."
+        },
+        {
+          "label": "FAQ",
+          "desc": "Réponses aux questions courantes."
+        }
+      ]
+    },
+    "sidebar": {
+      "title": "Ressources",
+      "ctaTitle": "Voyez-le sur vos opérations",
+      "ctaBody": "Une démonstration adaptée à votre entreprise.",
+      "cta": "Demander une démo →"
+    },
+    "blog": {
+      "eyebrow": "Ressources / Blog",
+      "title": "Stratégie et réflexion produit.",
+      "intro": "Comment nous concevons l'infrastructure pour les entreprises opérationnelles — et ce que cela signifie pour ceux qui les dirigent.",
+      "items": [
+        {
+          "title": "Pourquoi une caisse n'est pas un système d'exploitation",
+          "meta": "Stratégie · 6 min",
+          "excerpt": "La différence entre vendre à un comptoir et gérer une entreprise sur un registre — et pourquoi ça compte quand vous ajoutez des sites.",
+          "tag": "Stratégie"
+        },
+        {
+          "title": "Concevoir pour une connectivité instable",
+          "meta": "Ingénierie · 8 min",
+          "excerpt": "Comment le moteur de synchro d'ESTINAD garde les sites en vie hors ligne et se réconcilie proprement au retour de la connexion.",
+          "tag": "Ingénierie"
+        },
+        {
+          "title": "Le principe du registre unique",
+          "meta": "Produit · 5 min",
+          "excerpt": "Pourquoi chaque produit alimente un registre unique et fiable — et le coût opérationnel de vivre sans.",
+          "tag": "Produit"
+        },
+        {
+          "title": "De l'Algérie au MENA : construire pour la région",
+          "meta": "Vision · 7 min",
+          "excerpt": "Ce que signifie construire un logiciel de grade infrastructure d'abord pour les opérateurs algériens, puis pour la région.",
+          "tag": "Vision"
+        },
+        {
+          "title": "La marge est un système, pas un chiffre",
+          "meta": "Opérations · 6 min",
+          "excerpt": "Comment une discipline des stocks et du coût matière transforme la marge d'une estimation en variable contrôlé.",
+          "tag": "Opérations"
+        },
+        {
+          "title": "Ce que veulent vraiment les acheteurs entreprise",
+          "meta": "Vente · 5 min",
+          "excerpt": "Contrôle d'accès, audit, résidence et SSO — les contrôles qui signalent la maturité avant toute présentation.",
+          "tag": "Entreprise"
+        }
+      ]
+    },
+    "guides": {
+      "eyebrow": "Ressources / Guides",
+      "title": "Guides pratiques pour opérateurs.",
+      "intro": "Des guides pas à pas pour faire passer votre entreprise sur une plateforme disciplinée — par secteur et par étape.",
+      "items": [
+        {
+          "title": "Migrer un commerce sur un seul registre",
+          "meta": "Commerce · 12 min",
+          "excerpt": "Un guide pas à pas pour consolider caisse, stocks et reporting sur plusieurs sites.",
+          "tag": "Commerce"
+        },
+        {
+          "title": "Mettre en route un restaurant sur ESTINAD",
+          "meta": "Restauration · 10 min",
+          "excerpt": "De la carte au routage cuisine et à la clôture — un plan de déploiement calme pour les restaurateurs.",
+          "tag": "Restauration"
+        },
+        {
+          "title": "Numériser une clinique sans perturber les soins",
+          "meta": "Clinique · 11 min",
+          "excerpt": "Un déploiement planning, dossiers et facturation qui garde l'accueil calme et les praticiens concentrés.",
+          "tag": "Clinique"
+        },
+        {
+          "title": "Ajouter un second site de la bonne façon",
+          "meta": "Multi-sites · 9 min",
+          "excerpt": "Comment étendre un site unique à plusieurs sites sans re-platformer.",
+          "tag": "Multi-sites"
+        },
+        {
+          "title": "Planifier la connectivité pour les sites algériens",
+          "meta": "Opérations · 8 min",
+          "excerpt": "Choisir cloud, on-premise ou hybride par site — selon les conditions locales réelles.",
+          "tag": "Déploiement"
+        }
+      ]
+    },
+    "caseStudies": {
+      "eyebrow": "Ressources / Études de cas",
+      "title": "Des opérateurs qui ont arrêté de réconcilier et se sont mis à gérer.",
+      "intro": "Des résultats illustratifs du type d'entreprises pour lesquelles ESTINAD est conçu. Tous suivent le même schéma : consolider, automatiser, puis grandir.",
+      "cta": "Demander une démo →",
+      "items": [
+        {
+          "title": "Détaillant de prêt-à-porter · 6 sites",
+          "meta": "Commerce · −83 % temps de clôture",
+          "excerpt": "Un détaillant multi-sites a abandonné trois installs de caisse et une réconciliation Excel nocturne en passant à ESTINAD Commerce et ESTINAD Cloud.",
+          "tag": "Commerce"
+        },
+        {
+          "title": "Groupe de restauration · 4 sites",
+          "meta": "Restauration · 1 carte, 4 sites",
+          "excerpt": "Une marque a unifié la carte et le coût matière sur quatre sites, remplaçant tickets papier et caisse déconnectée par un seul flux.",
+          "tag": "Restauration"
+        },
+        {
+          "title": "Cabinet multi-cliniques · 3 sites",
+          "meta": "Clinique · 0 dossier perdu",
+          "excerpt": "Un cabinet a numérisé planning, dossiers et facturation avec accès par rôles et résidence des données sensibles.",
+          "tag": "Clinique"
+        },
+        {
+          "title": "Groupe mixte · commerce + restauration",
+          "meta": "Multi-marques · une plateforme",
+          "excerpt": "Un opérateur gérant des marques commerce et restauration s'est consolidé sur ESTINAD Cloud avec un reporting consolidé par entité.",
+          "tag": "Multi-marques"
+        }
+      ]
+    },
+    "documentation": {
+      "eyebrow": "Ressources / Documentation",
+      "title": "Installation, opérations et API.",
+      "intro": "Tout ce qu'il faut pour mettre ESTINAD en route, le faire tourner au quotidien et l'intégrer au reste de votre stack.",
+      "sections": [
+        {
+          "title": "Premiers pas",
+          "items": [
+            "Configuration du compte et de l'organisation",
+            "Ajouter votre premier site",
+            "Inviter des utilisateurs et attribuer des rôles",
+            "Connecter le matériel (imprimantes, lecteurs, terminaux)"
+          ]
+        },
+        {
+          "title": "Produits",
+          "items": [
+            "Configuration d'ESTINAD Commerce",
+            "Configuration d'ESTINAD Restauration",
+            "Configuration d'ESTINAD Clinique",
+            "Contrôle organisationnel ESTINAD Cloud"
+          ]
+        },
+        {
+          "title": "Opérations",
+          "items": [
+            "Mode hors ligne et synchro",
+            "Sauvegarde et restauration",
+            "Piste d'audit et exports",
+            "Résidence et rétention"
+          ]
+        },
+        {
+          "title": "Développeurs",
+          "items": [
+            "Référence API REST",
+            "Webhooks",
+            "Formats d'export de données",
+            "Configuration SSO"
+          ]
+        }
+      ],
+      "apiTag": "API",
+      "apiLine": "REST + webhooks · stable, versionné, documenté.",
+      "readApi": "Lire la référence API →"
+    },
+    "faq": {
+      "eyebrow": "Ressources / FAQ",
+      "title": "Réponses aux questions courantes.",
+      "intro": "Les questions que se posent les dirigeants avant de demander une démo.",
+      "groups": [
+        {
+          "title": "Général",
+          "faqs": [
+            {
+              "q": "ESTINAD est-il juste une caisse ?",
+              "a": "Non. ESTINAD est un système d'exploitation métier partagé. La caisse est une fonctionnalité au sein de produits verticaux (Commerce, Restauration, Clinique) qui tournent tous sur la plateforme ESTINAD OS."
+            },
+            {
+              "q": "Où ESTINAD est-il disponible ?",
+              "a": "ESTINAD est conçu en Algérie et pensé pour le MENA et les marchés mondiaux. Les options de déploiement prennent en charge la connectivité locale et les exigences de résidence des données."
+            },
+            {
+              "q": "Ai-je besoin des quatre produits ?",
+              "a": "Non. Commencez par le produit adapté à votre activité. Ajoutez-en d'autres en grandissant — ils partagent une plateforme, donc pas de re-platforming."
+            }
+          ]
+        },
+        {
+          "title": "Fiabilité",
+          "faqs": [
+            {
+              "q": "Que se passe-t-il quand internet tombe ?",
+              "a": "Le serveur du site continue de prendre en charge les flux locaux. Les données sélectionnées se synchronisent vers le cloud au retour de la connexion."
+            },
+            {
+              "q": "Mes données sont-elles sauvegardées ?",
+              "a": "Oui. ESTINAD Cloud assure une sauvegarde chiffrée continue avec restauration à un instant t sur tous les produits."
+            }
+          ]
+        },
+        {
+          "title": "Tarifs & déploiement",
+          "faqs": [
+            {
+              "q": "Comment sont structurés les tarifs ?",
+              "a": "Chaque produit a ses propres tarifs, généralement par site, par clinique ou par point de vente. ESTINAD Cloud est inclus avec les offres multi-sites. Des conditions entreprise existent."
+            },
+            {
+              "q": "Quelle vitesse pour être opérationnel ?",
+              "a": "Un site standard est opérationnel en une journée. Les déploiements multi-sites se font par étapes avec accès contrôlé pour limiter le risque."
+            }
+          ]
+        }
+      ],
+      "stillTitle": "D'autres questions ?",
+      "stillBody": "Nous calerons la plateforme sur votre entreprise et répondrons en contexte.",
+      "cta": "Demander une démo →"
+    }
+  },
+  "partners": {
+    "eyebrow": "Partners",
+    "title": "Build recurring business with ESTINAD.",
+    "intro": "Join a program for companies that sell, deploy, support, or integrate business software for restaurants, retail businesses, clinics, and multi-location organizations.",
+    "earlyNote": "We are building our founding partner network. Selected partners receive early access to enablement and direct collaboration. Partner terms are agreed based on role, territory, and customer segment.",
+    "cta": "Apply to partner",
+    "applyHref": "/partners/apply",
+    "tracks": {
+      "referral": {
+        "t": "Referral partners",
+        "d": "Introduce qualified operators to ESTINAD.",
+        "who": "Advisors and local business networks.",
+        "does": "Make introductions and support discovery.",
+        "provides": "Sales material and direct collaboration.",
+        "revenue": "Referral terms agreed per opportunity.",
+        "training": "Product overview and sales enablement.",
+        "cta": "Explore referrals"
       },
+      "resellers": {
+        "t": "Resellers",
+        "d": "Sell ESTINAD in your market.",
+        "who": "Software and hardware resellers.",
+        "does": "Develop opportunities and manage customer relationships.",
+        "provides": "Enablement, materials, and implementation coordination.",
+        "revenue": "Commercial terms agreed by role and territory.",
+        "training": "Sales and product enablement.",
+        "cta": "Explore resellers"
+      },
+      "implementers": {
+        "t": "Founding implementer track",
+        "d": "Deploy, configure, train, and support customer teams.",
+        "who": "Implementation and IT service companies.",
+        "does": "Deliver local rollout and customer support.",
+        "provides": "Rollout guidance and technical collaboration.",
+        "revenue": "Implementation and support terms agreed by scope.",
+        "training": "Implementation partnership enablement.",
+        "cta": "Explore implementers"
+      },
+      "technology": {
+        "t": "Technology partners",
+        "d": "Connect complementary tools and services.",
+        "who": "Payment, accounting, delivery, and technology providers.",
+        "does": "Build and maintain useful integrations.",
+        "provides": "Integration collaboration and product context.",
+        "revenue": "Terms agreed per integration and go-to-market model.",
+        "training": "Technical and product collaboration.",
+        "cta": "Explore technology partners"
+      }
     },
+    "howEyebrow": "How partnerships work",
+    "howTitle": "Choose a role. Build a shared plan.",
+    "howIntro": "We define customer segment, territory, enablement, delivery responsibilities, and commercial terms together.",
+    "applyCta": "Apply to partner",
+    "apply": {
+      "eyebrow": "Partner application",
+      "title": "Tell us how you work with operational businesses.",
+      "intro": "We review applications for fit, market focus, and delivery capability.",
+      "form": {
+        "name": "Name",
+        "company": "Company",
+        "email": "Email",
+        "phone": "Phone",
+        "typeLabel": "Partner type",
+        "types": [
+          "Referral partner",
+          "Reseller",
+          "Implementer",
+          "Technology partner"
+        ],
+        "territory": "Territory",
+        "segment": "Customer segment",
+        "message": "Tell us about your business",
+        "submit": "Apply to partner",
+        "sending": "Sending…",
+        "sentTitle": "Application received",
+        "sentBody": "Thank you. We will review your application and respond.",
+        "privacyNote": "By submitting, you agree to our",
+        "privacyLink": "privacy policy",
+        "consentLabel": "I agree to the privacy policy."
+      }
+    },
+    "sub": {}
   },
-
-  resources: {
-    index: {
-      eyebrow: "Ressources",
-      title: "Stratégie, guides pratiques et preuves.",
-      intro:
-        "Tout ce que nous publions sur la gestion d'entreprises opérationnelles sur une plateforme disciplinée.",
-      nav: [
-        { label: "Blog", desc: "Stratégie et réflexion produit." },
-        { label: "Guides", desc: "Guides pratiques pour opérateurs." },
-        { label: "Études de cas", desc: "Comment des entreprises sont passées à ESTINAD." },
-        { label: "Documentation", desc: "Installation, API et opérations." },
-        { label: "FAQ", desc: "Réponses aux questions courantes." },
-      ],
-    },
-    sidebar: {
-      title: "Ressources",
-      ctaTitle: "Voyez-le sur vos opérations",
-      ctaBody: "Une démonstration adaptée à votre entreprise.",
-      cta: "Demander une démo →",
-    },
-    blog: {
-      eyebrow: "Ressources / Blog",
-      title: "Stratégie et réflexion produit.",
-      intro:
-        "Comment nous concevons l'infrastructure pour les entreprises opérationnelles — et ce que cela signifie pour ceux qui les dirigent.",
-      items: [
-        { title: "Pourquoi une caisse n'est pas un système d'exploitation", meta: "Stratégie · 6 min", excerpt: "La différence entre vendre à un comptoir et gérer une entreprise sur un registre — et pourquoi ça compte quand vous ajoutez des sites.", tag: "Stratégie" },
-        { title: "Concevoir pour une connectivité instable", meta: "Ingénierie · 8 min", excerpt: "Comment le moteur de synchro d'ESTINAD garde les sites en vie hors ligne et se réconcilie proprement au retour de la connexion.", tag: "Ingénierie" },
-        { title: "Le principe du registre unique", meta: "Produit · 5 min", excerpt: "Pourquoi chaque produit alimente un registre unique et fiable — et le coût opérationnel de vivre sans.", tag: "Produit" },
-        { title: "De l'Algérie au MENA : construire pour la région", meta: "Vision · 7 min", excerpt: "Ce que signifie construire un logiciel de grade infrastructure d'abord pour les opérateurs algériens, puis pour la région.", tag: "Vision" },
-        { title: "La marge est un système, pas un chiffre", meta: "Opérations · 6 min", excerpt: "Comment une discipline des stocks et du coût matière transforme la marge d'une estimation en variable contrôlé.", tag: "Opérations" },
-        { title: "Ce que veulent vraiment les acheteurs entreprise", meta: "Vente · 5 min", excerpt: "Contrôle d'accès, audit, résidence et SSO — les contrôles qui signalent la maturité avant toute présentation.", tag: "Entreprise" },
-      ],
-    },
-    guides: {
-      eyebrow: "Ressources / Guides",
-      title: "Guides pratiques pour opérateurs.",
-      intro:
-        "Des guides pas à pas pour faire passer votre entreprise sur une plateforme disciplinée — par secteur et par étape.",
-      items: [
-        { title: "Migrer un commerce sur un seul registre", meta: "Commerce · 12 min", excerpt: "Un guide pas à pas pour consolider caisse, stocks et reporting sur plusieurs sites.", tag: "Commerce" },
-        { title: "Mettre en route un restaurant sur ESTINAD", meta: "Restauration · 10 min", excerpt: "De la carte au routage cuisine et à la clôture — un plan de déploiement calme pour les restaurateurs.", tag: "Restauration" },
-        { title: "Numériser une clinique sans perturber les soins", meta: "Clinique · 11 min", excerpt: "Un déploiement planning, dossiers et facturation qui garde l'accueil calme et les praticiens concentrés.", tag: "Clinique" },
-        { title: "Ajouter un second site de la bonne façon", meta: "Multi-sites · 9 min", excerpt: "Comment étendre un site unique à plusieurs sites sans re-platformer.", tag: "Multi-sites" },
-        { title: "Planifier la connectivité pour les sites algériens", meta: "Opérations · 8 min", excerpt: "Choisir cloud, on-premise ou hybride par site — selon les conditions locales réelles.", tag: "Déploiement" },
-      ],
-    },
-    caseStudies: {
-      eyebrow: "Ressources / Études de cas",
-      title: "Des opérateurs qui ont arrêté de réconcilier et se sont mis à gérer.",
-      intro:
-        "Des résultats illustratifs du type d'entreprises pour lesquelles ESTINAD est conçu. Tous suivent le même schéma : consolider, automatiser, puis grandir.",
-      cta: "Demander une démo →",
-      items: [
-        { title: "Détaillant de prêt-à-porter · 6 sites", meta: "Commerce · −83 % temps de clôture", excerpt: "Un détaillant multi-sites a abandonné trois installs de caisse et une réconciliation Excel nocturne en passant à ESTINAD Commerce et ESTINAD Cloud.", tag: "Commerce" },
-        { title: "Groupe de restauration · 4 sites", meta: "Restauration · 1 carte, 4 sites", excerpt: "Une marque a unifié la carte et le coût matière sur quatre sites, remplaçant tickets papier et caisse déconnectée par un seul flux.", tag: "Restauration" },
-        { title: "Cabinet multi-cliniques · 3 sites", meta: "Clinique · 0 dossier perdu", excerpt: "Un cabinet a numérisé planning, dossiers et facturation avec accès par rôles et résidence des données sensibles.", tag: "Clinique" },
-        { title: "Groupe mixte · commerce + restauration", meta: "Multi-marques · une plateforme", excerpt: "Un opérateur gérant des marques commerce et restauration s'est consolidé sur ESTINAD Cloud avec un reporting consolidé par entité.", tag: "Multi-marques" },
-      ],
-    },
-    documentation: {
-      eyebrow: "Ressources / Documentation",
-      title: "Installation, opérations et API.",
-      intro:
-        "Tout ce qu'il faut pour mettre ESTINAD en route, le faire tourner au quotidien et l'intégrer au reste de votre stack.",
-      sections: [
-        { title: "Premiers pas", items: ["Configuration du compte et de l'organisation", "Ajouter votre premier site", "Inviter des utilisateurs et attribuer des rôles", "Connecter le matériel (imprimantes, lecteurs, terminaux)"] },
-        { title: "Produits", items: ["Configuration d'ESTINAD Commerce", "Configuration d'ESTINAD Restauration", "Configuration d'ESTINAD Clinique", "Contrôle organisationnel ESTINAD Cloud"] },
-        { title: "Opérations", items: ["Mode hors ligne et synchro", "Sauvegarde et restauration", "Piste d'audit et exports", "Résidence et rétention"] },
-        { title: "Développeurs", items: ["Référence API REST", "Webhooks", "Formats d'export de données", "Configuration SSO"] },
-      ],
-      apiTag: "API",
-      apiLine: "REST + webhooks · stable, versionné, documenté.",
-      readApi: "Lire la référence API →",
-    },
-    faq: {
-      eyebrow: "Ressources / FAQ",
-      title: "Réponses aux questions courantes.",
-      intro: "Les questions que se posent les dirigeants avant de demander une démo.",
-      groups: [
+  "company": {
+    "index": {
+      "eyebrow": "Société",
+      "title": "Une entreprise logicielle avec des produits et une livraison sur mesure.",
+      "intro": "ESTINAD crée des produits logiciels prêts et livre des logiciels sur mesure, des sites web et des écosystèmes complets pour les clients — en démarrant en Algérie, pensée pour le MENA et les marchés mondiaux.",
+      "nav": [
         {
-          title: "Général",
-          faqs: [
-            { q: "ESTINAD est-il juste une caisse ?", a: "Non. ESTINAD est un système d'exploitation métier partagé. La caisse est une fonctionnalité au sein de produits verticaux (Commerce, Restauration, Clinique) qui tournent tous sur la plateforme ESTINAD OS." },
-            { q: "Où ESTINAD est-il disponible ?", a: "ESTINAD est conçu en Algérie et pensé pour le MENA et les marchés mondiaux. Les options de déploiement prennent en charge la connectivité locale et les exigences de résidence des données." },
-            { q: "Ai-je besoin des quatre produits ?", a: "Non. Commencez par le produit adapté à votre activité. Ajoutez-en d'autres en grandissant — ils partagent une plateforme, donc pas de re-platforming." },
-          ],
+          "label": "À propos",
+          "desc": "Qui nous sommes et ce que nous bâtissons."
         },
         {
-          title: "Fiabilité",
-          faqs: [
-            { q: "Que se passe-t-il quand internet tombe ?", a: "Le mode on-premise garde la caisse, la cuisine ou la clinique en hors ligne. Le moteur de synchro se réconcilie au cloud au retour de la connexion — aucune transaction perdue." },
-            { q: "Mes données sont-elles sauvegardées ?", a: "Oui. ESTINAD Cloud assure une sauvegarde chiffrée continue avec restauration à un instant t sur tous les produits." },
-          ],
+          "label": "Vision",
+          "desc": "Où ESTINAD se dirige."
         },
         {
-          title: "Tarifs & déploiement",
-          faqs: [
-            { q: "Comment sont structurés les tarifs ?", a: "Chaque produit a ses propres tarifs, généralement par site, par clinique ou par point de vente. ESTINAD Cloud est inclus avec les offres multi-sites. Des conditions entreprise existent." },
-            { q: "Quelle vitesse pour être opérationnel ?", a: "Un site standard est opérationnel en une journée. Les déploiements multi-sites se font par étapes avec accès contrôlé pour limiter le risque." },
-          ],
+          "label": "Carrières",
+          "desc": "Bâtir des logiciels pour les opérateurs."
         },
-      ],
-      stillTitle: "D'autres questions ?",
-      stillBody: "Nous calerons la plateforme sur votre entreprise et répondrons en contexte.",
-      cta: "Demander une démo →",
+        {
+          "label": "Contact",
+          "desc": "Parler à l'équipe."
+        }
+      ]
     },
-  },
-
-  company: {
-    index: {
-      eyebrow: "Société",
-      title: "Une entreprise logicielle avec des produits et une livraison sur mesure.",
-      intro:
-        "ESTINAD crée des produits logiciels prêts et livre des logiciels sur mesure, des sites web et des écosystèmes complets pour les clients — en démarrant en Algérie, pensée pour le MENA et les marchés mondiaux.",
-      nav: [
-        { label: "À propos", desc: "Qui nous sommes et ce que nous construisons." },
-        { label: "Vision", desc: "Où va ESTINAD." },
-        { label: "Partenaires", desc: "Revendre et implémenter avec nous." },
-        { label: "Carrières", desc: "Bâtir du logiciel pour les opérateurs." },
-        { label: "Contact", desc: "Parler à l'équipe." },
-      ],
-    },
-    about: {
-      eyebrow: "Société / À propos",
-      title: "Une entreprise logicielle — produits sur le marché, builds sur mesure pour les clients.",
-      intro:
-        "ESTINAD existe parce que les entreprises qui font tourner l'économie réelle méritent un logiciel aussi sérieux qu'elles. Nous bâtissons des produits prêts qu'elles peuvent adopter aujourd'hui, et nous bâtissons des systèmes sur mesure pour celles qui ont besoin de quelque chose qui n'existe pas encore.",
-      beliefsEyebrow: "Ce en quoi nous croyons",
-      beliefsTitle: "Le logiciel doit être une fondation, pas une corvée.",
-      beliefs: [
+    "about": {
+      "eyebrow": "Société / À propos",
+      "title": "Une entreprise logicielle — produits sur le marché, builds sur mesure pour les clients.",
+      "intro": "ESTINAD existe parce que les entreprises qui font tourner l'économie réelle méritent un logiciel aussi sérieux qu'elles. Nous bâtissons des produits prêts qu'elles peuvent adopter aujourd'hui, et nous bâtissons des systèmes sur mesure pour celles qui ont besoin de quelque chose qui n'existe pas encore.",
+      "beliefsEyebrow": "Ce en quoi nous croyons",
+      "beliefsTitle": "Le logiciel doit être une fondation, pas une corvée.",
+      "beliefs": [
         "La plupart des entreprises opérationnelles de notre région vivent sur un patchwork : une caisse, un tableur, une messagerie et la mémoire du dirigeant. Chaque outil va bien seul. Ensemble, ils font perdre du temps, de la marge et de la confiance.",
         "ESTINAD est l'inverse du patchwork. Nous vendons des produits prêts bâtis sur une plateforme disciplinée — et quand un produit ne suffit pas, nous bâtissons le système sur mesure dont l'entreprise a réellement besoin. Une entreprise, les deux côtés, la même discipline d'ingénierie.",
-        "Nous la bâtissons de grade infrastructure parce que les entreprises qui en dépendent ne peuvent pas se permettre qu'elle soit brillante. Elle doit être stable, précise et durable.",
+        "Nous la bâtissons de grade infrastructure parce que les entreprises qui en dépendent ne peuvent pas se permettre qu'elle soit brillante. Elle doit être stable, précise et durable."
       ],
-      stats: [
-        { value: "2", label: "Façons de travailler : produits & sur mesure" },
-        { value: "5+", label: "Produits prêts sur le marché" },
-        { value: "Algérie → MENA", label: "Conçu local, pensé pour passer à l'échelle" },
-        { value: "Produits · Sur mesure · Écosystèmes", label: "Capacité logicielle complète" },
+      "stats": [
+        {
+          "value": "2",
+          "label": "Façons de travailler : produits & sur mesure"
+        },
+        {
+          "value": "5+",
+          "label": "Produits prêts sur le marché"
+        },
+        {
+          "value": "Algérie → MENA",
+          "label": "Conçu local, pensé pour passer à l'échelle"
+        },
+        {
+          "value": "Produits · Sur mesure · Écosystèmes",
+          "label": "Capacité logicielle complète"
+        }
       ],
-      principlesEyebrow: "Comment nous construisons",
-      principlesTitle: "Des principes qui tiennent à un service chargé.",
-      principles: [
-        { t: "La stabilité d'abord", d: "Si ça cède quand ça compte, rien d'autre ne compte." },
-        { t: "Une source de vérité", d: "Un registre, une identité, une synchro — partout." },
-        { t: "Conditions réelles", d: "Concevoir pour la connectivité instable, pas pour les salles idéales." },
-        { t: "Long terme", d: "Conçu pour être le système sur lequel une entreprise grandit des années." },
+      "principlesEyebrow": "Comment nous construisons",
+      "principlesTitle": "Des principes qui tiennent à un service chargé.",
+      "principles": [
+        {
+          "t": "La stabilité d'abord",
+          "d": "Si ça cède quand ça compte, rien d'autre ne compte."
+        },
+        {
+          "t": "Une source de vérité",
+          "d": "Un registre, une identité, une synchro — partout."
+        },
+        {
+          "t": "Conditions réelles",
+          "d": "Concevoir pour la connectivité instable, pas pour les salles idéales."
+        },
+        {
+          "t": "Long terme",
+          "d": "Conçu pour être le système sur lequel une entreprise grandit des années."
+        }
       ],
-      cta: "Lire notre vision →",
+      "cta": "Lire notre vision →"
     },
-    vision: {
-      eyebrow: "Société / Vision",
-      title: "Un système d'exploitation métier qui définit une catégorie.",
-      intro:
-        "Nous bâtissons la plateforme sur laquelle les entreprises opérationnelles s'appuient durablement — en commençant là où nous comprenons le mieux les conditions, et en passant à l'échelle sur le mérite.",
-      trajectoryEyebrow: "La trajectoire",
-      trajectoryTitle: "Profondeur locale, puis régionale, puis mondiale.",
-      phases: [
-        { n: "01", t: "L'Algérie d'abord", d: "Gagner la confiance des PME opérationnelles en Algérie — commerce, restauration et cliniques sur une plateforme conçue pour les conditions locales." },
-        { n: "02", t: "Le MENA ensuite", d: "Étendre la plateforme dans la région, avec résidence, localisation et réseaux de partenaires adaptés à chaque marché." },
-        { n: "03", t: "Standard mondial", d: "Devenir un système d'exploitation métier qui définit une catégorie — un logiciel de grade infrastructure que les opérateurs choisissent partout sur le mérite." },
+    "vision": {
+      "eyebrow": "Société / Vision",
+      "title": "Un système d'exploitation métier qui définit une catégorie.",
+      "intro": "Nous bâtissons la plateforme sur laquelle les entreprises opérationnelles s'appuient durablement — en commençant là où nous comprenons le mieux les conditions, et en passant à l'échelle sur le mérite.",
+      "trajectoryEyebrow": "La trajectoire",
+      "trajectoryTitle": "Profondeur locale, puis régionale, puis mondiale.",
+      "phases": [
+        {
+          "n": "01",
+          "t": "L'Algérie d'abord",
+          "d": "Gagner la confiance des PME opérationnelles en Algérie — commerce, restauration et cliniques sur une plateforme conçue pour les conditions locales."
+        },
+        {
+          "n": "02",
+          "t": "Le MENA ensuite",
+          "d": "Étendre la plateforme dans la région, avec résidence, localisation et réseaux de partenaires adaptés à chaque marché."
+        },
+        {
+          "n": "03",
+          "t": "Standard mondial",
+          "d": "Devenir un système d'exploitation métier qui définit une catégorie — un logiciel de grade infrastructure que les opérateurs choisissent partout sur le mérite."
+        }
       ],
-      truthEyebrow: "Ce que nous voulons voir vrai",
-      truthTitle: "Le système sur lequel les entreprises s'appuient, pas dont elles fuient.",
-      truths: [
+      "truthEyebrow": "Ce que nous voulons voir vrai",
+      "truthTitle": "Le système sur lequel les entreprises s'appuient, pas dont elles fuient.",
+      "truths": [
         "Quand un opérateur ajoute un site, une marque ou une nouvelle activité, la réponse ne doit jamais être de re-platformer. Ce doit être d'activer un autre produit sur la même fondation.",
         "Quand une entreprise évalue ESTINAD, les contrôles dont elle a besoin — accès, audit, résidence, SSO — doivent déjà être là, parce que nous les avons bâtis d'abord pour les opérateurs qui en avaient besoin.",
-        "Et quand la connexion tombe sur un site chargé, l'entreprise doit continuer — parce que nous avons conçu pour cela avant toute autre chose.",
+        "Et quand la connexion tombe sur un site chargé, l'entreprise doit continuer — parce que nous avons conçu pour cela avant toute autre chose."
       ],
-      cta: "Demander une démo →",
+      "cta": "Demander une démo →"
     },
-    partners: {
-      eyebrow: "Société / Partenaires",
-      title: "Bâtissez une pratique sur une plateforme conçue pour durer.",
-      intro:
-        "ESTINAD grandit grâce à des partenaires qui connaissent leurs marchés. Revendre, implémenter ou intégrer — sur une infrastructure qui tient.",
-      cta: "Devenir partenaire →",
-      tracks: [
-        { t: "Revendeurs", d: "Apportez ESTINAD aux opérateurs de votre marché — avec des marges, de l'enablement et une relation co-détenue.", points: ["Partage de revenu sur chaque site", "Enablement commercial et supports", "Prospection co-brandée", "Options de territoire protégé"] },
-        { t: "Intégrateurs", d: "Mettez ESTINAD en place pour vos clients — matériel, réseau, déploiement et support sur le terrain.", points: ["Parcours d'implémentation certifié", "Guides de déploiement", "Support technique prioritaire", "Revenus services récurrents"] },
-        { t: "Partenaires technologiques", d: "Intégrez la plateforme ESTINAD — paiements, livraison, comptabilité et au-delà.", points: ["API REST documentée et webhooks", "Co-marketing pour les intégrations live", "Accès sandbox", "Contribution à la roadmap commune"] },
+    "partners": {
+      "eyebrow": "Société / Partenaires",
+      "title": "Bâtissez une pratique sur une plateforme conçue pour durer.",
+      "intro": "ESTINAD grandit grâce à des partenaires qui connaissent leurs marchés. Revendre, implémenter ou intégrer — sur une infrastructure qui tient.",
+      "cta": "Devenir partenaire →",
+      "tracks": [
+        {
+          "t": "Revendeurs",
+          "d": "Apportez ESTINAD aux opérateurs de votre marché — avec des marges, de l'enablement et une relation co-détenue.",
+          "points": [
+            "Partage de revenu sur chaque site",
+            "Enablement commercial et supports",
+            "Prospection co-brandée",
+            "Options de territoire protégé"
+          ]
+        },
+        {
+          "t": "Intégrateurs",
+          "d": "Mettez ESTINAD en place pour vos clients — matériel, réseau, déploiement et support sur le terrain.",
+          "points": [
+            "Parcours d'implémentation certifié",
+            "Guides de déploiement",
+            "Support technique prioritaire",
+            "Revenus services récurrents"
+          ]
+        },
+        {
+          "t": "Partenaires technologiques",
+          "d": "Intégrez la plateforme ESTINAD — paiements, livraison, comptabilité et au-delà.",
+          "points": [
+            "API REST documentée et webhooks",
+            "Co-marketing pour les intégrations live",
+            "Accès sandbox",
+            "Contribution à la roadmap commune"
+          ]
+        }
       ],
-      howEyebrow: "Comment fonctionnent les partenariats",
-      howTitle: "Accompagnés, pas abandonnés.",
-      howIntro:
-        "Nous investissons dans les partenaires qui investissent dans la plateforme — avec enablement, support et une relation qui dure au-delà de la première affaire.",
-      applyCta: "Postuler comme partenaire →",
+      "howEyebrow": "Comment fonctionnent les partenariats",
+      "howTitle": "Accompagnés, pas abandonnés.",
+      "howIntro": "Nous investissons dans les partenaires qui investissent dans la plateforme — avec enablement, support et une relation qui dure au-delà de la première affaire.",
+      "applyCta": "Postuler comme partenaire →"
     },
-    careers: {
-      eyebrow: "Société / Carrières",
-      title: "Bâtissez la plateforme dont dépendent les opérateurs.",
-      intro:
-        "Nous recrutons pour le jugement, la retenue et un biais pour ce qui dure. Si vous préférez bâtir de l'infrastructure plutôt que courir après les modes, c'est ici.",
-      cta: "Voir les postes ouverts ↓",
-      howEyebrow: "Comment nous travaillons",
-      howTitle: "La stabilité est une fonctionnalité. Le goût aussi.",
-      how: [
+    "careers": {
+      "eyebrow": "Société / Carrières",
+      "title": "Bâtissez la plateforme dont dépendent les opérateurs.",
+      "intro": "Nous recrutons pour le jugement, la retenue et un biais pour ce qui dure. Si vous préférez bâtir de l'infrastructure plutôt que courir après les modes, c'est ici.",
+      "cta": "Voir les postes ouverts ↓",
+      "howEyebrow": "Comment nous travaillons",
+      "howTitle": "La stabilité est une fonctionnalité. Le goût aussi.",
+      "how": [
         "Nous construisons pour les conditions réelles des opérateurs, pas pour les salles de démo. Cela signifie concevoir pour la connectivité instable, des marges réelles et des gens qui ne peuvent pas se payer un logiciel qui cède.",
         "Nous avançons avec discipline : des équipes petites et senior, des responsabilités claires, peu de réunions, des décisions durables.",
-        "Nous sommes basés en Algérie et recrutons dans la région au fur et à mesure de notre croissance.",
+        "Nous sommes basés en Algérie et recrutons dans la région au fur et à mesure de notre croissance."
       ],
-      rolesEyebrow: "Postes ouverts",
-      rolesTitle: "Où nous recrutons.",
-      roles: [
-        { role: "Ingénieur plateforme (synchro & registre)", loc: "Algérie · Remote-friendly", team: "Ingénierie" },
-        { role: "Ingénieur produit — Commerce & Restauration", loc: "Algérie · Remote-friendly", team: "Ingénierie" },
-        { role: "Designer produit, systèmes & flux", loc: "Algérie · Hybride", team: "Produit" },
-        { role: "Responsable d'implémentation", loc: "Algérie · Terrain", team: "Go-to-market" },
-        { role: "Manager partenaires, MENA", loc: "Remote · MENA", team: "Go-to-market" },
+      "rolesEyebrow": "Postes ouverts",
+      "rolesTitle": "Où nous recrutons.",
+      "roles": [
+        {
+          "role": "Ingénieur plateforme (synchro & registre)",
+          "loc": "Algérie · Remote-friendly",
+          "team": "Ingénierie"
+        },
+        {
+          "role": "Ingénieur produit — Commerce & Restauration",
+          "loc": "Algérie · Remote-friendly",
+          "team": "Ingénierie"
+        },
+        {
+          "role": "Designer produit, systèmes & flux",
+          "loc": "Algérie · Hybride",
+          "team": "Produit"
+        },
+        {
+          "role": "Responsable d'implémentation",
+          "loc": "Algérie · Terrain",
+          "team": "Go-to-market"
+        },
+        {
+          "role": "Manager partenaires, MENA",
+          "loc": "Remote · MENA",
+          "team": "Go-to-market"
+        }
       ],
-      applyCta: "Postuler ou se présenter →",
+      "applyCta": "Postuler ou se présenter →"
     },
-    contact: {
-      eyebrow: "Société / Contact",
-      title: "Parler à l'équipe.",
-      intro:
-        "Que vous vouliez une démo, un partenariat ou juste comprendre la plateforme — nous lisons tout et répondons sous un jour ouvré.",
-      directTitle: "Direct",
-      emailLabel: "E-mail",
-      email: "hello@estinad.com",
-      basedLabel: "Basés en",
-      based: "Algérie · au service du MENA et du monde",
-      responseLabel: "Réponse",
-      response: "Sous un jour ouvré",
-      form: {
-        name: "Nom",
-        company: "Société",
-        email: "E-mail",
-        phone: "Téléphone",
-        reasonLabel: "Motif",
-        reasons: ["Démo", "Commercial", "Partenariat", "Support", "Carrières", "Autre"],
-        messageLabel: "Message",
-        messagePlaceholder: "Comment pouvons-nous aider ?",
-        submit: "Envoyer le message →",
-        sending: "Envoi…",
-        sentTitle: "Message reçu",
-        sentBody: "Merci. Nous répondrons sous un jour ouvré.",
-        privacyNote: "En soumettant, vous acceptez notre",
-        privacyLink: "politique de confidentialité",
-      },
-    },
+    "contact": {
+      "eyebrow": "Société / Contact",
+      "title": "Parler à l'équipe.",
+      "intro": "Que vous vouliez une démo, un partenariat ou juste comprendre la plateforme — nous lisons tout et répondons sous un jour ouvré.",
+      "directTitle": "Direct",
+      "emailLabel": "E-mail",
+      "email": "hello@estinad.com",
+      "basedLabel": "Basés en",
+      "based": "Algérie · au service du MENA et du monde",
+      "responseLabel": "Réponse",
+      "response": "Sous un jour ouvré",
+      "form": {
+        "name": "Nom",
+        "company": "Société",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "reasonLabel": "Motif",
+        "reasons": [
+          "Démo",
+          "Commercial",
+          "Partenariat",
+          "Support",
+          "Carrières",
+          "Autre"
+        ],
+        "messageLabel": "Message",
+        "messagePlaceholder": "Comment pouvons-nous aider ?",
+        "submit": "Envoyer le message →",
+        "sending": "Envoi…",
+        "sentTitle": "Message reçu",
+        "sentBody": "Merci. Nous répondrons sous un jour ouvré.",
+        "privacyNote": "En soumettant, vous acceptez notre",
+        "privacyLink": "politique de confidentialité"
+      }
+    }
   },
-
-  demo: {
-    eyebrow: "Demander une démo",
-    title: "Voyez ESTINAD sur vos opérations.",
-    intro:
-      "Parlez-nous de votre entreprise. Nous cartographierons vos points de vente, produits et flux sur la plateforme — et vous montrerons ce qui compte le plus pour vous.",
-    whatTitle: "Ce que vous obtenez",
-    what: [
+  "demo": {
+    "eyebrow": "Demander une démo",
+    "title": "Voyez ESTINAD sur vos opérations.",
+    "intro": "Parlez-nous de votre entreprise. Nous cartographierons vos points de vente, produits et flux sur la plateforme — et vous montrerons ce qui compte le plus pour vous.",
+    "whatTitle": "Ce que vous obtenez",
+    "what": [
       "Une démonstration adaptée à votre secteur et votre nombre de sites",
       "Un plan de déploiement réaliste pour votre connectivité",
       "Des tarifs dimensionnés à votre échelle réelle",
-      "Une voie claire de vos outils actuels vers une plateforme",
+      "Une voie claire de vos outils actuels vers une plateforme"
     ],
-    preferTitle: "Préférez parler ?",
-    preferBody: "Contactez l'équipe directement à",
-    email: "hello@estinad.com",
-    form: {
-      name: "Nom complet",
-      business: "Nom de l'entreprise",
-      email: "E-mail",
-      phone: "Téléphone",
-      sectorLabel: "Secteur",
-      sectors: ["Commerce", "Restauration", "Clinique", "Multi-sites", "Autre"],
-      branches: "Nombre de points de vente",
-      currentTools: "Outils actuels",
-      messageLabel: "Que voulez-vous résoudre ?",
-      messagePlaceholder: "Dites-nous ce qui est le plus dur à gérer aujourd'hui.",
-      submit: "Demander une démo →",
-      sending: "Envoi…",
-      sentTitle: "Demande reçue",
-      sentBody: "Merci. Nous reviendrons vers vous sous un jour ouvré pour planifier votre démonstration.",
-      privacyNote: "En soumettant, vous acceptez notre",
-      privacyLink: "politique de confidentialité",
-    },
-  },
-
-  legal: {
-    privacy: {
-      eyebrow: "Légal / Confidentialité",
-      title: "Politique de confidentialité",
-      intro:
-        "Comment ESTINAD collecte, utilise et protège les données des entreprises qui en dépendent.",
-      blocks: [
-        { title: "1. Champ d'application", body: "Cette politique couvre ESTINAD OS et ses produits — Commerce, Restauration, Clinique et Cloud — y compris les sites web, tableaux de bord et déploiements on-premise exploités par ESTINAD." },
-        { title: "2. Données traitées", body: "Données de compte et d'organisation ; configuration des sites et utilisateurs ; enregistrements transactionnels (ventes, stocks, plannings, facturation) ; et journaux opérationnels nécessaires à l'audit et à la fiabilité. Les secteurs sensibles, comme les cliniques, bénéficient de contrôles supplémentaires décrits dans la documentation produit." },
-        { title: "3. Comment nous utilisons les données", body: "Pour exploiter la plateforme, assurer le support, maintenir la fiabilité, prévenir la fraude et améliorer les produits. Nous ne vendons pas de données personnelles. Des métriques agrégées non identifiantes peuvent être utilisées pour l'analytique produit." },
-        { title: "4. Chiffrement et stockage", body: "Les données sont chiffrées en transit et au repos, y compris les sauvegardes. La résidence régionale et le déploiement hybride sont disponibles quand la réglementation exige que les données restent dans le pays." },
-        { title: "5. Accès et contrôle", body: "Les dirigeants contrôlent qui peut accéder à quoi via l'accès par rôles. Les personnes peuvent demander l'accès, la correction ou la suppression de leurs données personnelles, le cas échéant, en contactant ESTINAD." },
-        { title: "6. Rétention", body: "Les données sont conservées tant que le compte est actif et selon les obligations légales, comptables ou d'audit. Les sauvegardes permettent une restauration à un instant t dans la fenêtre de rétention de la plateforme." },
-        { title: "7. Sous-traitants", body: "ESTINAD utilise des prestataires d'infrastructure et de services vérifiés, sous accords de traitement de données. Une liste à jour des sous-traitants est disponible sur demande." },
-        { title: "8. Contact", body: "Les questions sur cette politique ou les demandes de données peuvent être envoyées à privacy@estinad.com. Nous répondrons dans le délai requis par la loi applicable." },
+    "preferTitle": "Préférez parler ?",
+    "preferBody": "Contactez l'équipe directement à",
+    "email": "hello@estinad.com",
+    "form": {
+      "name": "Nom complet",
+      "business": "Nom de l'entreprise",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "sectorLabel": "Secteur",
+      "sectors": [
+        "Commerce",
+        "Restauration",
+        "Clinique",
+        "Multi-sites",
+        "Autre"
       ],
-    },
-    terms: {
-      eyebrow: "Légal / Conditions",
-      title: "Conditions d'utilisation",
-      intro: "Les conditions selon lesquelles les entreprises utilisent ESTINAD OS et ses produits.",
-      blocks: [
-        { title: "1. Acceptation", body: "En accédant ou en utilisant ESTINAD, vous acceptez ces conditions au nom de votre organisation. Si vous n'acceptez pas, n'utilisez pas la plateforme." },
-        { title: "2. Licence", body: "ESTINAD accorde à votre organisation une licence limitée, non exclusive et non transférable pour utiliser la plateforme et ses produits dans le cadre de votre offre active, sous réserve de ces conditions." },
-        { title: "3. Vos responsabilités", body: "Vous êtes responsable de l'exactitude de vos données, de la conduite de vos utilisateurs et de la sécurité de vos identifiants. Vous acceptez d'utiliser la plateforme légalement et conformément à son usage prévu." },
-        { title: "4. Usage acceptable", body: "Vous ne pouvez pas faire un mauvais usage de la plateforme, tenter de l'ingénierie inverse, la revendre sans autorisation, ou l'utiliser pour traiter des données en violation de la loi applicable." },
-        { title: "5. Tarifs et facturation", body: "Les tarifs sont décrits sur la page tarifs de chaque produit et confirmés dans votre commande ou accord. Sauf accord contraire, les tarifs sont facturés par site, par clinique ou par point de vente, mensuellement ou annuellement." },
-        { title: "6. Fiabilité", body: "ESTINAD est conçu pour la stabilité, y compris le fonctionnement hors ligne. Nous visons une haute disponibilité et assurons sauvegarde et restauration, mais aucun service n'est garanti sans interruption ni erreur." },
-        { title: "7. Confidentialité et données", body: "Chaque partie protège les informations confidentielles de l'autre. Vos données restent vôtres ; ESTINAD les traite uniquement pour exploiter la plateforme, comme décrit dans la politique de confidentialité." },
-        { title: "8. Résiliation", body: "Chaque partie peut résilier comme décrit dans votre accord. En cas de résiliation, ESTINAD rendra vos données exportables pendant une période définie, puis les supprimera selon la politique de rétention." },
-        { title: "9. Modifications", body: "ESTINAD peut mettre à jour ces conditions et ses tarifs avec un préavis raisonnable. La poursuite de l'utilisation après l'entrée en vigueur vaut acceptation." },
-        { title: "10. Contact", body: "Les questions sur ces conditions peuvent être envoyées à legal@estinad.com." },
-      ],
-    },
+      "branches": "Nombre de points de vente",
+      "currentTools": "Outils actuels",
+      "messageLabel": "Que voulez-vous résoudre ?",
+      "messagePlaceholder": "Dites-nous ce qui est le plus dur à gérer aujourd'hui.",
+      "submit": "Demander une démo →",
+      "sending": "Envoi…",
+      "sentTitle": "Demande reçue",
+      "sentBody": "Merci. Nous reviendrons vers vous sous un jour ouvré pour planifier votre démonstration.",
+      "privacyNote": "En soumettant, vous acceptez notre",
+      "privacyLink": "politique de confidentialité"
+    }
   },
+  "legal": {
+    "privacy": {
+      "eyebrow": "Légal / Confidentialité",
+      "title": "Politique de confidentialité",
+      "intro": "Comment ESTINAD collecte, utilise et protège les données des entreprises qui en dépendent.",
+      "blocks": [
+        {
+          "title": "1. Champ d'application",
+          "body": "Cette politique couvre ESTINAD OS et ses produits — Commerce, Restauration, Clinique et Cloud — y compris les sites web, tableaux de bord et déploiements on-premise exploités par ESTINAD."
+        },
+        {
+          "title": "2. Données traitées",
+          "body": "Données de compte et d'organisation ; configuration des sites et utilisateurs ; enregistrements transactionnels (ventes, stocks, plannings, facturation) ; et journaux opérationnels nécessaires à l'audit et à la fiabilité. Les secteurs sensibles, comme les cliniques, bénéficient de contrôles supplémentaires décrits dans la documentation produit."
+        },
+        {
+          "title": "3. Comment nous utilisons les données",
+          "body": "Pour exploiter la plateforme, assurer le support, maintenir la fiabilité, prévenir la fraude et améliorer les produits. Nous ne vendons pas de données personnelles. Des métriques agrégées non identifiantes peuvent être utilisées pour l'analytique produit."
+        },
+        {
+          "title": "4. Chiffrement et stockage",
+          "body": "Les données sont chiffrées en transit et au repos, y compris les sauvegardes. La résidence régionale et le déploiement hybride sont disponibles quand la réglementation exige que les données restent dans le pays."
+        },
+        {
+          "title": "5. Accès et contrôle",
+          "body": "Les dirigeants contrôlent qui peut accéder à quoi via l'accès par rôles. Les personnes peuvent demander l'accès, la correction ou la suppression de leurs données personnelles, le cas échéant, en contactant ESTINAD."
+        },
+        {
+          "title": "6. Rétention",
+          "body": "Les données sont conservées tant que le compte est actif et selon les obligations légales, comptables ou d'audit. Les sauvegardes permettent une restauration à un instant t dans la fenêtre de rétention de la plateforme."
+        },
+        {
+          "title": "7. Sous-traitants",
+          "body": "ESTINAD utilise des prestataires d'infrastructure et de services vérifiés, sous accords de traitement de données. Une liste à jour des sous-traitants est disponible sur demande."
+        },
+        {
+          "title": "8. Contact",
+          "body": "Les questions sur cette politique ou les demandes de données peuvent être envoyées à privacy@estinad.com. Nous répondrons dans le délai requis par la loi applicable."
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "Légal / Conditions",
+      "title": "Conditions d'utilisation",
+      "intro": "Les conditions selon lesquelles les entreprises utilisent ESTINAD OS et ses produits.",
+      "blocks": [
+        {
+          "title": "1. Acceptation",
+          "body": "En accédant ou en utilisant ESTINAD, vous acceptez ces conditions au nom de votre organisation. Si vous n'acceptez pas, n'utilisez pas la plateforme."
+        },
+        {
+          "title": "2. Licence",
+          "body": "ESTINAD accorde à votre organisation une licence limitée, non exclusive et non transférable pour utiliser la plateforme et ses produits dans le cadre de votre offre active, sous réserve de ces conditions."
+        },
+        {
+          "title": "3. Vos responsabilités",
+          "body": "Vous êtes responsable de l'exactitude de vos données, de la conduite de vos utilisateurs et de la sécurité de vos identifiants. Vous acceptez d'utiliser la plateforme légalement et conformément à son usage prévu."
+        },
+        {
+          "title": "4. Usage acceptable",
+          "body": "Vous ne pouvez pas faire un mauvais usage de la plateforme, tenter de l'ingénierie inverse, la revendre sans autorisation, ou l'utiliser pour traiter des données en violation de la loi applicable."
+        },
+        {
+          "title": "5. Tarifs et facturation",
+          "body": "Les tarifs sont décrits sur la page tarifs de chaque produit et confirmés dans votre commande ou accord. Sauf accord contraire, les tarifs sont facturés par site, par clinique ou par point de vente, mensuellement ou annuellement."
+        },
+        {
+          "title": "6. Fiabilité",
+          "body": "ESTINAD est conçu pour la stabilité, y compris le fonctionnement hors ligne. Nous visons une haute disponibilité et assurons sauvegarde et restauration, mais aucun service n'est garanti sans interruption ni erreur."
+        },
+        {
+          "title": "7. Confidentialité et données",
+          "body": "Chaque partie protège les informations confidentielles de l'autre. Vos données restent vôtres ; ESTINAD les traite uniquement pour exploiter la plateforme, comme décrit dans la politique de confidentialité."
+        },
+        {
+          "title": "8. Résiliation",
+          "body": "Chaque partie peut résilier comme décrit dans votre accord. En cas de résiliation, ESTINAD rendra vos données exportables pendant une période définie, puis les supprimera selon la politique de rétention."
+        },
+        {
+          "title": "9. Modifications",
+          "body": "ESTINAD peut mettre à jour ces conditions et ses tarifs avec un préavis raisonnable. La poursuite de l'utilisation après l'entrée en vigueur vaut acceptation."
+        },
+        {
+          "title": "10. Contact",
+          "body": "Les questions sur ces conditions peuvent être envoyées à legal@estinad.com."
+        }
+      ]
+    }
+  }
 };

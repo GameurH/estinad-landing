@@ -1,12 +1,24 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { Section, SectionHeader, Eyebrow, Button } from "@/components/ui";
 import { Monogram } from "@/components/Monogram";
 import { getDict } from "@/lib/i18n";
 import { isLocale, lp, type Locale } from "@/lib/i18n-config";
 import { productsList, platformCards } from "@/lib/nav";
+import { pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const l: Locale = isLocale(locale) ? locale : "en";
+  const d = getDict(l);
+  return pageMeta(l, "/platform", {
+    title: d.platform.overview.title,
+    description: d.platform.overview.intro,
+  });
+}
 
 export default async function PlatformPage({ params }: Props) {
   const { locale } = await params;

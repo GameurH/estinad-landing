@@ -4,6 +4,7 @@ import { Section } from "@/components/ui";
 import { LeadForm, type FieldDef } from "@/components/LeadForm";
 import { getDict } from "@/lib/i18n";
 import { isLocale, lp, type Locale } from "@/lib/i18n-config";
+import { pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -11,7 +12,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const l: Locale = isLocale(locale) ? locale : "en";
   const d = getDict(l);
-  return { title: d.company.contact.title, description: d.company.contact.intro };
+  return pageMeta(l, "/company/contact", {
+    title: d.company.contact.title,
+    description: d.company.contact.intro,
+  });
 }
 
 export default async function ContactPage({ params }: Props) {
@@ -39,6 +43,9 @@ export default async function ContactPage({ params }: Props) {
         <div className="grid gap-12 lg:grid-cols-[1fr_360px]">
           <LeadForm
             endpoint="/api/contact"
+            analyticsSubmit="contact_form_submitted"
+            consentLabel={d.common.consentLabel}
+            errorRetry={d.common.errorRetry}
             fields={fields}
             submit={f.submit}
             sending={f.sending}

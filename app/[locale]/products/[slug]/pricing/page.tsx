@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PricingView } from "@/components/PricingPage";
+import { PricingViewTracker } from "@/components/AnalyticsTrackers";
 import { getDict } from "@/lib/i18n";
 import { isLocale, productSlugs, type Locale } from "@/lib/i18n-config";
+import { pageMeta } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -17,7 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!(productSlugs as readonly string[]).includes(slug)) return {};
   const key = slug as (typeof productSlugs)[number];
   const p = d.products.items[key];
-  return { title: `${p.name} · ${d.common.pricing}`, description: p.oneLiner };
+  return pageMeta(l, `/products/${slug}/pricing`, {
+    title: `${p.name} · ${d.common.pricing}`,
+    description: p.oneLiner,
+  });
 }
 
 export default async function ProductPricing({ params }: Props) {
@@ -29,19 +34,22 @@ export default async function ProductPricing({ params }: Props) {
   const p = d.products.items[key];
 
   return (
-    <PricingView
-      data={{
-        locale: l,
-        slug,
-        eyebrow: `${d.nav.products} / ${p.name} / ${d.common.pricing}`,
-        title: `${p.name} · ${d.common.pricing}`,
-        productName: p.name,
-        productOneLiner: p.oneLiner,
-        productVertical: p.vertical,
-        tiers: d.pricing.tiers[key],
-        pr: d.pricing,
-        c: d.common,
-      }}
-    />
+    <>
+      <PricingViewTracker slug={slug} />
+      <PricingView
+        data={{
+          locale: l,
+          slug,
+          eyebrow: `${d.nav.products} / ${p.name} / ${d.common.pricing}`,
+          title: `${p.name} · ${d.common.pricing}`,
+          productName: p.name,
+          productOneLiner: p.oneLiner,
+          productVertical: p.vertical,
+          tiers: d.pricing.tiers[key],
+          pr: d.pricing,
+          c: d.common,
+        }}
+      />
+    </>
   );
 }

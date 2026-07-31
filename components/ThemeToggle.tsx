@@ -79,7 +79,7 @@ export function ThemeToggle({ labels }: Props) {
         />
         <span
           className={`absolute h-1.5 w-1.5 rounded-full bg-ink transition-transform ${
-            isLight ? "translate-x-2" : "-translate-x-1"
+            isLight ? "translate-x-2 rtl:-translate-x-2" : "-translate-x-1 rtl:translate-x-1"
           }`}
         />
       </span>
