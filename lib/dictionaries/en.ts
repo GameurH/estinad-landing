@@ -91,6 +91,10 @@ export const en = {
     megaSecurity: "Discipline by default",
     megaDeployment: "Local-first, cloud-enhanced",
     megaProductsIntro: "Ready software products, grouped by what the business does.",
+    softwareProducts: "Software Products",
+    certifiedHardware: "Certified Hardware",
+    compareSolutions: "Compare Solutions",
+    megaHardwareIntro: "Selected, tested hardware—ready to work with ESTINAD.",
     megaGroupRetail: "Retail operations",
     megaGroupRestaurant: "Restaurant operations",
     megaGroupAdmin: "Business administration",
@@ -127,6 +131,7 @@ export const en = {
       { label: "ESTINAD Restaurant", href: "/products/restaurant" },
       { label: "ESTINAD Clinic", href: "/products/clinic" },
       { label: "ESTINAD Cloud", href: "/products/cloud" },
+      { label: "Certified Hardware", href: "/hardware" },
     ],
     solutionLinks: [
       { label: "For Retail", href: "/solutions/retail" },
@@ -2304,6 +2309,396 @@ export const en = {
       sentBody: "Thank you. We'll be in touch within one business day to schedule your walkthrough.",
       privacyNote: "By submitting, you agree to our",
       privacyLink: "privacy policy",
+    },
+  },
+
+  hardware: {
+    meta: {
+      title: "Certified Hardware",
+      description:
+        "ESTINAD Certified Hardware — selected, tested deployment kits prepared to work with ESTINAD products. Request a quote for your operation.",
+    },
+    hero: {
+      eyebrow: "ESTINAD / CERTIFIED HARDWARE",
+      title: "Hardware selected for reliable operation.",
+      body: "Certified deployment kits, prepared to work with ESTINAD products—from the first counter to multi-site rollout.",
+      primaryCta: "Request a quote",
+      secondaryCta: "Check compatibility",
+      supporting: "Tested configurations · Prepared deployment · Clear support scope",
+    },
+    certified: {
+      eyebrow: "Certified by design",
+      title: "Hardware is part of the deployment standard.",
+      body: "Every certified kit is selected, tested, and prepared around the way ESTINAD products are deployed. This reduces setup uncertainty and gives your team a clearer path from installation to daily operation.",
+      principles: [
+        { title: "Tested with ESTINAD products", body: "Configurations reviewed against the software they will run." },
+        { title: "Configured for deployment", body: "Kits prepared for installation, not assembled at the last minute." },
+        { title: "Clear compatibility guidance", body: "Straightforward guidance on what is supported and what needs review." },
+        { title: "One coordinated implementation path", body: "Hardware aligned with software setup, training, and launch." },
+      ],
+    },
+    model: {
+      eyebrow: "Commercial model",
+      title: "Four elements. Software remains primary.",
+      body: "Hardware is an optional certified package for reliable deployment—not a requirement for every ESTINAD customer.",
+      items: [
+        { title: "Software subscription or license", body: "The primary strategic revenue and the product you operate on." },
+        { title: "Implementation and onboarding", body: "Setup, configuration, migration, training, and launch." },
+        { title: "Certified hardware package", body: "One-time purchase, quoted or sold as a deployment bundle." },
+        { title: "Support plan", body: "Optional recurring operational support, within a clear scope." },
+      ],
+    },
+    kitsSection: {
+      eyebrow: "ESTINAD Axis",
+      title: "Choose a kit built for your operation.",
+      configuredLabel: "Configured to your requirements",
+      viewDetails: "View kit details",
+      requestQuote: "Request a quote",
+      talkToTeam: "Talk to our team",
+      backToHardware: "Back to Certified Hardware",
+      includesLabel: "What's included",
+      includesIntro: "A prepared deployment set—selected for ESTINAD and confirmed during quoting.",
+      useCaseLabel: "Operational fit",
+      galleryLabel: "Reference visuals",
+      galleryIntro: "Illustrative studio and deployment references. Final equipment is confirmed with your quote.",
+      specsLabel: "Reference specifications",
+      worksWithLabel: "Works with ESTINAD",
+      worksWithIntro: "Each Axis kit is prepared around the ESTINAD product it supports.",
+      scopeNote:
+        "Specifications are illustrative reference configurations. Final equipment is confirmed during quoting and compatibility review.",
+    },
+    kits: {
+      "retail-counter-kit": {
+        name: "ESTINAD Axis Counter",
+        shortName: "Axis Counter",
+        tagline: "A complete checkout position, prepared before it reaches the counter.",
+        useCase: "Retail stores and fixed checkout counters.",
+        detailIntro:
+          "A fixed-counter configuration for retail checkout—selected to reduce uncertainty at install and daily operation.",
+        operationalFit:
+          "Built for single- and multi-branch retail teams that need a dependable counter position without improvising peripherals at launch.",
+        includes: [
+          { id: "terminal", label: "ESTINAD-ready POS terminal", blurb: "Counter display prepared for ESTINAD Retail workflows." },
+          { id: "scanner", label: "Barcode scanner", blurb: "Presentation or handheld scanning for product lookup." },
+          { id: "printer", label: "Receipt printer", blurb: "Thermal printer for counter receipt output." },
+          { id: "drawer", label: "Cash drawer", blurb: "Standard drawer aligned to the kit printer path." },
+          { id: "setup", label: "Installation option", blurb: "Configuration and install support available on request." },
+        ],
+        specGroups: [
+          {
+            title: "System",
+            specs: [
+              { label: "POS terminal", value: "Counter-mounted display with ESTINAD-ready setup option" },
+              { label: "Deployment posture", value: "Fixed counter position for retail checkout" },
+            ],
+          },
+          {
+            title: "Peripherals",
+            specs: [
+              { label: "Barcode scanner", value: "Handheld or presentation scanner for product lookup" },
+              { label: "Receipt printer", value: "Thermal receipt printer for counter output" },
+              { label: "Cash drawer", value: "Standard cash drawer compatible with the kit printer path" },
+            ],
+          },
+          {
+            title: "Deployment scope",
+            specs: [
+              { label: "Setup option", value: "Installation and configuration available on request" },
+              { label: "Configuration", value: "Configured to your requirements during quoting" },
+            ],
+          },
+        ],
+        media: {
+          hero: { alt: "ESTINAD Axis Counter studio configuration on a pale stone counter" },
+          detail: {
+            alt: "Close-up of Axis Counter scanner and receipt printer",
+            caption: "Scanner and printer positioned for a coordinated retail counter path.",
+          },
+          deployment: {
+            alt: "Illustrative Axis Counter deployment in a calm retail shop",
+            caption: "Illustrative deployment reference—not a live customer installation.",
+          },
+          included: {
+            alt: "Axis Counter included components arranged as a technical plate",
+            caption: "Reference component set for quoting and preparation.",
+          },
+        },
+        cta: "Request a quote",
+      },
+      "restaurant-counter-kit": {
+        name: "ESTINAD Axis Service",
+        shortName: "Axis Service",
+        tagline: "A service-ready counter system built for the pace of hospitality.",
+        useCase: "Restaurants, cafés, and food-service counters.",
+        detailIntro:
+          "A counter configuration for food-service service points—aligned with ESTINAD Restaurant deployment practice.",
+        operationalFit:
+          "Designed for restaurants and cafés that need a prepared service counter with clear receipt flow and tidy cable management.",
+        includes: [
+          { id: "terminal", label: "ESTINAD-ready POS terminal", blurb: "Counter terminal prepared for ESTINAD Restaurant workflows." },
+          { id: "printer", label: "Receipt printer", blurb: "Thermal printer for guest and kitchen-adjacent output." },
+          { id: "drawer", label: "Cash drawer", blurb: "Standard drawer for counter cash handling." },
+          { id: "accessories", label: "Counter accessories", blurb: "Mounting and cable-management accessories as agreed." },
+          { id: "setup", label: "Installation option", blurb: "Configuration and install support available on request." },
+        ],
+        specGroups: [
+          {
+            title: "System",
+            specs: [
+              { label: "POS terminal", value: "Counter terminal prepared for ESTINAD Restaurant workflows" },
+              { label: "Deployment posture", value: "Service counter position for hospitality operations" },
+            ],
+          },
+          {
+            title: "Peripherals",
+            specs: [
+              { label: "Receipt printer", value: "Thermal printer for guest and kitchen-adjacent output" },
+              { label: "Cash drawer", value: "Standard cash drawer for counter cash handling" },
+              { label: "Counter accessories", value: "Mounting and counter accessories as agreed" },
+            ],
+          },
+          {
+            title: "Deployment scope",
+            specs: [
+              { label: "Setup option", value: "Installation and configuration available on request" },
+              { label: "Configuration", value: "Configured to your requirements during quoting" },
+            ],
+          },
+        ],
+        media: {
+          hero: { alt: "ESTINAD Axis Service hospitality counter system in studio light" },
+          detail: {
+            alt: "Close-up of Axis Service printer and cable-management spine",
+            caption: "Printer path and cable routing prepared for a service counter.",
+          },
+          deployment: {
+            alt: "Illustrative Axis Service counter in a contemporary café",
+            caption: "Illustrative hospitality deployment reference before service.",
+          },
+          included: {
+            alt: "Axis Service included components on a technical plate",
+            caption: "Reference hospitality counter set for quoting.",
+          },
+        },
+        cta: "Request a quote",
+      },
+      "inventory-kit": {
+        name: "ESTINAD Axis Inventory",
+        shortName: "Axis Inventory",
+        tagline: "Scan, label, and move stock with one prepared field kit.",
+        useCase: "Inventory workflows, stock operations, and labeling.",
+        detailIntro:
+          "A mobility-oriented kit for stock counts, receiving, and labeling—paired with ESTINAD inventory workflows.",
+        operationalFit:
+          "For teams that need a portable inventory station for aisle counts, receiving, and shelf labeling across one or more sites.",
+        includes: [
+          { id: "handheld", label: "Handheld barcode scanner", blurb: "Scanner for aisle and stockroom product lookup." },
+          { id: "labelPrinter", label: "Label printer", blurb: "Label printer for shelf and product labeling." },
+          { id: "device", label: "Inventory device", blurb: "Handheld device or tablet option for inventory tasks." },
+          { id: "setup", label: "Setup support", blurb: "Setup support available on request." },
+        ],
+        specGroups: [
+          {
+            title: "System",
+            specs: [
+              { label: "Inventory device", value: "Handheld device or tablet option for inventory tasks" },
+              { label: "Deployment posture", value: "Mobile field kit for stock operations" },
+            ],
+          },
+          {
+            title: "Peripherals",
+            specs: [
+              { label: "Handheld scanner", value: "Barcode scanner for aisle and stockroom use" },
+              { label: "Label printer", value: "Label printer for shelf and product labeling" },
+            ],
+          },
+          {
+            title: "Deployment scope",
+            specs: [
+              { label: "Setup support", value: "Setup support available on request" },
+              { label: "Configuration", value: "Configured to your requirements during quoting" },
+            ],
+          },
+        ],
+        media: {
+          hero: { alt: "ESTINAD Axis Inventory mobile kit with scanner, label printer, and tablet" },
+          detail: {
+            alt: "Close-up of Axis Inventory handheld scanner and label printer",
+            caption: "Scanner and label path prepared for stockroom workflows.",
+          },
+          deployment: {
+            alt: "Illustrative Axis Inventory station in an organized stockroom",
+            caption: "Illustrative inventory deployment reference—not a live site.",
+          },
+          included: {
+            alt: "Axis Inventory included components arranged as a technical plate",
+            caption: "Reference field kit components for quoting.",
+          },
+        },
+        cta: "Request a quote",
+      },
+      "multi-site-rollout": {
+        name: "ESTINAD Axis Fleet",
+        shortName: "Axis Fleet",
+        tagline: "One hardware standard, deployed consistently across every site.",
+        useCase: "Organizations standardizing hardware across several locations.",
+        detailIntro:
+          "A coordinated rollout approach for teams standardizing certified configurations across multiple sites.",
+        operationalFit:
+          "For multi-site operators who need one prepared hardware standard, site-by-site configuration, and coordinated installation.",
+        includes: [
+          { id: "plan", label: "Standardized deployment plan", blurb: "Shared sequence covering sites and responsibilities." },
+          { id: "configuration", label: "Site-by-site configuration", blurb: "Per-site hardware setup aligned to the plan." },
+          { id: "preparation", label: "Pre-deployment preparation", blurb: "Preparation before install to reduce on-site uncertainty." },
+          { id: "coordination", label: "Rollout coordination", blurb: "Installation, training, and launch coordination." },
+        ],
+        specGroups: [
+          {
+            title: "System",
+            specs: [
+              { label: "Deployment plan", value: "Shared plan covering sequence, sites, and responsibilities" },
+              { label: "Deployment posture", value: "Standardized multi-site hardware rollout" },
+            ],
+          },
+          {
+            title: "Peripherals",
+            specs: [
+              { label: "Site configuration", value: "Per-site hardware configuration aligned to the plan" },
+              { label: "Prepared kits", value: "Certified configurations repeated across locations" },
+            ],
+          },
+          {
+            title: "Deployment scope",
+            specs: [
+              { label: "Pre-deployment", value: "Preparation before install to reduce on-site uncertainty" },
+              { label: "Rollout coordination", value: "Installation, training, and launch coordination" },
+            ],
+          },
+        ],
+        media: {
+          hero: { alt: "ESTINAD Axis Fleet standardized counter configurations in studio" },
+          detail: {
+            alt: "Pre-deployment preparation of identical Axis configurations",
+            caption: "Identical prepared sets before site-by-site rollout.",
+          },
+          deployment: {
+            alt: "Illustrative Axis Fleet staging workspace with repeated systems",
+            caption: "Illustrative multi-site staging reference—not a customer warehouse.",
+          },
+          included: {
+            alt: "Axis Fleet rollout artifacts arranged as a technical plate",
+            caption: "Reference coordination set for multi-site quoting.",
+          },
+        },
+        cta: "Talk to our team",
+      },
+    },
+    steps: {
+      eyebrow: "How deployment works",
+      title: "Three steps from requirements to launch.",
+      items: [
+        {
+          title: "Tell us about your location",
+          body: "Share your business type, number of counters, sites, and existing equipment.",
+        },
+        {
+          title: "Receive a recommended configuration",
+          body: "We review your requirements and recommend a suitable certified kit.",
+        },
+        {
+          title: "Prepare, install, and launch",
+          body: "Your selected setup is prepared for deployment, installed where agreed, and tested before launch.",
+        },
+      ],
+    },
+    compatibility: {
+      eyebrow: "Compatibility",
+      title: "Already have hardware?",
+      body: "Use our compatibility review before purchasing or deploying existing equipment. We will help determine whether it is supported, conditionally supported, or unsuitable for your ESTINAD setup.",
+      cta: "Check your hardware",
+      metaTitle: "Hardware compatibility review",
+      metaDescription:
+        "Request an ESTINAD hardware compatibility review for existing equipment before purchase or deployment.",
+      pageTitle: "Check your hardware.",
+      pageIntro:
+        "Describe your current equipment and the ESTINAD product you plan to run. Our team will review whether it is supported, conditionally supported, or unsuitable.",
+      outcomesTitle: "What you will learn",
+      outcomes: [
+        "Whether your equipment is supported with ESTINAD",
+        "Whether support is conditional on configuration or accessories",
+        "Whether a certified kit is a clearer path for your sites",
+      ],
+    },
+    finalCta: {
+      title: "Planning a new location or upgrading your current setup?",
+      body: "Tell us how your business operates, and we will recommend a deployment kit built around your ESTINAD product.",
+      cta: "Request a hardware quote",
+    },
+    quote: {
+      metaTitle: "Request a hardware quote",
+      metaDescription:
+        "Request a quote for ESTINAD Certified Hardware deployment kits for your locations.",
+      eyebrow: "Request a quote",
+      title: "Tell us how your operation runs.",
+      intro:
+        "Share your locations, counters, and preferred kit. Our team will review your requirements and follow up with a recommended configuration.",
+      asideTitle: "What happens next",
+      aside: [
+        "We review your business type and site count",
+        "We recommend a certified kit or compatibility path",
+        "We confirm scope for installation and training if needed",
+      ],
+      note: "Hardware is optional. Customers may use existing equipment that passes compatibility verification.",
+    },
+    form: {
+      sections: {
+        contact: "Contact",
+        operation: "Your operation",
+        deployment: "Deployment preferences",
+      },
+      fullName: "Full name",
+      companyName: "Company name",
+      email: "Email",
+      phone: "Phone number",
+      country: "Country",
+      city: "City",
+      businessType: "Business type",
+      businessTypes: ["Retail", "Restaurant", "Clinic", "Multi-site", "Other"],
+      productInterest: "ESTINAD product of interest",
+      products: ["Retail", "Restaurant", "Clinic", "Cloud", "Not sure yet"],
+      locations: "Number of locations",
+      counters: "Number of checkout counters",
+      kit: "Selected deployment kit",
+      kitPlaceholder: "Select a kit",
+      existingHardware: "Existing hardware status",
+      existingOptions: [
+        { value: "none", label: "No existing hardware" },
+        { value: "needs-review", label: "Need compatibility review" },
+        { value: "already-compatible", label: "Already using compatible equipment" },
+      ],
+      installation: "Installation and training requirement",
+      installationOptions: [
+        { value: "yes", label: "Yes — include installation and training" },
+        { value: "no", label: "No — hardware package only" },
+        { value: "discuss", label: "Discuss during follow-up" },
+      ],
+      equipmentSummary: "Current equipment summary",
+      equipmentPlaceholder: "List terminals, printers, scanners, and any known models or interfaces.",
+      notes: "Notes",
+      notesPlaceholder: "Anything else we should know about your sites or timeline.",
+      submitQuote: "Submit quote request",
+      submitCompatibility: "Submit compatibility request",
+      sending: "Sending…",
+      sentTitle: "Request recorded",
+      sentBody:
+        "Your request has been recorded. Our team will review your requirements and follow up.",
+      privacyNote: "By submitting, you agree to our",
+      privacyLink: "privacy policy",
+      errors: {
+        required: "This field is required.",
+        email: "Enter a valid email address.",
+        invalid: "Select a valid option.",
+      },
     },
   },
 

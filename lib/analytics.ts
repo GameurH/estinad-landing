@@ -11,7 +11,11 @@ export type AnalyticsEvent =
   | "pricing_viewed"
   | "product_page_viewed"
   | "case_study_viewed"
-  | "contact_form_submitted";
+  | "contact_form_submitted"
+  | "hardware_quote_started"
+  | "hardware_quote_submitted"
+  | "hardware_compatibility_started"
+  | "hardware_compatibility_submitted";
 
 type EventPayload = Record<string, string | number | boolean | undefined>;
 

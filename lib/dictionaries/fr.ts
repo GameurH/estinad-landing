@@ -81,6 +81,10 @@ export const fr: Dictionary = {
     "megaSecurity": "La discipline par défaut",
     "megaDeployment": "Local-first, enrichi par le cloud",
     "megaProductsIntro": "Produits logiciels prêts, groupés par fonction de l'entreprise.",
+    "softwareProducts": "Produits logiciels",
+    "certifiedHardware": "Matériel certifié",
+    "compareSolutions": "Comparer les solutions",
+    "megaHardwareIntro": "Matériel sélectionné et testé — prêt à fonctionner avec ESTINAD.",
     "megaGroupRetail": "Opérations commerce",
     "megaGroupRestaurant": "Opérations restauration",
     "megaGroupAdmin": "Administration",
@@ -127,6 +131,10 @@ export const fr: Dictionary = {
       {
         "label": "ESTINAD Cloud",
         "href": "/products/cloud"
+      },
+      {
+        "label": "Matériel certifié",
+        "href": "/hardware"
       }
     ],
     "solutionLinks": [
@@ -4176,6 +4184,434 @@ export const fr: Dictionary = {
       "sentBody": "Merci. Nous reviendrons vers vous sous un jour ouvré pour planifier votre démonstration.",
       "privacyNote": "En soumettant, vous acceptez notre",
       "privacyLink": "politique de confidentialité"
+    }
+  },
+  "hardware": {
+    "meta": {
+      "title": "Matériel certifié",
+      "description": "Matériel certifié ESTINAD — kits de déploiement sélectionnés et testés, préparés pour fonctionner avec les produits ESTINAD. Demandez un devis pour votre exploitation."
+    },
+    "hero": {
+      "eyebrow": "ESTINAD / MATÉRIEL CERTIFIÉ",
+      "title": "Du matériel sélectionné pour une exploitation fiable.",
+      "body": "Des kits de déploiement certifiés, préparés pour fonctionner avec les produits ESTINAD — du premier comptoir au déploiement multi-sites.",
+      "primaryCta": "Demander un devis",
+      "secondaryCta": "Vérifier la compatibilité",
+      "supporting": "Configurations testées · Déploiement préparé · Support clairement défini"
+    },
+    "certified": {
+      "eyebrow": "Certifié par conception",
+      "title": "Le matériel fait partie du standard de déploiement.",
+      "body": "Chaque kit certifié est sélectionné, testé et préparé selon la manière dont les produits ESTINAD sont déployés. Cela réduit les incertitudes à l’installation et facilite le passage à l’exploitation quotidienne.",
+      "principles": [
+        {
+          "title": "Testé avec les produits ESTINAD",
+          "body": "Des configurations examinées au regard du logiciel qu’elles feront tourner."
+        },
+        {
+          "title": "Configuré pour le déploiement",
+          "body": "Des kits préparés pour l’installation, pas assemblés à la dernière minute."
+        },
+        {
+          "title": "Guidance de compatibilité claire",
+          "body": "Des indications nettes sur ce qui est pris en charge et ce qui nécessite une revue."
+        },
+        {
+          "title": "Un parcours d’implémentation coordonné",
+          "body": "Du matériel aligné sur la configuration logicielle, la formation et le lancement."
+        }
+      ]
+    },
+    "model": {
+      "eyebrow": "Modèle commercial",
+      "title": "Quatre éléments. Le logiciel reste prioritaire.",
+      "body": "Le matériel est un pack certifié optionnel pour un déploiement fiable — pas une obligation pour chaque client ESTINAD.",
+      "items": [
+        {
+          "title": "Abonnement ou licence logicielle",
+          "body": "Le revenu stratégique principal et le produit sur lequel vous opérez."
+        },
+        {
+          "title": "Implémentation et onboarding",
+          "body": "Installation, configuration, migration, formation et lancement."
+        },
+        {
+          "title": "Pack matériel certifié",
+          "body": "Achat unique, devisé ou vendu comme bundle de déploiement."
+        },
+        {
+          "title": "Plan de support",
+          "body": "Support opérationnel récurrent optionnel, dans un périmètre clair."
+        }
+      ]
+    },
+    "kitsSection": {
+      "eyebrow": "ESTINAD Axis",
+      "title": "Choisissez un kit adapté à votre exploitation.",
+      "configuredLabel": "Configuré selon vos besoins",
+      "viewDetails": "Voir le détail du kit",
+      "requestQuote": "Demander un devis",
+      "talkToTeam": "Parler à notre équipe",
+      "backToHardware": "Retour au matériel certifié",
+      "includesLabel": "Ce qui est inclus",
+      "includesIntro": "Un ensemble de déploiement préparé — sélectionné pour ESTINAD et confirmé lors du devis.",
+      "useCaseLabel": "Adéquation opérationnelle",
+      "galleryLabel": "Visuels de référence",
+      "galleryIntro": "Références studio et de déploiement illustratives. L’équipement final est confirmé avec votre devis.",
+      "specsLabel": "Spécifications de référence",
+      "worksWithLabel": "Fonctionne avec ESTINAD",
+      "worksWithIntro": "Chaque kit Axis est préparé autour du produit ESTINAD qu’il accompagne.",
+      "scopeNote": "Les spécifications sont des configurations de référence illustratives. L’équipement final est confirmé lors du devis et de la revue de compatibilité."
+    },
+    "kits": {
+      "retail-counter-kit": {
+        "name": "ESTINAD Axis Counter",
+        "shortName": "Axis Counter",
+        "tagline": "Un poste d’encaissement complet, préparé avant d’arriver au comptoir.",
+        "useCase": "Commerces de détail et caisses fixes.",
+        "detailIntro": "Une configuration de comptoir fixe pour l’encaissement commerce — sélectionnée pour réduire l’incertitude à l’installation et en exploitation quotidienne.",
+        "operationalFit": "Conçu pour les équipes commerce mono- ou multi-sites qui ont besoin d’un poste de caisse fiable sans improviser les périphériques au lancement.",
+        "includes": [
+          { "id": "terminal", "label": "Terminal POS prêt pour ESTINAD", "blurb": "Écran de comptoir préparé pour les flux ESTINAD Retail." },
+          { "id": "scanner", "label": "Lecteur de codes-barres", "blurb": "Lecture de présentation ou portable pour la recherche produit." },
+          { "id": "printer", "label": "Imprimante de tickets", "blurb": "Imprimante thermique pour la sortie comptoir." },
+          { "id": "drawer", "label": "Tiroir-caisse", "blurb": "Tiroir standard aligné sur le chemin imprimante du kit." },
+          { "id": "setup", "label": "Option d’installation", "blurb": "Configuration et installation disponibles sur demande." }
+        ],
+        "specGroups": [
+          {
+            "title": "Système",
+            "specs": [
+              { "label": "Terminal POS", "value": "Écran de comptoir avec option de préparation ESTINAD" },
+              { "label": "Posture de déploiement", "value": "Poste de comptoir fixe pour l’encaissement commerce" }
+            ]
+          },
+          {
+            "title": "Périphériques",
+            "specs": [
+              { "label": "Lecteur de codes-barres", "value": "Lecteur portable ou de présentation pour la recherche produit" },
+              { "label": "Imprimante de tickets", "value": "Imprimante thermique pour la sortie comptoir" },
+              { "label": "Tiroir-caisse", "value": "Tiroir-caisse standard compatible avec le chemin imprimante du kit" }
+            ]
+          },
+          {
+            "title": "Périmètre de déploiement",
+            "specs": [
+              { "label": "Option d’installation", "value": "Installation et configuration disponibles sur demande" },
+              { "label": "Configuration", "value": "Configuré selon vos besoins lors du devis" }
+            ]
+          }
+        ],
+        "media": {
+          "hero": { "alt": "Configuration studio ESTINAD Axis Counter sur un comptoir en pierre claire" },
+          "detail": {
+            "alt": "Gros plan du lecteur et de l’imprimante Axis Counter",
+            "caption": "Lecteur et imprimante positionnés pour un parcours de caisse coordonné."
+          },
+          "deployment": {
+            "alt": "Déploiement illustratif Axis Counter dans un commerce calme",
+            "caption": "Référence de déploiement illustrative — pas une installation client réelle."
+          },
+          "included": {
+            "alt": "Composants inclus Axis Counter présentés en plan technique",
+            "caption": "Ensemble de composants de référence pour devis et préparation."
+          }
+        },
+        "cta": "Demander un devis"
+      },
+      "restaurant-counter-kit": {
+        "name": "ESTINAD Axis Service",
+        "shortName": "Axis Service",
+        "tagline": "Un système de comptoir prêt pour le rythme de la restauration.",
+        "useCase": "Restaurants, cafés et comptoirs food-service.",
+        "detailIntro": "Une configuration de comptoir pour les points de service food-service — alignée sur les pratiques de déploiement ESTINAD Restauration.",
+        "operationalFit": "Pensé pour les restaurants et cafés qui ont besoin d’un comptoir de service préparé, avec un flux ticket clair et une gestion de câbles soignée.",
+        "includes": [
+          { "id": "terminal", "label": "Terminal POS prêt pour ESTINAD", "blurb": "Terminal de comptoir préparé pour les flux ESTINAD Restauration." },
+          { "id": "printer", "label": "Imprimante de tickets", "blurb": "Imprimante thermique pour tickets client et sortie proche cuisine." },
+          { "id": "drawer", "label": "Tiroir-caisse", "blurb": "Tiroir standard pour l’encaissement comptoir." },
+          { "id": "accessories", "label": "Accessoires de comptoir", "blurb": "Supports et accessoires de gestion de câbles selon accord." },
+          { "id": "setup", "label": "Option d’installation", "blurb": "Configuration et installation disponibles sur demande." }
+        ],
+        "specGroups": [
+          {
+            "title": "Système",
+            "specs": [
+              { "label": "Terminal POS", "value": "Terminal de comptoir préparé pour les flux ESTINAD Restauration" },
+              { "label": "Posture de déploiement", "value": "Poste de service pour les opérations hospitality" }
+            ]
+          },
+          {
+            "title": "Périphériques",
+            "specs": [
+              { "label": "Imprimante de tickets", "value": "Imprimante thermique pour tickets client et sortie proche cuisine" },
+              { "label": "Tiroir-caisse", "value": "Tiroir-caisse standard pour l’encaissement comptoir" },
+              { "label": "Accessoires de comptoir", "value": "Supports et accessoires de comptoir selon accord" }
+            ]
+          },
+          {
+            "title": "Périmètre de déploiement",
+            "specs": [
+              { "label": "Option d’installation", "value": "Installation et configuration disponibles sur demande" },
+              { "label": "Configuration", "value": "Configuré selon vos besoins lors du devis" }
+            ]
+          }
+        ],
+        "media": {
+          "hero": { "alt": "Système de comptoir hospitality ESTINAD Axis Service en lumière studio" },
+          "detail": {
+            "alt": "Gros plan de l’imprimante Axis Service et du rail de câbles",
+            "caption": "Parcours d’impression et routage de câbles préparés pour un comptoir de service."
+          },
+          "deployment": {
+            "alt": "Comptoir illustratif Axis Service dans un café contemporain",
+            "caption": "Référence de déploiement hospitality illustrative avant service."
+          },
+          "included": {
+            "alt": "Composants inclus Axis Service sur un plan technique",
+            "caption": "Ensemble de référence pour devis de comptoir hospitality."
+          }
+        },
+        "cta": "Demander un devis"
+      },
+      "inventory-kit": {
+        "name": "ESTINAD Axis Inventory",
+        "shortName": "Axis Inventory",
+        "tagline": "Scanner, étiqueter et déplacer le stock avec un kit terrain préparé.",
+        "useCase": "Flux d’inventaire, opérations stock et étiquetage.",
+        "detailIntro": "Un kit orienté mobilité pour inventaires, réceptions et étiquetage — associé aux flux inventaire ESTINAD.",
+        "operationalFit": "Pour les équipes qui ont besoin d’un poste inventaire portable pour les comptages, la réception et l’étiquetage rayon sur un ou plusieurs sites.",
+        "includes": [
+          { "id": "handheld", "label": "Lecteur de codes-barres portable", "blurb": "Lecteur pour allées et réserve." },
+          { "id": "labelPrinter", "label": "Imprimante d’étiquettes", "blurb": "Imprimante pour étiquetage rayon et produit." },
+          { "id": "device", "label": "Appareil inventaire", "blurb": "Option appareil portable ou tablette pour les tâches inventaire." },
+          { "id": "setup", "label": "Accompagnement", "blurb": "Accompagnement à la mise en service disponible sur demande." }
+        ],
+        "specGroups": [
+          {
+            "title": "Système",
+            "specs": [
+              { "label": "Appareil inventaire", "value": "Option appareil portable ou tablette pour les tâches inventaire" },
+              { "label": "Posture de déploiement", "value": "Kit terrain mobile pour les opérations stock" }
+            ]
+          },
+          {
+            "title": "Périphériques",
+            "specs": [
+              { "label": "Lecteur portable", "value": "Lecteur de codes-barres pour allées et réserve" },
+              { "label": "Imprimante d’étiquettes", "value": "Imprimante pour étiquetage rayon et produit" }
+            ]
+          },
+          {
+            "title": "Périmètre de déploiement",
+            "specs": [
+              { "label": "Accompagnement", "value": "Accompagnement à la mise en service disponible sur demande" },
+              { "label": "Configuration", "value": "Configuré selon vos besoins lors du devis" }
+            ]
+          }
+        ],
+        "media": {
+          "hero": { "alt": "Kit mobile ESTINAD Axis Inventory avec lecteur, imprimante d’étiquettes et tablette" },
+          "detail": {
+            "alt": "Gros plan du lecteur portable et de l’imprimante d’étiquettes Axis Inventory",
+            "caption": "Lecteur et parcours d’étiquettes préparés pour les flux de réserve."
+          },
+          "deployment": {
+            "alt": "Station illustrative Axis Inventory dans une réserve organisée",
+            "caption": "Référence de déploiement inventaire illustrative — pas un site réel."
+          },
+          "included": {
+            "alt": "Composants inclus Axis Inventory présentés en plan technique",
+            "caption": "Composants de référence du kit terrain pour devis."
+          }
+        },
+        "cta": "Demander un devis"
+      },
+      "multi-site-rollout": {
+        "name": "ESTINAD Axis Fleet",
+        "shortName": "Axis Fleet",
+        "tagline": "Un standard matériel, déployé de façon cohérente sur chaque site.",
+        "useCase": "Organisations standardisant le matériel sur plusieurs sites.",
+        "detailIntro": "Une approche de déploiement coordonnée pour les équipes qui standardisent des configurations certifiées sur plusieurs sites.",
+        "operationalFit": "Pour les opérateurs multi-sites qui ont besoin d’un standard matériel préparé, d’une configuration site par site et d’une installation coordonnée.",
+        "includes": [
+          { "id": "plan", "label": "Plan de déploiement standardisé", "blurb": "Séquence partagée couvrant sites et responsabilités." },
+          { "id": "configuration", "label": "Configuration site par site", "blurb": "Préparation matérielle par site alignée sur le plan." },
+          { "id": "preparation", "label": "Préparation pré-déploiement", "blurb": "Préparation avant installation pour réduire l’incertitude sur site." },
+          { "id": "coordination", "label": "Coordination du déploiement", "blurb": "Coordination de l’installation, de la formation et du lancement." }
+        ],
+        "specGroups": [
+          {
+            "title": "Système",
+            "specs": [
+              { "label": "Plan de déploiement", "value": "Plan partagé couvrant séquence, sites et responsabilités" },
+              { "label": "Posture de déploiement", "value": "Déploiement matériel multi-sites standardisé" }
+            ]
+          },
+          {
+            "title": "Périphériques",
+            "specs": [
+              { "label": "Configuration par site", "value": "Configuration matérielle par site alignée sur le plan" },
+              { "label": "Kits préparés", "value": "Configurations certifiées répétées sur les sites" }
+            ]
+          },
+          {
+            "title": "Périmètre de déploiement",
+            "specs": [
+              { "label": "Pré-déploiement", "value": "Préparation avant installation pour réduire l’incertitude sur site" },
+              { "label": "Coordination du déploiement", "value": "Coordination de l’installation, de la formation et du lancement" }
+            ]
+          }
+        ],
+        "media": {
+          "hero": { "alt": "Configurations de comptoir standardisées ESTINAD Axis Fleet en studio" },
+          "detail": {
+            "alt": "Préparation pré-déploiement de configurations Axis identiques",
+            "caption": "Ensembles identiques préparés avant le déploiement site par site."
+          },
+          "deployment": {
+            "alt": "Espace de staging illustratif Axis Fleet avec systèmes répétés",
+            "caption": "Référence de staging multi-sites illustrative — pas un entrepôt client."
+          },
+          "included": {
+            "alt": "Artefacts de déploiement Axis Fleet présentés en plan technique",
+            "caption": "Ensemble de coordination de référence pour devis multi-sites."
+          }
+        },
+        "cta": "Parler à notre équipe"
+      }
+    },
+    "steps": {
+      "eyebrow": "Comment se déroule le déploiement",
+      "title": "Trois étapes des besoins au lancement.",
+      "items": [
+        {
+          "title": "Présentez-nous votre site",
+          "body": "Indiquez votre activité, le nombre de postes, vos implantations et votre équipement existant."
+        },
+        {
+          "title": "Recevez une configuration recommandée",
+          "body": "Nous examinons vos besoins et vous recommandons un kit certifié adapté."
+        },
+        {
+          "title": "Préparer, installer, démarrer",
+          "body": "La configuration retenue est préparée, installée selon le périmètre convenu, puis testée avant le lancement."
+        }
+      ]
+    },
+    "compatibility": {
+      "eyebrow": "Compatibilité",
+      "title": "Vous avez déjà du matériel ?",
+      "body": "Demandez une vérification de compatibilité avant d’acheter ou de déployer votre équipement existant. Nous vous aiderons à déterminer s’il est pris en charge, pris en charge sous conditions, ou inadapté à votre configuration ESTINAD.",
+      "cta": "Vérifier mon matériel",
+      "metaTitle": "Vérification de compatibilité matériel",
+      "metaDescription": "Demandez une revue de compatibilité ESTINAD pour votre équipement existant avant achat ou déploiement.",
+      "pageTitle": "Vérifiez votre matériel.",
+      "pageIntro": "Décrivez votre équipement actuel et le produit ESTINAD que vous souhaitez exploiter. Notre équipe examinera s’il est pris en charge, pris en charge sous conditions, ou inadapté.",
+      "outcomesTitle": "Ce que vous saurez",
+      "outcomes": [
+        "Si votre équipement est pris en charge avec ESTINAD",
+        "Si le support est conditionnel à une configuration ou des accessoires",
+        "Si un kit certifié est une voie plus claire pour vos sites"
+      ]
+    },
+    "finalCta": {
+      "title": "Vous préparez un nouveau site ou modernisez votre installation actuelle ?",
+      "body": "Expliquez-nous comment votre activité fonctionne, et nous vous recommanderons un kit de déploiement adapté à votre produit ESTINAD.",
+      "cta": "Demander un devis matériel"
+    },
+    "quote": {
+      "metaTitle": "Demander un devis matériel",
+      "metaDescription": "Demandez un devis pour les kits de déploiement Matériel certifié ESTINAD pour vos sites.",
+      "eyebrow": "Demander un devis",
+      "title": "Parlez-nous de votre exploitation.",
+      "intro": "Indiquez vos sites, postes et kit préféré. Notre équipe examinera vos besoins et reviendra avec une configuration recommandée.",
+      "asideTitle": "Et ensuite",
+      "aside": [
+        "Nous examinons votre type d’activité et le nombre de sites",
+        "Nous recommandons un kit certifié ou un parcours de compatibilité",
+        "Nous confirmons le périmètre d’installation et de formation si besoin"
+      ],
+      "note": "Le matériel est optionnel. Les clients peuvent utiliser un équipement existant qui passe la vérification de compatibilité."
+    },
+    "form": {
+      "sections": {
+        "contact": "Contact",
+        "operation": "Votre exploitation",
+        "deployment": "Préférences de déploiement"
+      },
+      "fullName": "Nom complet",
+      "companyName": "Nom de l’entreprise",
+      "email": "E-mail",
+      "phone": "Numéro de téléphone",
+      "country": "Pays",
+      "city": "Ville",
+      "businessType": "Type d’activité",
+      "businessTypes": [
+        "Commerce",
+        "Restauration",
+        "Clinique",
+        "Multi-sites",
+        "Autre"
+      ],
+      "productInterest": "Produit ESTINAD concerné",
+      "products": [
+        "Commerce",
+        "Restauration",
+        "Clinique",
+        "Cloud",
+        "Pas encore décidé"
+      ],
+      "locations": "Nombre de sites",
+      "counters": "Nombre de postes d’encaissement",
+      "kit": "Kit de déploiement sélectionné",
+      "kitPlaceholder": "Sélectionnez un kit",
+      "existingHardware": "Statut du matériel existant",
+      "existingOptions": [
+        {
+          "value": "none",
+          "label": "Pas de matériel existant"
+        },
+        {
+          "value": "needs-review",
+          "label": "Besoin d’une revue de compatibilité"
+        },
+        {
+          "value": "already-compatible",
+          "label": "Déjà équipé en matériel compatible"
+        }
+      ],
+      "installation": "Besoin d’installation et de formation",
+      "installationOptions": [
+        {
+          "value": "yes",
+          "label": "Oui — inclure installation et formation"
+        },
+        {
+          "value": "no",
+          "label": "Non — pack matériel uniquement"
+        },
+        {
+          "value": "discuss",
+          "label": "À discuter lors du suivi"
+        }
+      ],
+      "equipmentSummary": "Résumé de l’équipement actuel",
+      "equipmentPlaceholder": "Listez terminaux, imprimantes, lecteurs et interfaces connues.",
+      "notes": "Notes",
+      "notesPlaceholder": "Tout autre élément utile sur vos sites ou votre calendrier.",
+      "submitQuote": "Envoyer la demande de devis",
+      "submitCompatibility": "Envoyer la demande de compatibilité",
+      "sending": "Envoi…",
+      "sentTitle": "Demande enregistrée",
+      "sentBody": "Votre demande a été enregistrée. Notre équipe examinera vos besoins et vous recontactera.",
+      "privacyNote": "En soumettant, vous acceptez notre",
+      "privacyLink": "politique de confidentialité",
+      "errors": {
+        "required": "Ce champ est obligatoire.",
+        "email": "Saisissez une adresse e-mail valide.",
+        "invalid": "Sélectionnez une option valide."
+      }
     }
   },
   "legal": {

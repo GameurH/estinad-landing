@@ -89,6 +89,15 @@ export const caseStudySlugs = [
 ] as const;
 export const platformSlugs = ["architecture", "security", "deployment"] as const;
 
+/** ESTINAD Certified Hardware deployment kits — served under /hardware/[slug]. */
+export const hardwareKitSlugs = [
+  "retail-counter-kit",
+  "restaurant-counter-kit",
+  "inventory-kit",
+  "multi-site-rollout",
+] as const;
+export type HardwareKitSlug = (typeof hardwareKitSlugs)[number];
+
 export const partnerSlugs = ["resellers", "implementers", "technology"] as const;
 export type PartnerSlug = (typeof partnerSlugs)[number];
 

@@ -9,6 +9,7 @@ import {
   serviceSlugs,
   caseStudySlugs,
   partnerSlugs,
+  hardwareKitSlugs,
 } from "@/lib/i18n-config";
 
 const base = "https://estinad.com";
@@ -25,6 +26,9 @@ const staticRoutes = [
   "/resources",
   "/company",
   "/demo",
+  "/hardware",
+  "/hardware/quote",
+  "/hardware/compatibility",
 ];
 
 const resourceRoutes = [
@@ -67,7 +71,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   };
 
-  staticRoutes.forEach((p) => add(p, 0.8, "weekly"));
+  staticRoutes.forEach((p) => {
+    const priority =
+      p === "/hardware" ||
+      p === "/hardware/quote" ||
+      p === "/hardware/compatibility"
+        ? 0.65
+        : 0.8;
+    add(p, priority, "weekly");
+  });
 
   productSlugs.forEach((s) => {
     add(`/products/${s}`, 0.9, "weekly");
@@ -81,6 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   serviceSlugs.forEach((s) => add(`/services/${s}`, 0.7, "monthly"));
   caseStudySlugs.forEach((s) => add(`/case-studies/${s}`, 0.6, "monthly"));
   partnerSlugs.forEach((s) => add(`/partners/${s}`, 0.8, "monthly"));
+  hardwareKitSlugs.forEach((s) => add(`/hardware/${s}`, 0.6, "monthly"));
   resourceRoutes.forEach((p) => add(p, 0.6, "weekly"));
   companyRoutes.forEach((p) => add(p, 0.6, "monthly"));
   legalRoutes.forEach((p) => add(p, 0.3, "yearly"));

@@ -1,0 +1,124 @@
+﻿Ôû▓ Next.js 16.2.9 (Turbopack)
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 18.6s
+  Running TypeScript ...
+  Finished TypeScript in 38.5s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/112) ...
+  Generating static pages using 11 workers (28/112) 
+  Generating static pages using 11 workers (56/112) 
+  Generating static pages using 11 workers (84/112) 
+Ô£ô Generating static pages using 11 workers (112/112) in 7.9s
+  Finalizing page optimization ...
+
+Route (app)
+Ôöî Ôùï /_not-found
+Ôö£ ÔùÅ /[locale]
+Ôöé Ôö£ /en
+Ôöé Ôö£ /fr
+Ôöé Ôöö /ar
+Ôö£ ÔùÅ /[locale]/company
+Ôöé Ôö£ /en/company
+Ôöé Ôö£ /fr/company
+Ôöé Ôöö /ar/company
+Ôö£ ÔùÅ /[locale]/company/about
+Ôöé Ôö£ /en/company/about
+Ôöé Ôö£ /fr/company/about
+Ôöé Ôöö /ar/company/about
+Ôö£ ÔùÅ /[locale]/company/careers
+Ôöé Ôö£ /en/company/careers
+Ôöé Ôö£ /fr/company/careers
+Ôöé Ôöö /ar/company/careers
+Ôö£ ÔùÅ /[locale]/company/contact
+Ôöé Ôö£ /en/company/contact
+Ôöé Ôö£ /fr/company/contact
+Ôöé Ôöö /ar/company/contact
+Ôö£ ÔùÅ /[locale]/company/partners
+Ôöé Ôö£ /en/company/partners
+Ôöé Ôö£ /fr/company/partners
+Ôöé Ôöö /ar/company/partners
+Ôö£ ÔùÅ /[locale]/company/vision
+Ôöé Ôö£ /en/company/vision
+Ôöé Ôö£ /fr/company/vision
+Ôöé Ôöö /ar/company/vision
+Ôö£ ÔùÅ /[locale]/demo
+Ôöé Ôö£ /en/demo
+Ôöé Ôö£ /fr/demo
+Ôöé Ôöö /ar/demo
+Ôö£ ÔùÅ /[locale]/legal/privacy
+Ôöé Ôö£ /en/legal/privacy
+Ôöé Ôö£ /fr/legal/privacy
+Ôöé Ôöö /ar/legal/privacy
+Ôö£ ÔùÅ /[locale]/legal/terms
+Ôöé Ôö£ /en/legal/terms
+Ôöé Ôö£ /fr/legal/terms
+Ôöé Ôöö /ar/legal/terms
+Ôö£ ÔùÅ /[locale]/platform
+Ôöé Ôö£ /en/platform
+Ôöé Ôö£ /fr/platform
+Ôöé Ôöö /ar/platform
+Ôö£ ÔùÅ /[locale]/platform/[slug]
+Ôöé Ôö£ /en/platform/architecture
+Ôöé Ôö£ /en/platform/security
+Ôöé Ôö£ /en/platform/deployment
+Ôöé Ôöö [+6 more paths]
+Ôö£ ÔùÅ /[locale]/products
+Ôöé Ôö£ /en/products
+Ôöé Ôö£ /fr/products
+Ôöé Ôöö /ar/products
+Ôö£ ÔùÅ /[locale]/products/[slug]
+Ôöé Ôö£ /en/products/retail
+Ôöé Ôö£ /en/products/restaurant
+Ôöé Ôö£ /en/products/clinic
+Ôöé Ôöö [+9 more paths]
+Ôö£ ÔùÅ /[locale]/products/[slug]/pricing
+Ôöé Ôö£ /en/products/retail/pricing
+Ôöé Ôö£ /en/products/restaurant/pricing
+Ôöé Ôö£ /en/products/clinic/pricing
+Ôöé Ôöö [+9 more paths]
+Ôö£ ÔùÅ /[locale]/resources
+Ôöé Ôö£ /en/resources
+Ôöé Ôö£ /fr/resources
+Ôöé Ôöö /ar/resources
+Ôö£ ÔùÅ /[locale]/resources/blog
+Ôöé Ôö£ /en/resources/blog
+Ôöé Ôö£ /fr/resources/blog
+Ôöé Ôöö /ar/resources/blog
+Ôö£ ÔùÅ /[locale]/resources/case-studies
+Ôöé Ôö£ /en/resources/case-studies
+Ôöé Ôö£ /fr/resources/case-studies
+Ôöé Ôöö /ar/resources/case-studies
+Ôö£ ÔùÅ /[locale]/resources/documentation
+Ôöé Ôö£ /en/resources/documentation
+Ôöé Ôö£ /fr/resources/documentation
+Ôöé Ôöö /ar/resources/documentation
+Ôö£ ÔùÅ /[locale]/resources/faq
+Ôöé Ôö£ /en/resources/faq
+Ôöé Ôö£ /fr/resources/faq
+Ôöé Ôöö /ar/resources/faq
+Ôö£ ÔùÅ /[locale]/resources/guides
+Ôöé Ôö£ /en/resources/guides
+Ôöé Ôö£ /fr/resources/guides
+Ôöé Ôöö /ar/resources/guides
+Ôö£ ÔùÅ /[locale]/solutions
+Ôöé Ôö£ /en/solutions
+Ôöé Ôö£ /fr/solutions
+Ôöé Ôöö /ar/solutions
+Ôö£ ÔùÅ /[locale]/solutions/[slug]
+Ôöé Ôö£ /en/solutions/retail
+Ôöé Ôö£ /en/solutions/restaurants
+Ôöé Ôö£ /en/solutions/clinics
+Ôöé Ôöö [+12 more paths]
+Ôö£ ãÆ /api/contact
+Ôö£ ãÆ /api/demo
+Ôö£ Ôùï /robots.txt
+Ôöö Ôùï /sitemap.xml
+
+
+ãÆ Proxy (Middleware)
+
+Ôùï  (Static)   prerendered as static content
+ÔùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ãÆ  (Dynamic)  server-rendered on demand
+

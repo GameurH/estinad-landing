@@ -8,7 +8,6 @@ import { ThemeToggle, type ThemeLabels } from "./ThemeToggle";
 import {
   locales,
   lp,
-  productSlugs,
   solutionSlugs,
   caseStudySlugs,
   platformSlugs,
@@ -33,7 +32,6 @@ export function Header({ data }: { data: HeaderData }) {
   const {
     locale,
     nav,
-    productNames,
     solutionNames,
     caseStudyNames,
     platformNames,
@@ -91,10 +89,23 @@ export function Header({ data }: { data: HeaderData }) {
   };
 
   type MegaEntry = { label: string; href: string; desc?: string };
-  const productEntries: MegaEntry[] = productSlugs.map((s) => ({
-    label: productNames[s],
-    href: `/products/${s}`,
-  }));
+  const productEntries: MegaEntry[] = [
+    {
+      label: nav.softwareProducts,
+      href: "/products",
+      desc: nav.megaProductsIntro,
+    },
+    {
+      label: nav.certifiedHardware,
+      href: "/hardware",
+      desc: nav.megaHardwareIntro,
+    },
+    {
+      label: nav.compareSolutions,
+      href: "/solutions",
+      desc: nav.megaSolutionsIntro,
+    },
+  ];
   const solutionEntries: MegaEntry[] = solutionSlugs.map((s) => ({
     label: solutionNames[s],
     href: `/solutions/${s}`,

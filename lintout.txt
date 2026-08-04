@@ -1,0 +1,320 @@
+﻿
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\app\[locale]\products\[slug]\page.tsx
+  8:3  warning  'lp' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\app\[locale]\services\page.tsx
+  6:24  warning  'serviceSlugs' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\AppPage.tsx
+  33:19  warning  'slug' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  33:42  warning  'c' is assigned a value but never used     @typescript-eslint/no-unused-vars
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Header.tsx
+  25:83  warning  'resourcesNav' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx
+    4:18  warning  'Eyebrow' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+    4:51  warning  'Stat' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+  336:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:336:8
+  334 |   return (
+  335 |     <>
+> 336 |       <Hero />
+      |        ^^^^ This component is created during render
+  337 |       <TrustStrip />
+  338 |       <WhoIs />
+  339 |       <ProductsOverview />
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:26:16
+  24 |
+  25 |   /* ============================ 1. HERO ============================ */
+> 26 |   const Hero = () => (
+     |                ^^^^^^^
+> 27 |     <section className="relative overflow-hidden hairline-b">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 28 |       <div className="absolute inset-0 grid-backdrop opacity-60" aria-hidden />
+     ÔÇª
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 84 |     </section>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 85 |   );
+     | ^^^^ The component is created during render here
+  86 |
+  87 |   /* ====================== 2. TRUST / CREDIBILITY ====================== */
+  88 |   const TrustStrip = () => (  react-hooks/static-components
+  337:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:337:8
+  335 |     <>
+  336 |       <Hero />
+> 337 |       <TrustStrip />
+      |        ^^^^^^^^^^ This component is created during render
+  338 |       <WhoIs />
+  339 |       <ProductsOverview />
+  340 |       <SolutionsOverview />
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:88:22
+   86 |
+   87 |   /* ====================== 2. TRUST / CREDIBILITY ====================== */
+>  88 |   const TrustStrip = () => (
+      |                      ^^^^^^^
+>  89 |     <section className="hairline-b bg-surface">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  90 |       <div className="shell py-12">
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 109 |     </section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 110 |   );
+      | ^^^^ The component is created during render here
+  111 |
+  112 |   /* =================== 3. WHO IS ESTINAD =================== */
+  113 |   const WhoIs = () => (                                                                react-hooks/static-components
+  338:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:338:8
+  336 |       <Hero />
+  337 |       <TrustStrip />
+> 338 |       <WhoIs />
+      |        ^^^^^ This component is created during render
+  339 |       <ProductsOverview />
+  340 |       <SolutionsOverview />
+  341 |       <ServicesOverview />
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:113:17
+  111 |
+  112 |   /* =================== 3. WHO IS ESTINAD =================== */
+> 113 |   const WhoIs = () => (
+      |                 ^^^^^^^
+> 114 |     <Section>
+      | ^^^^^^^^^^^^^
+> 115 |       <SectionHeader eyebrow={h.whoIs.eyebrow} title={h.whoIs.title} intro={h.whoIs.intro} />
+      ÔÇª
+      | ^^^^^^^^^^^^^
+> 127 |     </Section>
+      | ^^^^^^^^^^^^^
+> 128 |   );
+      | ^^^^ The component is created during render here
+  129 |
+  130 |   /* =================== 4. PRODUCTS OVERVIEW =================== */
+  131 |   const ProductsOverview = () => (                                                                                                                                     react-hooks/static-components
+  339:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:339:8
+  337 |       <TrustStrip />
+  338 |       <WhoIs />
+> 339 |       <ProductsOverview />
+      |        ^^^^^^^^^^^^^^^^ This component is created during render
+  340 |       <SolutionsOverview />
+  341 |       <ServicesOverview />
+  342 |       <CaseStudies />
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:131:28
+  129 |
+  130 |   /* =================== 4. PRODUCTS OVERVIEW =================== */
+> 131 |   const ProductsOverview = () => (
+      |                            ^^^^^^^
+> 132 |     <Section className="bg-surface">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 133 |       <SectionHeader
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 170 |     </Section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 171 |   );
+      | ^^^^ The component is created during render here
+  172 |
+  173 |   /* =================== 5. SOLUTIONS BY INDUSTRY =================== */
+  174 |   const SolutionsOverview = () => (                                                                  react-hooks/static-components
+  340:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:340:8
+  338 |       <WhoIs />
+  339 |       <ProductsOverview />
+> 340 |       <SolutionsOverview />
+      |        ^^^^^^^^^^^^^^^^^ This component is created during render
+  341 |       <ServicesOverview />
+  342 |       <CaseStudies />
+  343 |       <WhyEstinad />
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:174:29
+  172 |
+  173 |   /* =================== 5. SOLUTIONS BY INDUSTRY =================== */
+> 174 |   const SolutionsOverview = () => (
+      |                             ^^^^^^^
+> 175 |     <Section>
+      | ^^^^^^^^^^^^^
+> 176 |       <SectionHeader
+      ÔÇª
+      | ^^^^^^^^^^^^^
+> 202 |     </Section>
+      | ^^^^^^^^^^^^^
+> 203 |   );
+      | ^^^^ The component is created during render here
+  204 |
+  205 |   /* =================== 6. SERVICES / CUSTOM EXECUTION =================== */
+  206 |   const ServicesOverview = () => (                                                                                                                                                  react-hooks/static-components
+  341:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:341:8
+  339 |       <ProductsOverview />
+  340 |       <SolutionsOverview />
+> 341 |       <ServicesOverview />
+      |        ^^^^^^^^^^^^^^^^ This component is created during render
+  342 |       <CaseStudies />
+  343 |       <WhyEstinad />
+  344 |       <HowWeWork />
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:206:28
+  204 |
+  205 |   /* =================== 6. SERVICES / CUSTOM EXECUTION =================== */
+> 206 |   const ServicesOverview = () => (
+      |                            ^^^^^^^
+> 207 |     <Section className="bg-surface">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 208 |       <SectionHeader
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 233 |     </Section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 234 |   );
+      | ^^^^ The component is created during render here
+  235 |
+  236 |   /* =================== 7. CASE STUDIES / PROOF =================== */
+  237 |   const CaseStudies = () => (                                                           react-hooks/static-components
+  342:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:342:8
+  340 |       <SolutionsOverview />
+  341 |       <ServicesOverview />
+> 342 |       <CaseStudies />
+      |        ^^^^^^^^^^^ This component is created during render
+  343 |       <WhyEstinad />
+  344 |       <HowWeWork />
+  345 |       <FinalCTA />
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:237:23
+  235 |
+  236 |   /* =================== 7. CASE STUDIES / PROOF =================== */
+> 237 |   const CaseStudies = () => (
+      |                       ^^^^^^^
+> 238 |     <Section>
+      | ^^^^^^^^^^^^^
+> 239 |       <SectionHeader
+      ÔÇª
+      | ^^^^^^^^^^^^^
+> 263 |     </Section>
+      | ^^^^^^^^^^^^^
+> 264 |   );
+      | ^^^^ The component is created during render here
+  265 |
+  266 |   /* =================== 8. WHY ESTINAD =================== */
+  267 |   const WhyEstinad = () => (                                                                                                                                                                                               react-hooks/static-components
+  343:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:343:8
+  341 |       <ServicesOverview />
+  342 |       <CaseStudies />
+> 343 |       <WhyEstinad />
+      |        ^^^^^^^^^^ This component is created during render
+  344 |       <HowWeWork />
+  345 |       <FinalCTA />
+  346 |     </>
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:267:22
+  265 |
+  266 |   /* =================== 8. WHY ESTINAD =================== */
+> 267 |   const WhyEstinad = () => (
+      |                      ^^^^^^^
+> 268 |     <Section className="bg-surface">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 269 |       <SectionHeader eyebrow={h.why.eyebrow} title={h.why.title} intro={h.why.intro} />
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 281 |     </Section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 282 |   );
+      | ^^^^ The component is created during render here
+  283 |
+  284 |   /* =================== 9. HOW WE WORK =================== */
+  285 |   const HowWeWork = () => (                                                                 react-hooks/static-components
+  344:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:344:8
+  342 |       <CaseStudies />
+  343 |       <WhyEstinad />
+> 344 |       <HowWeWork />
+      |        ^^^^^^^^^ This component is created during render
+  345 |       <FinalCTA />
+  346 |     </>
+  347 |   );
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:285:21
+  283 |
+  284 |   /* =================== 9. HOW WE WORK =================== */
+> 285 |   const HowWeWork = () => (
+      |                     ^^^^^^^
+> 286 |     <Section>
+      | ^^^^^^^^^^^^^
+> 287 |       <SectionHeader
+      ÔÇª
+      | ^^^^^^^^^^^^^
+> 301 |     </Section>
+      | ^^^^^^^^^^^^^
+> 302 |   );
+      | ^^^^ The component is created during render here
+  303 |
+  304 |   /* =================== 10. FINAL CTA =================== */
+  305 |   const FinalCTA = () => (                                                                                                                                                                                                                                                           react-hooks/static-components
+  345:8   error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:345:8
+  343 |       <WhyEstinad />
+  344 |       <HowWeWork />
+> 345 |       <FinalCTA />
+      |        ^^^^^^^^ This component is created during render
+  346 |     </>
+  347 |   );
+  348 | }
+
+C:\Users\ameur.ghenaiet\Documents\intj\Estinad\estinad-landing\components\Home.tsx:305:20
+  303 |
+  304 |   /* =================== 10. FINAL CTA =================== */
+> 305 |   const FinalCTA = () => (
+      |                    ^^^^^^^
+> 306 |     <section className="relative overflow-hidden hairline-b bg-base">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 307 |       <div className="absolute inset-0 grid-backdrop opacity-50" aria-hidden />
+      ÔÇª
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 331 |     </section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 332 |   );
+      | ^^^^ The component is created during render here
+  333 |
+  334 |   return (
+  335 |     <>                                                               react-hooks/static-components
+
+Ô£û 17 problems (10 errors, 7 warnings)
+

@@ -1,0 +1,6 @@
+▲ Next.js 16.2.9 (Turbopack)
+- Local:         http://localhost:3213
+- Network:       http://192.168.0.1:3213
+✓ Ready in 3.5s
+
+[?25h
