@@ -29,7 +29,7 @@ export function HardwareKitGallery({ kit, copy, labels }: Props) {
     <Section>
       <SectionHeader
         eyebrow={labels.galleryLabel}
-        title={labels.galleryLabel}
+        title={copy.name}
         intro={labels.galleryIntro}
       />
       <div className="mt-12 grid gap-8 lg:grid-cols-2">

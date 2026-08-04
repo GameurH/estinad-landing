@@ -38,24 +38,24 @@ export type HardwareKitDefinition = {
 };
 
 const hero = (slug: HardwareKitSlug): HardwareMediaAsset => ({
-  src: `/images/hardware/${slug}/hero.png`,
-  width: 2048,
-  height: 1536,
+  src: `/images/hardware/${slug}/hero.jpg`,
+  width: 1600,
+  height: 1200,
 });
 
 const detail = (slug: HardwareKitSlug): HardwareMediaAsset => ({
-  src: `/images/hardware/${slug}/detail.png`,
-  width: 2048,
-  height: 1536,
+  src: `/images/hardware/${slug}/detail.jpg`,
+  width: 1600,
+  height: 1200,
 });
 
 const wide = (
   slug: HardwareKitSlug,
   file: "deployment" | "included",
 ): HardwareMediaAsset => ({
-  src: `/images/hardware/${slug}/${file}.png`,
-  width: 2048,
-  height: 1152,
+  src: `/images/hardware/${slug}/${file}.jpg`,
+  width: 1600,
+  height: 900,
 });
 
 export const hardwareKits: readonly HardwareKitDefinition[] = [
