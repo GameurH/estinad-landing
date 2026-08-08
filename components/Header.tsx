@@ -391,9 +391,8 @@ export function Header({ data }: { data: HeaderData }) {
           solutions={solutions}
           hardwareKits={hardwareKits}
           productsMega={productsMega}
+          solutionsMega={solutionsMega}
           hardwareMega={hardwareMega}
-          solutionsIntro={solutionsMega.intro}
-          allSolutionsLabel={solutionsMega.viewAll}
           requestQuoteLabel={nav.requestQuote}
           trustLine={mobileNav.trustLine}
           themeSectionLabel={themeLabels.sectionLabel}

@@ -1,14 +1,19 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useId, useState, type ReactNode } from "react";
 import { useReducedMotion } from "framer-motion";
 import { ThemeToggle, type ThemeLabels } from "@/components/ThemeToggle";
 import { ProductNavCard } from "@/components/nav/ProductNavCard";
+import { productIcon } from "@/components/nav/ProductIcons";
 import { navSectionIcon } from "@/components/nav/NavSectionIcons";
+import { solutionMegaIcon, solutionTintClass } from "@/components/nav/SolutionIcons";
+import { hardwareMegaIcon } from "@/components/nav/HardwareIcons";
 import { locales, lp, type Locale } from "@/lib/i18n-config";
 import type { ProductCard, SolutionCard } from "@/lib/nav";
 import type { ProductsMegaLabels } from "@/components/nav/ProductsMegaMenu";
+import type { SolutionsMegaLabels } from "@/components/nav/SolutionsMegaMenu";
 import type { HardwareMegaLabels, HardwareNavKit } from "@/components/nav/HardwareMegaMenu";
 import type { MegaNavLink } from "@/components/nav/LinksMegaMenu";
 
@@ -37,9 +42,8 @@ type Props = {
   solutions: SolutionCard[];
   hardwareKits: HardwareNavKit[];
   productsMega: ProductsMegaLabels;
+  solutionsMega: SolutionsMegaLabels;
   hardwareMega: HardwareMegaLabels;
-  solutionsIntro: string;
-  allSolutionsLabel: string;
   requestQuoteLabel: string;
   trustLine: string;
   themeSectionLabel: string;
@@ -133,9 +137,8 @@ export function MobileNav({
   solutions,
   hardwareKits,
   productsMega,
+  solutionsMega,
   hardwareMega,
-  solutionsIntro,
-  allSolutionsLabel,
   requestQuoteLabel,
   trustLine,
   themeSectionLabel,
@@ -155,6 +158,11 @@ export function MobileNav({
     fr: langLabels.fr,
     ar: langLabels.ar,
   };
+
+  const knownSolutionSlugs = new Set(solutions.map((s) => s.slug));
+  const solutionCards = (solutionsMega.cards.business ?? []).filter((card) =>
+    knownSolutionSlugs.has(card.slug),
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -213,6 +221,21 @@ export function MobileNav({
                           />
                         </div>
                       ))}
+
+                      <ul className="flex flex-col gap-3">
+                        {productsMega.highlights.map((item) => (
+                          <li key={item.title} className="flex items-start gap-3">
+                            <span className="mt-0.5 text-ink shrink-0">
+                              {productIcon(item.icon, "h-4 w-4")}
+                            </span>
+                            <div>
+                              <div className="text-sm font-medium text-ink">{item.title}</div>
+                              <p className="mt-0.5 text-xs leading-relaxed text-muted">{item.body}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+
                       <div>
                         <div className="mb-3 flex items-center justify-between gap-3">
                           <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
@@ -239,6 +262,20 @@ export function MobileNav({
                           ))}
                         </div>
                       </div>
+
+                      <div className="rounded-[14px] border border-line bg-surface p-3.5">
+                        <div className="text-sm font-medium text-ink">{productsMega.helpTitle}</div>
+                        <p className="mt-1 text-xs text-muted">{productsMega.helpBody}</p>
+                        <Link
+                          href={L("/company/contact")}
+                          onClick={onClose}
+                          className="mt-2 inline-flex min-h-10 items-center gap-1.5 text-sm font-medium text-ink"
+                        >
+                          {productsMega.talkExpert}
+                          <span className="inline-block rtl:-scale-x-100 text-muted">→</span>
+                        </Link>
+                      </div>
+
                       <Link
                         href={L("/products")}
                         onClick={onClose}
@@ -251,94 +288,175 @@ export function MobileNav({
                   )}
 
                   {section.kind === "solutions" && (
-                    <div className="flex flex-col gap-3">
-                      <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted">
-                        {solutionsIntro}
-                      </p>
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <p className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
+                          {solutionsMega.eyebrow}
+                        </p>
+                        <h3 className="mt-2 text-base font-semibold tracking-tight text-ink">
+                          {solutionsMega.title}
+                        </h3>
+                        <p className="mt-2 text-xs leading-relaxed text-muted">
+                          {solutionsMega.body}
+                        </p>
+                      </div>
+
                       <div className="grid gap-2">
-                        {solutions.map((solution) => (
+                        {solutionCards.map((card) => (
                           <Link
-                            key={solution.slug}
-                            href={L(`/solutions/${solution.slug}`)}
+                            key={card.slug}
+                            href={L(`/solutions/${card.slug}`)}
                             onClick={onClose}
-                            className="rounded-[14px] border border-line bg-surface p-4 active:bg-surface-2 transition-colors"
+                            className="rounded-[14px] border border-line bg-surface p-3.5 active:bg-surface-2 transition-colors"
                           >
-                            <div className="font-mono text-[0.62rem] uppercase tracking-[0.16em] text-muted-2">
-                              {solution.audience}
-                            </div>
-                            <div className="mt-1 flex items-center justify-between gap-3">
-                              <h3 className="text-sm font-medium text-ink">{solution.name}</h3>
-                              <span className="inline-block rtl:-scale-x-100 text-muted-2 text-xs">
-                                →
+                            <div className="flex items-start gap-3">
+                              <span
+                                className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] ${
+                                  solutionTintClass[card.tint] ?? solutionTintClass.mute
+                                }`}
+                              >
+                                {solutionMegaIcon(card.icon, "h-5 w-5")}
+                              </span>
+                              <span className="min-w-0 flex-1">
+                                <span className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-muted">
+                                  {card.category}
+                                </span>
+                                <span className="mt-1 flex items-center justify-between gap-2">
+                                  <span className="text-sm font-semibold text-ink">{card.title}</span>
+                                  <span className="text-muted-2 text-xs">→</span>
+                                </span>
+                                <span className="mt-1 block text-xs leading-relaxed text-muted line-clamp-2">
+                                  {card.body}
+                                </span>
                               </span>
                             </div>
-                            <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-muted">
-                              {solution.summary}
-                            </p>
                           </Link>
                         ))}
                       </div>
+
+                      <div className="rounded-[14px] border border-line bg-surface p-3.5">
+                        <div className="text-sm font-medium text-ink">{solutionsMega.helpTitle}</div>
+                        <p className="mt-1 text-xs text-muted">{solutionsMega.helpBody}</p>
+                        <Link
+                          href={L("/company/contact")}
+                          onClick={onClose}
+                          className="mt-2 inline-flex min-h-10 items-center gap-1.5 text-sm font-medium text-ink"
+                        >
+                          {solutionsMega.talkExpert}
+                          <span className="inline-block rtl:-scale-x-100 text-muted">→</span>
+                        </Link>
+                      </div>
+
                       <Link
                         href={L("/solutions")}
                         onClick={onClose}
                         className="inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-ink"
                       >
-                        {allSolutionsLabel}
+                        {solutionsMega.viewAllCta}
                         <span className="inline-block rtl:-scale-x-100 text-muted">→</span>
                       </Link>
                     </div>
                   )}
 
                   {section.kind === "hardware" && (
-                    <div className="flex flex-col gap-3">
-                      <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted">
-                        {hardwareMega.intro}
-                      </p>
-                      <div className="overflow-hidden rounded-[16px] bg-ink text-bg p-5">
-                        <div className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-bg/55">
-                          ESTINAD Axis
-                        </div>
-                        <h3 className="mt-2 text-lg font-semibold text-bg">
-                          {hardwareMega.viewAll}
+                    <div className="flex flex-col gap-4">
+                      <div>
+                        <p className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
+                          <span className="text-ink">{hardwareMegaIcon("check", "h-3.5 w-3.5")}</span>
+                          {hardwareMega.eyebrow}
+                        </p>
+                        <h3 className="mt-2 text-base font-semibold tracking-tight text-ink">
+                          {hardwareMega.title}
                         </h3>
-                        <div className="mt-5 flex flex-col gap-2">
-                          <Link
-                            href={L(hardwareMega.quoteHref)}
-                            onClick={onClose}
-                            className="inline-flex min-h-11 items-center justify-center rounded-full bg-bg px-4 text-sm font-medium text-ink"
-                          >
-                            {hardwareMega.requestQuote}
-                          </Link>
-                          <Link
-                            href={L(hardwareMega.compatibilityHref)}
-                            onClick={onClose}
-                            className="inline-flex min-h-11 items-center justify-center rounded-full border border-bg/30 px-4 text-sm font-medium text-bg"
-                          >
-                            {hardwareMega.checkCompatibility}
-                          </Link>
+                        <p className="mt-2 text-xs leading-relaxed text-muted">
+                          {hardwareMega.body}
+                        </p>
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <Link
+                          href={L(hardwareMega.quoteHref)}
+                          onClick={onClose}
+                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-ink px-4 text-sm font-medium text-bg"
+                        >
+                          {hardwareMega.requestQuote}
+                          <span className="inline-block rtl:-scale-x-100 opacity-80">→</span>
+                        </Link>
+                        <Link
+                          href={L(hardwareMega.compatibilityHref)}
+                          onClick={onClose}
+                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-line-strong px-4 text-sm font-medium text-ink"
+                        >
+                          {hardwareMega.checkCompatibility}
+                          <span className="inline-block rtl:-scale-x-100 text-muted">→</span>
+                        </Link>
+                      </div>
+
+                      <div>
+                        <div className="mb-3 text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
+                          {hardwareMega.kitsLabel}
+                        </div>
+                        <div className="-mx-1 flex gap-2 overflow-x-auto snap-x snap-mandatory pb-1 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                          {hardwareKits.map((kit) => (
+                            <Link
+                              key={kit.slug}
+                              href={L(`/hardware/${kit.slug}`)}
+                              onClick={onClose}
+                              className="snap-start shrink-0 w-[min(72vw,220px)] overflow-hidden rounded-[14px] border border-line bg-card active:bg-surface-2 transition-colors"
+                            >
+                              <div className="relative aspect-[4/3] bg-surface">
+                                <span className="absolute start-2.5 top-2.5 z-10 font-mono text-[0.62rem] text-muted">
+                                  {kit.glyph}
+                                </span>
+                                <Image
+                                  src={kit.imageSrc}
+                                  alt={kit.imageAlt}
+                                  fill
+                                  sizes="220px"
+                                  className="object-cover"
+                                />
+                              </div>
+                              <div className="p-3">
+                                <h3 className="text-sm font-semibold text-ink">
+                                  {kit.shortName || kit.name}
+                                </h3>
+                                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted">
+                                  {kit.tagline}
+                                </p>
+                                <div className="mt-2 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-muted-2">
+                                  {kit.category}
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
                         </div>
                       </div>
-                      <div className="-mx-1 flex gap-2 overflow-x-auto snap-x snap-mandatory pb-1 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                        {hardwareKits.map((kit) => (
+
+                      <div className="grid gap-1">
+                        {hardwareMega.sideLinks.map((link) => (
                           <Link
-                            key={kit.slug}
-                            href={L(`/hardware/${kit.slug}`)}
+                            key={link.title}
+                            href={L(link.href)}
                             onClick={onClose}
-                            className="snap-start shrink-0 w-[min(72vw,240px)] rounded-[14px] border border-line bg-surface p-4 active:bg-surface-2 transition-colors"
+                            className="flex items-start gap-3 rounded-[12px] p-2.5 active:bg-surface transition-colors"
                           >
-                            <div className="flex items-center gap-2">
-                              <span className="font-mono text-[0.65rem] text-muted-2">
-                                {kit.glyph}
+                            <span className="mt-0.5 text-ink shrink-0">
+                              {hardwareMegaIcon(link.icon, "h-4 w-4")}
+                            </span>
+                            <span className="min-w-0 flex-1">
+                              <span className="flex items-center justify-between gap-2">
+                                <span className="text-sm font-medium text-ink">{link.title}</span>
+                                <span className="text-muted-2 text-xs">→</span>
                               </span>
-                              <h3 className="text-sm font-medium text-ink">
-                                {kit.shortName || kit.name}
-                              </h3>
-                            </div>
-                            <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted">
-                              {kit.tagline}
-                            </p>
+                              <span className="mt-0.5 block text-xs text-muted">{link.body}</span>
+                            </span>
                           </Link>
                         ))}
+                      </div>
+
+                      <div className="rounded-[14px] border border-line bg-surface p-3.5">
+                        <div className="text-sm font-medium text-ink">{hardwareMega.assuranceTitle}</div>
+                        <p className="mt-1 text-xs text-muted">{hardwareMega.assuranceBody}</p>
                       </div>
                     </div>
                   )}
