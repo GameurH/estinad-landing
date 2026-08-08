@@ -24,8 +24,33 @@ export function lp(locale: Locale, href: string): string {
   return href;
 }
 
-export const productSlugs = ["retail", "restaurant", "clinic", "cloud"] as const;
+export const productSlugs = [
+  "retail",
+  "restaurant",
+  "inventory",
+  "invoices",
+  "workforce",
+  "clinic",
+  "central",
+] as const;
 export type ProductSlug = (typeof productSlugs)[number];
+
+/** Launch status for customer-facing product lines. */
+export const productAvailability = {
+  retail: "available",
+  restaurant: "coming-soon",
+  inventory: "coming-soon",
+  invoices: "coming-soon",
+  workforce: "coming-soon",
+  clinic: "coming-soon",
+  central: "coming-soon",
+} as const satisfies Record<ProductSlug, "available" | "coming-soon">;
+
+export type ProductAvailability = (typeof productAvailability)[ProductSlug];
+
+/** Only Retail has public pricing today. */
+export const pricingProductSlugs = ["retail"] as const;
+export type PricingProductSlug = (typeof pricingProductSlugs)[number];
 
 /**
  * Connected product components (POS, Waiter, KDS, Core, UI, Native, Importer).

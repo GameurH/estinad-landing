@@ -22,6 +22,7 @@ export type FooterData = {
       caseStudies: string;
       resources: string;
       company: string;
+      hardware: string;
     };
     productLinks: { label: string; href: string }[];
     solutionLinks: { label: string; href: string }[];
@@ -29,6 +30,7 @@ export type FooterData = {
     caseStudyLinks: { label: string; href: string }[];
     platformLinks: { label: string; href: string }[];
     partnerLinks: { label: string; href: string }[];
+    hardwareLinks: { label: string; href: string }[];
   };
   resourcesNav: { label: string; href: string }[];
   companyNav: { label: string; href: string }[];
@@ -41,10 +43,8 @@ export function Footer({ data }: { data: FooterData }) {
 
   const columns: { title: string; items: { label: string; href: string }[] }[] = [
     { title: footer.cols.products, items: footer.productLinks },
-    { title: footer.cols.platform, items: footer.platformLinks },
     { title: footer.cols.solutions, items: footer.solutionLinks },
-    { title: footer.cols.partners, items: footer.partnerLinks },
-    { title: footer.cols.services, items: footer.serviceLinks },
+    { title: footer.cols.hardware, items: footer.hardwareLinks },
     { title: footer.cols.resources, items: resourcesNav },
     { title: footer.cols.company, items: companyNav },
   ];
@@ -59,7 +59,7 @@ export function Footer({ data }: { data: FooterData }) {
           </h2>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
-              href={lp(locale, "/demo")}
+              href={lp(locale, "/quote")}
               className="inline-flex items-center h-12 px-7 rounded-full text-[0.9375rem] font-medium bg-inv-fg text-inv-bg hover:bg-inv-fg/85 transition-colors"
             >
               {footer.ctaPrimary}
@@ -71,7 +71,7 @@ export function Footer({ data }: { data: FooterData }) {
               {footer.ctaSecondary}
             </Link>
             <Link
-              href={lp(locale, "/services")}
+              href={lp(locale, "/company/contact")}
               className="inline-flex items-center h-12 px-4 text-[0.9375rem] font-medium text-inv-fg-dim hover:text-inv-fg transition-colors"
             >
               {footer.ctaTertiary}
@@ -81,7 +81,7 @@ export function Footer({ data }: { data: FooterData }) {
       </div>
 
       <div className="shell py-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
           <div className="col-span-2 lg:col-span-1">
             <Link href={lp(locale, "/")} className="inline-flex" aria-label="ESTINAD">
               <span className="inline-block rounded-[2px] bg-inv-fg p-1.5">
@@ -101,7 +101,7 @@ export function Footer({ data }: { data: FooterData }) {
               </div>
               <ul className="mt-4 flex flex-col gap-2.5">
                 {col.items.map((item) => (
-                  <li key={item.href}>
+                  <li key={`${col.title}-${item.href}-${item.label}`}>
                     <Link
                       href={lp(locale, item.href)}
                       className="text-sm text-inv-fg-dim hover:text-inv-fg transition-colors"

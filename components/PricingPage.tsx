@@ -28,7 +28,7 @@ export function PricingView({ data }: { data: PricingPageData }) {
         eyebrow={eyebrow}
         title={title}
         intro={productOneLiner}
-        cta={{ label: c.requestDemoArrow, href: L("/demo") }}
+        cta={{ label: c.requestQuoteArrow, href: L(`/quote?product=${slug}`) }}
         secondaryCta={{ label: productName, href: L(`/products/${slug}`) }}
       />
 
@@ -64,7 +64,7 @@ export function PricingView({ data }: { data: PricingPageData }) {
                 ))}
               </ul>
               <Link
-                href={L("/demo")}
+                href={L(`/quote?product=${slug}`)}
                 className={`mt-8 inline-flex items-center justify-center h-11 px-5 text-sm font-medium transition-colors ${
                   t.emphasized
                     ? "bg-accent text-base hover:bg-accent-dim border border-accent"
@@ -133,10 +133,10 @@ export function PricingView({ data }: { data: PricingPageData }) {
           <p className="mt-3 text-muted max-w-lg mx-auto">{c.notSureBody}</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
-              href={L("/demo")}
+              href={L(`/quote?product=${slug}`)}
               className="inline-flex items-center h-11 px-5 text-sm font-medium bg-accent text-base hover:bg-accent-dim border border-accent transition-colors"
             >
-              {c.requestDemoArrow}
+              {c.requestQuoteArrow}
             </Link>
             <Link
               href={L("/company/contact")}

@@ -19,7 +19,7 @@ todos:
     status: completed
   - id: axis-verify
     content: Run multilingual responsive visual QA, lint, type checks, build, and route checks
-    status: in_progress
+    status: completed
 isProject: false
 ---
 

@@ -6,6 +6,8 @@
 export type AnalyticsEvent =
   | "demo_request_started"
   | "demo_request_submitted"
+  | "quote_request_started"
+  | "quote_request_submitted"
   | "partner_application_started"
   | "partner_application_submitted"
   | "pricing_viewed"

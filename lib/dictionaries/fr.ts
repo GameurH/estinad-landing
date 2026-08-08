@@ -1,12 +1,14 @@
 import type { Dictionary } from "./types";
+import { en } from "./en";
+import { deepFill } from "./deep-fill";
 
-export const fr: Dictionary = {
+const frRaw = {
   "meta": {
-    "title": "ESTINAD — Produits logiciels & solutions logicielles sur mesure",
+    "title": "ESTINAD — Produits logiciels pour les opérations réelles",
     "titleTemplate": "%s · ESTINAD",
-    "description": "Systèmes d'exploitation métier local-first pour restaurants, commerces, cliniques et organisations multi-sites. Conçu en Algérie.",
-    "ogTitle": "ESTINAD — Produits logiciels & solutions logicielles sur mesure",
-    "ogDescription": "Systèmes d'exploitation métier local-first pour les équipes opérationnelles, avec synchronisation cloud pour une visibilité centralisée."
+    "description": "ESTINAD est une société produit qui lance avec ESTINAD Retail, avec d'autres produits en développement sur la plateforme ESTINAD. Conçu en Algérie.",
+    "ogTitle": "ESTINAD — Produits logiciels pour les opérations réelles",
+    "ogDescription": "Lancement avec ESTINAD Retail ; Restaurant, Inventory, Invoices, Workforce, Clinic et Central font partie du portefeuille ESTINAD en développement."
   },
   "lang": {
     "switchLabel": "Langue",
@@ -62,7 +64,12 @@ export const fr: Dictionary = {
     "plannedLabel": "Prévu",
     "inDevelopmentLabel": "En développement",
     "explorePlatformArrow": "Explorer la plateforme →",
-    "sellOrImplement": "Vendre ou implémenter"
+    "sellOrImplement": "Vendre ou implémenter",
+    "requestQuote": "Demander un devis",
+    "requestQuoteArrow": "Demander un devis →",
+    "availableLabel": "Disponible",
+    "comingSoonLabel": "Bientôt disponible",
+    "registerInterest": "Manifestez votre intérêt →"
   },
   "nav": {
     "home": "Accueil",
@@ -80,7 +87,7 @@ export const fr: Dictionary = {
     "megaArchitecture": "Une plateforme, pas des applications juxtaposées",
     "megaSecurity": "La discipline par défaut",
     "megaDeployment": "Local-first, enrichi par le cloud",
-    "megaProductsIntro": "Produits logiciels prêts, groupés par fonction de l'entreprise.",
+    "megaProductsIntro": "ESTINAD Retail est disponible aujourd'hui. D'autres produits sont en développement dans le portefeuille ESTINAD.",
     "softwareProducts": "Produits logiciels",
     "certifiedHardware": "Matériel certifié",
     "compareSolutions": "Comparer les solutions",
@@ -94,15 +101,18 @@ export const fr: Dictionary = {
     "megaServicesIntro": "Livraison logicielle sur mesure — bâtie de bout en bout.",
     "megaPlatformIntro": "Architecture hybride, local-first.",
     "megaPartnersIntro": "Vendez, déployez, accompagnez ou intégrez ESTINAD.",
-    "megaCaseIntro": "Travaux clients réels, par secteur et résultat."
+    "megaCaseIntro": "Travaux clients réels, par secteur et résultat.",
+    "hardware": "Matériel",
+    "requestQuote": "Demander un devis",
+    "megaResourcesIntro": "Guides, documentation et réponses."
   },
   "footer": {
-    "ctaEyebrow": "Produits et logiciel sur mesure",
-    "ctaTitle": "Gérez votre entreprise sur du logiciel prêt — ou laissez-nous bâtir le système dont vous avez besoin.",
-    "ctaPrimary": "Demander une démo",
+    "ctaEyebrow": "Produits ESTINAD",
+    "ctaTitle": "Commencez avec ESTINAD Retail. Explorez le portefeuille.",
+    "ctaPrimary": "Demander un devis",
     "ctaSecondary": "Explorer les produits",
-    "ctaTertiary": "Discuter de votre projet",
-    "tagline": "Produits logiciels et solutions sur mesure. Conçus en Algérie, selon des standards internationaux.",
+    "ctaTertiary": "Parler à l'équipe",
+    "tagline": "ESTINAD est une société produit qui lance avec ESTINAD Retail, avec d'autres produits en développement sur la plateforme ESTINAD.",
     "builtLine": "Conçus en Algérie, selon des standards internationaux.",
     "rights": "Tous droits réservés.",
     "cols": {
@@ -113,28 +123,37 @@ export const fr: Dictionary = {
       "partners": "Partenaires",
       "caseStudies": "Études de cas",
       "resources": "Ressources",
-      "company": "Société"
+      "company": "Société",
+      "hardware": "Matériel"
     },
     "productLinks": [
       {
-        "label": "ESTINAD Commerce",
+        "label": "ESTINAD Retail · Disponible",
         "href": "/products/retail"
       },
       {
-        "label": "ESTINAD Restauration",
+        "label": "ESTINAD Restaurant · Bientôt",
         "href": "/products/restaurant"
       },
       {
-        "label": "ESTINAD Clinique",
+        "label": "ESTINAD Inventory · Bientôt",
+        "href": "/products/inventory"
+      },
+      {
+        "label": "ESTINAD Invoices · Bientôt",
+        "href": "/products/invoices"
+      },
+      {
+        "label": "ESTINAD Workforce · Bientôt",
+        "href": "/products/workforce"
+      },
+      {
+        "label": "ESTINAD Clinic · Bientôt",
         "href": "/products/clinic"
       },
       {
-        "label": "ESTINAD Cloud",
-        "href": "/products/cloud"
-      },
-      {
-        "label": "Matériel certifié",
-        "href": "/hardware"
+        "label": "ESTINAD Central · Bientôt",
+        "href": "/products/central"
       }
     ],
     "solutionLinks": [
@@ -238,6 +257,20 @@ export const fr: Dictionary = {
         "label": "Postuler",
         "href": "/partners/apply"
       }
+    ],
+    "hardwareLinks": [
+      {
+        "label": "Matériel certifié",
+        "href": "/hardware"
+      },
+      {
+        "label": "Demander un devis",
+        "href": "/quote"
+      },
+      {
+        "label": "Vérifier la compatibilité",
+        "href": "/hardware/compatibility"
+      }
     ]
   },
   "notFound": {
@@ -250,19 +283,19 @@ export const fr: Dictionary = {
   "homeV2": {
     "hero": {
       "eyebrow": "ESTINAD / BUSINESS SOFTWARE COMPANY",
-      "title": "Des standards mondiaux. Un savoir-faire algérien. Des logiciels sur lesquels compter.",
-      "sub": "Des produits prêts à l'emploi pour structurer et soutenir chaque dimension de votre activité — avec des solutions sur mesure lorsque le besoin va plus loin.",
-      "cta1": "Demander une démo",
+      "title": "Lancement avec ESTINAD Retail. Construction d'une plateforme plus large.",
+      "sub": "ESTINAD est une société produit qui lance avec ESTINAD Retail, avec d'autres produits en développement sur la plateforme ESTINAD.",
+      "cta1": "Demander un devis",
       "cta2": "Découvrir les produits",
-      "supporting": "Des produits, pas des outils · Pensés avec rigueur, pas assemblés · Conçus en Algérie"
+      "supporting": "Retail disponible · Autres produits bientôt · Conçu en Algérie"
     },
     "whoWeAre": {
       "title": "Une entreprise de produits, pas une société de services.",
       "body": "Nous n'assemblons pas des outils existants et nous ne vendons pas des heures de développement. Nous concevons des logiciels complets, nous les faisons évoluer en continu, et nous les assumons partout où ils sont déployés. C'est la différence entre acheter un logiciel et investir dans un engagement durable."
     },
     "products": {
-      "title": "Nos produits",
-      "body": "Une famille de logiciels métiers construits sur une même base d'ingénierie — conçus pour fonctionner ensemble ou séparément avec le même niveau d'exigence.",
+      "title": "Notre portefeuille produits",
+      "body": "ESTINAD Retail est disponible. Restaurant, Inventory, Invoices, Workforce, Clinic et Central restent visibles comme produits planifiés — pas comme offres lancées.",
       "cta": "Découvrir les produits"
     },
     "why": {
@@ -276,9 +309,9 @@ export const fr: Dictionary = {
       ]
     },
     "finalCta": {
-      "title": "Vous voulez voir ce que nous construisons dans votre contexte ?",
-      "body": "Demandez une démonstration pour découvrir comment nos produits peuvent soutenir vos opérations, que vous gériez un seul site ou plusieurs implantations.",
-      "cta": "Demander une démo"
+      "title": "Prêt à parler d'ESTINAD Retail ?",
+      "body": "Demandez un devis pour Retail et le matériel certifié, ou explorez les produits qu'ESTINAD construit ensuite.",
+      "cta": "Demander un devis"
     }
   },
   "platform": {
@@ -434,17 +467,22 @@ export const fr: Dictionary = {
   "products": {
     "index": {
       "eyebrow": "Produits",
-      "title": "Quatre produits. Une plateforme.",
-      "intro": "Chaque produit ESTINAD est conçu pour un secteur et unifié par ESTINAD OS en dessous. Commencez avec un. Ajoutez-en un autre sans re-platformer.",
+      "title": "ESTINAD Retail disponible. D'autres produits en développement.",
+      "intro": "ESTINAD lance avec ESTINAD Retail. Restaurant, Inventory, Invoices, Workforce, Clinic et Central font partie du portefeuille planifié — visibles ici, sans être présentés comme lancés.",
       "tagVertical": "Vertical",
       "tagDeploy": "Déploiement hybride",
-      "tagPricing": "Tarifs dédiés"
+      "tagPricing": "Tarifs dédiés",
+      "tagAvailable": "Disponible",
+      "tagComingSoon": "Bientôt disponible",
+      "groupAvailable": "Disponible maintenant",
+      "groupComingSoon": "Bientôt disponible",
+      "comingSoonIntro": "Ces produits sont en développement sur la plateforme ESTINAD. Ils ne sont pas encore disponibles à l'achat ou au déploiement."
     },
     "items": {
       "retail": {
         "glyph": "ER",
         "vertical": "Commerce",
-        "name": "ESTINAD Commerce",
+        "name": "ESTINAD Retail",
         "short": "Commerce",
         "oneLiner": "Le système d'exploitation du commerce de prêt-à-porter et multi-catégories — stocks, caisse et performance magasin dans un seul registre.",
         "positioning": "ESTINAD Commerce unifie la caisse, les stocks et l'analytique magasin dans un registre unique et fiable. Conçu pour les détaillants de prêt-à-porter et les magasins multi-catégories qui ont besoin d'un contrôle précis des stocks, d'une caisse rapide et d'une visibilité claire sur tous les points de vente.",
@@ -474,8 +512,8 @@ export const fr: Dictionary = {
               "role": "Counter operations"
             },
             {
-              "name": "ESTINAD Cloud",
-              "href": "/products/cloud",
+              "name": "ESTINAD Central",
+              "href": "/products/central",
               "role": "Central visibility"
             },
             {
@@ -683,9 +721,9 @@ export const fr: Dictionary = {
       "restaurant": {
         "glyph": "RS",
         "vertical": "Restauration",
-        "name": "ESTINAD Restauration",
+        "name": "ESTINAD Restaurant",
         "short": "Restauration",
-        "oneLiner": "Le système d'exploitation des restaurants — cuisine, salle et commandes dans un flux calme et rapide.",
+        "oneLiner": "Bientôt disponible — opérations restaurant pour salle, cuisine et commandes sur la plateforme ESTINAD.",
         "positioning": "ESTINAD Restauration coordonne la salle, la cuisine et la caisse comme un seul flux. Conçu pour les restaurants comptoir et à table qui ont besoin de vitesse au comptoir, de clarté en cuisine et de chiffres propres à la clôture.",
         "byline": "ESTINAD Restaurant par ESTINAD",
         "problem": {
@@ -723,8 +761,8 @@ export const fr: Dictionary = {
               "role": "Kitchen workflow"
             },
             {
-              "name": "ESTINAD Cloud",
-              "href": "/products/cloud",
+              "name": "ESTINAD Central",
+              "href": "/products/central",
               "role": "Central visibility"
             }
           ]
@@ -927,9 +965,9 @@ export const fr: Dictionary = {
       "clinic": {
         "glyph": "CL",
         "vertical": "Clinique",
-        "name": "ESTINAD Clinique",
+        "name": "ESTINAD Clinic",
         "short": "Clinique",
-        "oneLiner": "Le système d'exploitation des cliniques — planning, dossiers et facturation dans un système calme et conforme.",
+        "oneLiner": "Bientôt disponible — planification, dossiers et facturation clinique sur la plateforme ESTINAD.",
         "positioning": "ESTINAD Clinique réunit le planning, les dossiers patients et la facturation dans un système discipliné. Conçu pour les cliniques qui ont besoin d'un flux d'accueil calme, de dossiers fiables et d'un reporting financier propre, sans le bruit d'un logiciel générique.",
         "byline": "ESTINAD Clinic par ESTINAD",
         "problem": {
@@ -952,8 +990,8 @@ export const fr: Dictionary = {
           "title": "Composants ESTINAD connectés.",
           "items": [
             {
-              "name": "ESTINAD Cloud",
-              "href": "/products/cloud",
+              "name": "ESTINAD Central",
+              "href": "/products/central",
               "role": "Authorized central visibility"
             },
             {
@@ -1158,244 +1196,21 @@ export const fr: Dictionary = {
         ],
         "ctaTitle": "Mettez ESTINAD Clinique sur vos opérations."
       },
-      "cloud": {
-        "glyph": "CD",
-        "vertical": "Plateforme",
-        "name": "ESTINAD Cloud",
-        "short": "Cloud",
-        "oneLiner": "Synchronisation, accès à distance et gestion centrale — sans remplacer votre serveur local.",
-        "positioning": "ESTINAD Cloud est l'espace cloud dédié de chaque tenant. Il n'héberge pas les opérations quotidiennes et n'est pas une base opérationnelle SaaS partagée. Il synchronise les modules sélectionnés en ligne, permet un accès mobile et à distance sécurisé hors LAN, et prend en charge l'analytique, les tableaux de bord, les notifications, les sauvegardes et la future IA — tandis que le serveur local reste la source de vérité autoritaire.",
-        "byline": "ESTINAD Cloud par ESTINAD",
-        "problem": {
-          "eyebrow": "Le problème métier",
-          "title": "Le siège manque d'une vue connectée.",
-          "body": "Les organisations multi-sites peinent à superviser et piloter chaque site lorsque chaque site doit rester opérationnel hors ligne — et les systèmes exclusivement cloud échouent quand la connectivité chute."
-        },
-        "localFirst": {
-          "eyebrow": "Enrichi par le cloud, pas dépendant du cloud",
-          "title": "Le cloud complète les opérations locales.",
-          "body": "ESTINAD Cloud est une couche de synchronisation et de gestion. Les serveurs locaux possèdent les opérations ; le cloud ajoute l'accès à distance et la visibilité centrale.",
-          "points": [
-            "Synchronisation de modules sélectionnés",
-            "Accès mobile et à distance sécurisé",
-            "Le serveur local reste autoritaire"
-          ]
-        },
-        "worksWith": {
-          "eyebrow": "Fonctionne avec",
-          "title": "Composants ESTINAD connectés.",
-          "items": [
-            {
-              "name": "ESTINAD Retail",
-              "href": "/products/retail",
-              "role": "Retail operations"
-            },
-            {
-              "name": "ESTINAD Restaurant",
-              "href": "/products/restaurant",
-              "role": "Restaurant operations"
-            },
-            {
-              "name": "ESTINAD Clinic",
-              "href": "/products/clinic",
-              "role": "Clinic operations"
-            }
-          ]
-        },
-        "multiLocation": {
-          "eyebrow": "Multi-sites",
-          "title": "Une interface pour chaque site.",
-          "body": "Chaque site conserve son propre serveur local et sa base de données. La synchronisation cloud consolide les données sélectionnées pour que le siège puisse superviser et piloter l'organisation depuis une interface centralisée."
-        },
-        "implementation": {
-          "eyebrow": "Implémentation",
-          "title": "Un déploiement connecté par étapes.",
-          "steps": [
-            {
-              "t": "Découverte",
-              "d": "Définir les sites et les besoins de reporting."
-            },
-            {
-              "t": "Installation",
-              "d": "Préparer les serveurs locaux dédiés à chaque site."
-            },
-            {
-              "t": "Configuration",
-              "d": "Définir le périmètre de synchronisation et l'accès pour l'espace tenant."
-            },
-            {
-              "t": "Formation",
-              "d": "Former les utilisateurs de gestion autorisés."
-            },
-            {
-              "t": "Support",
-              "d": "Définir les modalités de support continu."
-            }
-          ]
-        },
-        "partnerCta": {
-          "title": "Vous vendez ou implémentez des logiciels métier connectés ?",
-          "body": "Travaillez avec ESTINAD pour présenter et déployer la plateforme hybride local-first.",
-          "label": "Devenir partenaire ESTINAD Cloud",
-          "href": "/partners"
-        },
-        "proof": {
-          "eyebrow": "Références",
-          "title": "Conçu pour la gestion connectée.",
-          "body": "Des exemples illustratifs présentent les résultats qu'ESTINAD Cloud est conçu pour accompagner.",
-          "label": "Exemple illustratif"
-        },
-        "icpTitle": "Pour qui",
-        "icpHeader": "Pour les opérateurs qui ont besoin de fiabilité locale et de visibilité centrale.",
-        "icp": [
-          "Dirigeants opérant deux sites ou plus",
-          "Opérateurs multi-marques consolidant le reporting sans dépendance exclusive au cloud",
-          "Équipes ayant besoin d'un accès à distance tout en gardant des opérations local-first"
-        ],
-        "useCasesTitle": "Cas d'usage principaux",
-        "useCasesHeader": "À quoi sert la couche cloud.",
-        "useCases": [
-          "Accès à distance sécurisé lorsque les utilisateurs sont hors du réseau local",
-          "Supervision et gestion centrales de tous les sites",
-          "Analytique, tableaux de bord et notifications à partir des données synchronisées",
-          "Sauvegardes et reprise des modules synchronisés sélectionnés",
-          "Fondation pour de futurs services IA sur le contexte métier synchronisé"
-        ],
-        "visualEyebrow": "Concept visuel",
-        "visualTitle": "Une console pour la visibilité synchronisée — les serveurs locaux font toujours tourner la journée.",
-        "visualCaption": "Concept d'interface illustratif · ESTINAD Cloud",
-        "visualSidebar": [
-          "Tableau de bord",
-          "Cloud",
-          "Registre",
-          "Rapports",
-          "Points de vente",
-          "Réglages"
-        ],
-        "visualKpis": [
-          "Aujourd'hui",
-          "Cette semaine",
-          "MTD"
-        ],
-        "visualChart": "Performance",
-        "workflowsEyebrow": "Flux clés",
-        "workflowsTitle": "Trois flux que la couche cloud prend en charge.",
-        "workflowsIntro": "Le cloud ne fait pas tourner la caisse. Il connecte les sites, protège les données synchronisées et donne au siège une vue calme.",
-        "workflows": [
-          {
-            "title": "Synchroniser",
-            "steps": [
-              "Les serveurs locaux restent autoritaires à chaque site",
-              "Les modules sélectionnés se synchronisent lorsque la connexion est disponible",
-              "La synchronisation reprend automatiquement après les coupures",
-              "Chaque tenant conserve un espace cloud dédié"
-            ]
-          },
-          {
-            "title": "Accéder à distance",
-            "steps": [
-              "Accès sécurisé via internet hors du LAN",
-              "Accès mobile pour les utilisateurs autorisés en déplacement",
-              "Vues limitées par rôle, site et fonction",
-              "Les opérations locales continuent si le cloud est inaccessible"
-            ]
-          },
-          {
-            "title": "Gérer centralement",
-            "steps": [
-              "Superviser chaque site depuis une interface",
-              "Analytique, tableaux de bord et notifications",
-              "Sauvegardes des données synchronisées",
-              "Fondation pour de futurs services IA"
-            ]
-          }
-        ],
-        "featuresEyebrow": "Groupes de fonctionnalités",
-        "featuresTitle": "Organisés par ce que fait la couche cloud — pas en prétendant que c'est la caisse.",
-        "featureClusters": [
-          {
-            "title": "Synchronisation",
-            "description": "Données sélectionnées, automatiques en ligne.",
-            "points": [
-              "Synchronisation de modules sélectionnés uniquement",
-              "Synchronisation automatique au retour de la connexion",
-              "Espace dédié par tenant",
-              "Le serveur local reste toujours autoritaire"
-            ]
-          },
-          {
-            "title": "Accès à distance & gestion",
-            "description": "Siège et mobile, sans opérations exclusivement cloud.",
-            "points": [
-              "Accès à distance sécurisé hors LAN",
-              "Supervision centrale de tous les sites",
-              "Accès et périmètres par rôles",
-              "Visibilité utilisateurs et appareils lorsque configurée"
-            ]
-          },
-          {
-            "title": "Visibilité & continuité",
-            "description": "Analytique, sauvegardes et future IA.",
-            "points": [
-              "Tableaux de bord et reporting consolidé",
-              "Notifications à partir d'événements synchronisés",
-              "Dispositifs de sauvegarde pour les données synchronisées",
-              "Voie vers la future IA sur le contexte métier"
-            ]
-          }
-        ],
-        "deployEyebrow": "Comment s'inscrit le modèle hybride",
-        "deployTitle": "Le cloud est la couche de synchronisation et de gestion — jamais le déploiement principal.",
-        "deployment": [
-          "Le serveur local auto-hébergé dédié reste principal à chaque site",
-          "Espace cloud dédié par tenant pour les données synchronisées sélectionnées",
-          "Accès à distance, analytique et sauvegardes — enrichi par le cloud, pas dépendant du cloud"
-        ],
-        "integEyebrow": "Intégrations",
-        "integTitle": "Se connecte aux produits ESTINAD déjà en service localement.",
-        "integrations": [
-          "Tous les produits ESTINAD (natif)",
-          "Livraison de rapports WhatsApp et e-mail",
-          "Exports de données programmés",
-          "SSO pour l'entreprise (sur offre)"
-        ],
-        "faqEyebrow": "FAQ",
-        "faqTitle": "Les questions que se posent d'abord les dirigeants.",
-        "faq": [
-          {
-            "q": "ESTINAD Cloud est-il requis pour les opérations locales ?",
-            "a": "Non. Les opérations essentielles tournent sur le serveur local auto-hébergé sans internet. Le cloud débloque l'accès à distance, la visibilité multi-sites, l'analytique et les sauvegardes des données synchronisées."
-          },
-          {
-            "q": "Cloud remplace-t-il le serveur local ?",
-            "a": "Non. Le serveur local est toujours la source de vérité autoritaire. Cloud est une couche de synchronisation et de gestion."
-          },
-          {
-            "q": "Les données d'un tenant sont-elles partagées avec d'autres clients ?",
-            "a": "Non. Chaque tenant dispose d'un serveur local dédié, d'une base de données locale dédiée et d'un espace cloud dédié."
-          },
-          {
-            "q": "Quelles données se synchronisent ?",
-            "a": "Uniquement les modules et données sélectionnés, configurés par organisation — pas l'ensemble de la base opérationnelle par défaut."
-          },
-          {
-            "q": "Peut-on accéder au système hors du réseau local ?",
-            "a": "Oui. L'accès mobile et à distance sécurisé utilise la couche de synchronisation cloud lorsque les utilisateurs sont hors LAN."
-          },
-          {
-            "q": "Quels produits se connectent à Cloud ?",
-            "a": "Commerce, Restauration et Clinique utilisent le même modèle hybride avec ESTINAD Cloud comme couche de synchronisation et de gestion."
-          },
-          {
-            "q": "Comment se déroule l'implémentation ?",
-            "a": "Infrastructure locale, périmètre de synchronisation, accès, formation et support sont planifiés ensemble."
-          },
-          {
-            "q": "Comment sont gérés la tarification et la propriété ?",
-            "a": "Les conditions commerciales dépendent des produits, sites, infrastructure et support continu. Vous possédez votre infrastructure opérationnelle locale."
-          }
-        ],
-        "ctaTitle": "Mettez ESTINAD Cloud sur vos opérations."
+      "inventory": {
+        "name": "ESTINAD Inventory",
+        "oneLiner": "Bientôt disponible — contrôle des stocks dédié pour réceptions, transferts et exactitude."
+      },
+      "invoices": {
+        "name": "ESTINAD Invoices",
+        "oneLiner": "Bientôt disponible — facturation pour les équipes qui ont besoin de documents et d'encaissements clairs."
+      },
+      "workforce": {
+        "name": "ESTINAD Workforce",
+        "oneLiner": "Bientôt disponible — planification, présence et opérations d'équipe multi-sites."
+      },
+      "central": {
+        "name": "ESTINAD Central",
+        "oneLiner": "Bientôt disponible — synchronisation, accès distant et gestion centrale sans remplacer les serveurs locaux."
       }
     }
   },
@@ -2728,187 +2543,46 @@ export const fr: Dictionary = {
     "tiers": {
       "retail": [
         {
-          "name": "Site unique",
+          "name": "Boutique unique",
           "price": "4 900 DZD",
-          "cadence": "/ mois · par site",
-          "positioning": "Pour un magasin sortant d'outils éparpillés.",
+          "cadence": "/ mois · par boutique",
+          "positioning": "Pour un commerce qui quitte des outils dispersés.",
           "features": [
-            "1 site, caisses illimitées",
-            "Caisse + registre de stocks",
+            "1 boutique, caisses illimitées",
+            "POS + ledger stock",
             "Matrice de variantes (taille / couleur)",
             "Rapports quotidiens",
             "Support e-mail"
           ],
-          "cta": "Demander une démo",
+          "cta": "Demander un devis",
           "emphasized": false
         },
         {
-          "name": "Multi-sites",
+          "name": "Multi-boutiques",
           "price": "9 900 DZD",
-          "cadence": "/ mois · par site",
-          "positioning": "Pour les détaillants qui passent à plusieurs sites.",
+          "cadence": "/ mois · par boutique",
+          "positioning": "Pour les commerçants qui grandissent.",
           "features": [
-            "Tout du Site unique",
-            "Transferts de stock entre sites",
+            "Tout le niveau Boutique unique",
+            "Transferts de stock entre boutiques",
             "Catalogue et prix centraux",
-            "Reporting employés et postes",
+            "Reporting personnel et shifts",
             "Support prioritaire"
           ],
-          "cta": "Demander une démo",
+          "cta": "Demander un devis",
           "emphasized": true
         },
         {
           "name": "Entreprise",
-          "price": "Sur devis",
+          "price": "Sur mesure",
           "cadence": "contrat annuel",
-          "positioning": "Pour les groupes nécessitant contrôle et résidence.",
+          "positioning": "Pour les groupes qui ont besoin de contrôle et de résidence.",
           "features": [
-            "Tout de Multi-sites",
-            "Contrôle organisationnel ESTINAD Cloud",
+            "Tout le niveau Multi-boutiques",
+            "Options de contrôle organisationnel",
             "Contrôles de résidence et rétention",
             "SSO et exports d'audit",
             "Onboarding dédié"
-          ],
-          "cta": "Contacter le commercial",
-          "emphasized": false
-        }
-      ],
-      "restaurant": [
-        {
-          "name": "Site unique",
-          "price": "5 900 DZD",
-          "cadence": "/ mois · par site",
-          "positioning": "Pour un restaurant ou café.",
-          "features": [
-            "1 site, comptoir + service à table",
-            "Flux de commande + tickets cuisine",
-            "Gestion de la carte et modificateurs",
-            "Clôture de poste et réconciliation de caisse",
-            "Support e-mail"
-          ],
-          "cta": "Demander une démo",
-          "emphasized": false
-        },
-        {
-          "name": "Multi-sites",
-          "price": "11 900 DZD",
-          "cadence": "/ mois · par site",
-          "positioning": "Pour les marques de restauration à plusieurs sites.",
-          "features": [
-            "Tout du Site unique",
-            "Carte centrale sur tous les sites",
-            "Support affichage cuisine",
-            "Coût matière et suivi des pertes",
-            "Support prioritaire"
-          ],
-          "cta": "Demander une démo",
-          "emphasized": true
-        },
-        {
-          "name": "Entreprise",
-          "price": "Sur devis",
-          "cadence": "contrat annuel",
-          "positioning": "Pour les groupes nécessitant un contrôle central.",
-          "features": [
-            "Tout de Multi-sites",
-            "Contrôle organisationnel ESTINAD Cloud",
-            "Reporting consolidé des marges",
-            "Résidence et exports d'audit",
-            "Onboarding dédié"
-          ],
-          "cta": "Contacter le commercial",
-          "emphasized": false
-        }
-      ],
-      "clinic": [
-        {
-          "name": "Clinique unique",
-          "price": "6 900 DZD",
-          "cadence": "/ mois · par clinique",
-          "positioning": "Pour un cabinet qui se numérise.",
-          "features": [
-            "1 clinique, praticiens illimités",
-            "Planning + dossiers patients",
-            "Facturation des actes et factures",
-            "Accès par rôles",
-            "Support e-mail"
-          ],
-          "cta": "Demander une démo",
-          "emphasized": false
-        },
-        {
-          "name": "Multi-cliniques",
-          "price": "12 900 DZD",
-          "cadence": "/ mois · par clinique",
-          "positioning": "Pour les cabinets à plusieurs sites.",
-          "features": [
-            "Tout de Clinique unique",
-            "Planning cross-cliniques",
-            "Reporting financier consolidé",
-            "Rappels patients (SMS / WhatsApp)",
-            "Support prioritaire"
-          ],
-          "cta": "Demander une démo",
-          "emphasized": true
-        },
-        {
-          "name": "Entreprise",
-          "price": "Sur devis",
-          "cadence": "contrat annuel",
-          "positioning": "Pour les réseaux avec besoins de résidence.",
-          "features": [
-            "Tout de Multi-cliniques",
-            "Contrôle organisationnel ESTINAD Cloud",
-            "Options de résidence des données",
-            "SSO et exports d'audit",
-            "Onboarding dédié"
-          ],
-          "cta": "Contacter le commercial",
-          "emphasized": false
-        }
-      ],
-      "cloud": [
-        {
-          "name": "Opérateur",
-          "price": "Inclus",
-          "cadence": "avec toute offre multi-sites",
-          "positioning": "Contrôle central pour opérateurs en croissance.",
-          "features": [
-            "Gestion des sites et utilisateurs",
-            "Sauvegarde chiffrée continue",
-            "Reporting cross-produits",
-            "Accès par rôles",
-            "Support e-mail"
-          ],
-          "cta": "Demander une démo",
-          "emphasized": false
-        },
-        {
-          "name": "Organisation",
-          "price": "À partir de 19 900 DZD",
-          "cadence": "/ mois · par organisation",
-          "positioning": "Pour les opérateurs multi-marques se consolidant.",
-          "features": [
-            "Tout d'Opérateur",
-            "Marques et entités juridiques",
-            "Tableaux de bord exécutifs consolidés",
-            "Exports programmés",
-            "Support prioritaire"
-          ],
-          "cta": "Demander une démo",
-          "emphasized": true
-        },
-        {
-          "name": "Entreprise",
-          "price": "Sur devis",
-          "cadence": "contrat annuel",
-          "positioning": "Pour le contrôle entreprise et la résidence.",
-          "features": [
-            "Tout d'Organisation",
-            "SSO et audit avancé",
-            "Résidence et rétention régionales",
-            "Déploiement hybride",
-            "Gestionnaire de succès dédié"
           ],
           "cta": "Contacter le commercial",
           "emphasized": false
@@ -2945,7 +2619,7 @@ export const fr: Dictionary = {
         "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
         "related": [
           "retail",
-          "cloud"
+          "central"
         ]
       },
       "restaurants": {
@@ -2970,7 +2644,7 @@ export const fr: Dictionary = {
         "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
         "related": [
           "restaurant",
-          "cloud"
+          "central"
         ]
       },
       "clinics": {
@@ -2995,7 +2669,7 @@ export const fr: Dictionary = {
         "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
         "related": [
           "clinic",
-          "cloud"
+          "central"
         ]
       },
       "smes": {
@@ -3022,7 +2696,7 @@ export const fr: Dictionary = {
           "retail",
           "restaurant",
           "clinic",
-          "cloud"
+          "central"
         ]
       },
       "multi-branch": {
@@ -3046,7 +2720,7 @@ export const fr: Dictionary = {
         "relatedEyebrow": "Produits recommandés",
         "relatedTitle": "Les produits ESTINAD sur lesquels cette solution s'appuie.",
         "related": [
-          "cloud",
+          "central",
           "retail",
           "restaurant",
           "clinic"
@@ -3380,7 +3054,7 @@ export const fr: Dictionary = {
         "relatedEyebrow": "Bâti sur",
         "related": [
           "retail",
-          "cloud"
+          "central"
         ]
       },
       "restaurant-four-locations": {
@@ -3415,7 +3089,7 @@ export const fr: Dictionary = {
         "relatedEyebrow": "Bâti sur",
         "related": [
           "restaurant",
-          "cloud"
+          "central"
         ]
       },
       "custom-operations-sme": {
@@ -3484,7 +3158,7 @@ export const fr: Dictionary = {
         "relatedEyebrow": "Bâti sur",
         "related": [
           "retail",
-          "cloud"
+          "central"
         ]
       },
       "clinic-three-locations": {
@@ -3519,7 +3193,7 @@ export const fr: Dictionary = {
         "relatedEyebrow": "Bâti sur",
         "related": [
           "clinic",
-          "cloud"
+          "central"
         ]
       },
       "brand-website-multilingual": {
@@ -3587,7 +3261,7 @@ export const fr: Dictionary = {
         ],
         "relatedEyebrow": "Bâti sur",
         "related": [
-          "cloud",
+          "central",
           "retail",
           "restaurant"
         ]
@@ -4272,38 +3946,81 @@ export const fr: Dictionary = {
         "detailIntro": "Une configuration de comptoir fixe pour l’encaissement commerce — sélectionnée pour réduire l’incertitude à l’installation et en exploitation quotidienne.",
         "operationalFit": "Conçu pour les équipes commerce mono- ou multi-sites qui ont besoin d’un poste de caisse fiable sans improviser les périphériques au lancement.",
         "includes": [
-          { "id": "terminal", "label": "Terminal POS prêt pour ESTINAD", "blurb": "Écran de comptoir préparé pour les flux ESTINAD Retail." },
-          { "id": "scanner", "label": "Lecteur de codes-barres", "blurb": "Lecture de présentation ou portable pour la recherche produit." },
-          { "id": "printer", "label": "Imprimante de tickets", "blurb": "Imprimante thermique pour la sortie comptoir." },
-          { "id": "drawer", "label": "Tiroir-caisse", "blurb": "Tiroir standard aligné sur le chemin imprimante du kit." },
-          { "id": "setup", "label": "Option d’installation", "blurb": "Configuration et installation disponibles sur demande." }
+          {
+            "id": "terminal",
+            "label": "Terminal POS prêt pour ESTINAD",
+            "blurb": "Écran de comptoir préparé pour les flux ESTINAD Retail."
+          },
+          {
+            "id": "scanner",
+            "label": "Lecteur de codes-barres",
+            "blurb": "Lecture de présentation ou portable pour la recherche produit."
+          },
+          {
+            "id": "printer",
+            "label": "Imprimante de tickets",
+            "blurb": "Imprimante thermique pour la sortie comptoir."
+          },
+          {
+            "id": "drawer",
+            "label": "Tiroir-caisse",
+            "blurb": "Tiroir standard aligné sur le chemin imprimante du kit."
+          },
+          {
+            "id": "setup",
+            "label": "Option d’installation",
+            "blurb": "Configuration et installation disponibles sur demande."
+          }
         ],
         "specGroups": [
           {
             "title": "Système",
             "specs": [
-              { "label": "Terminal POS", "value": "Écran de comptoir avec option de préparation ESTINAD" },
-              { "label": "Posture de déploiement", "value": "Poste de comptoir fixe pour l’encaissement commerce" }
+              {
+                "label": "Terminal POS",
+                "value": "Écran de comptoir avec option de préparation ESTINAD"
+              },
+              {
+                "label": "Posture de déploiement",
+                "value": "Poste de comptoir fixe pour l’encaissement commerce"
+              }
             ]
           },
           {
             "title": "Périphériques",
             "specs": [
-              { "label": "Lecteur de codes-barres", "value": "Lecteur portable ou de présentation pour la recherche produit" },
-              { "label": "Imprimante de tickets", "value": "Imprimante thermique pour la sortie comptoir" },
-              { "label": "Tiroir-caisse", "value": "Tiroir-caisse standard compatible avec le chemin imprimante du kit" }
+              {
+                "label": "Lecteur de codes-barres",
+                "value": "Lecteur portable ou de présentation pour la recherche produit"
+              },
+              {
+                "label": "Imprimante de tickets",
+                "value": "Imprimante thermique pour la sortie comptoir"
+              },
+              {
+                "label": "Tiroir-caisse",
+                "value": "Tiroir-caisse standard compatible avec le chemin imprimante du kit"
+              }
             ]
           },
           {
             "title": "Périmètre de déploiement",
             "specs": [
-              { "label": "Option d’installation", "value": "Installation et configuration disponibles sur demande" },
-              { "label": "Configuration", "value": "Configuré selon vos besoins lors du devis" }
+              {
+                "label": "Option d’installation",
+                "value": "Installation et configuration disponibles sur demande"
+              },
+              {
+                "label": "Configuration",
+                "value": "Configuré selon vos besoins lors du devis"
+              }
             ]
           }
         ],
         "media": {
-          "hero": { "alt": "Configuration studio ESTINAD Axis Counter sur un comptoir en pierre claire" },
+          "hero": {
+            "alt": "Configuration studio ESTINAD Axis Counter sur un comptoir en pierre claire"
+          },
           "detail": {
             "alt": "Gros plan du lecteur et de l’imprimante Axis Counter",
             "caption": "Lecteur et imprimante positionnés pour un parcours de caisse coordonné."
@@ -4327,38 +4044,81 @@ export const fr: Dictionary = {
         "detailIntro": "Une configuration de comptoir pour les points de service food-service — alignée sur les pratiques de déploiement ESTINAD Restauration.",
         "operationalFit": "Pensé pour les restaurants et cafés qui ont besoin d’un comptoir de service préparé, avec un flux ticket clair et une gestion de câbles soignée.",
         "includes": [
-          { "id": "terminal", "label": "Terminal POS prêt pour ESTINAD", "blurb": "Terminal de comptoir préparé pour les flux ESTINAD Restauration." },
-          { "id": "printer", "label": "Imprimante de tickets", "blurb": "Imprimante thermique pour tickets client et sortie proche cuisine." },
-          { "id": "drawer", "label": "Tiroir-caisse", "blurb": "Tiroir standard pour l’encaissement comptoir." },
-          { "id": "accessories", "label": "Accessoires de comptoir", "blurb": "Supports et accessoires de gestion de câbles selon accord." },
-          { "id": "setup", "label": "Option d’installation", "blurb": "Configuration et installation disponibles sur demande." }
+          {
+            "id": "terminal",
+            "label": "Terminal POS prêt pour ESTINAD",
+            "blurb": "Terminal de comptoir préparé pour les flux ESTINAD Restauration."
+          },
+          {
+            "id": "printer",
+            "label": "Imprimante de tickets",
+            "blurb": "Imprimante thermique pour tickets client et sortie proche cuisine."
+          },
+          {
+            "id": "drawer",
+            "label": "Tiroir-caisse",
+            "blurb": "Tiroir standard pour l’encaissement comptoir."
+          },
+          {
+            "id": "accessories",
+            "label": "Accessoires de comptoir",
+            "blurb": "Supports et accessoires de gestion de câbles selon accord."
+          },
+          {
+            "id": "setup",
+            "label": "Option d’installation",
+            "blurb": "Configuration et installation disponibles sur demande."
+          }
         ],
         "specGroups": [
           {
             "title": "Système",
             "specs": [
-              { "label": "Terminal POS", "value": "Terminal de comptoir préparé pour les flux ESTINAD Restauration" },
-              { "label": "Posture de déploiement", "value": "Poste de service pour les opérations hospitality" }
+              {
+                "label": "Terminal POS",
+                "value": "Terminal de comptoir préparé pour les flux ESTINAD Restauration"
+              },
+              {
+                "label": "Posture de déploiement",
+                "value": "Poste de service pour les opérations hospitality"
+              }
             ]
           },
           {
             "title": "Périphériques",
             "specs": [
-              { "label": "Imprimante de tickets", "value": "Imprimante thermique pour tickets client et sortie proche cuisine" },
-              { "label": "Tiroir-caisse", "value": "Tiroir-caisse standard pour l’encaissement comptoir" },
-              { "label": "Accessoires de comptoir", "value": "Supports et accessoires de comptoir selon accord" }
+              {
+                "label": "Imprimante de tickets",
+                "value": "Imprimante thermique pour tickets client et sortie proche cuisine"
+              },
+              {
+                "label": "Tiroir-caisse",
+                "value": "Tiroir-caisse standard pour l’encaissement comptoir"
+              },
+              {
+                "label": "Accessoires de comptoir",
+                "value": "Supports et accessoires de comptoir selon accord"
+              }
             ]
           },
           {
             "title": "Périmètre de déploiement",
             "specs": [
-              { "label": "Option d’installation", "value": "Installation et configuration disponibles sur demande" },
-              { "label": "Configuration", "value": "Configuré selon vos besoins lors du devis" }
+              {
+                "label": "Option d’installation",
+                "value": "Installation et configuration disponibles sur demande"
+              },
+              {
+                "label": "Configuration",
+                "value": "Configuré selon vos besoins lors du devis"
+              }
             ]
           }
         ],
         "media": {
-          "hero": { "alt": "Système de comptoir hospitality ESTINAD Axis Service en lumière studio" },
+          "hero": {
+            "alt": "Système de comptoir hospitality ESTINAD Axis Service en lumière studio"
+          },
           "detail": {
             "alt": "Gros plan de l’imprimante Axis Service et du rail de câbles",
             "caption": "Parcours d’impression et routage de câbles préparés pour un comptoir de service."
@@ -4382,36 +4142,72 @@ export const fr: Dictionary = {
         "detailIntro": "Un kit orienté mobilité pour inventaires, réceptions et étiquetage — associé aux flux inventaire ESTINAD.",
         "operationalFit": "Pour les équipes qui ont besoin d’un poste inventaire portable pour les comptages, la réception et l’étiquetage rayon sur un ou plusieurs sites.",
         "includes": [
-          { "id": "handheld", "label": "Lecteur de codes-barres portable", "blurb": "Lecteur pour allées et réserve." },
-          { "id": "labelPrinter", "label": "Imprimante d’étiquettes", "blurb": "Imprimante pour étiquetage rayon et produit." },
-          { "id": "device", "label": "Appareil inventaire", "blurb": "Option appareil portable ou tablette pour les tâches inventaire." },
-          { "id": "setup", "label": "Accompagnement", "blurb": "Accompagnement à la mise en service disponible sur demande." }
+          {
+            "id": "handheld",
+            "label": "Lecteur de codes-barres portable",
+            "blurb": "Lecteur pour allées et réserve."
+          },
+          {
+            "id": "labelPrinter",
+            "label": "Imprimante d’étiquettes",
+            "blurb": "Imprimante pour étiquetage rayon et produit."
+          },
+          {
+            "id": "device",
+            "label": "Appareil inventaire",
+            "blurb": "Option appareil portable ou tablette pour les tâches inventaire."
+          },
+          {
+            "id": "setup",
+            "label": "Accompagnement",
+            "blurb": "Accompagnement à la mise en service disponible sur demande."
+          }
         ],
         "specGroups": [
           {
             "title": "Système",
             "specs": [
-              { "label": "Appareil inventaire", "value": "Option appareil portable ou tablette pour les tâches inventaire" },
-              { "label": "Posture de déploiement", "value": "Kit terrain mobile pour les opérations stock" }
+              {
+                "label": "Appareil inventaire",
+                "value": "Option appareil portable ou tablette pour les tâches inventaire"
+              },
+              {
+                "label": "Posture de déploiement",
+                "value": "Kit terrain mobile pour les opérations stock"
+              }
             ]
           },
           {
             "title": "Périphériques",
             "specs": [
-              { "label": "Lecteur portable", "value": "Lecteur de codes-barres pour allées et réserve" },
-              { "label": "Imprimante d’étiquettes", "value": "Imprimante pour étiquetage rayon et produit" }
+              {
+                "label": "Lecteur portable",
+                "value": "Lecteur de codes-barres pour allées et réserve"
+              },
+              {
+                "label": "Imprimante d’étiquettes",
+                "value": "Imprimante pour étiquetage rayon et produit"
+              }
             ]
           },
           {
             "title": "Périmètre de déploiement",
             "specs": [
-              { "label": "Accompagnement", "value": "Accompagnement à la mise en service disponible sur demande" },
-              { "label": "Configuration", "value": "Configuré selon vos besoins lors du devis" }
+              {
+                "label": "Accompagnement",
+                "value": "Accompagnement à la mise en service disponible sur demande"
+              },
+              {
+                "label": "Configuration",
+                "value": "Configuré selon vos besoins lors du devis"
+              }
             ]
           }
         ],
         "media": {
-          "hero": { "alt": "Kit mobile ESTINAD Axis Inventory avec lecteur, imprimante d’étiquettes et tablette" },
+          "hero": {
+            "alt": "Kit mobile ESTINAD Axis Inventory avec lecteur, imprimante d’étiquettes et tablette"
+          },
           "detail": {
             "alt": "Gros plan du lecteur portable et de l’imprimante d’étiquettes Axis Inventory",
             "caption": "Lecteur et parcours d’étiquettes préparés pour les flux de réserve."
@@ -4435,36 +4231,72 @@ export const fr: Dictionary = {
         "detailIntro": "Une approche de déploiement coordonnée pour les équipes qui standardisent des configurations certifiées sur plusieurs sites.",
         "operationalFit": "Pour les opérateurs multi-sites qui ont besoin d’un standard matériel préparé, d’une configuration site par site et d’une installation coordonnée.",
         "includes": [
-          { "id": "plan", "label": "Plan de déploiement standardisé", "blurb": "Séquence partagée couvrant sites et responsabilités." },
-          { "id": "configuration", "label": "Configuration site par site", "blurb": "Préparation matérielle par site alignée sur le plan." },
-          { "id": "preparation", "label": "Préparation pré-déploiement", "blurb": "Préparation avant installation pour réduire l’incertitude sur site." },
-          { "id": "coordination", "label": "Coordination du déploiement", "blurb": "Coordination de l’installation, de la formation et du lancement." }
+          {
+            "id": "plan",
+            "label": "Plan de déploiement standardisé",
+            "blurb": "Séquence partagée couvrant sites et responsabilités."
+          },
+          {
+            "id": "configuration",
+            "label": "Configuration site par site",
+            "blurb": "Préparation matérielle par site alignée sur le plan."
+          },
+          {
+            "id": "preparation",
+            "label": "Préparation pré-déploiement",
+            "blurb": "Préparation avant installation pour réduire l’incertitude sur site."
+          },
+          {
+            "id": "coordination",
+            "label": "Coordination du déploiement",
+            "blurb": "Coordination de l’installation, de la formation et du lancement."
+          }
         ],
         "specGroups": [
           {
             "title": "Système",
             "specs": [
-              { "label": "Plan de déploiement", "value": "Plan partagé couvrant séquence, sites et responsabilités" },
-              { "label": "Posture de déploiement", "value": "Déploiement matériel multi-sites standardisé" }
+              {
+                "label": "Plan de déploiement",
+                "value": "Plan partagé couvrant séquence, sites et responsabilités"
+              },
+              {
+                "label": "Posture de déploiement",
+                "value": "Déploiement matériel multi-sites standardisé"
+              }
             ]
           },
           {
             "title": "Périphériques",
             "specs": [
-              { "label": "Configuration par site", "value": "Configuration matérielle par site alignée sur le plan" },
-              { "label": "Kits préparés", "value": "Configurations certifiées répétées sur les sites" }
+              {
+                "label": "Configuration par site",
+                "value": "Configuration matérielle par site alignée sur le plan"
+              },
+              {
+                "label": "Kits préparés",
+                "value": "Configurations certifiées répétées sur les sites"
+              }
             ]
           },
           {
             "title": "Périmètre de déploiement",
             "specs": [
-              { "label": "Pré-déploiement", "value": "Préparation avant installation pour réduire l’incertitude sur site" },
-              { "label": "Coordination du déploiement", "value": "Coordination de l’installation, de la formation et du lancement" }
+              {
+                "label": "Pré-déploiement",
+                "value": "Préparation avant installation pour réduire l’incertitude sur site"
+              },
+              {
+                "label": "Coordination du déploiement",
+                "value": "Coordination de l’installation, de la formation et du lancement"
+              }
             ]
           }
         ],
         "media": {
-          "hero": { "alt": "Configurations de comptoir standardisées ESTINAD Axis Fleet en studio" },
+          "hero": {
+            "alt": "Configurations de comptoir standardisées ESTINAD Axis Fleet en studio"
+          },
           "detail": {
             "alt": "Préparation pré-déploiement de configurations Axis identiques",
             "caption": "Ensembles identiques préparés avant le déploiement site par site."
@@ -4701,5 +4533,59 @@ export const fr: Dictionary = {
         }
       ]
     }
+  },
+  "quote": {
+    "metaTitle": "Demander un devis",
+    "metaDescription": "Demandez un devis pour ESTINAD Retail et le matériel certifié. Les autres produits ESTINAD arrivent bientôt.",
+    "eyebrow": "Demander un devis",
+    "title": "Obtenez un devis pour ESTINAD Retail et le matériel.",
+    "intro": "Dites-nous ce dont vous avez besoin. Les devis couvrent aujourd'hui ESTINAD Retail et le matériel certifié. Les autres produits ESTINAD arrivent bientôt.",
+    "asideTitle": "Ce que nous pouvons chiffrer aujourd'hui",
+    "aside": [
+      "Logiciel ESTINAD Retail pour une ou plusieurs boutiques",
+      "Kits matériels certifiés préparés pour ESTINAD",
+      "Cadrage d'implémentation et de déploiement",
+      "Intérêt pour les produits ESTINAD à venir"
+    ],
+    "hardwareNote": "Besoin d'un devis matériel pour un kit précis ?",
+    "hardwareLink": "Ouvrir le formulaire devis matériel →",
+    "preferTitle": "Vous préférez parler ?",
+    "preferBody": "Contactez l'équipe directement à",
+    "email": "hello@estinad.com",
+    "form": {
+      "name": "Nom complet",
+      "company": "Entreprise",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "scopeLabel": "De quoi avez-vous besoin ?",
+      "scopes": [
+        "ESTINAD Retail",
+        "Matériel certifié",
+        "Retail et matériel",
+        "Intérêt pour un produit à venir"
+      ],
+      "productLabel": "Produit concerné",
+      "products": [
+        "ESTINAD Retail (Disponible)",
+        "ESTINAD Restaurant (Bientôt)",
+        "ESTINAD Inventory (Bientôt)",
+        "ESTINAD Invoices (Bientôt)",
+        "ESTINAD Workforce (Bientôt)",
+        "ESTINAD Clinic (Bientôt)",
+        "ESTINAD Central (Bientôt)",
+        "Pas encore sûr"
+      ],
+      "branches": "Nombre de sites / boutiques",
+      "messageLabel": "Dites-nous en plus",
+      "messagePlaceholder": "Partagez le nombre de sites, vos outils actuels, vos besoins matériels, ou le produit pour lequel vous voulez des infos.",
+      "submit": "Demander un devis →",
+      "sending": "Envoi…",
+      "sentTitle": "Demande de devis reçue",
+      "sentBody": "Merci. Nous vous répondrons sous un jour ouvré.",
+      "privacyNote": "En envoyant, vous acceptez notre",
+      "privacyLink": "politique de confidentialité"
+    }
   }
 };
+
+export const fr: Dictionary = deepFill(en, frRaw);

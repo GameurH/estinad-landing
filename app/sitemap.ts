@@ -3,7 +3,7 @@ import {
   locales,
   defaultLocale,
   productSlugs,
-  componentSlugs,
+  pricingProductSlugs,
   platformSlugs,
   solutionSlugs,
   serviceSlugs,
@@ -26,6 +26,7 @@ const staticRoutes = [
   "/resources",
   "/company",
   "/demo",
+  "/quote",
   "/hardware",
   "/hardware/quote",
   "/hardware/compatibility",
@@ -75,24 +76,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const priority =
       p === "/hardware" ||
       p === "/hardware/quote" ||
-      p === "/hardware/compatibility"
+      p === "/hardware/compatibility" ||
+      p === "/quote"
         ? 0.65
         : 0.8;
     add(p, priority, "weekly");
   });
 
   productSlugs.forEach((s) => {
-    add(`/products/${s}`, 0.9, "weekly");
-    add(`/products/${s}/pricing`, 0.8, "monthly");
+    const priority = s === "retail" ? 0.9 : 0.7;
+    add(`/products/${s}`, priority, "weekly");
   });
 
-  componentSlugs.forEach((s) => add(`/products/components/${s}`, 0.7, "monthly"));
+  pricingProductSlugs.forEach((s) => add(`/products/${s}/pricing`, 0.8, "monthly"));
 
-  platformSlugs.forEach((s) => add(`/platform/${s}`, 0.7, "monthly"));
+  // Legacy component pages remain accessible but are excluded from the public sitemap.
+  platformSlugs.forEach((s) => add(`/platform/${s}`, 0.5, "monthly"));
   solutionSlugs.forEach((s) => add(`/solutions/${s}`, 0.8, "monthly"));
-  serviceSlugs.forEach((s) => add(`/services/${s}`, 0.7, "monthly"));
-  caseStudySlugs.forEach((s) => add(`/case-studies/${s}`, 0.6, "monthly"));
-  partnerSlugs.forEach((s) => add(`/partners/${s}`, 0.8, "monthly"));
+  serviceSlugs.forEach((s) => add(`/services/${s}`, 0.5, "monthly"));
+  caseStudySlugs.forEach((s) => add(`/case-studies/${s}`, 0.4, "monthly"));
+  partnerSlugs.forEach((s) => add(`/partners/${s}`, 0.5, "monthly"));
   hardwareKitSlugs.forEach((s) => add(`/hardware/${s}`, 0.6, "monthly"));
   resourceRoutes.forEach((p) => add(p, 0.6, "weekly"));
   companyRoutes.forEach((p) => add(p, 0.6, "monthly"));

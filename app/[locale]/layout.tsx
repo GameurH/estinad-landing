@@ -18,12 +18,11 @@ import {
   resourcesNav,
   companyNav,
   legalNav,
-  productNames,
-  solutionNames,
-  caseStudyNames,
-  platformNames,
-  partnerNames,
+  availableProductsList,
+  comingSoonProductsList,
+  solutionsList,
 } from "@/lib/nav";
+import { hardwareKitsList } from "@/lib/hardware";
 import { hreflangMeta } from "@/lib/seo";
 
 const geistSans = Geist({
@@ -103,15 +102,69 @@ export default async function LocaleLayout({ children, params }: Props & { child
   const d = getDict(l);
   const meta = localeMeta[l];
 
+  const companyItems = companyNav(d);
+  const resourceItems = resourcesNav(d);
+
   const headerData: HeaderData = {
     locale: l,
     nav: d.nav,
-    productNames: productNames(d),
-    solutionNames: solutionNames(d),
-    caseStudyNames: caseStudyNames(d),
-    platformNames: platformNames(d),
-    partnerNames: partnerNames(d),
-    companyNav: companyNav(d),
+    common: d.common,
+    availableProducts: availableProductsList(d),
+    comingSoonProducts: comingSoonProductsList(d),
+    solutions: solutionsList(d),
+    hardwareKits: hardwareKitsList(d).map((kit) => ({
+      slug: kit.slug,
+      glyph: kit.glyph,
+      name: kit.copy.name,
+      shortName: kit.copy.shortName,
+      tagline: kit.copy.tagline,
+    })),
+    resourcesLinks: resourceItems.map((item) => ({
+      label: item.label,
+      href: item.href,
+      desc: item.desc,
+    })),
+    companyLinks: companyItems.map((item, i) => ({
+      label: item.label,
+      href: item.href,
+      desc: item.desc,
+      featured: i === companyItems.length - 1,
+      meta: i === companyItems.length - 1 ? d.nav.contact : undefined,
+    })),
+    productsMega: {
+      intro: d.nav.megaProductsIntro,
+      groupAvailable: d.products.index.groupAvailable,
+      groupComingSoon: d.products.index.groupComingSoon,
+      available: d.common.availableLabel,
+      comingSoon: d.common.comingSoonLabel,
+      requestQuote: d.common.requestQuote,
+      viewPricing: d.common.viewPricing,
+      viewAllProducts: d.common.exploreProductsArrow,
+      certifiedHardware: d.nav.certifiedHardware,
+    },
+    solutionsMega: {
+      intro: d.nav.megaSolutionsIntro,
+      viewAll: d.common.allSolutions,
+    },
+    hardwareMega: {
+      intro: d.nav.megaHardwareIntro,
+      kitsLabel: d.hardware.kitsSection.eyebrow,
+      requestQuote: d.hardware.hero.primaryCta,
+      checkCompatibility: d.hardware.hero.secondaryCta,
+      viewAll: d.nav.certifiedHardware,
+      quoteHref: "/hardware/quote",
+      compatibilityHref: "/hardware/compatibility",
+    },
+    resourcesMega: {
+      intro: d.nav.megaResourcesIntro,
+      viewAll: d.nav.resources,
+      viewAllHref: "/resources",
+    },
+    companyMega: {
+      intro: d.company.index.intro,
+      viewAll: d.nav.company,
+      viewAllHref: "/company",
+    },
     langLabels: d.lang,
     themeLabels: d.theme,
   };

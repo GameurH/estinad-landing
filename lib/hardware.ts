@@ -101,7 +101,7 @@ export const hardwareKits: readonly HardwareKitDefinition[] = [
     slug: "inventory-kit",
     demoConfiguration: true,
     glyph: "03",
-    relatedProducts: ["retail", "restaurant", "clinic"],
+    relatedProducts: ["inventory", "retail"],
     media: {
       hero: hero("inventory-kit"),
       detail: detail("inventory-kit"),
@@ -119,7 +119,7 @@ export const hardwareKits: readonly HardwareKitDefinition[] = [
     slug: "multi-site-rollout",
     demoConfiguration: true,
     glyph: "04",
-    relatedProducts: ["retail", "restaurant", "clinic", "cloud"],
+    relatedProducts: ["central", "retail"],
     media: {
       hero: hero("multi-site-rollout"),
       detail: detail("multi-site-rollout"),

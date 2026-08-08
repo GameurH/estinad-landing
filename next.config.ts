@@ -28,6 +28,23 @@ const nextConfig: NextConfig = {
         destination: "/:locale/products/components/:slug",
         permanent: true,
       },
+      // ESTINAD Cloud renamed to ESTINAD Central
+      {
+        source: `/:locale(${locales})/products/cloud`,
+        destination: "/:locale/products/central",
+        permanent: true,
+      },
+      {
+        source: `/:locale(${locales})/products/cloud/pricing`,
+        destination: "/:locale/products/central",
+        permanent: true,
+      },
+      // Coming-soon products: no public pricing pages
+      {
+        source: `/:locale(${locales})/products/:slug(restaurant|inventory|invoices|workforce|clinic|central)/pricing`,
+        destination: "/:locale/products/:slug",
+        permanent: true,
+      },
     ];
   },
 };

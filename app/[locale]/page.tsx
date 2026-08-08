@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Home, type HomeData } from "@/components/Home";
 import { getDict } from "@/lib/i18n";
-import { isLocale, type Locale, productSlugs } from "@/lib/i18n-config";
+import { isLocale, type Locale } from "@/lib/i18n-config";
+import { availableProductSlugs } from "@/lib/products";
 import { pageMeta, absoluteUrl } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -49,7 +50,7 @@ export default async function HomePage({ params }: Props) {
         publisher: { "@id": "https://estinad.com/#org" },
         inLanguage: l,
       },
-      ...productSlugs.map((slug) => {
+      ...availableProductSlugs().map((slug) => {
         const p = d.products.items[slug];
         return {
           "@type": "SoftwareApplication",

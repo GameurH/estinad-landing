@@ -1,6 +1,7 @@
 import type { Dictionary } from "@/lib/dictionaries/types";
 import {
   productSlugs,
+  productAvailability,
   solutionSlugs,
   serviceSlugs,
   caseStudySlugs,
@@ -8,7 +9,9 @@ import {
   componentSlugs,
   partnerSlugs,
   roadmapSlugs,
+  type ProductAvailability,
 } from "@/lib/i18n-config";
+import { availableProductSlugs, comingSoonProductSlugs } from "@/lib/products";
 
 const resHrefs = [
   "/resources/blog",
@@ -115,12 +118,51 @@ export type ProductCard = {
   short: string;
   oneLiner: string;
   vertical: string;
+  availability: ProductAvailability;
 };
 
 export function productsList(d: Dictionary): ProductCard[] {
   return productSlugs.map((s) => {
     const p = d.products.items[s];
-    return { slug: s, glyph: p.glyph, name: p.name, short: p.short, oneLiner: p.oneLiner, vertical: p.vertical };
+    return {
+      slug: s,
+      glyph: p.glyph,
+      name: p.name,
+      short: p.short,
+      oneLiner: p.oneLiner,
+      vertical: p.vertical,
+      availability: productAvailability[s],
+    };
+  });
+}
+
+export function availableProductsList(d: Dictionary): ProductCard[] {
+  return availableProductSlugs().map((s) => {
+    const p = d.products.items[s];
+    return {
+      slug: s,
+      glyph: p.glyph,
+      name: p.name,
+      short: p.short,
+      oneLiner: p.oneLiner,
+      vertical: p.vertical,
+      availability: productAvailability[s],
+    };
+  });
+}
+
+export function comingSoonProductsList(d: Dictionary): ProductCard[] {
+  return comingSoonProductSlugs().map((s) => {
+    const p = d.products.items[s];
+    return {
+      slug: s,
+      glyph: p.glyph,
+      name: p.name,
+      short: p.short,
+      oneLiner: p.oneLiner,
+      vertical: p.vertical,
+      availability: productAvailability[s],
+    };
   });
 }
 

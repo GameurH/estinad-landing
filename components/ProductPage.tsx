@@ -2,20 +2,22 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section, SectionHeader, Eyebrow, Button, Tag, NodeDivider } from "@/components/ui";
 import { Monogram } from "@/components/Monogram";
-import { lp, type Locale } from "@/lib/i18n-config";
+import { lp, type Locale, type ProductAvailability } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
 
 export type ProductPageData = {
   locale: Locale;
   slug: string;
   eyebrow: string;
+  availability: ProductAvailability;
   p: Dictionary["products"]["items"][keyof Dictionary["products"]["items"]];
   c: Dictionary["common"];
 };
 
 export function ProductPageView({ data }: { data: ProductPageData }) {
-  const { locale, slug, eyebrow, p, c } = data;
+  const { locale, slug, eyebrow, availability, p, c } = data;
   const L = (href: string) => lp(locale, href);
+  const isAvailable = availability === "available";
 
   return (
     <>
@@ -24,8 +26,16 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         eyebrow={eyebrow}
         title={p.byline}
         intro={p.oneLiner}
-        cta={{ label: c.requestDemoArrow, href: L("/demo") }}
-        secondaryCta={{ label: c.viewPricing, href: L(`/products/${slug}/pricing`) }}
+        cta={
+          isAvailable
+            ? { label: c.requestQuoteArrow, href: L(`/quote?product=${slug}`) }
+            : { label: c.registerInterest, href: L("/company/contact") }
+        }
+        secondaryCta={
+          isAvailable
+            ? { label: c.viewPricing, href: L(`/products/${slug}/pricing`) }
+            : { label: c.exploreProductsArrow, href: L("/products") }
+        }
       />
 
       <Section>
@@ -265,10 +275,21 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
                 {p.ctaTitle}
               </h2>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href={L("/demo")}>{c.requestDemoArrow}</Button>
-                <Button href={L(`/products/${slug}/pricing`)} variant="secondary">
-                  {c.viewPricing}
-                </Button>
+                {isAvailable ? (
+                  <>
+                    <Button href={L(`/quote?product=${slug}`)}>{c.requestQuoteArrow}</Button>
+                    <Button href={L(`/products/${slug}/pricing`)} variant="secondary">
+                      {c.viewPricing}
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button href={L("/company/contact")}>{c.registerInterest}</Button>
+                    <Button href={L("/products/retail")} variant="secondary">
+                      {c.exploreProductsArrow}
+                    </Button>
+                  </>
+                )}
               </div>
             </div>
             <div className="hairline bg-surface p-8">

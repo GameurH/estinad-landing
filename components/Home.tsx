@@ -66,7 +66,7 @@ export function Home({ data }: { data: HomeData }) {
           </Reveal>
           <Reveal delay={0.24}>
             <div className={`flex flex-wrap items-center justify-center gap-4 ${isAr ? "mt-12" : "mt-11"}`}>
-              <Button href={L("/demo")}>{h2.hero.cta1}</Button>
+              <Button href={L("/quote")}>{h2.hero.cta1}</Button>
               <Button href={L("/products")} variant="secondary">
                 {h2.hero.cta2}
               </Button>
@@ -216,7 +216,7 @@ export function Home({ data }: { data: HomeData }) {
             </p>
           </Reveal>
           <Reveal delay={0.18} className="mt-12">
-            <Button href={L("/demo")}>{h2.finalCta.cta}</Button>
+            <Button href={L("/quote")}>{h2.finalCta.cta}</Button>
           </Reveal>
         </div>
       </section>
