@@ -1,13 +1,16 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { navSectionIcon } from "@/components/nav/NavSectionIcons";
 
 type Props = {
   labels: ThemeLabels;
+  variant?: "default" | "card";
 };
 
 export type ThemeLabels = {
   toggleLabel: string;
+  sectionLabel: string;
   light: string;
   dark: string;
 };
@@ -44,21 +47,55 @@ function subscribe(callback: () => void): () => void {
   };
 }
 
-export function ThemeToggle({ labels }: Props) {
+function applyTheme(next: Theme) {
+  document.documentElement.classList.toggle("dark", next === "dark");
+  try {
+    localStorage.setItem(STORAGE_KEY, next);
+  } catch {
+    /* ignore storage failures */
+  }
+  window.dispatchEvent(new Event(THEME_EVENT));
+}
+
+export function ThemeToggle({ labels, variant = "default" }: Props) {
   const theme = useSyncExternalStore(subscribe, getTheme, getServerTheme);
+  const isLight = theme === "light";
 
   const toggle = () => {
-    const next: Theme = theme === "light" ? "dark" : "light";
-    document.documentElement.classList.toggle("dark", next === "dark");
-    try {
-      localStorage.setItem(STORAGE_KEY, next);
-    } catch {
-      /* ignore storage failures */
-    }
-    window.dispatchEvent(new Event(THEME_EVENT));
+    applyTheme(isLight ? "dark" : "light");
   };
 
-  const isLight = theme === "light";
+  if (variant === "card") {
+    return (
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label={labels.toggleLabel}
+        className="flex w-full items-center justify-between gap-3 rounded-[16px] border border-line bg-card px-4 py-3.5 text-start transition-colors active:bg-surface-2"
+      >
+        <span className="flex items-center gap-3 min-w-0">
+          <span className="text-ink">{navSectionIcon("sun", "h-5 w-5")}</span>
+          <span className="text-[0.9375rem] font-medium text-ink">
+            {isLight ? labels.light : labels.dark}
+          </span>
+        </span>
+        <span
+          className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full p-1 transition-colors ${
+            isLight ? "bg-surface-2 border border-line" : "bg-ink"
+          }`}
+          aria-hidden
+        >
+          <span
+            className={`h-5 w-5 rounded-full shadow-sm transition-transform ${
+              isLight
+                ? "translate-x-0 bg-card border border-line rtl:translate-x-0"
+                : "translate-x-5 bg-bg rtl:-translate-x-5"
+            }`}
+          />
+        </span>
+      </button>
+    );
+  }
 
   return (
     <button

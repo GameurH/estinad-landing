@@ -31,6 +31,7 @@ export type HeaderData = {
   companyMega: LinksMegaLabels;
   langLabels: { switchLabel: string; en: string; fr: string; ar: string };
   themeLabels: ThemeLabels;
+  mobileNav: Dictionary["mobileNav"];
 };
 
 export function Header({ data }: { data: HeaderData }) {
@@ -51,6 +52,7 @@ export function Header({ data }: { data: HeaderData }) {
     companyMega,
     langLabels,
     themeLabels,
+    mobileNav,
   } = data;
   const pathname = usePathname();
   const [open, setOpen] = useState<string | null>(null);
@@ -151,19 +153,36 @@ export function Header({ data }: { data: HeaderData }) {
 
   const mobileSections = primary.map((item) => {
     if (item.kind === "products") {
-      return { kind: "products" as const, label: item.label, href: item.href };
+      return {
+        kind: "products" as const,
+        label: item.label,
+        href: item.href,
+        desc: mobileNav.productsDesc,
+      };
     }
     if (item.kind === "solutions") {
-      return { kind: "solutions" as const, label: item.label, href: item.href };
+      return {
+        kind: "solutions" as const,
+        label: item.label,
+        href: item.href,
+        desc: mobileNav.solutionsDesc,
+      };
     }
     if (item.kind === "hardware") {
-      return { kind: "hardware" as const, label: item.label, href: item.href };
+      return {
+        kind: "hardware" as const,
+        label: item.label,
+        href: item.href,
+        desc: mobileNav.hardwareDesc,
+      };
     }
     if (item.kind === "resources") {
       return {
         kind: "links" as const,
+        sectionKind: "resources" as const,
         label: item.label,
         href: item.href,
+        desc: mobileNav.resourcesDesc,
         links: resourcesLinks,
         intro: resourcesMega.intro,
         viewAllLabel: resourcesMega.viewAll,
@@ -171,8 +190,10 @@ export function Header({ data }: { data: HeaderData }) {
     }
     return {
       kind: "links" as const,
+      sectionKind: "company" as const,
       label: item.label,
       href: item.href,
+      desc: mobileNav.companyDesc,
       links: companyLinks,
       intro: companyMega.intro,
       viewAllLabel: companyMega.viewAll,
@@ -204,8 +225,14 @@ export function Header({ data }: { data: HeaderData }) {
                   onClick={() => setOpen(null)}
                   aria-expanded={open === item.label}
                   aria-haspopup="menu"
-                  className={`flex items-center gap-1.5 px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
-                    isActive(item.href) ? "text-ink" : "text-ink-secondary hover:text-ink"
+                  className={`relative flex items-center gap-1.5 px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
+                    open === item.label || isActive(item.href)
+                      ? "text-ink"
+                      : "text-ink-secondary hover:text-ink"
+                  } ${
+                    open === item.label
+                      ? "after:absolute after:start-2.5 after:end-2.5 after:bottom-0.5 after:h-px after:bg-ink"
+                      : ""
                   }`}
                 >
                   {item.label}
@@ -270,7 +297,11 @@ export function Header({ data }: { data: HeaderData }) {
           </div>
 
           <button
-            className="lg:hidden flex flex-col gap-1.5 p-3 relative z-50"
+            className={`lg:hidden relative z-50 inline-flex items-center justify-center transition-colors ${
+              mobileOpen
+                ? "h-10 w-10 rounded-full border border-line bg-card text-ink"
+                : "flex flex-col gap-1.5 p-3"
+            }`}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => {
@@ -278,9 +309,17 @@ export function Header({ data }: { data: HeaderData }) {
               setMobileOpen((v) => !v);
             }}
           >
-            <span className={`h-px w-6 bg-ink transition-transform ${mobileOpen ? "translate-y-2 rotate-45" : ""}`} />
-            <span className={`h-px w-6 bg-ink transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
-            <span className={`h-px w-6 bg-ink transition-transform ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+            {mobileOpen ? (
+              <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                <path d="M4 4l8 8M12 4l-8 8" strokeLinecap="round" />
+              </svg>
+            ) : (
+              <>
+                <span className="h-px w-6 bg-ink" />
+                <span className="h-px w-6 bg-ink" />
+                <span className="h-px w-6 bg-ink" />
+              </>
+            )}
           </button>
         </div>
 
@@ -356,6 +395,8 @@ export function Header({ data }: { data: HeaderData }) {
           solutionsIntro={solutionsMega.intro}
           allSolutionsLabel={solutionsMega.viewAll}
           requestQuoteLabel={nav.requestQuote}
+          trustLine={mobileNav.trustLine}
+          themeSectionLabel={themeLabels.sectionLabel}
           cardLabels={cardLabels}
           langLabels={langLabels}
           themeLabels={themeLabels}

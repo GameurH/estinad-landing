@@ -3,8 +3,15 @@
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
 import { ProductNavCard } from "@/components/nav/ProductNavCard";
+import { productIcon } from "@/components/nav/ProductIcons";
 import { lp, type Locale } from "@/lib/i18n-config";
 import type { ProductCard } from "@/lib/nav";
+
+export type ProductsMegaHighlight = {
+  icon: string;
+  title: string;
+  body: string;
+};
 
 export type ProductsMegaLabels = {
   intro: string;
@@ -15,7 +22,10 @@ export type ProductsMegaLabels = {
   requestQuote: string;
   viewPricing: string;
   viewAllProducts: string;
-  certifiedHardware: string;
+  highlights: ProductsMegaHighlight[];
+  helpTitle: string;
+  helpBody: string;
+  talkExpert: string;
 };
 
 type Props = {
@@ -48,58 +58,78 @@ export function ProductsMegaMenu({
       onMouseLeave={onMouseLeave}
     >
       <div
-        className={`bg-card hairline rounded-card shadow-float overflow-hidden origin-top ${
+        className={`bg-card border border-line rounded-[20px] shadow-float overflow-hidden origin-top ${
           reduceMotion ? "" : "animate-mega-in"
         }`}
         role="menu"
         aria-label={labels.viewAllProducts}
       >
-        <div className="px-5 pt-4 pb-3 hairline-b">
-          <p className="text-[11px] font-mono uppercase tracking-[0.16em] text-muted">
+        {/* Top banner */}
+        <div className="px-5 md:px-6 py-3 bg-surface border-b border-line">
+          <p className="text-[10px] md:text-[11px] font-mono uppercase tracking-[0.18em] text-muted leading-relaxed">
             {labels.intro}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-[minmax(280px,1.05fr)_minmax(0,1.6fr)]">
-          <div className="lg:border-e lg:border-line">
-            <div className="px-5 pt-4 pb-2">
-              <div className="flex items-center gap-3">
-                <span className="h-1.5 w-1.5 rotate-45 border border-ink" />
-                <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
-                  {labels.groupAvailable}
-                </span>
-              </div>
+        <div className="grid lg:grid-cols-[minmax(300px,0.95fr)_minmax(0,1.55fr)]">
+          {/* Available now */}
+          <div className="p-4 md:p-5 lg:border-e lg:border-line flex flex-col">
+            <div className="mb-3 flex items-center gap-2.5">
+              <span className="h-1.5 w-1.5 rotate-45 border border-ink" />
+              <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
+                {labels.groupAvailable}
+              </span>
             </div>
-            <div className="px-3 pb-3">
-              {featured ? (
-                <div className="overflow-hidden rounded-[14px]">
-                  <ProductNavCard
-                    product={featured}
-                    locale={locale}
-                    labels={labels}
-                    variant="featured"
-                    onNavigate={onNavigate}
-                    style={
-                      reduceMotion
-                        ? undefined
-                        : { animation: "mega-card-in 220ms ease-out both" }
-                    }
-                  />
-                </div>
-              ) : null}
-            </div>
+
+            {featured ? (
+              <ProductNavCard
+                product={featured}
+                locale={locale}
+                labels={labels}
+                variant="featured"
+                onNavigate={onNavigate}
+                style={
+                  reduceMotion
+                    ? undefined
+                    : { animation: "mega-card-in 220ms ease-out both" }
+                }
+              />
+            ) : null}
+
+            <ul className="mt-5 flex flex-col gap-3.5">
+              {labels.highlights.map((item) => (
+                <li key={item.title} className="flex items-start gap-3">
+                  <span className="mt-0.5 text-ink shrink-0">
+                    {productIcon(item.icon, "h-4 w-4")}
+                  </span>
+                  <div>
+                    <div className="text-sm font-medium text-ink">{item.title}</div>
+                    <p className="mt-0.5 text-xs leading-relaxed text-muted">{item.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href={L("/products")}
+              onClick={onNavigate}
+              className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:opacity-70 transition-opacity"
+            >
+              {labels.viewAllProducts}
+              <span className="inline-block rtl:-scale-x-100 text-muted">→</span>
+            </Link>
           </div>
 
-          <div className="bg-surface/60">
-            <div className="px-5 pt-4 pb-2">
-              <div className="flex items-center gap-3">
-                <span className="h-1.5 w-1.5 rotate-45 border border-muted-2" />
-                <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
-                  {labels.groupComingSoon}
-                </span>
-              </div>
+          {/* Coming soon */}
+          <div className="p-4 md:p-5 bg-surface/40">
+            <div className="mb-3 flex items-center gap-2.5">
+              <span className="h-1.5 w-1.5 rotate-45 border border-muted-2" />
+              <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
+                {labels.groupComingSoon}
+              </span>
             </div>
-            <div className="grid gap-px sm:grid-cols-2 xl:grid-cols-3 hairline bg-line mx-3 mb-3 overflow-hidden rounded-[14px]">
+
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
               {comingSoon.map((product, i) => (
                 <ProductNavCard
                   key={product.slug}
@@ -122,22 +152,27 @@ export function ProductsMegaMenu({
           </div>
         </div>
 
-        <div className="hairline-t px-5 py-3 flex flex-wrap items-center justify-between gap-3 bg-card">
+        {/* Help footer */}
+        <div className="border-t border-line px-5 md:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3 bg-card">
+          <div className="flex items-center gap-3 min-w-0">
+            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line bg-surface text-ink">
+              {productIcon("help", "h-4 w-4")}
+            </span>
+            <div className="min-w-0">
+              <div className="text-sm font-medium text-ink">{labels.helpTitle}</div>
+              <p className="text-xs text-muted truncate sm:whitespace-normal">
+                {labels.helpBody}
+              </p>
+            </div>
+          </div>
           <Link
-            href={L("/products")}
+            href={L("/company/contact")}
             onClick={onNavigate}
-            className="text-xs font-mono uppercase tracking-[0.16em] text-ink hover:opacity-70 transition-opacity"
+            className="inline-flex items-center gap-2 text-sm font-medium text-ink hover:opacity-70 transition-opacity"
           >
-            {labels.viewAllProducts}{" "}
-            <span className="inline-block rtl:-scale-x-100">→</span>
-          </Link>
-          <Link
-            href={L("/hardware")}
-            onClick={onNavigate}
-            className="text-xs font-mono uppercase tracking-[0.16em] text-muted hover:text-ink transition-colors"
-          >
-            {labels.certifiedHardware}{" "}
-            <span className="inline-block rtl:-scale-x-100">→</span>
+            <span className="text-muted">{productIcon("expert", "h-4 w-4")}</span>
+            {labels.talkExpert}
+            <span className="inline-block rtl:-scale-x-100 text-muted">→</span>
           </Link>
         </div>
       </div>

@@ -23,8 +23,18 @@ export const en = {
 
   theme: {
     toggleLabel: "Toggle theme",
+    sectionLabel: "Theme",
     light: "Light",
     dark: "Dark",
+  },
+
+  mobileNav: {
+    productsDesc: "Explore our product suite",
+    solutionsDesc: "Industry solutions",
+    hardwareDesc: "Certified devices",
+    resourcesDesc: "Guides, docs & more",
+    companyDesc: "About ESTINAD",
+    trustLine: "Secure · Reliable · Enterprise grade",
   },
 
   common: {
@@ -99,6 +109,32 @@ export const en = {
     megaDeployment: "Local-first, cloud-enhanced",
     megaProductsIntro:
       "ESTINAD Retail is available today. Additional products are in development as part of the ESTINAD portfolio.",
+    megaProductsHelpTitle: "Need help choosing?",
+    megaProductsHelpBody: "Our team can help you find the right solution.",
+    megaProductsTalkExpert: "Talk to an expert",
+    megaProductsExploreAll: "Explore all products",
+    megaProductsHighlights: [
+      {
+        icon: "platform",
+        title: "Unified platform",
+        body: "One ledger for all operations and data.",
+      },
+      {
+        icon: "secure",
+        title: "Local-first by design",
+        body: "Store operations stay online even when the cloud does not.",
+      },
+      {
+        icon: "insights",
+        title: "Clear store performance",
+        body: "Sales, stock, and staff visibility in one calm view.",
+      },
+      {
+        icon: "scale",
+        title: "Built to expand",
+        body: "Start with Retail; grow into the ESTINAD portfolio over time.",
+      },
+    ],
     softwareProducts: "Software Products",
     certifiedHardware: "Certified Hardware",
     compareSolutions: "Compare Solutions",

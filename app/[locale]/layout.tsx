@@ -139,8 +139,11 @@ export default async function LocaleLayout({ children, params }: Props & { child
       comingSoon: d.common.comingSoonLabel,
       requestQuote: d.common.requestQuote,
       viewPricing: d.common.viewPricing,
-      viewAllProducts: d.common.exploreProductsArrow,
-      certifiedHardware: d.nav.certifiedHardware,
+      viewAllProducts: d.nav.megaProductsExploreAll,
+      highlights: d.nav.megaProductsHighlights,
+      helpTitle: d.nav.megaProductsHelpTitle,
+      helpBody: d.nav.megaProductsHelpBody,
+      talkExpert: d.nav.megaProductsTalkExpert,
     },
     solutionsMega: {
       intro: d.nav.megaSolutionsIntro,
@@ -167,6 +170,7 @@ export default async function LocaleLayout({ children, params }: Props & { child
     },
     langLabels: d.lang,
     themeLabels: d.theme,
+    mobileNav: d.mobileNav,
   };
 
   const footerData: FooterData = {
