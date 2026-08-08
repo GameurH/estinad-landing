@@ -71,6 +71,40 @@ export function retailFeatureIcon(icon: string, className?: string) {
           <path d="M9 8V6.5A3 3 0 0 1 12 3.5 3 3 0 0 1 15 6.5V8" />
         </IconFrame>
       );
+    case "checkout":
+      return (
+        <IconFrame className={className}>
+          <rect x="3" y="5" width="18" height="12" rx="1.5" />
+          <path d="M8 21h8M12 17v4" />
+          <path d="M7 10h4M7 13h6" />
+        </IconFrame>
+      );
+    case "staff":
+      return (
+        <IconFrame className={className}>
+          <circle cx="9" cy="8" r="2.5" />
+          <circle cx="16" cy="9" r="2" />
+          <path d="M3.5 19c.8-3 2.8-4.5 5.5-4.5s4.7 1.5 5.5 4.5" />
+          <path d="M14 14.2c1.5-.4 3.1-.2 4.5 1.1.7.7 1.2 1.7 1.5 2.7" />
+        </IconFrame>
+      );
+    case "orders":
+      return (
+        <IconFrame className={className}>
+          <path d="M7 3h8l4 4v14H7V3Z" />
+          <path d="M15 3v4h4" />
+          <path d="M10 12h5M10 16h3" />
+        </IconFrame>
+      );
+    case "fulfillment":
+      return (
+        <IconFrame className={className}>
+          <path d="M3 7h13v10H3z" />
+          <path d="M16 10h3.5L21 13v4h-5" />
+          <circle cx="7.5" cy="18.5" r="1.5" />
+          <circle cx="17.5" cy="18.5" r="1.5" />
+        </IconFrame>
+      );
     default:
       return (
         <IconFrame className={className}>

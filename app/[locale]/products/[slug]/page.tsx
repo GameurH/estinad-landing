@@ -80,6 +80,10 @@ export default async function ProductRoute({ params }: Props) {
           homeLabel: d.nav.home,
           productsLabel: d.nav.products,
           retailLanding: slug === "retail" ? d.products.items.retail.landing : undefined,
+          restaurantLanding:
+            slug === "restaurant" ? d.products.items.restaurant.landing : undefined,
+          invoicesLanding:
+            slug === "invoices" ? d.products.items.invoices.landing : undefined,
         }}
       />
     </>

@@ -785,6 +785,145 @@ export const en = {
               body: "Centralize operations and data across all locations.",
             },
           ],
+          operationsCarousel: {
+            cta: "Explore retail →",
+            prevLabel: "Previous feature",
+            nextLabel: "Next feature",
+            slides: [
+              {
+                id: "retail-operations",
+                icon: "bag",
+                title: "Retail Operations",
+                description:
+                  "Run every part of your retail operations with real-time visibility, smarter inventory control, and a faster checkout experience.",
+                tabLabel: "Retail Operations",
+                tabBody: "Run your store smarter",
+                imageSrc: "/images/retail/ops-01.png",
+                imageAlt: "ESTINAD Retail operations dashboard",
+                features: [
+                  {
+                    icon: "checkout",
+                    title: "Checkout Management",
+                    body: "Keep every checkout fast, reliable, and connected across your store.",
+                  },
+                  {
+                    icon: "inventory",
+                    title: "Inventory Management",
+                    body: "Track stock levels, product movement, and availability in real time.",
+                  },
+                  {
+                    icon: "staff",
+                    title: "Staff & Store Management",
+                    body: "Manage teams, roles, shifts, and store operations from one place.",
+                  },
+                  {
+                    icon: "orders",
+                    title: "Orders & Fulfillment",
+                    body: "Connect in-store, pickup, and online orders into one streamlined workflow.",
+                  },
+                ],
+              },
+              {
+                id: "inventory-control",
+                icon: "inventory",
+                title: "Inventory Control",
+                description:
+                  "Keep every unit accounted for — receiving, transfers, counts, and low-stock alerts in one trusted ledger.",
+                tabLabel: "Inventory Control",
+                tabBody: "Track every item in real time",
+                imageSrc: "/images/retail/ops-02.png",
+                imageAlt: "ESTINAD Retail inventory dashboard",
+                features: [
+                  {
+                    icon: "inventory",
+                    title: "Stock visibility",
+                    body: "See on-hand, in-transit, and reserved stock across branches instantly.",
+                  },
+                  {
+                    icon: "orders",
+                    title: "Receiving & transfers",
+                    body: "Receive against purchase orders and move stock with a full audit trail.",
+                  },
+                  {
+                    icon: "analytics",
+                    title: "Counts & adjustments",
+                    body: "Run cycle counts and approve variances without spreadsheet chaos.",
+                  },
+                  {
+                    icon: "products",
+                    title: "Variant accuracy",
+                    body: "Size and color variants stay exact from shelf to report.",
+                  },
+                ],
+              },
+              {
+                id: "staff-management",
+                icon: "staff",
+                title: "Staff Management",
+                description:
+                  "Give every role the right access — from counter staff to store managers — with clear accountability.",
+                tabLabel: "Staff Management",
+                tabBody: "Empower your team",
+                imageSrc: "/images/retail/ops-03.png",
+                imageAlt: "ESTINAD Retail staff management view",
+                features: [
+                  {
+                    icon: "staff",
+                    title: "Roles & permissions",
+                    body: "Scope access by role so the right people see the right data.",
+                  },
+                  {
+                    icon: "checkout",
+                    title: "Shift operations",
+                    body: "Open, close, and reconcile shifts with clean cash variance tracking.",
+                  },
+                  {
+                    icon: "analytics",
+                    title: "Staff performance",
+                    body: "Track sales by associate without slowing the counter.",
+                  },
+                  {
+                    icon: "stores",
+                    title: "Multi-store teams",
+                    body: "Manage people across branches from one calm view.",
+                  },
+                ],
+              },
+              {
+                id: "orders-fulfillment",
+                icon: "fulfillment",
+                title: "Orders & Fulfillment",
+                description:
+                  "Unify in-store, pickup, and fulfillment workflows so every order moves cleanly from capture to handoff.",
+                tabLabel: "Orders & Fulfillment",
+                tabBody: "Fulfill every order seamlessly",
+                imageSrc: "/images/retail/ops-04.png",
+                imageAlt: "ESTINAD Retail orders and fulfillment view",
+                features: [
+                  {
+                    icon: "orders",
+                    title: "Unified order inbox",
+                    body: "Capture and track orders from counter, pickup, and online channels.",
+                  },
+                  {
+                    icon: "fulfillment",
+                    title: "Fulfillment status",
+                    body: "Move orders through prep, ready, and collected with clear status.",
+                  },
+                  {
+                    icon: "checkout",
+                    title: "Returns & exchanges",
+                    body: "Handle returns against the same ledger that closed the sale.",
+                  },
+                  {
+                    icon: "analytics",
+                    title: "Order insights",
+                    body: "See volume, ticket size, and channel mix without another tool.",
+                  },
+                ],
+              },
+            ],
+          },
         },
       },
       restaurant: {
@@ -869,6 +1008,73 @@ export const en = {
           { q: "Is this a separate brand?", a: "No. It is ESTINAD Restaurant — ESTINAD plus a clear product descriptor under the single master brand." },
         ],
         ctaTitle: "ESTINAD Restaurant is coming soon.",
+        landing: {
+          badge: "In development",
+          callouts: [
+            { icon: "kitchen", label: "Kitchen", value: "12 active orders" },
+            { icon: "floor", label: "Floor", value: "6 tables open" },
+            { icon: "orders", label: "Orders", value: "24 new today" },
+          ],
+          pillars: [
+            {
+              icon: "unified",
+              title: "Unified operations",
+              body: "Floor, kitchen, and orders in one connected flow.",
+            },
+            {
+              icon: "faster",
+              title: "Faster service",
+              body: "Streamline processes and reduce wait times.",
+            },
+            {
+              icon: "insights",
+              title: "Smarter insights",
+              body: "Real-time data for better decisions.",
+            },
+            {
+              icon: "enterprise",
+              title: "Enterprise grade",
+              body: "Secure, reliable, and built to scale.",
+            },
+          ],
+          builtTitle: "Built for modern restaurants",
+          builtBody:
+            "ESTINAD Restaurant is designed to coordinate the floor, kitchen, and register as a single flow for quick-service and table-service restaurants. It is not available to purchase or deploy yet.",
+          builtPoints: [
+            "Developed as part of the ESTINAD product portfolio",
+            "Integrated with ESTINAD hardware ecosystem",
+            "Focused on reliability, performance, and scale",
+          ],
+          expectEyebrow: "What to expect",
+          expectTitle: "A complete restaurant operations platform",
+          expectLink: "Explore all capabilities",
+          expectCards: [
+            {
+              icon: "floor",
+              title: "Floor management",
+              body: "Table management, staff operations, and guest experience.",
+            },
+            {
+              icon: "kitchen",
+              title: "Kitchen management",
+              body: "Real-time order routing, kitchen display, and preparation tracking.",
+            },
+            {
+              icon: "orders",
+              title: "Order management",
+              body: "Unified ordering across dine-in, takeaway, and delivery.",
+            },
+            {
+              icon: "insights",
+              title: "Business insights",
+              body: "Real-time reports and analytics to grow your business.",
+            },
+          ],
+          interestEyebrow: "Be the first to know",
+          interestTitle: "Register your interest",
+          interestBody: "Get early updates on ESTINAD Restaurant.",
+          interestCta: "Register interest →",
+        },
       },
       inventory: {
         glyph: "IV",
@@ -997,6 +1203,64 @@ export const en = {
           { q: "How does it fit the portfolio?", a: "It sits alongside Retail and the other planned ESTINAD products." },
         ],
         ctaTitle: "ESTINAD Invoices is coming soon.",
+        landing: {
+          crumbComingSoon: "Coming soon",
+          spotlightTitle: "Built for operators",
+          spotlightBody:
+            "Clean documents, clear collections, and a ledger you can trust — without bolting on another finance tool.",
+          features: [
+            {
+              icon: "document",
+              title: "Professional invoicing",
+              body: "Issue numbered invoices and credit notes with consistent terms and tax handling.",
+            },
+            {
+              icon: "payment",
+              title: "Payment tracking",
+              body: "Record settlements, partial payments, and outstanding balances in one place.",
+            },
+            {
+              icon: "statement",
+              title: "Statements & aging",
+              body: "See what is due, overdue, and collected without spreadsheet reconstruction.",
+            },
+            {
+              icon: "reminder",
+              title: "Collection clarity",
+              body: "Surface reminder-ready lists so follow-up stays disciplined and timely.",
+            },
+            {
+              icon: "secure",
+              title: "Audit-ready control",
+              body: "Role-based access and document trails designed for operational finance.",
+            },
+          ],
+          soonEyebrow: "Coming soon",
+          soonTitle: "Designed for simple, precise, controlled billing.",
+          soonBody:
+            "ESTINAD Invoices is in development as part of the ESTINAD product portfolio. It is designed for operators who need disciplined invoicing, statements, and payment tracking — not available to purchase or deploy yet.",
+          invoiceLabel: "Invoice",
+          invoiceAmount: "$2,850.00",
+          invoiceStatus: "Paid",
+          invoiceMeta: "Illustrative document concept · ESTINAD Invoices",
+          footers: [
+            {
+              icon: "sectors",
+              title: "Built for every sector",
+              body: "Retail, services, and multi-site operators who need clean documents.",
+            },
+            {
+              icon: "ecosystem",
+              title: "Integrated with ESTINAD",
+              body: "Designed to sit alongside Retail and the broader ESTINAD portfolio.",
+            },
+            {
+              icon: "future",
+              title: "Ready for what comes next",
+              body: "A clear product path — visible now, launched when it is ready.",
+            },
+          ],
+        },
       },
       workforce: {
         glyph: "WF",

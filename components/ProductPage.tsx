@@ -4,7 +4,15 @@ import { Section, SectionHeader, Eyebrow, Button, Tag, NodeDivider } from "@/com
 import { Monogram } from "@/components/Monogram";
 import { RetailHero, type RetailLandingCopy } from "@/components/retail/RetailHero";
 import { RetailTrust } from "@/components/retail/RetailTrust";
-import { RetailFeatureRail } from "@/components/retail/RetailFeatureRail";
+import { RetailOperationsCarousel } from "@/components/retail/RetailOperationsCarousel";
+import {
+  RestaurantLanding,
+  type RestaurantLandingCopy,
+} from "@/components/restaurant/RestaurantLanding";
+import {
+  InvoicesLanding,
+  type InvoicesLandingCopy,
+} from "@/components/invoices/InvoicesLanding";
 import { lp, type Locale, type ProductAvailability } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
 
@@ -18,14 +26,30 @@ export type ProductPageData = {
   homeLabel: string;
   productsLabel: string;
   retailLanding?: RetailLandingCopy;
+  restaurantLanding?: RestaurantLandingCopy;
+  invoicesLanding?: InvoicesLandingCopy;
 };
 
 export function ProductPageView({ data }: { data: ProductPageData }) {
-  const { locale, slug, eyebrow, availability, p, c, homeLabel, productsLabel, retailLanding } =
-    data;
+  const {
+    locale,
+    slug,
+    eyebrow,
+    availability,
+    p,
+    c,
+    homeLabel,
+    productsLabel,
+    retailLanding,
+    restaurantLanding,
+    invoicesLanding,
+  } = data;
   const L = (href: string) => lp(locale, href);
   const isAvailable = availability === "available";
   const isRetail = slug === "retail" && retailLanding;
+  const isRestaurant = slug === "restaurant" && restaurantLanding;
+  const isInvoices = slug === "invoices" && invoicesLanding;
+  const hasCustomLanding = Boolean(isRetail || isRestaurant || isInvoices);
 
   return (
     <>
@@ -42,12 +66,31 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
             viewPricingLabel={c.viewPricing}
           />
           <RetailTrust label={retailLanding.trustLabel} marks={retailLanding.trustMarks} />
-          <RetailFeatureRail
-            title={retailLanding.featuresTitle}
-            intro={retailLanding.featuresIntro}
-            cards={retailLanding.featureCards}
+          <RetailOperationsCarousel
+            locale={locale}
+            copy={retailLanding.operationsCarousel}
           />
         </>
+      ) : isRestaurant ? (
+        <RestaurantLanding
+          locale={locale}
+          byline={p.byline}
+          oneLiner={p.oneLiner}
+          landing={restaurantLanding}
+          registerInterestLabel={c.registerInterest}
+          exploreProductsLabel={c.exploreProductsArrow}
+        />
+      ) : isInvoices ? (
+        <InvoicesLanding
+          locale={locale}
+          byline={p.byline}
+          oneLiner={p.oneLiner}
+          name={p.name}
+          productsLabel={productsLabel}
+          landing={invoicesLanding}
+          registerInterestLabel={c.registerInterest}
+          exploreProductsLabel={c.exploreProductsArrow}
+        />
       ) : (
         <>
           <PageHero
@@ -127,8 +170,8 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </div>
       </Section>
 
-      {/* Visual concept — skipped on Retail (hero image covers this) */}
-      {!isRetail && (
+      {/* Visual concept — skipped when custom landing covers this */}
+      {!hasCustomLanding && (
         <section className="hairline-b bg-surface">
           <div className="shell py-20 md:py-28">
             <Eyebrow>{p.visualEyebrow}</Eyebrow>
@@ -215,8 +258,8 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </div>
       </Section>
 
-      {/* 5. Key capabilities — Retail uses FeatureRail above */}
-      {!isRetail && (
+      {/* 5. Key capabilities — custom landings cover this above */}
+      {!hasCustomLanding && (
         <Section className="bg-surface">
           <SectionHeader eyebrow={p.featuresEyebrow} title={p.featuresTitle} />
           <div className="mt-12 grid gap-px md:grid-cols-3 hairline bg-line">

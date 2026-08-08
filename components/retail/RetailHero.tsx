@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui";
 import { Reveal } from "@/components/motion/Reveal";
 import { retailFeatureIcon } from "@/components/retail/RetailFeatureIcons";
+import type { RetailOperationsCarouselCopy } from "@/components/retail/RetailOperationsCarousel";
 import { lp, type Locale } from "@/lib/i18n-config";
 
 export type RetailLandingCopy = {
@@ -13,6 +14,7 @@ export type RetailLandingCopy = {
   featuresTitle: string;
   featuresIntro: string;
   featureCards: { icon: string; title: string; body: string }[];
+  operationsCarousel: RetailOperationsCarouselCopy;
 };
 
 type Props = {
