@@ -77,6 +77,9 @@ export default async function ProductRoute({ params }: Props) {
           availability,
           p,
           c: d.common,
+          homeLabel: d.nav.home,
+          productsLabel: d.nav.products,
+          retailLanding: slug === "retail" ? d.products.items.retail.landing : undefined,
         }}
       />
     </>

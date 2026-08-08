@@ -2,6 +2,9 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Section, SectionHeader, Eyebrow, Button, Tag, NodeDivider } from "@/components/ui";
 import { Monogram } from "@/components/Monogram";
+import { RetailHero, type RetailLandingCopy } from "@/components/retail/RetailHero";
+import { RetailTrust } from "@/components/retail/RetailTrust";
+import { RetailFeatureRail } from "@/components/retail/RetailFeatureRail";
 import { lp, type Locale, type ProductAvailability } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
 
@@ -12,35 +15,61 @@ export type ProductPageData = {
   availability: ProductAvailability;
   p: Dictionary["products"]["items"][keyof Dictionary["products"]["items"]];
   c: Dictionary["common"];
+  homeLabel: string;
+  productsLabel: string;
+  retailLanding?: RetailLandingCopy;
 };
 
 export function ProductPageView({ data }: { data: ProductPageData }) {
-  const { locale, slug, eyebrow, availability, p, c } = data;
+  const { locale, slug, eyebrow, availability, p, c, homeLabel, productsLabel, retailLanding } =
+    data;
   const L = (href: string) => lp(locale, href);
   const isAvailable = availability === "available";
+  const isRetail = slug === "retail" && retailLanding;
 
   return (
     <>
-      {/* 1. Product identity */}
-      <PageHero
-        eyebrow={eyebrow}
-        title={p.byline}
-        intro={p.oneLiner}
-        cta={
-          isAvailable
-            ? { label: c.requestQuoteArrow, href: L(`/quote?product=${slug}`) }
-            : { label: c.registerInterest, href: L("/company/contact") }
-        }
-        secondaryCta={
-          isAvailable
-            ? { label: c.viewPricing, href: L(`/products/${slug}/pricing`) }
-            : { label: c.exploreProductsArrow, href: L("/products") }
-        }
-      />
-
-      <Section>
-        <p className="max-w-3xl text-lg leading-relaxed text-ivory-dim">{p.positioning}</p>
-      </Section>
+      {isRetail ? (
+        <>
+          <RetailHero
+            locale={locale}
+            name={p.name}
+            oneLiner={p.oneLiner}
+            landing={retailLanding}
+            homeLabel={homeLabel}
+            productsLabel={productsLabel}
+            requestQuoteLabel={c.requestQuoteArrow}
+            viewPricingLabel={c.viewPricing}
+          />
+          <RetailTrust label={retailLanding.trustLabel} marks={retailLanding.trustMarks} />
+          <RetailFeatureRail
+            title={retailLanding.featuresTitle}
+            intro={retailLanding.featuresIntro}
+            cards={retailLanding.featureCards}
+          />
+        </>
+      ) : (
+        <>
+          <PageHero
+            eyebrow={eyebrow}
+            title={p.byline}
+            intro={p.oneLiner}
+            cta={
+              isAvailable
+                ? { label: c.requestQuoteArrow, href: L(`/quote?product=${slug}`) }
+                : { label: c.registerInterest, href: L("/company/contact") }
+            }
+            secondaryCta={
+              isAvailable
+                ? { label: c.viewPricing, href: L(`/products/${slug}/pricing`) }
+                : { label: c.exploreProductsArrow, href: L("/products") }
+            }
+          />
+          <Section>
+            <p className="max-w-3xl text-lg leading-relaxed text-ivory-dim">{p.positioning}</p>
+          </Section>
+        </>
+      )}
 
       {/* 2. Industry problem */}
       <Section className="bg-surface">
@@ -98,55 +127,59 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </div>
       </Section>
 
-      {/* Visual concept */}
-      <section className="hairline-b bg-surface">
-        <div className="shell py-20 md:py-28">
-          <Eyebrow>{p.visualEyebrow}</Eyebrow>
-          <h2 className="mt-2 text-2xl md:text-3xl text-ivory font-semibold tracking-tight max-w-2xl">
-            {p.visualTitle}
-          </h2>
-          <div className="mt-10 relative hairline bg-base aspect-[16/9] overflow-hidden">
-            <div className="absolute inset-0 grid-fine opacity-60" aria-hidden />
-            <div className="absolute inset-0 p-6 md:p-10 grid gap-4 md:grid-cols-[200px_1fr]">
-              <div className="hidden md:flex flex-col gap-2">
-                <div className="flex items-center gap-2 hairline p-3">
-                  <Monogram className="h-4 w-4 text-ivory" />
-                  <span className="text-xs text-ivory font-mono">ESTINAD</span>
-                </div>
-                {p.visualSidebar.map((l, i) => (
-                  <div
-                    key={l}
-                    className={`hairline p-3 text-xs ${i === 1 ? "text-ivory border-accent/40" : "text-muted"}`}
-                  >
-                    {l}
+      {/* Visual concept — skipped on Retail (hero image covers this) */}
+      {!isRetail && (
+        <section className="hairline-b bg-surface">
+          <div className="shell py-20 md:py-28">
+            <Eyebrow>{p.visualEyebrow}</Eyebrow>
+            <h2 className="mt-2 text-2xl md:text-3xl text-ivory font-semibold tracking-tight max-w-2xl">
+              {p.visualTitle}
+            </h2>
+            <div className="mt-10 relative hairline bg-base aspect-[16/9] overflow-hidden">
+              <div className="absolute inset-0 grid-fine opacity-60" aria-hidden />
+              <div className="absolute inset-0 p-6 md:p-10 grid gap-4 md:grid-cols-[200px_1fr]">
+                <div className="hidden md:flex flex-col gap-2">
+                  <div className="flex items-center gap-2 hairline p-3">
+                    <Monogram className="h-4 w-4 text-ivory" />
+                    <span className="text-xs text-ivory font-mono">ESTINAD</span>
                   </div>
-                ))}
-              </div>
-              <div className="flex flex-col gap-4">
-                <div className="grid grid-cols-3 gap-4">
-                  {p.visualKpis.map((k) => (
-                    <div key={k} className="hairline p-4">
-                      <div className="text-[0.65rem] font-mono uppercase tracking-wider text-muted-2">{k}</div>
-                      <div className="mt-2 h-5 w-2/3 bg-surface-3" />
+                  {p.visualSidebar.map((l, i) => (
+                    <div
+                      key={l}
+                      className={`hairline p-3 text-xs ${i === 1 ? "text-ivory border-accent/40" : "text-muted"}`}
+                    >
+                      {l}
                     </div>
                   ))}
                 </div>
-                <div className="flex-1 hairline p-4 relative overflow-hidden">
-                  <div className="text-[0.65rem] font-mono uppercase tracking-wider text-muted-2">
-                    {p.visualChart}
-                  </div>
-                  <div className="mt-4 flex items-end gap-2 h-3/4">
-                    {[40, 65, 50, 80, 55, 90, 70, 60, 85, 75].map((h, i) => (
-                      <div key={i} className="flex-1 bg-line-strong" style={{ height: `${h}%` }} />
+                <div className="flex flex-col gap-4">
+                  <div className="grid grid-cols-3 gap-4">
+                    {p.visualKpis.map((k) => (
+                      <div key={k} className="hairline p-4">
+                        <div className="text-[0.65rem] font-mono uppercase tracking-wider text-muted-2">
+                          {k}
+                        </div>
+                        <div className="mt-2 h-5 w-2/3 bg-surface-3" />
+                      </div>
                     ))}
+                  </div>
+                  <div className="flex-1 hairline p-4 relative overflow-hidden">
+                    <div className="text-[0.65rem] font-mono uppercase tracking-wider text-muted-2">
+                      {p.visualChart}
+                    </div>
+                    <div className="mt-4 flex items-end gap-2 h-3/4">
+                      {[40, 65, 50, 80, 55, 90, 70, 60, 85, 75].map((h, i) => (
+                        <div key={i} className="flex-1 bg-line-strong" style={{ height: `${h}%` }} />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <p className="mt-4 text-xs text-muted-2 font-mono">{p.visualCaption}</p>
           </div>
-          <p className="mt-4 text-xs text-muted-2 font-mono">{p.visualCaption}</p>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* 4. Local-first deployment */}
       <Section>
@@ -182,26 +215,28 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </div>
       </Section>
 
-      {/* 5. Key capabilities */}
-      <Section className="bg-surface">
-        <SectionHeader eyebrow={p.featuresEyebrow} title={p.featuresTitle} />
-        <div className="mt-12 grid gap-px md:grid-cols-3 hairline bg-line">
-          {p.featureClusters.map((cl) => (
-            <div key={cl.title} className="bg-base p-7">
-              <h3 className="text-base text-ivory font-medium">{cl.title}</h3>
-              <p className="mt-2 text-sm text-muted">{cl.description}</p>
-              <ul className="mt-5 flex flex-col gap-2.5">
-                {cl.points.map((pt) => (
-                  <li key={pt} className="flex items-start gap-2.5 text-sm text-ivory-dim">
-                    <span className="mt-2 h-1 w-1 bg-accent flex-shrink-0" />
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </Section>
+      {/* 5. Key capabilities — Retail uses FeatureRail above */}
+      {!isRetail && (
+        <Section className="bg-surface">
+          <SectionHeader eyebrow={p.featuresEyebrow} title={p.featuresTitle} />
+          <div className="mt-12 grid gap-px md:grid-cols-3 hairline bg-line">
+            {p.featureClusters.map((cl) => (
+              <div key={cl.title} className="bg-base p-7">
+                <h3 className="text-base text-ivory font-medium">{cl.title}</h3>
+                <p className="mt-2 text-sm text-muted">{cl.description}</p>
+                <ul className="mt-5 flex flex-col gap-2.5">
+                  {cl.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2.5 text-sm text-ivory-dim">
+                      <span className="mt-2 h-1 w-1 bg-accent flex-shrink-0" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* 6. Works with */}
       <Section>
