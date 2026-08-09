@@ -66,7 +66,7 @@ export default async function ServicesPage({ params }: Props) {
           <div className="bg-base p-8">
             <Eyebrow>{d.nav.products}</Eyebrow>
             <p className="mt-3 text-sm text-muted leading-relaxed">
-              {d.products.index.intro}
+              {d.products.index.description}
             </p>
             <div className="mt-6">
               <Button href={L("/products")} variant="secondary">

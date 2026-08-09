@@ -35,18 +35,34 @@ export const productSlugs = [
 ] as const;
 export type ProductSlug = (typeof productSlugs)[number];
 
-/** Launch status for customer-facing product lines. */
-export const productAvailability = {
-  retail: "available",
-  restaurant: "coming-soon",
-  inventory: "coming-soon",
-  invoices: "coming-soon",
-  workforce: "coming-soon",
-  clinic: "coming-soon",
-  central: "coming-soon",
-} as const satisfies Record<ProductSlug, "available" | "coming-soon">;
+/** Lifecycle stage for customer-facing product lines. */
+export const productStatuses = [
+  "available",
+  "beta",
+  "development",
+  "coming_soon",
+  "planned",
+] as const;
+export type ProductStatus = (typeof productStatuses)[number];
 
-export type ProductAvailability = (typeof productAvailability)[ProductSlug];
+/** Single source of truth — change status here to update the whole site. */
+export const productStatus = {
+  retail: "available",
+  restaurant: "beta",
+  inventory: "development",
+  invoices: "coming_soon",
+  workforce: "planned",
+  clinic: "planned",
+  central: "development",
+} as const satisfies Record<ProductSlug, ProductStatus>;
+
+/** Temporarily omitted from portfolio, nav, and listing surfaces. */
+export const hiddenProductSlugs = ["workforce", "clinic"] as const;
+export type HiddenProductSlug = (typeof hiddenProductSlugs)[number];
+
+export function isProductListed(slug: ProductSlug): boolean {
+  return !(hiddenProductSlugs as readonly string[]).includes(slug);
+}
 
 /** Only Retail has public pricing today. */
 export const pricingProductSlugs = ["retail"] as const;

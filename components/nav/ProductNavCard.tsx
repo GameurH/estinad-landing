@@ -3,13 +3,13 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { Monogram } from "@/components/Monogram";
+import { ProductStatusBadge } from "@/components/products/ProductStatusBadge";
 import { productIcon } from "@/components/nav/ProductIcons";
-import { lp, type Locale } from "@/lib/i18n-config";
+import { lp, type Locale, type ProductStatus } from "@/lib/i18n-config";
 import type { ProductCard } from "@/lib/nav";
 
 type Labels = {
-  available: string;
-  comingSoon: string;
+  statuses: Record<ProductStatus, string>;
   requestQuote: string;
   viewPricing: string;
 };
@@ -32,7 +32,8 @@ export function ProductNavCard({
   style,
 }: Props) {
   const L = (href: string) => lp(locale, href);
-  const available = product.availability === "available";
+  const statusLabel = labels.statuses[product.status];
+  const isAvailable = product.status === "available";
 
   if (variant === "featured") {
     return (
@@ -54,9 +55,12 @@ export function ProductNavCard({
                 {product.vertical}
               </span>
             </div>
-            <span className="inline-flex shrink-0 items-center rounded-full border border-bg/25 px-2.5 py-1 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-bg">
-              {labels.available}
-            </span>
+            <ProductStatusBadge
+              status={product.status}
+              label={statusLabel}
+              size="sm"
+              tone="inverse"
+            />
           </div>
           <h3 className="mt-5 text-xl font-semibold tracking-tight text-bg">
             {product.name}
@@ -66,22 +70,24 @@ export function ProductNavCard({
           </p>
         </Link>
 
-        <div className="relative z-10 mt-auto flex flex-wrap gap-2 pt-6">
-          <Link
-            href={L(`/quote?product=${product.slug}`)}
-            onClick={onNavigate}
-            className="inline-flex min-h-10 items-center rounded-full bg-bg px-4 text-sm font-medium text-ink transition-opacity hover:opacity-90"
-          >
-            {labels.requestQuote}
-          </Link>
-          <Link
-            href={L(`/products/${product.slug}/pricing`)}
-            onClick={onNavigate}
-            className="inline-flex min-h-10 items-center rounded-full border border-bg/30 px-4 text-sm font-medium text-bg transition-colors hover:border-bg/60"
-          >
-            {labels.viewPricing}
-          </Link>
-        </div>
+        {isAvailable ? (
+          <div className="relative z-10 mt-auto flex flex-wrap gap-2 pt-6">
+            <Link
+              href={L(`/quote?product=${product.slug}`)}
+              onClick={onNavigate}
+              className="inline-flex min-h-10 items-center rounded-full bg-bg px-4 text-sm font-medium text-ink transition-opacity hover:opacity-90"
+            >
+              {labels.requestQuote}
+            </Link>
+            <Link
+              href={L(`/products/${product.slug}/pricing`)}
+              onClick={onNavigate}
+              className="inline-flex min-h-10 items-center rounded-full border border-bg/30 px-4 text-sm font-medium text-bg transition-colors hover:border-bg/60"
+            >
+              {labels.viewPricing}
+            </Link>
+          </div>
+        ) : null}
       </div>
     );
   }
@@ -111,9 +117,7 @@ export function ProductNavCard({
         <span className="inline-flex items-center rounded-full bg-surface-2 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-muted">
           {product.vertical}
         </span>
-        <span className="inline-flex items-center rounded-full bg-surface-2 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-muted">
-          {available ? labels.available : labels.comingSoon}
-        </span>
+        <ProductStatusBadge status={product.status} label={statusLabel} showDot={false} />
       </div>
     </Link>
   );

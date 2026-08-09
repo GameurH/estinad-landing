@@ -145,7 +145,7 @@ export function AppPageView({ data }: { data: AppPageData }) {
                     </li>
                   ))}
                 </ol>
-              </div>
+              </div>  
             ))}
           </div>
         </Section>

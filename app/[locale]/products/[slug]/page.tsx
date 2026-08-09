@@ -4,7 +4,7 @@ import { ProductPageView } from "@/components/ProductPage";
 import { getDict } from "@/lib/i18n";
 import {
   isLocale,
-  productAvailability,
+  productStatus,
   productSlugs,
   type Locale,
 } from "@/lib/i18n-config";
@@ -24,12 +24,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const d = getDict(l);
   if (!isProductSlug(slug)) return {};
   const p = d.products.items[slug];
-  const status =
-    productAvailability[slug] === "available"
-      ? d.common.availableLabel
-      : d.common.comingSoonLabel;
+  const status = productStatus[slug];
+  const statusLabel = d.products.index.statuses[status];
   return pageMeta(l, `/products/${slug}`, {
-    title: `${p.name} · ${status}`,
+    title: `${p.name} · ${statusLabel}`,
     description: p.oneLiner,
   });
 }
@@ -42,9 +40,8 @@ export default async function ProductRoute({ params }: Props) {
   if (!isProductSlug(slug)) notFound();
 
   const p = d.products.items[slug];
-  const availability = productAvailability[slug];
-  const statusLabel =
-    availability === "available" ? d.common.availableLabel : d.common.comingSoonLabel;
+  const status = productStatus[slug];
+  const statusLabel = d.products.index.statuses[status];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -55,8 +52,10 @@ export default async function ProductRoute({ params }: Props) {
     description: p.oneLiner,
     offers: undefined,
     brand: { "@type": "Organization", name: "ESTINAD" },
-    ...(availability === "coming-soon"
-      ? { releaseNotes: "Coming soon — not available for purchase or deployment yet." }
+    ...(status !== "available"
+      ? {
+          releaseNotes: `${statusLabel} — not available for purchase or deployment yet.`,
+        }
       : {}),
   };
 
@@ -74,7 +73,7 @@ export default async function ProductRoute({ params }: Props) {
           locale: l,
           slug,
           eyebrow: `${d.nav.products} / ${p.name} / ${statusLabel}`,
-          availability,
+          status,
           p,
           c: d.common,
           homeLabel: d.nav.home,

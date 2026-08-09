@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/lib/dictionaries/types";
 import {
   productSlugs,
-  productAvailability,
+  productStatus,
   solutionSlugs,
   serviceSlugs,
   caseStudySlugs,
@@ -9,9 +9,13 @@ import {
   componentSlugs,
   partnerSlugs,
   roadmapSlugs,
-  type ProductAvailability,
+  type ProductStatus,
 } from "@/lib/i18n-config";
-import { availableProductSlugs, comingSoonProductSlugs } from "@/lib/products";
+import {
+  availableProductSlugs,
+  listedProductSlugs,
+  portfolioProductSlugs,
+} from "@/lib/products";
 
 const resHrefs = [
   "/resources/blog",
@@ -118,11 +122,11 @@ export type ProductCard = {
   short: string;
   oneLiner: string;
   vertical: string;
-  availability: ProductAvailability;
+  status: ProductStatus;
 };
 
 export function productsList(d: Dictionary): ProductCard[] {
-  return productSlugs.map((s) => {
+  return listedProductSlugs().map((s) => {
     const p = d.products.items[s];
     return {
       slug: s,
@@ -131,7 +135,7 @@ export function productsList(d: Dictionary): ProductCard[] {
       short: p.short,
       oneLiner: p.oneLiner,
       vertical: p.vertical,
-      availability: productAvailability[s],
+      status: productStatus[s],
     };
   });
 }
@@ -146,13 +150,13 @@ export function availableProductsList(d: Dictionary): ProductCard[] {
       short: p.short,
       oneLiner: p.oneLiner,
       vertical: p.vertical,
-      availability: productAvailability[s],
+      status: productStatus[s],
     };
   });
 }
 
-export function comingSoonProductsList(d: Dictionary): ProductCard[] {
-  return comingSoonProductSlugs().map((s) => {
+export function portfolioProductsList(d: Dictionary): ProductCard[] {
+  return portfolioProductSlugs().map((s) => {
     const p = d.products.items[s];
     return {
       slug: s,
@@ -161,9 +165,14 @@ export function comingSoonProductsList(d: Dictionary): ProductCard[] {
       short: p.short,
       oneLiner: p.oneLiner,
       vertical: p.vertical,
-      availability: productAvailability[s],
+      status: productStatus[s],
     };
   });
+}
+
+/** @deprecated Use portfolioProductsList */
+export function comingSoonProductsList(d: Dictionary): ProductCard[] {
+  return portfolioProductsList(d);
 }
 
 export type SolutionCard = {

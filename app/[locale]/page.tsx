@@ -3,6 +3,7 @@ import { Home, type HomeData } from "@/components/Home";
 import { getDict } from "@/lib/i18n";
 import { isLocale, type Locale } from "@/lib/i18n-config";
 import { availableProductSlugs } from "@/lib/products";
+import { productsList } from "@/lib/nav";
 import { pageMeta, absoluteUrl } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -29,6 +30,16 @@ export default async function HomePage({ params }: Props) {
   const data: HomeData = {
     locale: l,
     h2: d.homeV2,
+    products: productsList(d),
+    productLabels: {
+      eyebrow: d.products.index.eyebrow,
+      title: d.homeV2.products.title,
+      description: d.homeV2.products.body,
+      statuses: d.products.index.statuses,
+      viewProduct: d.products.index.viewProduct,
+      exploreAll: d.products.index.exploreAll,
+      cardDescriptions: d.products.index.cardDescriptions,
+    },
   };
 
   const jsonLd = {

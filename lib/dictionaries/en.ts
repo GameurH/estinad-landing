@@ -518,21 +518,21 @@ export const en = {
 
   homeV2: {
     hero: {
-      eyebrow: "ESTINAD / BUSINESS SOFTWARE COMPANY",
-      title: "Launching with ESTINAD Retail. Building a broader platform.",
-      sub: "ESTINAD is a product company launching with ESTINAD Retail, with additional products being developed as part of the broader ESTINAD platform.",
-      cta1: "Request a quote",
+      eyebrow: "ESTINAD / RELIABLE BUSINESS SOFTWARE",
+      title: "Software built with precision. Trusted with confidence.",
+      sub: "Ready-made business software designed to meet the demands of your operations — with custom solutions when your needs go beyond what is ready-made.",
+      cta1: "Request a demo",
       cta2: "Explore products",
-      supporting: "Retail available · Additional products coming soon · Built in Algeria",
+      supporting: "Products built with precision · Engineering built for continuity · From Algeria",
     },
     whoWeAre: {
-      title: "A product company — not a services firm.",
-      body: "We design complete software products under one master brand, own them, improve them continuously, and stand behind them wherever they operate. ESTINAD Retail is available today; the wider portfolio is in active development.",
+      title: "Software is part of your business.",
+      body: "That is why we design it by this principle: performance you can rely on, a clear experience, and engineering built for continuity.",
     },
     products: {
-      title: "Our product portfolio",
-      body: "ESTINAD Retail is available now. Restaurant, Inventory, Invoices, Workforce, Clinic, and Central remain visible as planned products — not as launched offerings.",
-      cta: "Explore products",
+      title: "ESTINAD Products",
+      body: "Business software products, each with a clear stage in its journey from development to availability.",
+      cta: "Explore all products →",
     },
     why: {
       title: "Quality is the foundation, not a differentiator.",
@@ -641,16 +641,43 @@ export const en = {
 
   products: {
     index: {
-      eyebrow: "Products",
-      title: "ESTINAD Retail available. More products in development.",
-      intro:
-        "ESTINAD is a product company launching with ESTINAD Retail. Restaurant, Inventory, Invoices, Workforce, Clinic, and Central are part of the planned portfolio — visible here, not presented as launched products.",
+      eyebrow: "ESTINAD Products",
+      title: "ESTINAD Products",
+      description:
+        "Business software products, each with a clear stage in its journey from development to availability.",
+      statuses: {
+        available: "Available Now",
+        beta: "In Beta",
+        development: "In Development",
+        coming_soon: "Coming Soon",
+        planned: "Planned",
+      },
+      cardDescriptions: {
+        retail:
+          "All-in-one retail management for modern stores. POS, inventory, orders, customers and analytics — in perfect sync.",
+        restaurant:
+          "Restaurant operations for floor, kitchen, and orders — built on the ESTINAD platform.",
+        inventory:
+          "Stock control across receiving, transfers, and accurate counts.",
+       
+        invoices:
+          "Invoicing and billing for teams that need clean documents and collections.",
+          central:
+          "Synchronization, remote access, and central management across locations.",
+        workforce:
+          "Scheduling, attendance, and team operations for multi-site businesses.",
+        clinic:
+          "Clinic scheduling, records, and billing on the ESTINAD platform.",
+      },
+      exploreAll: "Explore all products →",
+      groupAvailable: "Available now",
+      groupPortfolio: "Product portfolio",
+      viewProduct: "View product",
       tagVertical: "Vertical",
       tagDeploy: "Hybrid deployment",
       tagPricing: "Dedicated pricing",
       tagAvailable: "Available",
       tagComingSoon: "Coming soon",
-      groupAvailable: "Available now",
       groupComingSoon: "Coming soon",
       comingSoonIntro:
         "These products are in development as part of the ESTINAD platform. They are not available to purchase or deploy yet.",

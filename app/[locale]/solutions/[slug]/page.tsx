@@ -8,7 +8,7 @@ import {
   isLocale,
   lp,
   solutionSlugs,
-  productAvailability,
+  productStatus,
   type Locale,
 } from "@/lib/i18n-config";
 import { isProductSlug } from "@/lib/products";
@@ -83,7 +83,8 @@ export default async function SolutionPage({ params }: Props) {
           {s.related.map((slug) => {
             if (!isProductSlug(slug)) return null;
             const p = d.products.items[slug];
-            const available = productAvailability[slug] === "available";
+            const status = productStatus[slug];
+            const statusLabel = d.products.index.statuses[status];
             return (
               <Link
                 key={slug}
@@ -93,7 +94,7 @@ export default async function SolutionPage({ params }: Props) {
                 <div className="flex items-center justify-between gap-3">
                   <div className="font-mono text-xs text-accent">{p.glyph}</div>
                   <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted-2">
-                    {available ? d.common.availableLabel : d.common.comingSoonLabel}
+                    {statusLabel}
                   </span>
                 </div>
                 <h3 className="mt-2 text-base text-ivory font-medium">{p.name}</h3>

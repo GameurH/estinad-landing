@@ -48,8 +48,7 @@ type Props = {
   trustLine: string;
   themeSectionLabel: string;
   cardLabels: {
-    available: string;
-    comingSoon: string;
+    statuses: ProductsMegaLabels["statuses"];
     requestQuote: string;
     viewPricing: string;
   };
@@ -239,7 +238,7 @@ export function MobileNav({
                       <div>
                         <div className="mb-3 flex items-center justify-between gap-3">
                           <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
-                            {productsMega.groupComingSoon}
+                            {productsMega.groupPortfolio}
                           </span>
                           <span className="text-[11px] font-mono text-muted-2">
                             {comingSoonProducts.length}

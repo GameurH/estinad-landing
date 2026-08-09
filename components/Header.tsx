@@ -132,8 +132,7 @@ export function Header({ data }: { data: HeaderData }) {
   ];
 
   const cardLabels = {
-    available: common.availableLabel,
-    comingSoon: common.comingSoonLabel,
+    statuses: productsMega.statuses,
     requestQuote: common.requestQuote,
     viewPricing: common.viewPricing,
   };

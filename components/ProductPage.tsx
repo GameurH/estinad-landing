@@ -13,14 +13,14 @@ import {
   InvoicesLanding,
   type InvoicesLandingCopy,
 } from "@/components/invoices/InvoicesLanding";
-import { lp, type Locale, type ProductAvailability } from "@/lib/i18n-config";
+import { lp, type Locale, type ProductStatus } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
 
 export type ProductPageData = {
   locale: Locale;
   slug: string;
   eyebrow: string;
-  availability: ProductAvailability;
+  status: ProductStatus;
   p: Dictionary["products"]["items"][keyof Dictionary["products"]["items"]];
   c: Dictionary["common"];
   homeLabel: string;
@@ -35,7 +35,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
     locale,
     slug,
     eyebrow,
-    availability,
+    status,
     p,
     c,
     homeLabel,
@@ -45,7 +45,7 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
     invoicesLanding,
   } = data;
   const L = (href: string) => lp(locale, href);
-  const isAvailable = availability === "available";
+  const isAvailable = status === "available";
   const isRetail = slug === "retail" && retailLanding;
   const isRestaurant = slug === "restaurant" && restaurantLanding;
   const isInvoices = slug === "invoices" && invoicesLanding;

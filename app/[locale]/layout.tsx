@@ -19,7 +19,7 @@ import {
   companyNav,
   legalNav,
   availableProductsList,
-  comingSoonProductsList,
+  portfolioProductsList,
   solutionsList,
 } from "@/lib/nav";
 import { hardwareKitsList } from "@/lib/hardware";
@@ -110,7 +110,7 @@ export default async function LocaleLayout({ children, params }: Props & { child
     nav: d.nav,
     common: d.common,
     availableProducts: availableProductsList(d),
-    comingSoonProducts: comingSoonProductsList(d),
+    comingSoonProducts: portfolioProductsList(d),
     solutions: solutionsList(d),
     hardwareKits: hardwareKitsList(d).map((kit) => ({
       slug: kit.slug,
@@ -137,9 +137,8 @@ export default async function LocaleLayout({ children, params }: Props & { child
     productsMega: {
       intro: d.nav.megaProductsIntro,
       groupAvailable: d.products.index.groupAvailable,
-      groupComingSoon: d.products.index.groupComingSoon,
-      available: d.common.availableLabel,
-      comingSoon: d.common.comingSoonLabel,
+      groupPortfolio: d.products.index.groupPortfolio,
+      statuses: d.products.index.statuses,
       requestQuote: d.common.requestQuote,
       viewPricing: d.common.viewPricing,
       viewAllProducts: d.nav.megaProductsExploreAll,

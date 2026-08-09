@@ -282,21 +282,21 @@ const frRaw = {
   },
   "homeV2": {
     "hero": {
-      "eyebrow": "ESTINAD / BUSINESS SOFTWARE COMPANY",
-      "title": "Lancement avec ESTINAD Retail. Construction d'une plateforme plus large.",
-      "sub": "ESTINAD est une société produit qui lance avec ESTINAD Retail, avec d'autres produits en développement sur la plateforme ESTINAD.",
-      "cta1": "Demander un devis",
+      "eyebrow": "ESTINAD / LOGICIELS MÉTIERS FIABLES",
+      "title": "Des logiciels conçus avec précision. Une fiabilité sur laquelle compter.",
+      "sub": "Des logiciels métiers prêts à l'emploi, conçus pour répondre aux exigences de votre activité — avec des solutions sur mesure lorsque vos besoins vont au-delà du prêt à l'emploi.",
+      "cta1": "Demander une démo",
       "cta2": "Découvrir les produits",
-      "supporting": "Retail disponible · Autres produits bientôt · Conçu en Algérie"
+      "supporting": "Des produits conçus avec précision · Une ingénierie pensée pour durer · Depuis l'Algérie"
     },
     "whoWeAre": {
-      "title": "Une entreprise de produits, pas une société de services.",
-      "body": "Nous n'assemblons pas des outils existants et nous ne vendons pas des heures de développement. Nous concevons des logiciels complets, nous les faisons évoluer en continu, et nous les assumons partout où ils sont déployés. C'est la différence entre acheter un logiciel et investir dans un engagement durable."
+      "title": "Les logiciels font partie de votre activité.",
+      "body": "C'est pourquoi nous les concevons selon ce principe : une performance fiable, une expérience claire, et une ingénierie pensée pour durer."
     },
     "products": {
-      "title": "Notre portefeuille produits",
-      "body": "ESTINAD Retail est disponible. Restaurant, Inventory, Invoices, Workforce, Clinic et Central restent visibles comme produits planifiés — pas comme offres lancées.",
-      "cta": "Découvrir les produits"
+      "title": "Produits ESTINAD",
+      "body": "Des produits logiciels pour les entreprises, chacun avec une étape clairement définie dans son parcours de développement.",
+      "cta": "Explorer tous les produits →"
     },
     "why": {
       "title": "La qualité est le point de départ, pas un argument différenciant.",
@@ -466,15 +466,34 @@ const frRaw = {
   },
   "products": {
     "index": {
-      "eyebrow": "Produits",
-      "title": "ESTINAD Retail disponible. D'autres produits en développement.",
-      "intro": "ESTINAD lance avec ESTINAD Retail. Restaurant, Inventory, Invoices, Workforce, Clinic et Central font partie du portefeuille planifié — visibles ici, sans être présentés comme lancés.",
+      "eyebrow": "Produits ESTINAD",
+      "title": "Produits ESTINAD",
+      "description": "Des produits logiciels pour les entreprises, chacun avec une étape clairement définie dans son parcours de développement.",
+      "statuses": {
+        "available": "Disponible maintenant",
+        "beta": "En phase de test",
+        "development": "En développement",
+        "coming_soon": "Bientôt disponible",
+        "planned": "Prévu"
+      },
+      "cardDescriptions": {
+        "retail": "Gestion retail tout-en-un pour magasins modernes. Caisse, stocks, commandes, clients et analytique — parfaitement synchronisés.",
+        "restaurant": "Opérations restaurant pour la salle, la cuisine et les commandes — sur la plateforme ESTINAD.",
+        "inventory": "Contrôle des stocks : réceptions, transferts et inventaires précis.",
+        "central": "Synchronisation, accès distant et gestion centrale multi-sites.",
+        "invoices": "Facturation claire pour les équipes qui ont besoin de documents nets et de suivi des encaissements.",
+        "workforce": "Planification, présence et opérations d'équipe pour les entreprises multi-sites.",
+        "clinic": "Planification clinique, dossiers et facturation sur la plateforme ESTINAD."
+      },
+      "exploreAll": "Explorer tous les produits →",
+      "groupAvailable": "Disponible maintenant",
+      "groupPortfolio": "Portefeuille produits",
+      "viewProduct": "Voir le produit",
       "tagVertical": "Vertical",
       "tagDeploy": "Déploiement hybride",
       "tagPricing": "Tarifs dédiés",
       "tagAvailable": "Disponible",
       "tagComingSoon": "Bientôt disponible",
-      "groupAvailable": "Disponible maintenant",
       "groupComingSoon": "Bientôt disponible",
       "comingSoonIntro": "Ces produits sont en développement sur la plateforme ESTINAD. Ils ne sont pas encore disponibles à l'achat ou au déploiement."
     },

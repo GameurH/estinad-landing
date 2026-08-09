@@ -16,9 +16,11 @@ export type ProductsMegaHighlight = {
 export type ProductsMegaLabels = {
   intro: string;
   groupAvailable: string;
-  groupComingSoon: string;
-  available: string;
-  comingSoon: string;
+  groupPortfolio: string;
+  statuses: Record<
+    import("@/lib/i18n-config").ProductStatus,
+    string
+  >;
   requestQuote: string;
   viewPricing: string;
   viewAllProducts: string;
@@ -41,7 +43,7 @@ type Props = {
 export function ProductsMegaMenu({
   locale,
   available,
-  comingSoon,
+  comingSoon: portfolio,
   labels,
   onNavigate,
   onMouseEnter,
@@ -120,17 +122,17 @@ export function ProductsMegaMenu({
             </Link>
           </div>
 
-          {/* Coming soon */}
+          {/* Portfolio */}
           <div className="p-4 md:p-5 bg-surface/40">
             <div className="mb-3 flex items-center gap-2.5">
               <span className="h-1.5 w-1.5 rotate-45 border border-muted-2" />
               <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
-                {labels.groupComingSoon}
+                {labels.groupPortfolio}
               </span>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-              {comingSoon.map((product, i) => (
+              {portfolio.map((product, i) => (
                 <ProductNavCard
                   key={product.slug}
                   product={product}

@@ -1,16 +1,28 @@
 import Image from "next/image";
 import { Button, Section } from "./ui";
 import { Reveal } from "./motion/Reveal";
+import { ProductPortfolio } from "@/components/products/ProductPortfolio";
 import { lp, type Locale } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
+import type { ProductCard } from "@/lib/nav";
 
 export type HomeData = {
   locale: Locale;
   h2: Dictionary["homeV2"];
+  products: ProductCard[];
+  productLabels: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    statuses: Dictionary["products"]["index"]["statuses"];
+    viewProduct: string;
+    exploreAll: string;
+    cardDescriptions: Dictionary["products"]["index"]["cardDescriptions"];
+  };
 };
 
 export function Home({ data }: { data: HomeData }) {
-  const { locale, h2 } = data;
+  const { locale, h2, products, productLabels } = data;
   const L = (href: string) => lp(locale, href);
   const isAr = locale === "ar";
 
@@ -66,7 +78,7 @@ export function Home({ data }: { data: HomeData }) {
           </Reveal>
           <Reveal delay={0.24}>
             <div className={`flex flex-wrap items-center justify-center gap-4 ${isAr ? "mt-12" : "mt-11"}`}>
-              <Button href={L("/quote")}>{h2.hero.cta1}</Button>
+              <Button href={L("/demo")}>{h2.hero.cta1}</Button>
               <Button href={L("/products")} variant="secondary">
                 {h2.hero.cta2}
               </Button>
@@ -115,36 +127,16 @@ export function Home({ data }: { data: HomeData }) {
       </Section>
 
       {/* 03 — PRODUCTS */}
-      <Section className="bg-surface">
-        <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
-            <h2
-              className={
-                isAr
-                  ? "text-[clamp(1.875rem,4.2vw,3.25rem)] leading-[1.35] font-semibold text-ink [text-wrap:balance]"
-                  : "text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.12] tracking-[-0.025em] font-semibold text-ink [text-wrap:balance]"
-              }
-            >
-              {h2.products.title}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p
-              className={
-                isAr
-                  ? "mt-8 text-lg md:text-xl leading-[1.9] text-ink-secondary [text-wrap:pretty]"
-                  : "mt-8 text-lg md:text-xl leading-relaxed text-ink-secondary [text-wrap:pretty]"
-              }
-            >
-              {h2.products.body}
-            </p>
-          </Reveal>
-          <Reveal delay={0.18} className="mt-12">
-            <Button href={L("/products")} variant="secondary">
-              {h2.products.cta}
-            </Button>
-          </Reveal>
-        </div>
+      <Section className="bg-surface overflow-hidden">
+        <Reveal>
+          <ProductPortfolio
+            locale={locale}
+            products={products}
+            labels={productLabels}
+            variant="preview"
+            showExploreCta
+          />
+        </Reveal>
       </Section>
 
       {/* 04 — WHY ESTINAD */}
