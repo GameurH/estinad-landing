@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button, Section } from "./ui";
 import { Reveal } from "./motion/Reveal";
 import { ProductPortfolio } from "@/components/products/ProductPortfolio";
+import { WhyEstinad } from "@/components/home/WhyEstinad";
 import { lp, type Locale } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
 import type { ProductCard } from "@/lib/nav";
@@ -141,44 +142,7 @@ export function Home({ data }: { data: HomeData }) {
 
       {/* 04 — WHY ESTINAD */}
       <Section>
-        <div className="mx-auto max-w-3xl">
-          <Reveal>
-            <h2
-              className={
-                isAr
-                  ? "text-center text-[clamp(1.875rem,4.2vw,3.25rem)] leading-[1.35] font-semibold text-ink [text-wrap:balance]"
-                  : "text-center text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.12] tracking-[-0.025em] font-semibold text-ink [text-wrap:balance]"
-              }
-            >
-              {h2.why.title}
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p
-              className={
-                isAr
-                  ? "mt-8 text-center text-lg md:text-xl leading-[1.9] text-ink-secondary [text-wrap:pretty]"
-                  : "mt-8 text-center text-lg md:text-xl leading-relaxed text-ink-secondary [text-wrap:pretty]"
-              }
-            >
-              {h2.why.body}
-            </p>
-          </Reveal>
-          <ul className="mt-16 space-y-0">
-            {h2.why.points.map((pt, i) => (
-              <Reveal key={pt} delay={0.12 + i * 0.04}>
-                <li className={`hairline-t flex gap-6 ${isAr ? "py-8 md:py-9" : "py-7 md:py-8"}`}>
-                  <span className="pt-1 font-mono text-xs text-muted shrink-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <p className={`text-[1.0625rem] text-ink ${isAr ? "leading-[1.85]" : "leading-relaxed"}`}>
-                    {pt}
-                  </p>
-                </li>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
+        <WhyEstinad locale={locale} copy={h2.why} />
       </Section>
 
       {/* 05 — FINAL CTA */}

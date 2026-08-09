@@ -535,13 +535,33 @@ export const en = {
       cta: "Explore all products →",
     },
     why: {
-      title: "Quality is the foundation, not a differentiator.",
-      body: "We believe software quality is not defined by feature count, but by what happens in daily operation: speed in use, stability under pressure, and continuity when conditions are less than ideal. Every product we release carries the same standard — because our name is on it.",
-      points: [
-        "Built for real operating environments, not presentations",
-        "Improved continuously, not delivered and forgotten",
-        "Developed on a shared technical foundation, so products work together instead of colliding",
-        "Launched with responsibility — Retail first, then the rest of the portfolio",
+      eyebrow: "ESTINAD / Quality by design",
+      title: "Quality isn’t a feature. It’s the foundation.",
+      body: "Every ESTINAD product is engineered for real operations — reliable today, continuously improving tomorrow, and designed to work as one connected system.",
+      visualLabel: "One connected foundation",
+      pillars: [
+        {
+          title: "Built for real work",
+          body: "Products shaped around the realities of everyday business.",
+        },
+        {
+          title: "Reliable in operation",
+          body: "Stable performance businesses can depend on every day.",
+        },
+        {
+          title: "Continuously evolving",
+          body: "Every release improves the product without disrupting the operation.",
+        },
+        {
+          title: "One connected foundation",
+          body: "Shared technology lets every ESTINAD product work naturally together.",
+        },
+      ],
+      trust: [
+        "Engineered in-house",
+        "Built for daily operations",
+        "Continuously improved",
+        "One connected platform",
       ],
     },
     finalCta: {

@@ -299,13 +299,33 @@ const frRaw = {
       "cta": "Explorer tous les produits →"
     },
     "why": {
-      "title": "La qualité est le point de départ, pas un argument différenciant.",
-      "body": "Pour nous, la qualité d'un logiciel ne se mesure pas au nombre de fonctionnalités, mais à ce qu'il apporte au quotidien : rapidité d'usage, stabilité sous pression, et continuité lorsque les conditions ne sont pas idéales. Chaque produit que nous lançons répond au même niveau d'exigence — parce qu'il porte notre nom.",
-      "points": [
-        "Pensés pour les conditions réelles d'exploitation, pas pour les démonstrations",
-        "Améliorés en continu, pas livrés puis oubliés",
-        "Développés sur une base technique commune, pour mieux fonctionner ensemble",
-        "Lancés avec responsabilité — chaque produit engage notre nom"
+      "eyebrow": "ESTINAD / Qualité dès la conception",
+      "title": "La qualité n’est pas une fonctionnalité. C’est le fondement.",
+      "body": "Chaque produit ESTINAD est conçu pour les opérations réelles — fiable aujourd’hui, en amélioration continue demain, et pensé pour fonctionner comme un système connecté.",
+      "visualLabel": "Une base connectée",
+      "pillars": [
+        {
+          "title": "Conçu pour le travail réel",
+          "body": "Des produits pensés autour des réalités du quotidien des entreprises."
+        },
+        {
+          "title": "Fiable en production",
+          "body": "Des performances stables sur lesquelles les entreprises peuvent compter chaque jour."
+        },
+        {
+          "title": "En évolution continue",
+          "body": "Chaque version améliore le produit sans perturber l’exploitation."
+        },
+        {
+          "title": "Une base technologique commune",
+          "body": "Une technologie partagée pour que chaque produit ESTINAD fonctionne naturellement avec les autres."
+        }
+      ],
+      "trust": [
+        "Conçu en interne",
+        "Pensé pour le quotidien",
+        "Amélioré en continu",
+        "Une plateforme connectée"
       ]
     },
     "finalCta": {
