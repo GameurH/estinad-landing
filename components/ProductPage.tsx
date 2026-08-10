@@ -38,7 +38,6 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
     status,
     p,
     c,
-    homeLabel,
     productsLabel,
     retailLanding,
     restaurantLanding,
@@ -60,8 +59,6 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
             name={p.name}
             oneLiner={p.oneLiner}
             landing={retailLanding}
-            homeLabel={homeLabel}
-            productsLabel={productsLabel}
             requestQuoteLabel={c.requestQuoteArrow}
             viewPricingLabel={c.viewPricing}
           />
