@@ -114,6 +114,20 @@ const frRaw = {
     "ctaTertiary": "Parler à l'équipe",
     "tagline": "ESTINAD est une société produit qui lance avec ESTINAD Retail, avec d'autres produits en développement sur la plateforme ESTINAD.",
     "builtLine": "Conçus en Algérie, selon des standards internationaux.",
+    "builtBadge": "Conçu en Algérie",
+    "helpTitle": "Besoin d'aide ?",
+    "helpBody": "Nous sommes là pour vous accompagner.",
+    "helpCta": "Nous contacter",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "email": "E-mail"
+    },
+    "socialLinks": {
+      "linkedin": "https://www.linkedin.com/company/estinad",
+      "x": "https://x.com/estinad",
+      "email": "mailto:hello@estinad.com"
+    },
     "rights": "Tous droits réservés.",
     "cols": {
       "products": "Produits",
@@ -126,36 +140,6 @@ const frRaw = {
       "company": "Société",
       "hardware": "Matériel"
     },
-    "productLinks": [
-      {
-        "label": "ESTINAD Retail · Disponible",
-        "href": "/products/retail"
-      },
-      {
-        "label": "ESTINAD Restaurant · Bientôt",
-        "href": "/products/restaurant"
-      },
-      {
-        "label": "ESTINAD Inventory · Bientôt",
-        "href": "/products/inventory"
-      },
-      {
-        "label": "ESTINAD Invoices · Bientôt",
-        "href": "/products/invoices"
-      },
-      {
-        "label": "ESTINAD Workforce · Bientôt",
-        "href": "/products/workforce"
-      },
-      {
-        "label": "ESTINAD Clinic · Bientôt",
-        "href": "/products/clinic"
-      },
-      {
-        "label": "ESTINAD Central · Bientôt",
-        "href": "/products/central"
-      }
-    ],
     "solutionLinks": [
       {
         "label": "Pour le Commerce",
@@ -284,6 +268,9 @@ const frRaw = {
     "hero": {
       "eyebrow": "ESTINAD / LOGICIELS MÉTIERS FIABLES",
       "title": "Des logiciels conçus avec précision. Une fiabilité sur laquelle compter.",
+      "titleLine1": "Des logiciels conçus avec",
+      "titleLine2": "précision.",
+      "titleTail": "Une fiabilité sur laquelle compter.",
       "sub": "Des logiciels métiers prêts à l'emploi, conçus pour répondre aux exigences de votre activité — avec des solutions sur mesure lorsque vos besoins vont au-delà du prêt à l'emploi.",
       "cta1": "Demander une démo",
       "cta2": "Découvrir les produits",
@@ -329,9 +316,11 @@ const frRaw = {
       ]
     },
     "finalCta": {
-      "title": "Prêt à parler d'ESTINAD Retail ?",
-      "body": "Demandez un devis pour Retail et le matériel certifié, ou explorez les produits qu'ESTINAD construit ensuite.",
-      "cta": "Demander un devis"
+      "eyebrow": "ESTINAD / Logiciels métiers",
+      "title": "Vous voulez voir ce que nous construisons dans votre contexte ?",
+      "body": "Découvrez comment les produits ESTINAD sont conçus pour accompagner vos opérations au quotidien — d’un seul site à plusieurs implantations.",
+      "cta1": "Demander une démo",
+      "cta2": "Découvrir les produits"
     }
   },
   "platform": {

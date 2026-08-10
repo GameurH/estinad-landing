@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
 import { ProductNavCard } from "@/components/nav/ProductNavCard";
 import { productIcon } from "@/components/nav/ProductIcons";
-import { lp, type Locale } from "@/lib/i18n-config";
+import { lp, PRODUCTS_HUB_HREF, type Locale } from "@/lib/i18n-config";
 import type { ProductCard } from "@/lib/nav";
 
 export type ProductsMegaHighlight = {
@@ -113,7 +113,7 @@ export function ProductsMegaMenu({
             </ul>
 
             <Link
-              href={L("/products")}
+              href={L(PRODUCTS_HUB_HREF)}
               onClick={onNavigate}
               className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:opacity-70 transition-opacity"
             >

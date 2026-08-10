@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Monogram } from "@/components/Monogram";
 import { ProductStatusBadge } from "@/components/products/ProductStatusBadge";
 import { productIcon } from "@/components/nav/ProductIcons";
-import { lp, type Locale, type ProductStatus } from "@/lib/i18n-config";
+import { lp, productHref, productPricingHref, PRODUCTS_HUB_HREF, type Locale, type ProductStatus } from "@/lib/i18n-config";
 import type { ProductCard } from "@/lib/nav";
 
 type Labels = {
@@ -42,7 +42,7 @@ export function ProductNavCard({
         style={style}
       >
         <Link
-          href={L(`/products/${product.slug}`)}
+          href={L(productHref(product.slug))}
           onClick={onNavigate}
           className="relative block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg"
         >
@@ -80,7 +80,7 @@ export function ProductNavCard({
               {labels.requestQuote}
             </Link>
             <Link
-              href={L(`/products/${product.slug}/pricing`)}
+              href={L(productPricingHref(product.slug))}
               onClick={onNavigate}
               className="inline-flex min-h-10 items-center rounded-full border border-bg/30 px-4 text-sm font-medium text-bg transition-colors hover:border-bg/60"
             >
@@ -94,7 +94,7 @@ export function ProductNavCard({
 
   return (
     <Link
-      href={L(`/products/${product.slug}`)}
+      href={L(productHref(product.slug))}
       onClick={onNavigate}
       style={style}
       className="group flex h-full flex-col rounded-[16px] border border-line bg-card p-4 transition-colors hover:bg-surface-2 hover:border-line-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"

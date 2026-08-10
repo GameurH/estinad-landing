@@ -447,6 +447,20 @@ export const en = {
     tagline:
       "ESTINAD is a product company launching with ESTINAD Retail, with additional products being developed as part of the broader ESTINAD platform.",
     builtLine: "Built in Algeria, with global standards.",
+    builtBadge: "Built in Algeria",
+    helpTitle: "Need help?",
+    helpBody: "We're here to assist.",
+    helpCta: "Contact us",
+    social: {
+      linkedin: "LinkedIn",
+      x: "X",
+      email: "Email",
+    },
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/company/estinad",
+      x: "https://x.com/estinad",
+      email: "mailto:hello@estinad.com",
+    },
     rights: "All rights reserved.",
     cols: {
       products: "Products",
@@ -459,15 +473,6 @@ export const en = {
       company: "Company",
       hardware: "Hardware",
     },
-    productLinks: [
-      { label: "ESTINAD Retail · Available", href: "/products/retail" },
-      { label: "ESTINAD Restaurant · Coming soon", href: "/products/restaurant" },
-      { label: "ESTINAD Inventory · Coming soon", href: "/products/inventory" },
-      { label: "ESTINAD Invoices · Coming soon", href: "/products/invoices" },
-      { label: "ESTINAD Workforce · Coming soon", href: "/products/workforce" },
-      { label: "ESTINAD Clinic · Coming soon", href: "/products/clinic" },
-      { label: "ESTINAD Central · Coming soon", href: "/products/central" },
-    ],
     solutionLinks: [
       { label: "For Retail", href: "/solutions/retail" },
       { label: "For Restaurants", href: "/solutions/restaurants" },
@@ -520,6 +525,9 @@ export const en = {
     hero: {
       eyebrow: "ESTINAD / RELIABLE BUSINESS SOFTWARE",
       title: "Software built with precision. Trusted with confidence.",
+      titleLine1: "Software built with",
+      titleLine2: "precision.",
+      titleTail: "Trusted with confidence.",
       sub: "Ready-made business software designed to meet the demands of your operations — with custom solutions when your needs go beyond what is ready-made.",
       cta1: "Request a demo",
       cta2: "Explore products",
@@ -565,9 +573,11 @@ export const en = {
       ],
     },
     finalCta: {
-      title: "Ready to talk about ESTINAD Retail?",
-      body: "Request a quote for Retail and certified hardware, or explore the products ESTINAD is building next.",
-      cta: "Request a quote",
+      eyebrow: "ESTINAD / Business software",
+      title: "Want to see what we build in your context?",
+      body: "Discover how ESTINAD products are designed to support your daily operations — from a single location to multiple sites.",
+      cta1: "Request a demo",
+      cta2: "Explore products",
     },
   },
 

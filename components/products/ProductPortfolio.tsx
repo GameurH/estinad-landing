@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductStatusBadge } from "@/components/products/ProductStatusBadge";
 import { productIcon } from "@/components/nav/ProductIcons";
-import { lp, type Locale, type ProductSlug, type ProductStatus } from "@/lib/i18n-config";
+import { lp, PRODUCTS_HUB_HREF, productHref, type Locale, type ProductSlug, type ProductStatus } from "@/lib/i18n-config";
 import { portfolioGridOrder, productMedia } from "@/lib/product-media";
 import type { ProductCard } from "@/lib/nav";
 
@@ -56,7 +56,7 @@ function FeaturedRetailCard({
 
   return (
     <Link
-      href={L(`/products/${product.slug}`)}
+      href={L(productHref(product.slug))}
       className="group relative grid overflow-hidden rounded-[28px] bg-pure-black text-bg shadow-[0_24px_64px_rgba(0,0,0,0.18)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_32px_80px_rgba(0,0,0,0.28)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]"
     >
       <div
@@ -136,7 +136,7 @@ function PortfolioProductCard({
 
   return (
     <Link
-      href={L(`/products/${product.slug}`)}
+      href={L(productHref(product.slug))}
       className="group relative isolate flex min-h-[220px] flex-col overflow-hidden rounded-[24px] border border-line bg-card p-5 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-line-strong hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink sm:min-h-[240px] sm:p-6"
     >
       <div className="relative z-10 flex items-start justify-between gap-3">
@@ -257,7 +257,7 @@ export function ProductPortfolio({
       {showExploreCta && labels.exploreAll ? (
         <div className={`flex justify-center ${isPreview ? "mt-12" : "mt-14"}`}>
           <Link
-            href={L("/products")}
+            href={L(PRODUCTS_HUB_HREF)}
             className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line-strong bg-card px-6 text-sm font-medium text-ink shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
           >
             <span>{labels.exploreAll.replace(/\s*→\s*$/, "")}</span>

@@ -114,6 +114,20 @@ const arRaw = {
     "ctaTertiary": "تحدث مع الفريق",
     "tagline": "ESTINAD شركة منتجات تبدأ بإطلاق ESTINAD Retail، مع منتجات إضافية قيد التطوير ضمن منصة ESTINAD.",
     "builtLine": "من الجزائر، نبني برمجيات بمعايير العالم.",
+    "builtBadge": "صُنع في الجزائر",
+    "helpTitle": "تحتاج مساعدة؟",
+    "helpBody": "نحن هنا لمساعدتك.",
+    "helpCta": "تواصل معنا",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "email": "البريد"
+    },
+    "socialLinks": {
+      "linkedin": "https://www.linkedin.com/company/estinad",
+      "x": "https://x.com/estinad",
+      "email": "mailto:hello@estinad.com"
+    },
     "rights": "جميع الحقوق محفوظة.",
     "cols": {
       "products": "المنتجات",
@@ -126,36 +140,6 @@ const arRaw = {
       "company": "الشركة",
       "hardware": "الأجهزة"
     },
-    "productLinks": [
-      {
-        "label": "ESTINAD Retail · متاح",
-        "href": "/products/retail"
-      },
-      {
-        "label": "ESTINAD Restaurant · قريبًا",
-        "href": "/products/restaurant"
-      },
-      {
-        "label": "ESTINAD Inventory · قريبًا",
-        "href": "/products/inventory"
-      },
-      {
-        "label": "ESTINAD Invoices · قريبًا",
-        "href": "/products/invoices"
-      },
-      {
-        "label": "ESTINAD Workforce · قريبًا",
-        "href": "/products/workforce"
-      },
-      {
-        "label": "ESTINAD Clinic · قريبًا",
-        "href": "/products/clinic"
-      },
-      {
-        "label": "ESTINAD Central · قريبًا",
-        "href": "/products/central"
-      }
-    ],
     "solutionLinks": [
       {
         "label": "للتجزئة",
@@ -284,6 +268,9 @@ const arRaw = {
     "hero": {
       "eyebrow": "ESTINAD / برمجيات أعمال موثوقة",
       "title": "برمجيات تُبنى بإتقان. تُعتمد بثقة.",
+      "titleLine1": "برمجيات تُبنى",
+      "titleLine2": "بإتقان.",
+      "titleTail": "تُعتمد بثقة.",
       "sub": "برمجيات أعمال جاهزة صُممت لتلبية متطلبات عملك — مع حلول مخصصة عندما تتجاوز احتياجاتك ما هو جاهز.",
       "cta1": "اطلب عرضاً توضيحياً",
       "cta2": "استكشف المنتجات",
@@ -329,9 +316,11 @@ const arRaw = {
       ]
     },
     "finalCta": {
-      "title": "هل أنت مستعد للحديث عن ESTINAD Retail؟",
-      "body": "اطلب عرض سعر لـ Retail والأجهزة المعتمدة، أو استكشف المنتجات التي تبنيها ESTINAD لاحقًا.",
-      "cta": "اطلب عرض سعر"
+      "eyebrow": "ESTINAD / برمجيات الأعمال",
+      "title": "هل تريد أن ترى ما نبنيه في سياق عملك؟",
+      "body": "تعرّف على كيفية تصميم منتجات ESTINAD لدعم عملياتك اليومية — من موقع واحد إلى عدة مواقع.",
+      "cta1": "اطلب عرضاً توضيحياً",
+      "cta2": "استكشف المنتجات"
     }
   },
   "platform": {

@@ -24,6 +24,23 @@ export function lp(locale: Locale, href: string): string {
   return href;
 }
 
+/** Canonical products hub route — use everywhere instead of hardcoding "/products". */
+export const PRODUCTS_HUB_HREF = "/products";
+
+export function productHref(slug: string): string {
+  return `${PRODUCTS_HUB_HREF}/${slug}`;
+}
+
+export function productPricingHref(slug: string): string {
+  return `${productHref(slug)}/pricing`;
+}
+
+/** Shared active-state check for primary nav and footer links. */
+export function isNavActive(pathname: string, locale: Locale, href: string): boolean {
+  const full = lp(locale, href);
+  return pathname === full || pathname.startsWith(`${full}/`);
+}
+
 export const productSlugs = [
   "retail",
   "restaurant",

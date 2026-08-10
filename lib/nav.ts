@@ -2,6 +2,8 @@ import type { Dictionary } from "@/lib/dictionaries/types";
 import {
   productSlugs,
   productStatus,
+  PRODUCTS_HUB_HREF,
+  productHref,
   solutionSlugs,
   serviceSlugs,
   caseStudySlugs,
@@ -32,6 +34,53 @@ const companyHrefs = [
 ];
 
 export type NavItem = { label: string; href: string; desc?: string };
+
+export type PrimaryNavKind =
+  | "products"
+  | "solutions"
+  | "hardware"
+  | "resources"
+  | "company";
+
+export type PrimaryNavItem = {
+  label: string;
+  href: string;
+  kind: PrimaryNavKind;
+};
+
+export function primaryNavItems(d: Dictionary): PrimaryNavItem[] {
+  return [
+    { label: d.nav.products, href: PRODUCTS_HUB_HREF, kind: "products" },
+    { label: d.nav.solutions, href: "/solutions", kind: "solutions" },
+    { label: d.nav.hardware, href: "/hardware", kind: "hardware" },
+    { label: d.nav.resources, href: "/resources", kind: "resources" },
+    { label: d.nav.company, href: "/company", kind: "company" },
+  ];
+}
+
+export function productsNav(d: Dictionary): NavItem[] {
+  return listedProductSlugs().map((slug) => ({
+    label: d.products.items[slug].name,
+    href: productHref(slug),
+    desc: d.products.items[slug].oneLiner,
+  }));
+}
+
+export type FooterProductItem = {
+  label: string;
+  href: string;
+  status: ProductStatus;
+  statusLabel: string;
+};
+
+export function footerProductsNav(d: Dictionary): FooterProductItem[] {
+  return listedProductSlugs().map((slug) => ({
+    label: d.products.items[slug].name,
+    href: productHref(slug),
+    status: productStatus[slug],
+    statusLabel: d.products.index.statuses[productStatus[slug]],
+  }));
+}
 
 export function resourcesNav(d: Dictionary): NavItem[] {
   return d.resources.index.nav.map((n, i) => ({

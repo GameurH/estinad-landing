@@ -10,14 +10,15 @@ import { SolutionsMegaMenu, type SolutionsMegaLabels } from "@/components/nav/So
 import { HardwareMegaMenu, type HardwareMegaLabels, type HardwareNavKit } from "@/components/nav/HardwareMegaMenu";
 import { LinksMegaMenu, type LinksMegaLabels, type MegaNavLink } from "@/components/nav/LinksMegaMenu";
 import { MobileNav } from "@/components/nav/MobileNav";
-import { lp, type Locale } from "@/lib/i18n-config";
+import { lp, isNavActive, type Locale } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
-import type { ProductCard, SolutionCard } from "@/lib/nav";
+import type { PrimaryNavItem, ProductCard, SolutionCard } from "@/lib/nav";
 
 export type HeaderData = {
   locale: Locale;
   nav: Dictionary["nav"];
   common: Dictionary["common"];
+  primaryNav: PrimaryNavItem[];
   availableProducts: ProductCard[];
   comingSoonProducts: ProductCard[];
   solutions: SolutionCard[];
@@ -39,6 +40,7 @@ export function Header({ data }: { data: HeaderData }) {
     locale,
     nav,
     common,
+    primaryNav,
     availableProducts,
     comingSoonProducts,
     solutions,
@@ -118,18 +120,7 @@ export function Header({ data }: { data: HeaderData }) {
   useEffect(() => () => cancelClose(), []);
 
   const localePrefix = `/${locale}`;
-  const isActive = (href: string) => {
-    const full = lp(locale, href);
-    return pathname === full || pathname.startsWith(full + "/");
-  };
-
-  const primary = [
-    { label: nav.products, href: "/products", kind: "products" as const },
-    { label: nav.solutions, href: "/solutions", kind: "solutions" as const },
-    { label: nav.hardware, href: "/hardware", kind: "hardware" as const },
-    { label: nav.resources, href: "/resources", kind: "resources" as const },
-    { label: nav.company, href: "/company", kind: "company" as const },
-  ];
+  const isActive = (href: string) => isNavActive(pathname, locale, href);
 
   const cardLabels = {
     statuses: productsMega.statuses,
@@ -150,7 +141,7 @@ export function Header({ data }: { data: HeaderData }) {
     ar: langLabels.ar,
   };
 
-  const mobileSections = primary.map((item) => {
+  const mobileSections = primaryNav.map((item) => {
     if (item.kind === "products") {
       return {
         kind: "products" as const,
@@ -212,7 +203,7 @@ export function Header({ data }: { data: HeaderData }) {
           </Link>
 
           <nav className="hidden lg:flex items-center gap-0.5">
-            {primary.map((item) => (
+            {primaryNav.map((item) => (
               <div
                 key={item.label}
                 className="relative"

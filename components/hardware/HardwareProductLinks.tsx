@@ -1,8 +1,7 @@
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries/types";
 import type { HardwareKitDefinition } from "@/lib/hardware";
-import type { Locale } from "@/lib/i18n-config";
-import { lp } from "@/lib/i18n-config";
+import { lp, productHref, type Locale } from "@/lib/i18n-config";
 import { productNames } from "@/lib/nav";
 import { Section, SectionHeader } from "@/components/ui";
 
@@ -33,7 +32,7 @@ export function HardwareProductLinks({
         {kit.relatedProducts.map((slug) => (
           <li key={slug} className="bg-surface min-w-0">
             <Link
-              href={L(`/products/${slug}`)}
+              href={L(productHref(slug))}
               className="flex h-full flex-col p-6 md:p-7 hover:bg-bg transition-colors min-h-11"
             >
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted">

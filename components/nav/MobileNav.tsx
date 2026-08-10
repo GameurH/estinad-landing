@@ -10,7 +10,7 @@ import { productIcon } from "@/components/nav/ProductIcons";
 import { navSectionIcon } from "@/components/nav/NavSectionIcons";
 import { solutionMegaIcon, solutionTintClass } from "@/components/nav/SolutionIcons";
 import { hardwareMegaIcon } from "@/components/nav/HardwareIcons";
-import { locales, lp, type Locale } from "@/lib/i18n-config";
+import { locales, lp, PRODUCTS_HUB_HREF, type Locale } from "@/lib/i18n-config";
 import type { ProductCard, SolutionCard } from "@/lib/nav";
 import type { ProductsMegaLabels } from "@/components/nav/ProductsMegaMenu";
 import type { SolutionsMegaLabels } from "@/components/nav/SolutionsMegaMenu";
@@ -276,7 +276,7 @@ export function MobileNav({
                       </div>
 
                       <Link
-                        href={L("/products")}
+                        href={L(PRODUCTS_HUB_HREF)}
                         onClick={onClose}
                         className="inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-ink"
                       >
