@@ -72,6 +72,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: d.meta.titleTemplate,
     },
     description: d.meta.description,
+    appleWebApp: {
+      title: "ESTINAD",
+    },
     openGraph: {
       title: d.meta.ogTitle,
       description: d.meta.ogDescription,
