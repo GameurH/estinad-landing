@@ -126,7 +126,7 @@ export function RetailHero({
                 aria-hidden
               />
 
-              <div className="relative overflow-hidden rounded-[22px] border border-line bg-card shadow-float md:rounded-[28px]">
+              <div className="relative overflow-hidden rounded-[8px] border border-line bg-card shadow-float md:rounded-[8px]">
                 <div
                   className="pointer-events-none absolute inset-0 z-[1] rounded-[inherit] ring-1 ring-inset ring-black/[0.035] dark:ring-white/[0.05]"
                   aria-hidden
