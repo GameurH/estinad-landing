@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Logo } from "./Monogram";
 import { ThemeToggle, type ThemeLabels } from "./ThemeToggle";
 import { ProductsMegaMenu, type ProductsMegaLabels } from "@/components/nav/ProductsMegaMenu";
 import { SolutionsMegaMenu, type SolutionsMegaLabels } from "@/components/nav/SolutionsMegaMenu";
-import { HardwareMegaMenu, type HardwareMegaLabels, type HardwareNavKit } from "@/components/nav/HardwareMegaMenu";
+import { HardwareMegaMenu, type HardwareMegaLabels } from "@/components/nav/HardwareMegaMenu";
 import { LinksMegaMenu, type LinksMegaLabels, type MegaNavLink } from "@/components/nav/LinksMegaMenu";
 import { MobileNav } from "@/components/nav/MobileNav";
-import { lp, isNavActive, type Locale } from "@/lib/i18n-config";
+import type { HardwareMegaNav } from "@/lib/hardware-mega-nav";
+import { lp, isNavActive, productSlugs, type Locale } from "@/lib/i18n-config";
 import type { Dictionary } from "@/lib/dictionaries/types";
 import type { PrimaryNavItem, ProductCard, SolutionCard } from "@/lib/nav";
 
@@ -22,7 +23,7 @@ export type HeaderData = {
   availableProducts: ProductCard[];
   comingSoonProducts: ProductCard[];
   solutions: SolutionCard[];
-  hardwareKits: HardwareNavKit[];
+  hardwareMegaNav: HardwareMegaNav;
   resourcesLinks: MegaNavLink[];
   companyLinks: MegaNavLink[];
   productsMega: ProductsMegaLabels;
@@ -35,6 +36,15 @@ export type HeaderData = {
   mobileNav: Dictionary["mobileNav"];
 };
 
+function productSlugFromPath(pathname: string, locale: Locale): string | null {
+  const prefix = `/${locale}/products/`;
+  if (!pathname.startsWith(prefix)) return null;
+  const rest = pathname.slice(prefix.length);
+  const slug = rest.split("/")[0];
+  if (!slug || slug === "components") return null;
+  return (productSlugs as readonly string[]).includes(slug) ? slug : null;
+}
+
 export function Header({ data }: { data: HeaderData }) {
   const {
     locale,
@@ -44,7 +54,7 @@ export function Header({ data }: { data: HeaderData }) {
     availableProducts,
     comingSoonProducts,
     solutions,
-    hardwareKits,
+    hardwareMegaNav,
     resourcesLinks,
     companyLinks,
     productsMega,
@@ -63,6 +73,24 @@ export function Header({ data }: { data: HeaderData }) {
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+
+  const currentSlug = useMemo(
+    () => productSlugFromPath(pathname, locale),
+    [pathname, locale],
+  );
+
+  const currentProduct = useMemo(() => {
+    if (!currentSlug) return null;
+    return (
+      availableProducts.find((p) => p.slug === currentSlug) ??
+      comingSoonProducts.find((p) => p.slug === currentSlug) ??
+      null
+    );
+  }, [availableProducts, comingSoonProducts, currentSlug]);
+
+  const quoteHref =
+    currentSlug === "retail" ? "/quote?product=retail" : "/quote";
 
   const cancelClose = () => {
     if (closeTimer.current) {
@@ -102,6 +130,17 @@ export function Header({ data }: { data: HeaderData }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Publish hide state so nested chrome (e.g. hardware store bar) can track top offset.
+  useEffect(() => {
+    const collapsed = hidden && !mobileOpen;
+    document.documentElement.dataset.primaryNav = collapsed
+      ? "collapsed"
+      : "expanded";
+    return () => {
+      delete document.documentElement.dataset.primaryNav;
+    };
+  }, [hidden, mobileOpen]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") closeAll();
@@ -109,6 +148,24 @@ export function Header({ data }: { data: HeaderData }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  useEffect(() => {
+    if (!open && !langOpen) return;
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node | null;
+      if (target && headerRef.current && !headerRef.current.contains(target)) {
+        cancelClose();
+        setOpen(null);
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+    };
+  }, [open, langOpen]);
 
   useEffect(() => {
     document.documentElement.style.overflow = mobileOpen ? "hidden" : "";
@@ -121,11 +178,18 @@ export function Header({ data }: { data: HeaderData }) {
 
   const localePrefix = `/${locale}`;
   const isActive = (href: string) => isNavActive(pathname, locale, href);
+  const isPrimaryActive = (item: PrimaryNavItem) => {
+    if (item.kind === "hardware") {
+      return isNavActive(pathname, locale, "/hardware");
+    }
+    return isActive(item.href);
+  };
 
   const cardLabels = {
     statuses: productsMega.statuses,
     requestQuote: common.requestQuote,
     viewPricing: common.viewPricing,
+    currentLabel: productsMega.currentLabel,
   };
 
   const switchTo = (target: Locale) => {
@@ -192,50 +256,85 @@ export function Header({ data }: { data: HeaderData }) {
 
   return (
     <header
+      ref={headerRef}
       className={`fixed top-3 md:top-4 start-3 end-3 md:start-4 md:end-4 z-50 transition-transform duration-200 ease-out ${
         hidden && !mobileOpen ? "-translate-y-[130%]" : ""
       }`}
     >
       <div className="mx-auto max-w-[1200px] relative">
         <div className="glass rounded-full shadow-float h-14 ps-4 pe-3 flex items-center justify-between relative z-50">
-          <Link href={lp(locale, "/")} className="flex items-center" aria-label="ESTINAD">
-            <Logo />
-          </Link>
-
-          <nav className="hidden lg:flex items-center gap-0.5">
-            {primaryNav.map((item) => (
-              <div
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => openMenu(item.label)}
-                onMouseLeave={scheduleClose}
+          <div className="flex items-center gap-2 min-w-0">
+            <Link
+              href={lp(locale, "/")}
+              className="flex items-center shrink-0"
+              aria-label="ESTINAD"
+            >
+              <Logo />
+            </Link>
+            {currentProduct ? (
+              <span
+                className="hidden sm:inline-flex items-center gap-2 min-w-0 text-sm text-ink-secondary"
+                aria-current="page"
               >
-                <Link
-                  href={lp(locale, item.href)}
-                  onClick={() => setOpen(null)}
-                  aria-expanded={open === item.label}
-                  aria-haspopup="menu"
-                  className={`relative flex items-center gap-1.5 px-2.5 xl:px-3.5 py-2 text-sm transition-colors ${
-                    open === item.label || isActive(item.href)
-                      ? "text-ink"
-                      : "text-ink-secondary hover:text-ink"
-                  } ${
-                    open === item.label
-                      ? "after:absolute after:start-2.5 after:end-2.5 after:bottom-0.5 after:h-px after:bg-ink"
-                      : ""
-                  }`}
+                <span className="text-muted select-none" aria-hidden>
+                  ·
+                </span>
+                <span className="truncate font-medium text-ink">
+                  {currentProduct.short}
+                </span>
+                <span className="sr-only">
+                  {productsMega.currentLabel}
+                </span>
+              </span>
+            ) : null}
+          </div>
+
+          <nav className="hidden lg:flex items-center gap-0.5" aria-label="Primary">
+            {primaryNav.map((item) => {
+              const menuOpen = open === item.label;
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => openMenu(item.label)}
+                  onMouseLeave={scheduleClose}
                 >
-                  {item.label}
-                  <span
-                    className={`text-muted text-[10px] transition-transform ${
-                      open === item.label ? "rotate-180" : ""
+                  <Link
+                    href={lp(locale, item.href)}
+                    onClick={(e) => {
+                      // First interaction opens the menu (touch / keyboard parity with hover).
+                      if (!menuOpen) {
+                        e.preventDefault();
+                        openMenu(item.label);
+                        return;
+                      }
+                      setOpen(null);
+                    }}
+                    aria-expanded={menuOpen}
+                    aria-haspopup="menu"
+                    className={`relative flex items-center gap-1.5 px-2.5 xl:px-3.5 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink rounded-full ${
+                      menuOpen || isPrimaryActive(item)
+                        ? "text-ink"
+                        : "text-ink-secondary hover:text-ink"
+                    } ${
+                      menuOpen
+                        ? "after:absolute after:start-2.5 after:end-2.5 after:bottom-0.5 after:h-px after:bg-ink"
+                        : ""
                     }`}
                   >
-                    ▾
-                  </span>
-                </Link>
-              </div>
-            ))}
+                    {item.label}
+                    <span
+                      className={`text-muted text-[10px] transition-transform ${
+                        menuOpen ? "rotate-180" : ""
+                      }`}
+                      aria-hidden
+                    >
+                      ▾
+                    </span>
+                  </Link>
+                </div>
+              );
+            })}
           </nav>
 
           <div className="hidden lg:flex items-center gap-1">
@@ -247,23 +346,35 @@ export function Header({ data }: { data: HeaderData }) {
               onMouseLeave={() => setLangOpen(false)}
             >
               <button
-                className="flex items-center gap-1.5 px-3 py-2 text-sm text-ink-secondary hover:text-ink transition-colors"
+                type="button"
+                className="flex items-center gap-1.5 px-3 py-2 text-sm text-ink-secondary hover:text-ink transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink rounded-full"
                 aria-label={langLabels.switchLabel}
+                aria-expanded={langOpen}
+                aria-haspopup="listbox"
+                onClick={() => setLangOpen((v) => !v)}
               >
                 <span className="font-mono text-[11px] uppercase tracking-widest">
                   {locale}
                 </span>
-                <span className="text-muted text-[10px]">▾</span>
+                <span className="text-muted text-[10px]" aria-hidden>
+                  ▾
+                </span>
               </button>
               {langOpen && (
                 <div className="absolute end-0 top-full pt-3">
-                  <div className="w-40 bg-card hairline rounded-card shadow-lift p-1 animate-mega-in">
+                  <div
+                    className="w-40 bg-card hairline rounded-card shadow-lift p-1 animate-mega-in"
+                    role="listbox"
+                    aria-label={langLabels.switchLabel}
+                  >
                     {(["en", "fr", "ar"] as const).map((l) => (
                       <Link
                         key={l}
                         href={switchTo(l)}
                         onClick={closeAll}
-                        className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                        role="option"
+                        aria-selected={l === locale}
+                        className={`block px-3 py-2 rounded-lg text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${
                           l === locale
                             ? "text-ink bg-surface-2"
                             : "text-ink-secondary hover:bg-surface-2 hover:text-ink"
@@ -278,19 +389,20 @@ export function Header({ data }: { data: HeaderData }) {
             </div>
 
             <Link
-              href={lp(locale, "/quote")}
+              href={lp(locale, quoteHref)}
               onClick={() => setOpen(null)}
-              className="inline-flex items-center h-9 px-4 ms-1 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
+              className="inline-flex items-center h-9 px-4 ms-1 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
               {nav.requestQuote}
             </Link>
           </div>
 
           <button
-            className={`lg:hidden relative z-50 inline-flex items-center justify-center transition-colors ${
+            type="button"
+            className={`lg:hidden relative z-50 inline-flex items-center justify-center transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${
               mobileOpen
                 ? "h-10 w-10 rounded-full border border-line bg-card text-ink"
-                : "flex flex-col gap-1.5 p-3"
+                : "flex flex-col gap-1.5 p-3 rounded-full"
             }`}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -319,6 +431,7 @@ export function Header({ data }: { data: HeaderData }) {
             available={availableProducts}
             comingSoon={comingSoonProducts}
             labels={productsMega}
+            currentSlug={currentSlug}
             onNavigate={closeAll}
             onMouseEnter={cancelClose}
             onMouseLeave={scheduleClose}
@@ -339,7 +452,7 @@ export function Header({ data }: { data: HeaderData }) {
         {open === nav.hardware && (
           <HardwareMegaMenu
             locale={locale}
-            kits={hardwareKits}
+            nav={hardwareMegaNav}
             labels={hardwareMega}
             onNavigate={closeAll}
             onMouseEnter={cancelClose}
@@ -379,16 +492,18 @@ export function Header({ data }: { data: HeaderData }) {
           availableProducts={availableProducts}
           comingSoonProducts={comingSoonProducts}
           solutions={solutions}
-          hardwareKits={hardwareKits}
+          hardwareMegaNav={hardwareMegaNav}
           productsMega={productsMega}
           solutionsMega={solutionsMega}
           hardwareMega={hardwareMega}
           requestQuoteLabel={nav.requestQuote}
+          quoteHref={quoteHref}
           trustLine={mobileNav.trustLine}
           themeSectionLabel={themeLabels.sectionLabel}
           cardLabels={cardLabels}
           langLabels={langLabels}
           themeLabels={themeLabels}
+          currentSlug={currentSlug}
           onClose={closeAll}
           switchTo={switchTo}
         />

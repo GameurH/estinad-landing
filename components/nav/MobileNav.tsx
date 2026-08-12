@@ -10,11 +10,13 @@ import { productIcon } from "@/components/nav/ProductIcons";
 import { navSectionIcon } from "@/components/nav/NavSectionIcons";
 import { solutionMegaIcon, solutionTintClass } from "@/components/nav/SolutionIcons";
 import { hardwareMegaIcon } from "@/components/nav/HardwareIcons";
+import { formatMoneyMinor } from "@/lib/hardware-commerce";
+import type { HardwareMegaNav } from "@/lib/hardware-mega-nav";
 import { locales, lp, PRODUCTS_HUB_HREF, type Locale } from "@/lib/i18n-config";
 import type { ProductCard, SolutionCard } from "@/lib/nav";
 import type { ProductsMegaLabels } from "@/components/nav/ProductsMegaMenu";
 import type { SolutionsMegaLabels } from "@/components/nav/SolutionsMegaMenu";
-import type { HardwareMegaLabels, HardwareNavKit } from "@/components/nav/HardwareMegaMenu";
+import type { HardwareMegaLabels } from "@/components/nav/HardwareMegaMenu";
 import type { MegaNavLink } from "@/components/nav/LinksMegaMenu";
 
 type SectionKind = "products" | "solutions" | "hardware" | "resources" | "company";
@@ -40,20 +42,23 @@ type Props = {
   availableProducts: ProductCard[];
   comingSoonProducts: ProductCard[];
   solutions: SolutionCard[];
-  hardwareKits: HardwareNavKit[];
+  hardwareMegaNav: HardwareMegaNav;
   productsMega: ProductsMegaLabels;
   solutionsMega: SolutionsMegaLabels;
   hardwareMega: HardwareMegaLabels;
   requestQuoteLabel: string;
+  quoteHref?: string;
   trustLine: string;
   themeSectionLabel: string;
   cardLabels: {
     statuses: ProductsMegaLabels["statuses"];
     requestQuote: string;
     viewPricing: string;
+    currentLabel: string;
   };
   langLabels: { switchLabel: string; en: string; fr: string; ar: string };
   themeLabels: ThemeLabels;
+  currentSlug?: string | null;
   onClose: () => void;
   switchTo: (target: Locale) => string;
 };
@@ -134,16 +139,18 @@ export function MobileNav({
   availableProducts,
   comingSoonProducts,
   solutions,
-  hardwareKits,
+  hardwareMegaNav,
   productsMega,
   solutionsMega,
   hardwareMega,
   requestQuoteLabel,
+  quoteHref = "/quote",
   trustLine,
   themeSectionLabel,
   cardLabels,
   langLabels,
   themeLabels,
+  currentSlug = null,
   onClose,
   switchTo,
 }: Props) {
@@ -216,6 +223,7 @@ export function MobileNav({
                             locale={locale}
                             labels={cardLabels}
                             variant="featured"
+                            current={currentSlug === product.slug}
                             onNavigate={onClose}
                           />
                         </div>
@@ -255,6 +263,7 @@ export function MobileNav({
                                 locale={locale}
                                 labels={cardLabels}
                                 variant="compact"
+                                current={currentSlug === product.slug}
                                 onNavigate={onClose}
                               />
                             </div>
@@ -372,90 +381,105 @@ export function MobileNav({
                         </p>
                       </div>
 
+                      {hardwareMegaNav.categories.length > 0 && (
+                        <div>
+                          <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
+                            {hardwareMega.categoriesLabel}
+                          </div>
+                          <div className="flex flex-col gap-0.5">
+                            {hardwareMegaNav.categories.map((category) => (
+                              <Link
+                                key={category.id}
+                                href={L(category.href)}
+                                onClick={onClose}
+                                className="flex items-center justify-between gap-3 rounded-[12px] px-2.5 py-2.5 active:bg-surface transition-colors"
+                              >
+                                <span className="min-w-0">
+                                  <span className="block text-sm font-medium text-ink truncate">
+                                    {category.name}
+                                  </span>
+                                  <span className="mt-0.5 block font-mono text-[0.6rem] uppercase tracking-[0.12em] text-muted">
+                                    {category.count}
+                                  </span>
+                                </span>
+                                <span className="text-muted-2 text-sm">→</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {hardwareMegaNav.featured.length > 0 && (
+                        <div>
+                          <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
+                            {hardwareMega.featuredLabel}
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            {hardwareMegaNav.featured.map((product) => (
+                              <Link
+                                key={product.id}
+                                href={L(product.href)}
+                                onClick={onClose}
+                                className="flex items-center gap-3 rounded-[12px] border border-line bg-card p-2 active:bg-surface-2 transition-colors"
+                              >
+                                <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-[8px] bg-surface border border-line">
+                                  {product.image ? (
+                                    <Image
+                                      src={product.image}
+                                      alt=""
+                                      fill
+                                      sizes="48px"
+                                      className="object-cover"
+                                      unoptimized
+                                    />
+                                  ) : null}
+                                </span>
+                                <span className="min-w-0 flex-1">
+                                  <span className="block text-sm font-medium text-ink line-clamp-2">
+                                    {product.name}
+                                  </span>
+                                  <span className="mt-1 block text-xs text-ink-secondary">
+                                    {formatMoneyMinor(
+                                      product.price,
+                                      product.currency,
+                                      locale,
+                                    )}
+                                  </span>
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {!hardwareMegaNav.categories.length &&
+                        !hardwareMegaNav.featured.length && (
+                          <p className="text-xs text-muted">{hardwareMega.emptyHint}</p>
+                        )}
+
                       <div className="flex flex-col gap-2">
                         <Link
-                          href={L(hardwareMega.quoteHref)}
+                          href={L(hardwareMega.catalogHref)}
                           onClick={onClose}
                           className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-ink px-4 text-sm font-medium text-bg"
                         >
-                          {hardwareMega.requestQuote}
+                          {hardwareMega.viewCatalog}
                           <span className="inline-block rtl:-scale-x-100 opacity-80">→</span>
+                        </Link>
+                        <Link
+                          href={L(hardwareMega.quoteHref)}
+                          onClick={onClose}
+                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-line-strong px-4 text-sm font-medium text-ink"
+                        >
+                          {hardwareMega.requestQuote}
                         </Link>
                         <Link
                           href={L(hardwareMega.compatibilityHref)}
                           onClick={onClose}
-                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-line-strong px-4 text-sm font-medium text-ink"
+                          className="inline-flex min-h-10 items-center justify-center text-sm text-ink-secondary underline underline-offset-2"
                         >
                           {hardwareMega.checkCompatibility}
-                          <span className="inline-block rtl:-scale-x-100 text-muted">→</span>
                         </Link>
-                      </div>
-
-                      <div>
-                        <div className="mb-3 text-[11px] font-mono uppercase tracking-[0.18em] text-muted">
-                          {hardwareMega.kitsLabel}
-                        </div>
-                        <div className="-mx-1 flex gap-2 overflow-x-auto snap-x snap-mandatory pb-1 px-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                          {hardwareKits.map((kit) => (
-                            <Link
-                              key={kit.slug}
-                              href={L(`/hardware/${kit.slug}`)}
-                              onClick={onClose}
-                              className="snap-start shrink-0 w-[min(72vw,220px)] overflow-hidden rounded-[14px] border border-line bg-card active:bg-surface-2 transition-colors"
-                            >
-                              <div className="relative aspect-[4/3] bg-surface">
-                                <span className="absolute start-2.5 top-2.5 z-10 font-mono text-[0.62rem] text-muted">
-                                  {kit.glyph}
-                                </span>
-                                <Image
-                                  src={kit.imageSrc}
-                                  alt={kit.imageAlt}
-                                  fill
-                                  sizes="220px"
-                                  className="object-cover"
-                                />
-                              </div>
-                              <div className="p-3">
-                                <h3 className="text-sm font-semibold text-ink">
-                                  {kit.shortName || kit.name}
-                                </h3>
-                                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted">
-                                  {kit.tagline}
-                                </p>
-                                <div className="mt-2 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-muted-2">
-                                  {kit.category}
-                                </div>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="grid gap-1">
-                        {hardwareMega.sideLinks.map((link) => (
-                          <Link
-                            key={link.title}
-                            href={L(link.href)}
-                            onClick={onClose}
-                            className="flex items-start gap-3 rounded-[12px] p-2.5 active:bg-surface transition-colors"
-                          >
-                            <span className="mt-0.5 text-ink shrink-0">
-                              {hardwareMegaIcon(link.icon, "h-4 w-4")}
-                            </span>
-                            <span className="min-w-0 flex-1">
-                              <span className="flex items-center justify-between gap-2">
-                                <span className="text-sm font-medium text-ink">{link.title}</span>
-                                <span className="text-muted-2 text-xs">→</span>
-                              </span>
-                              <span className="mt-0.5 block text-xs text-muted">{link.body}</span>
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-
-                      <div className="rounded-[14px] border border-line bg-surface p-3.5">
-                        <div className="text-sm font-medium text-ink">{hardwareMega.assuranceTitle}</div>
-                        <p className="mt-1 text-xs text-muted">{hardwareMega.assuranceBody}</p>
                       </div>
                     </div>
                   )}
@@ -564,7 +588,7 @@ export function MobileNav({
         <div className="pointer-events-none absolute inset-x-0 bottom-0 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-10 bg-gradient-to-t from-bg via-bg/95 to-transparent">
           <div className="pointer-events-auto mx-auto max-w-lg">
             <Link
-              href={L("/quote")}
+              href={L(quoteHref)}
               onClick={onClose}
               className="flex h-[3.25rem] min-h-[3.25rem] items-center justify-between gap-3 rounded-full bg-ink px-5 text-[0.9375rem] font-medium text-bg shadow-float active:scale-[0.98] transition-transform"
             >

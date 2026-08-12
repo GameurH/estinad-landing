@@ -14,6 +14,7 @@ import {
   lp,
   type Locale,
 } from "@/lib/i18n-config";
+import { productNames } from "@/lib/nav";
 import { pageMeta, SITE_BASE } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -72,6 +73,7 @@ export default async function HardwareKitPage({ params }: Props) {
   const labels = d.hardware.kitsSection;
   const copy = hardwareKitCopy(d, slug);
   const quoteHref = L(`/hardware/quote?kit=${slug}`);
+  const names = productNames(d);
 
   return (
     <>
@@ -81,6 +83,7 @@ export default async function HardwareKitPage({ params }: Props) {
         copy={copy}
         labels={labels}
         compatibilityCta={d.hardware.compatibility.cta}
+        productNames={names}
       />
 
       <Section>
@@ -94,6 +97,7 @@ export default async function HardwareKitPage({ params }: Props) {
           <p className="mt-5 text-base leading-relaxed text-ink-secondary">
             {copy.operationalFit}
           </p>
+          <p className="mt-4 text-sm text-muted">{labels.compatibilityVerified}</p>
         </div>
       </Section>
 

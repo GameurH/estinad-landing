@@ -1,6 +1,7 @@
 /**
- * Typed local source of truth for ESTINAD Certified Hardware / ESTINAD Axis.
- * Demo configurations only — never shown as live inventory or priced SKUs.
+ * Typed local source of truth for ESTINAD Certified Hardware.
+ * Catalog structure stays in-repo. Commerce fields are data-gated: kits remain
+ * quote_only until verified price, availability, and fulfillment values arrive.
  * Future Supabase mapping can reuse HardwareKitSlug + kit field names as columns.
  */
 
@@ -27,15 +28,79 @@ export type HardwareIncludePin = {
   y: number;
 };
 
+/** How a kit may be purchased. Purchasable requires verified commerce fields. */
+export type HardwarePurchaseMode = "quote_only" | "buy_now";
+
+/** Availability state — never invent stock counts. */
+export type HardwareAvailability =
+  | "contact"
+  | "available"
+  | "in_stock"
+  | "request_quote";
+
+export type HardwareCommerce = {
+  /** Stable SKU once verified; null until commercial data arrives. */
+  sku: string | null;
+  purchaseMode: HardwarePurchaseMode;
+  /** Price in minor units (e.g. cents). Null until verified. */
+  priceMinor: number | null;
+  currency: string | null;
+  availability: HardwareAvailability;
+  maxQuantity: number | null;
+  allowDelivery: boolean;
+  allowPickup: boolean;
+  /** Delivery cost in minor units. Null = unknown / not configured. */
+  deliveryCostMinor: number | null;
+};
+
 export type HardwareKitDefinition = {
   slug: HardwareKitSlug;
-  /** Internal flag — never render in public UI. */
-  demoConfiguration: true;
+  /**
+   * Internal flag — true while this kit is a configuration reference rather
+   * than a live priced SKU. Never render this boolean in public UI.
+   */
+  demoConfiguration: boolean;
   glyph: string;
   relatedProducts: ProductSlug[];
   media: Record<HardwareMediaKey, HardwareMediaAsset>;
   includePins: readonly HardwareIncludePin[];
+  commerce: HardwareCommerce;
 };
+
+/** Default commerce: quote-only, no invented prices or stock. */
+export const quoteOnlyCommerce = (): HardwareCommerce => ({
+  sku: null,
+  purchaseMode: "quote_only",
+  priceMinor: null,
+  currency: null,
+  availability: "request_quote",
+  maxQuantity: null,
+  allowDelivery: false,
+  allowPickup: false,
+  deliveryCostMinor: null,
+});
+
+/**
+ * TEMPORARY demo commerce for local/preview testing.
+ * Replace with verified commercial data before production.
+ * DZD amounts are whole dinars (not centimes).
+ */
+export const demoBuyNowCommerce = (opts: {
+  sku: string;
+  priceDzd: number;
+  deliveryDzd: number;
+  maxQuantity?: number;
+}): HardwareCommerce => ({
+  sku: opts.sku,
+  purchaseMode: "buy_now",
+  priceMinor: opts.priceDzd,
+  currency: "DZD",
+  availability: "available",
+  maxQuantity: opts.maxQuantity ?? 20,
+  allowDelivery: true,
+  allowPickup: true,
+  deliveryCostMinor: opts.deliveryDzd,
+});
 
 const hero = (slug: HardwareKitSlug): HardwareMediaAsset => ({
   src: `/images/hardware/${slug}/hero.jpg`,
@@ -77,6 +142,11 @@ export const hardwareKits: readonly HardwareKitDefinition[] = [
       { id: "printer", x: 74, y: 44 },
       { id: "setup", x: 90, y: 62 },
     ],
+    commerce: demoBuyNowCommerce({
+      sku: "EST-HW-COUNTER",
+      priceDzd: 189_000,
+      deliveryDzd: 3_500,
+    }),
   },
   {
     slug: "restaurant-counter-kit",
@@ -96,6 +166,11 @@ export const hardwareKits: readonly HardwareKitDefinition[] = [
       { id: "accessories", x: 72, y: 44 },
       { id: "setup", x: 88, y: 58 },
     ],
+    commerce: demoBuyNowCommerce({
+      sku: "EST-HW-SERVICE",
+      priceDzd: 175_000,
+      deliveryDzd: 3_500,
+    }),
   },
   {
     slug: "inventory-kit",
@@ -114,6 +189,11 @@ export const hardwareKits: readonly HardwareKitDefinition[] = [
       { id: "labelPrinter", x: 68, y: 46 },
       { id: "setup", x: 88, y: 58 },
     ],
+    commerce: demoBuyNowCommerce({
+      sku: "EST-HW-INVENTORY",
+      priceDzd: 98_000,
+      deliveryDzd: 2_500,
+    }),
   },
   {
     slug: "multi-site-rollout",
@@ -132,6 +212,8 @@ export const hardwareKits: readonly HardwareKitDefinition[] = [
       { id: "preparation", x: 58, y: 48 },
       { id: "coordination", x: 82, y: 40 },
     ],
+    // Fleet remains quote-only — coordination service, not a standard SKU.
+    commerce: quoteOnlyCommerce(),
   },
 ] as const;
 
@@ -164,4 +246,23 @@ export function hardwareKitOptionLabel(
 ): string {
   const copy = hardwareKitCopy(d, slug);
   return copy.shortName || copy.name;
+}
+
+/** True only when every commerce field required for Buy now is verified. */
+export function isPurchasable(commerce: HardwareCommerce): boolean {
+  return (
+    commerce.purchaseMode === "buy_now" &&
+    commerce.sku !== null &&
+    commerce.priceMinor !== null &&
+    commerce.currency !== null &&
+    (commerce.availability === "available" ||
+      commerce.availability === "in_stock") &&
+    commerce.maxQuantity !== null &&
+    commerce.maxQuantity > 0 &&
+    (commerce.allowDelivery || commerce.allowPickup)
+  );
+}
+
+export function anyKitPurchasable(): boolean {
+  return hardwareKits.some((kit) => isPurchasable(kit.commerce));
 }

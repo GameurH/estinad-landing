@@ -91,7 +91,27 @@ const frRaw = {
     "softwareProducts": "Produits logiciels",
     "certifiedHardware": "Matériel certifié",
     "compareSolutions": "Comparer les solutions",
-    "megaHardwareIntro": "Matériel sélectionné et testé — prêt à fonctionner avec ESTINAD.",
+    "megaHardwareIntro": "Sélectionné et testé — prêt pour ESTINAD.",
+    "megaHardware": {
+      "eyebrow": "Matériel certifié",
+      "title": "Du matériel qui mérite sa place.",
+      "body": "Une sélection ciblée pour les déploiements ESTINAD — pas un catalogue interminable dans le menu.",
+      "categoriesLabel": "Catégories clés",
+      "featuredLabel": "À la une",
+      "viewCatalog": "Voir le catalogue complet",
+      "catalogHref": "/hardware/catalog",
+      "requestQuote": "Demander un devis",
+      "quoteHref": "/hardware/quote",
+      "checkCompatibility": "Vérifier la compatibilité",
+      "compatibilityHref": "/hardware/compatibility",
+      "emptyHint": "Ouvrez le catalogue matériel complet pour parcourir tous les produits disponibles.",
+      "kitCategories": {
+        "retail-counter-kit": "Matériel d’encaissement",
+        "restaurant-counter-kit": "Matériel de service",
+        "inventory-kit": "Matériel d’inventaire",
+        "multi-site-rollout": "Matériel de déploiement"
+      }
+    },
     "megaGroupRetail": "Opérations commerce",
     "megaGroupRestaurant": "Opérations restauration",
     "megaGroupAdmin": "Administration",
@@ -102,8 +122,9 @@ const frRaw = {
     "megaPlatformIntro": "Architecture hybride, local-first.",
     "megaPartnersIntro": "Vendez, déployez, accompagnez ou intégrez ESTINAD.",
     "megaCaseIntro": "Travaux clients réels, par secteur et résultat.",
-    "hardware": "Matériel",
+    "hardware": "Catalogue",
     "requestQuote": "Demander un devis",
+    "currentLabel": "Actuel",
     "megaResourcesIntro": "Guides, documentation et réponses."
   },
   "footer": {
@@ -244,12 +265,16 @@ const frRaw = {
     ],
     "hardwareLinks": [
       {
+        "label": "Catalogue",
+        "href": "/hardware/catalog"
+      },
+      {
         "label": "Matériel certifié",
         "href": "/hardware"
       },
       {
         "label": "Demander un devis",
-        "href": "/quote"
+        "href": "/hardware/quote"
       },
       {
         "label": "Vérifier la compatibilité",
@@ -744,7 +769,223 @@ const frRaw = {
             "a": "Les conditions commerciales dépendent des sites, de l'infrastructure, du périmètre d'implémentation et du support continu."
           }
         ],
-        "ctaTitle": "Mettez ESTINAD Commerce sur vos opérations."
+        "ctaTitle": "Mettez ESTINAD Commerce sur vos opérations.",
+        "landing": {
+          "badge": "Disponible maintenant",
+          "benefits": [
+            "Opérations local-first",
+            "Registre magasin unifié"
+          ],
+          "trustLabel": "Conçu pour le retail algérien — mode et magasins multi-catégories.",
+          "trustMarks": [],
+          "features": {
+            "eyebrow": "ESTINAD RETAIL",
+            "title": "De l’achat à la vente, dans un seul système.",
+            "intro": "ESTINAD Retail suit le flux quotidien de votre activité — des achats et réceptions à la gestion des stocks, aux ventes et à la lecture de la performance.",
+            "stagesNavLabel": "Étapes du parcours retail",
+            "stages": [
+              {
+                "id": "purchase",
+                "navLabel": "Achats",
+                "title": "Acheter avec contrôle",
+                "body": "Créez des bons de commande par variante avant l’arrivée — la réception part d’un enregistrement clair."
+              },
+              {
+                "id": "receive",
+                "navLabel": "Réception",
+                "title": "Réceptionner avec précision",
+                "body": "Confirmez ce qui est arrivé par taille et style, et alignez le stock sur la livraison."
+              },
+              {
+                "id": "stock",
+                "navLabel": "Stocks",
+                "title": "Connaître votre stock",
+                "body": "Voyez les quantités disponibles par variante et détectez le stock bas avant le rayon."
+              },
+              {
+                "id": "sell",
+                "navLabel": "Vente",
+                "title": "Vendre plus vite",
+                "body": "Encaissez avec recherche et code-barres — le stock se met à jour depuis le même registre."
+              },
+              {
+                "id": "understand",
+                "navLabel": "Comprendre",
+                "title": "Comprendre votre activité",
+                "body": "Consultez ventes du jour, mix de paiements et meilleures variantes dans une vue calme."
+              }
+            ],
+            "supporting": {
+              "title": "Plus de contrôle, intégré au système.",
+              "items": [
+                {
+                  "id": "permissions",
+                  "icon": "staff",
+                  "title": "Équipe & permissions",
+                  "body": "Contrôlez les accès et les actions sensibles."
+                },
+                {
+                  "id": "offline",
+                  "icon": "offline",
+                  "title": "Fonctionnement hors ligne",
+                  "body": "Continuez à travailler sans Internet."
+                },
+                {
+                  "id": "backup",
+                  "icon": "backup",
+                  "title": "Sauvegarde & restauration",
+                  "body": "Protégez les données opérationnelles et récupérez si besoin."
+                },
+                {
+                  "id": "catalog",
+                  "icon": "barcode",
+                  "title": "Produits & codes-barres",
+                  "body": "Maintenez le catalogue derrière chaque vente."
+                }
+              ]
+            },
+            "ui": {
+              "appName": "ESTINAD Retail",
+              "search": "Rechercher variantes, SKU…",
+              "navPurchase": "Commandes",
+              "navReceive": "Réception",
+              "navStock": "Inventaire",
+              "navSell": "Point de vente",
+              "navUnderstand": "Rapports",
+              "product": "Chemise Oxford · M",
+              "secondaryProduct": "Chino slim · 32",
+              "supplier": "Atlas Apparel",
+              "poNumber": "PO-1042",
+              "purchaseOrders": "Bons de commande",
+              "supplierLabel": "Fournisseur",
+              "products": "Variante",
+              "qty": "Qté",
+              "status": "Statut",
+              "orderCreated": "Bon de commande créé",
+              "draft": "Brouillon",
+              "ordered": "Commandé",
+              "receiving": "Réception",
+              "orderedQty": "Commandé",
+              "receivedQty": "Reçu",
+              "inventoryUpdated": "Inventaire mis à jour",
+              "inventory": "Inventaire",
+              "onHand": "Disponible",
+              "stockStatus": "Statut",
+              "lowStock": "Stock bas",
+              "ok": "OK",
+              "pos": "Point de vente",
+              "cart": "Panier",
+              "barcodeScan": "Scanner le code-barres",
+              "pay": "Encaisser",
+              "receipt": "Reçu",
+              "paid": "Payé",
+              "total": "Total",
+              "todaySales": "Ventes du jour",
+              "payments": "Paiements",
+              "topProducts": "Meilleures variantes",
+              "shift": "Shift du matin",
+              "cash": "Espèces",
+              "card": "Carte",
+              "performance": "Journée commerciale",
+              "sizeLabel": "Taille",
+              "skuLabel": "SKU"
+            }
+          },
+          "operationalConfidence": {
+            "eyebrow": "Confiance opérationnelle",
+            "title": "Un système, dans tout votre magasin.",
+            "intro": "Faites tourner ESTINAD Retail sur un serveur local et connectez terminaux POS, PC et appareils opérationnels approuvés dans votre magasin — avec des données opérationnelles partagées sur le système local.",
+            "imageAlt":
+              "ESTINAD Retail sur téléphone, ordinateur portable et tablette au comptoir — opérations magasin partagées sur les appareils connectés.",
+            "principles": [
+              {
+                "id": "one-system",
+                "number": "01",
+                "title": "Données partagées sur les appareils connectés",
+                "body": "Connectez votre POS, vos PC et vos appareils opérationnels approuvés à un seul système ESTINAD Retail local. Votre équipe travaille à partir du même enregistrement opérationnel dans le magasin."
+              },
+              {
+                "id": "access",
+                "number": "02",
+                "title": "Le bon accès pour chaque rôle",
+                "body": "Le personnel se connecte avec un code PIN. Les rôles et permissions contrôlent qui peut annuler, appliquer une remise ou ajuster le stock."
+              },
+              {
+                "id": "data",
+                "number": "03",
+                "title": "Gardez vos données opérationnelles fiables",
+                "body": "Maintenez un enregistrement opérationnel cohérent sur le système local, avec synchronisation cloud et sauvegardes planifiées. Le périmètre de sauvegarde est confirmé lors de la mise en œuvre."
+              }
+            ],
+          },
+          "builtForStore": {
+            "eyebrow": "Conçu pour votre magasin",
+            "title": "Le logiciel s’adapte à la façon dont votre magasin fonctionne.",
+            "intro": "Connectez vos points de vente, postes de travail et appareils opérationnels approuvés via un système Retail local conçu pour le travail quotidien de votre équipe.",
+            "imageAlt": "Illustration d’un comptoir ESTINAD Retail dans un magasin calme — pas une installation client réelle.",
+            "contextsNavLabel": "Contextes d’exploitation du magasin",
+            "contexts": [
+              {
+                "id": "checkout",
+                "label": "Caisse",
+                "title": "POS au comptoir",
+                "body": "Finalisez les ventes rapidement avec une surface point de vente concentrée."
+              },
+              {
+                "id": "management",
+                "label": "Gestion",
+                "title": "PC pour les opérations",
+                "body": "Consultez stocks, commandes et performance du jour depuis un poste de travail."
+              },
+              {
+                "id": "device",
+                "label": "Appareil approuvé",
+                "title": "Visibilité opérationnelle",
+                "body": "Lorsque configuré, les appareils approuvés peuvent afficher les mêmes données opérationnelles du système local."
+              }
+            ],
+            "ui": {
+              "appName": "ESTINAD Retail",
+              "cart": "Panier",
+              "product": "Chemise Oxford · M",
+              "secondaryProduct": "Chino slim · 32",
+              "total": "Total",
+              "pay": "Encaisser",
+              "inventory": "Inventaire",
+              "onHand": "Disponible",
+              "reports": "Aujourd’hui",
+              "sales": "Ventes",
+              "stock": "Stock"
+            }
+          },
+          "certifiedHardware": {
+            "eyebrow": "Matériel certifié",
+            "title": "Le bon matériel, prêt pour le Retail.",
+            "intro": "Matériel sélectionné et testé pour la compatibilité avec ESTINAD Retail, avec un accompagnement pour l’installation, le déploiement et l’usage quotidien.",
+            "hierarchy": {
+              "software": "ESTINAD Retail",
+              "hardware": "Matériel certifié",
+              "support": "Accompagnement à la mise en œuvre"
+            },
+            "categories": [
+              { "id": "terminal", "label": "Terminal POS" },
+              { "id": "scanner", "label": "Scanner code-barres" },
+              { "id": "printer", "label": "Imprimante de tickets" },
+              { "id": "drawer", "label": "Tiroir-caisse" }
+            ],
+            "imageAlt": "Ensemble de référence Retail Counter Kit préparé pour ESTINAD Retail — terminal, scanner, imprimante et tiroir-caisse.",
+            "scopeNote": "Les spécifications sont des configurations de référence illustratives. L’équipement final est confirmé lors du devis et de la revue de compatibilité. Le matériel est optionnel — l’équipement existant peut être utilisé s’il passe la vérification de compatibilité.",
+            "primaryCta": "Explorer le matériel certifié",
+            "secondaryCta": "Demander un devis"
+          },
+          "finalCta": {
+            "eyebrow": "ESTINAD Retail",
+            "title": "Prêt à parler de votre activité retail ?",
+            "body": "Parlons d’ESTINAD Retail, du déploiement et de la configuration adaptée à votre magasin.",
+            "primaryCta": "Demander un devis",
+            "secondaryCta": "Parler à l’équipe"
+          }
+        }
       },
       "restaurant": {
         "glyph": "RS",
@@ -3895,80 +4136,165 @@ const frRaw = {
     },
     "hero": {
       "eyebrow": "ESTINAD / MATÉRIEL CERTIFIÉ",
-      "title": "Du matériel sélectionné pour une exploitation fiable.",
-      "body": "Des kits de déploiement certifiés, préparés pour fonctionner avec les produits ESTINAD — du premier comptoir au déploiement multi-sites.",
-      "primaryCta": "Demander un devis",
-      "secondaryCta": "Vérifier la compatibilité",
-      "supporting": "Configurations testées · Déploiement préparé · Support clairement défini"
+      "title": "Du matériel qui fonctionne avec ESTINAD.",
+      "body": "Matériel sélectionné et testé pour des déploiements ESTINAD fiables — des postes d’encaissement aux opérations retail quotidiennes.",
+      "primaryCta": "Voir le matériel",
+      "secondaryCta": "Demander un devis",
+      "supporting": "Le logiciel d’abord. Le matériel quand il aide."
     },
-    "certified": {
-      "eyebrow": "Certifié par conception",
-      "title": "Le matériel fait partie du standard de déploiement.",
-      "body": "Chaque kit certifié est sélectionné, testé et préparé selon la manière dont les produits ESTINAD sont déployés. Cela réduit les incertitudes à l’installation et facilite le passage à l’exploitation quotidienne.",
-      "principles": [
-        {
-          "title": "Testé avec les produits ESTINAD",
-          "body": "Des configurations examinées au regard du logiciel qu’elles feront tourner."
+    "catalog": {
+      "meta": {
+        "title": "Catalogue matériel",
+        "description": "Parcourez les kits et packs Matériel certifié ESTINAD — prix, compatibilité et comparaison simples."
+      },
+      "eyebrow": "Catalogue",
+      "title": "Matériel",
+      "intro": "Matériel professionnel pour votre point de vente.",
+      "searchLabel": "Rechercher dans le catalogue",
+      "searchPlaceholder": "Rechercher un matériel, modèle, marque…",
+      "searchEmpty": "Aucun produit ne correspond à vos filtres.",
+      "clearSearch": "Effacer la recherche",
+      "storeLabel": "Boutique live",
+      "storeUnavailable": "Le catalogue boutique n’est pas connecté. Définissez NEXT_PUBLIC_SUPABASE_URL et NEXT_PUBLIC_SUPABASE_ANON_KEY.",
+      "storeError": "Impossible de charger les produits. Réessayez sous peu.",
+      "productsHeading": "Produits",
+      "productsIntro": "Inventaire live de la boutique matériel ESTINAD — nom, description, prix et détails clés.",
+      "productsCountLabel": "produits",
+      "productsCountExact": "{count} produits",
+      "categoryFilterLabel": "Catégories",
+      "availabilityFilterLabel": "Disponibilité",
+      "filtersHeading": "Filtres",
+      "filtersReset": "Tout réinitialiser",
+      "filtersAllProducts": "Tout le matériel",
+      "filtersAvailable": "En stock",
+      "filtersUnavailable": "Sur commande",
+      "priceFilterLabel": "Fourchette de prix",
+      "priceUnder10k": "Moins de 10 000 DA",
+      "price10to30": "10 000 – 30 000 DA",
+      "price30to80": "30 000 – 80 000 DA",
+      "price80to150": "80 000 – 150 000 DA",
+      "priceOver150": "Plus de 150 000 DA",
+      "readyBadge": "ESTINAD Ready",
+      "inStock": "En stock",
+      "quoteOnlyStatus": "Sur commande",
+      "skuLabel": "SKU",
+      "brandLabel": "Marque",
+      "barcodeLabel": "Code-barres",
+      "uncategorized": "Général",
+      "quoteProduct": "Demander un devis",
+      "quoteCta": "Demander un devis",
+      "compareCta": "Comparer",
+      "viewDetails": "Voir le produit",
+      "addToCart": "Ajouter au panier",
+      "addedToCart": "Ajouté",
+      "sortLabel": "Trier par",
+      "sortFeatured": "Recommandés",
+      "sortPriceAsc": "Prix · croissant",
+      "sortPriceDesc": "Prix · décroissant",
+      "sortNameAsc": "Nom · A–Z",
+      "activeFilterReady": "En stock uniquement",
+      "kitsHeading": "Kits",
+      "kitsIntro": "Configurations certifiées individuelles à acheter ou à devis.",
+      "bundlesHeading": "Packs",
+      "bundlesIntro": "Ensembles prêts pour un parcours plus clair du matériel au logiciel.",
+      "compareLabel": "Comparer",
+      "includesLabel": "Inclus",
+      "hardwareTotal": "Total matériel",
+      "deliveryEstimate": "Livraison (estimation)",
+      "softwareLabel": "Logiciel",
+      "retailIncluded": "ESTINAD Retail · Single Branch",
+      "retailCadence": "/ mois · par magasin",
+      "oneTime": "Unique",
+      "monthly": "Mensuel",
+      "viewKit": "Voir le kit",
+      "buyBundle": "Ajouter les kits au panier",
+      "quoteBundle": "Demander un devis",
+      "exploreRetail": "Découvrir ESTINAD Retail",
+      "filtersAll": "Tous les kits",
+      "filtersBuyNow": "Achat immédiat",
+      "filtersQuote": "Sur devis",
+      "resultCount": "{count} résultats",
+      "bundles": {
+        "all-kits": {
+          "name": "Tous les kits",
+          "tagline": "Tous les kits certifiés standard dans un seul pack.",
+          "body": "Kits Comptoir Retail, Comptoir Restaurant et Inventaire — achetés ensemble pour une base matériel complète.",
+          "badge": "Pack matériel"
         },
-        {
-          "title": "Configuré pour le déploiement",
-          "body": "Des kits préparés pour l’installation, pas assemblés à la dernière minute."
-        },
-        {
-          "title": "Guidance de compatibilité claire",
-          "body": "Des indications nettes sur ce qui est pris en charge et ce qui nécessite une revue."
-        },
-        {
-          "title": "Un parcours d’implémentation coordonné",
-          "body": "Du matériel aligné sur la configuration logicielle, la formation et le lancement."
+        "all-kits-retail": {
+          "name": "Tous les kits + ESTINAD Retail",
+          "tagline": "Pack matériel avec le logiciel ESTINAD Retail.",
+          "body": "L’ensemble des kits standard plus ESTINAD Retail Single Branch — matériel en paiement unique, logiciel facturé chaque mois.",
+          "badge": "Matériel + logiciel"
         }
-      ]
+      }
     },
-    "model": {
-      "eyebrow": "Modèle commercial",
-      "title": "Quatre éléments. Le logiciel reste prioritaire.",
-      "body": "Le matériel est un pack certifié optionnel pour un déploiement fiable — pas une obligation pour chaque client ESTINAD.",
+    "shopBySetup": {
+      "eyebrow": "Choisir par usage",
+      "title": "Conçu pour votre façon d’opérer.",
+      "intro": "Partez de l’opération, pas d’une longue liste produits. Chaque usage correspond à une configuration ESTINAD ciblée.",
       "items": [
         {
-          "title": "Abonnement ou licence logicielle",
-          "body": "Le revenu stratégique principal et le produit sur lequel vous opérez."
+          "slug": "retail-counter-kit",
+          "title": "Comptoir retail",
+          "body": "Tout le nécessaire pour un poste d’encaissement standard."
         },
         {
-          "title": "Implémentation et onboarding",
-          "body": "Installation, configuration, migration, formation et lancement."
+          "slug": "restaurant-counter-kit",
+          "title": "Comptoir de service",
+          "body": "Un comptoir préparé pour les points de service en restauration."
         },
         {
-          "title": "Pack matériel certifié",
-          "body": "Achat unique, devisé ou vendu comme bundle de déploiement."
+          "slug": "inventory-kit",
+          "title": "Codes-barres & inventaire",
+          "body": "Matériel pour le scan, l’étiquetage et les opérations stock."
         },
         {
-          "title": "Plan de support",
-          "body": "Support opérationnel récurrent optionnel, dans un périmètre clair."
+          "slug": "multi-site-rollout",
+          "title": "Déploiement multi-sites",
+          "body": "Un standard matériel coordonné sur plusieurs sites."
         }
       ]
     },
+    "featured": {
+      "eyebrow": "Configuration mise en avant",
+      "title": "Kit comptoir ESTINAD Retail",
+      "body": "Une configuration d’encaissement complète autour d’ESTINAD Retail — une seule installation, des composants compatibles, un déploiement plus simple.",
+      "note": "Tarifs de démonstration pour l’aperçu. Remplacez-les par des conditions commerciales vérifiées avant la production.",
+      "primaryCta": "Voir la configuration",
+      "secondaryCta": "Demander un devis",
+      "componentsLabel": "Composants de référence"
+    },
     "kitsSection": {
-      "eyebrow": "ESTINAD Axis",
-      "title": "Choisissez un kit adapté à votre exploitation.",
+      "eyebrow": "Catalogue matériel",
+      "title": "Configurations ciblées pour les déploiements ESTINAD.",
       "configuredLabel": "Configuré selon vos besoins",
-      "viewDetails": "Voir le détail du kit",
+      "viewDetails": "Voir le détail",
       "requestQuote": "Demander un devis",
+      "buyNow": "Acheter",
       "talkToTeam": "Parler à notre équipe",
       "backToHardware": "Retour au matériel certifié",
       "includesLabel": "Ce qui est inclus",
-      "includesIntro": "Un ensemble de déploiement préparé — sélectionné pour ESTINAD et confirmé lors du devis.",
-      "useCaseLabel": "Adéquation opérationnelle",
+      "includesIntro": "Un ensemble de déploiement préparé — sélectionné pour ESTINAD et confirmé lors de la configuration.",
+      "useCaseLabel": "Usage principal",
       "galleryLabel": "Visuels de référence",
       "galleryIntro": "Références studio et de déploiement illustratives. L’équipement final est confirmé avec votre devis.",
-      "specsLabel": "Spécifications de référence",
-      "worksWithLabel": "Fonctionne avec ESTINAD",
-      "worksWithIntro": "Chaque kit Axis est préparé autour du produit ESTINAD qu’il accompagne.",
-      "scopeNote": "Les spécifications sont des configurations de référence illustratives. L’équipement final est confirmé lors du devis et de la revue de compatibilité."
+      "specsLabel": "Spécifications clés",
+      "worksWithLabel": "Compatible avec",
+      "worksWithIntro": "Chaque configuration est préparée autour du produit ESTINAD qu’elle accompagne.",
+      "compatibilityVerified": "Compatibilité vérifiée lors de la configuration",
+      "availabilityLabel": "Disponibilité",
+      "priceLabel": "Prix",
+      "contactAvailability": "Contactez-nous pour la disponibilité",
+      "requestQuoteAvailability": "Disponible sur devis",
+      "availableLabel": "Disponible",
+      "inStockLabel": "En stock",
+      "scopeNote": "Les spécifications sont des configurations de référence. L’équipement final est confirmé lors du devis et de la revue de compatibilité."
     },
     "kits": {
       "retail-counter-kit": {
-        "name": "ESTINAD Axis Counter",
-        "shortName": "Axis Counter",
+        "name": "ESTINAD Retail Counter Kit",
+        "shortName": "Retail Counter Kit",
         "tagline": "Un poste d’encaissement complet, préparé avant d’arriver au comptoir.",
         "useCase": "Commerces de détail et caisses fixes.",
         "detailIntro": "Une configuration de comptoir fixe pour l’encaissement commerce — sélectionnée pour réduire l’incertitude à l’installation et en exploitation quotidienne.",
@@ -4047,26 +4373,26 @@ const frRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "Configuration studio ESTINAD Axis Counter sur un comptoir en pierre claire"
+            "alt": "Configuration studio ESTINAD Retail Counter Kit sur un comptoir en pierre claire"
           },
           "detail": {
-            "alt": "Gros plan du lecteur et de l’imprimante Axis Counter",
+            "alt": "Gros plan du lecteur et de l’imprimante Retail Counter Kit",
             "caption": "Lecteur et imprimante positionnés pour un parcours de caisse coordonné."
           },
           "deployment": {
-            "alt": "Déploiement illustratif Axis Counter dans un commerce calme",
+            "alt": "Déploiement illustratif Retail Counter Kit dans un commerce calme",
             "caption": "Référence de déploiement illustrative — pas une installation client réelle."
           },
           "included": {
-            "alt": "Composants inclus Axis Counter présentés en plan technique",
+            "alt": "Composants inclus Retail Counter Kit présentés en plan technique",
             "caption": "Ensemble de composants de référence pour devis et préparation."
           }
         },
         "cta": "Demander un devis"
       },
       "restaurant-counter-kit": {
-        "name": "ESTINAD Axis Service",
-        "shortName": "Axis Service",
+        "name": "ESTINAD Restaurant Counter Kit",
+        "shortName": "Restaurant Counter Kit",
         "tagline": "Un système de comptoir prêt pour le rythme de la restauration.",
         "useCase": "Restaurants, cafés et comptoirs food-service.",
         "detailIntro": "Une configuration de comptoir pour les points de service food-service — alignée sur les pratiques de déploiement ESTINAD Restauration.",
@@ -4145,26 +4471,26 @@ const frRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "Système de comptoir hospitality ESTINAD Axis Service en lumière studio"
+            "alt": "Système de comptoir hospitality ESTINAD Restaurant Counter Kit en lumière studio"
           },
           "detail": {
-            "alt": "Gros plan de l’imprimante Axis Service et du rail de câbles",
+            "alt": "Gros plan de l’imprimante Restaurant Counter Kit et du rail de câbles",
             "caption": "Parcours d’impression et routage de câbles préparés pour un comptoir de service."
           },
           "deployment": {
-            "alt": "Comptoir illustratif Axis Service dans un café contemporain",
+            "alt": "Comptoir illustratif Restaurant Counter Kit dans un café contemporain",
             "caption": "Référence de déploiement hospitality illustrative avant service."
           },
           "included": {
-            "alt": "Composants inclus Axis Service sur un plan technique",
+            "alt": "Composants inclus Restaurant Counter Kit sur un plan technique",
             "caption": "Ensemble de référence pour devis de comptoir hospitality."
           }
         },
         "cta": "Demander un devis"
       },
       "inventory-kit": {
-        "name": "ESTINAD Axis Inventory",
-        "shortName": "Axis Inventory",
+        "name": "ESTINAD Inventory Kit",
+        "shortName": "Inventory Kit",
         "tagline": "Scanner, étiqueter et déplacer le stock avec un kit terrain préparé.",
         "useCase": "Flux d’inventaire, opérations stock et étiquetage.",
         "detailIntro": "Un kit orienté mobilité pour inventaires, réceptions et étiquetage — associé aux flux inventaire ESTINAD.",
@@ -4234,26 +4560,26 @@ const frRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "Kit mobile ESTINAD Axis Inventory avec lecteur, imprimante d’étiquettes et tablette"
+            "alt": "Kit mobile ESTINAD Inventory Kit avec lecteur, imprimante d’étiquettes et tablette"
           },
           "detail": {
-            "alt": "Gros plan du lecteur portable et de l’imprimante d’étiquettes Axis Inventory",
+            "alt": "Gros plan du lecteur portable et de l’imprimante d’étiquettes Inventory Kit",
             "caption": "Lecteur et parcours d’étiquettes préparés pour les flux de réserve."
           },
           "deployment": {
-            "alt": "Station illustrative Axis Inventory dans une réserve organisée",
+            "alt": "Station illustrative Inventory Kit dans une réserve organisée",
             "caption": "Référence de déploiement inventaire illustrative — pas un site réel."
           },
           "included": {
-            "alt": "Composants inclus Axis Inventory présentés en plan technique",
+            "alt": "Composants inclus Inventory Kit présentés en plan technique",
             "caption": "Composants de référence du kit terrain pour devis."
           }
         },
         "cta": "Demander un devis"
       },
       "multi-site-rollout": {
-        "name": "ESTINAD Axis Fleet",
-        "shortName": "Axis Fleet",
+        "name": "ESTINAD Multi-site Kit",
+        "shortName": "Multi-site Kit",
         "tagline": "Un standard matériel, déployé de façon cohérente sur chaque site.",
         "useCase": "Organisations standardisant le matériel sur plusieurs sites.",
         "detailIntro": "Une approche de déploiement coordonnée pour les équipes qui standardisent des configurations certifiées sur plusieurs sites.",
@@ -4323,41 +4649,73 @@ const frRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "Configurations de comptoir standardisées ESTINAD Axis Fleet en studio"
+            "alt": "Configurations de comptoir standardisées ESTINAD Multi-site Kit en studio"
           },
           "detail": {
-            "alt": "Préparation pré-déploiement de configurations Axis identiques",
+            "alt": "Préparation pré-déploiement de configurations certifiées identiques",
             "caption": "Ensembles identiques préparés avant le déploiement site par site."
           },
           "deployment": {
-            "alt": "Espace de staging illustratif Axis Fleet avec systèmes répétés",
+            "alt": "Espace de staging illustratif Multi-site Kit avec systèmes répétés",
             "caption": "Référence de staging multi-sites illustrative — pas un entrepôt client."
           },
           "included": {
-            "alt": "Artefacts de déploiement Axis Fleet présentés en plan technique",
+            "alt": "Artefacts de déploiement Multi-site Kit présentés en plan technique",
             "caption": "Ensemble de coordination de référence pour devis multi-sites."
           }
         },
         "cta": "Parler à notre équipe"
       }
     },
-    "steps": {
-      "eyebrow": "Comment se déroule le déploiement",
-      "title": "Trois étapes des besoins au lancement.",
+    "trust": {
+      "eyebrow": "Pourquoi le matériel certifié",
+      "title": "Conçu pour fonctionner ensemble.",
+      "body": "Nous sélectionnons et testons le matériel autour de vrais déploiements ESTINAD, pour que logiciel et équipements opérationnels travaillent ensemble avec moins de questions de compatibilité.",
       "items": [
         {
-          "title": "Présentez-nous votre site",
-          "body": "Indiquez votre activité, le nombre de postes, vos implantations et votre équipement existant."
+          "title": "Matériel sélectionné",
+          "body": "Un catalogue ciblé plutôt qu’une marketplace écrasante."
         },
         {
-          "title": "Recevez une configuration recommandée",
-          "body": "Nous examinons vos besoins et vous recommandons un kit certifié adapté."
+          "title": "Guidance de compatibilité",
+          "body": "Savoir quel matériel convient à votre configuration ESTINAD."
         },
         {
-          "title": "Préparer, installer, démarrer",
-          "body": "La configuration retenue est préparée, installée selon le périmètre convenu, puis testée avant le lancement."
+          "title": "Support de déploiement",
+          "body": "De l’aide pour configurer le matériel lorsque le déploiement l’exige."
         }
       ]
+    },
+    "purchasePath": {
+      "eyebrow": "Achat simple",
+      "title": "Achetez les kits standardisés lorsque le prix est confirmé.",
+      "body": "Les configurations standardisées avec prix et disponibilité vérifiés peuvent être commandées en paiement à la livraison. Les déploiements complexes, multi-sites et configurations sur mesure restent sur devis.",
+      "gatedNote": "Des tarifs de démonstration sont actifs pour les kits en aperçu. Multi-site Kit et les déploiements sur mesure restent sur devis.",
+      "cartCta": "Voir le panier",
+      "quoteCta": "Demander un devis"
+    },
+    "storeChrome": {
+      "eyebrow": "Matériel",
+      "catalog": "Catalogue",
+      "overview": "Aperçu",
+      "quote": "Devis",
+      "cart": "Panier",
+      "cartAria": "Panier matériel, {count} articles"
+    },
+    "productDetail": {
+      "backToCatalog": "Retour au catalogue",
+      "skuLabel": "SKU",
+      "brandLabel": "Marque",
+      "barcodeLabel": "Code-barres",
+      "categoryLabel": "Catégorie",
+      "availabilityLabel": "Disponibilité",
+      "available": "Disponible",
+      "quoteOnly": "Sur devis",
+      "addToCart": "Ajouter au panier",
+      "addedToCart": "Ajouté",
+      "requestQuote": "Demander un devis",
+      "detailsHeading": "Détails",
+      "relatedHeading": "Dans la même catégorie"
     },
     "compatibility": {
       "eyebrow": "Compatibilité",
@@ -4376,23 +4734,107 @@ const frRaw = {
       ]
     },
     "finalCta": {
-      "title": "Vous préparez un nouveau site ou modernisez votre installation actuelle ?",
-      "body": "Expliquez-nous comment votre activité fonctionne, et nous vous recommanderons un kit de déploiement adapté à votre produit ESTINAD.",
-      "cta": "Demander un devis matériel"
+      "title": "Besoin d’aide pour choisir la bonne configuration ?",
+      "body": "Dites-nous ce dont votre opération a besoin et nous vous aiderons à identifier le matériel ESTINAD adapté.",
+      "cta": "Demander un devis",
+      "secondaryCta": "Explorer ESTINAD Retail"
     },
     "quote": {
       "metaTitle": "Demander un devis matériel",
-      "metaDescription": "Demandez un devis pour les kits de déploiement Matériel certifié ESTINAD pour vos sites.",
+      "metaDescription": "Demandez un devis pour les configurations Matériel certifié ESTINAD pour vos sites.",
       "eyebrow": "Demander un devis",
       "title": "Parlez-nous de votre exploitation.",
-      "intro": "Indiquez vos sites, postes et kit préféré. Notre équipe examinera vos besoins et reviendra avec une configuration recommandée.",
+      "intro": "Indiquez vos sites, postes et configuration préférée. Notre équipe examinera vos besoins et reviendra avec une recommandation.",
       "asideTitle": "Et ensuite",
       "aside": [
         "Nous examinons votre type d’activité et le nombre de sites",
-        "Nous recommandons un kit certifié ou un parcours de compatibilité",
+        "Nous recommandons une configuration certifiée ou un parcours de compatibilité",
         "Nous confirmons le périmètre d’installation et de formation si besoin"
       ],
       "note": "Le matériel est optionnel. Les clients peuvent utiliser un équipement existant qui passe la vérification de compatibilité."
+    },
+    "cart": {
+      "metaTitle": "Panier matériel",
+      "metaDescription": "Vérifiez le matériel ESTINAD sélectionné avant le paiement.",
+      "eyebrow": "Panier",
+      "title": "Votre sélection matériel.",
+      "emptyTitle": "Votre panier est vide.",
+      "emptyBody": "L’achat en ligne est disponible uniquement pour les configurations avec prix et disponibilité vérifiés. Parcourez le catalogue ou demandez un devis.",
+      "emptyCta": "Voir le matériel",
+      "quoteCta": "Demander un devis",
+      "quantity": "Quantité",
+      "remove": "Retirer",
+      "subtotal": "Sous-total",
+      "checkoutCta": "Continuer vers le paiement",
+      "unavailableTitle": "L’achat n’est pas encore ouvert.",
+      "unavailableBody": "Les données commerciales vérifiées n’ont pas encore été publiées pour ces configurations. Demandez un devis pour confirmer le prix et la livraison.",
+      "quoteCtaAlt": "Demander un devis"
+    },
+    "checkout": {
+      "metaTitle": "Paiement matériel",
+      "metaDescription": "Finalisez une commande simple en paiement à la livraison pour le matériel ESTINAD certifié.",
+      "eyebrow": "Paiement",
+      "title": "Coordonnées client et livraison.",
+      "intro": "Paiement à la livraison. Nous confirmons la commande, puis organisons la livraison ou le retrait.",
+      "sections": {
+        "contact": "Informations client",
+        "fulfillment": "Livraison / retrait",
+        "review": "Récapitulatif",
+        "payment": "Paiement"
+      },
+      "fullName": "Nom complet",
+      "companyName": "Nom de l’entreprise",
+      "email": "E-mail",
+      "phone": "Numéro de téléphone",
+      "country": "Pays",
+      "city": "Ville",
+      "address": "Adresse de livraison",
+      "addressPlaceholder": "Rue, bâtiment et éventuelles indications d’accès",
+      "fulfillmentMethod": "Mode de remise",
+      "delivery": "Livraison",
+      "pickup": "Retrait",
+      "notes": "Notes de commande",
+      "notesPlaceholder": "Tout élément utile sur le timing ou l’accès au site.",
+      "paymentMethod": "Mode de paiement",
+      "paymentCod": "Paiement à la livraison",
+      "paymentCodNote": "Payez à la livraison ou au retrait. Pas de paiement carte en ligne dans ce parcours.",
+      "consent": "J’accepte la politique de confidentialité et comprends qu’il s’agit d’une commande en paiement à la livraison.",
+      "subtotal": "Sous-total",
+      "deliveryCost": "Livraison",
+      "total": "Total",
+      "placeOrder": "Passer la commande COD",
+      "placing": "Envoi de la commande…",
+      "backToCart": "Retour au panier",
+      "unavailableTitle": "Le paiement n’est pas encore disponible.",
+      "unavailableBody": "Le paiement en ligne s’ouvre lorsque prix, disponibilité et règles de remise vérifiés sont publiés. Demandez un devis en attendant.",
+      "quoteCta": "Demander un devis",
+      "errors": {
+        "required": "Ce champ est obligatoire.",
+        "email": "Saisissez une adresse e-mail valide.",
+        "empty": "Votre panier est vide.",
+        "notPurchasable": "Un ou plusieurs articles ne peuvent pas encore être achetés en ligne.",
+        "invalidQuantity": "Vérifiez la quantité de chaque article.",
+        "fulfillment": "Sélectionnez un mode de remise.",
+        "server": "Impossible de passer la commande. Réessayez ou demandez un devis."
+      }
+    },
+    "confirmation": {
+      "metaTitle": "Confirmation de commande",
+      "metaDescription": "Votre commande matériel ESTINAD en paiement à la livraison a été enregistrée.",
+      "eyebrow": "Confirmation",
+      "title": "Commande enregistrée.",
+      "body": "Merci. Votre commande en paiement à la livraison a été enregistrée. Notre équipe vous recontactera pour confirmer la remise.",
+      "referenceLabel": "Référence de commande",
+      "nextTitle": "Et ensuite",
+      "next": [
+        "Nous vérifions et confirmons la disponibilité",
+        "Nous organisons la livraison ou le retrait",
+        "Vous payez à la livraison ou au retrait"
+      ],
+      "shopCta": "Retour au matériel",
+      "quoteCta": "Besoin d’une configuration sur mesure ? Demandez un devis",
+      "missingTitle": "Aucune référence de commande trouvée.",
+      "missingBody": "Si vous venez de passer commande, vérifiez l’e-mail de confirmation ou contactez notre équipe."
     },
     "form": {
       "sections": {

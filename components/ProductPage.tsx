@@ -4,7 +4,11 @@ import { Section, SectionHeader, Eyebrow, Button, Tag, NodeDivider } from "@/com
 import { Monogram } from "@/components/Monogram";
 import { RetailHero, type RetailLandingCopy } from "@/components/retail/RetailHero";
 import { RetailTrust } from "@/components/retail/RetailTrust";
-import { RetailOperationsCarousel } from "@/components/retail/RetailOperationsCarousel";
+import { RetailFeatures } from "@/components/retail/RetailFeatures";
+import { RetailOperationalConfidence } from "@/components/retail/RetailOperationalConfidence";
+import { RetailBuiltForStore } from "@/components/retail/RetailBuiltForStore";
+import { RetailCertifiedHardware } from "@/components/retail/RetailCertifiedHardware";
+import { RetailFinalCta } from "@/components/retail/RetailFinalCta";
 import {
   RestaurantLanding,
   type RestaurantLandingCopy,
@@ -63,10 +67,14 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
             viewPricingLabel={c.viewPricing}
           />
           <RetailTrust label={retailLanding.trustLabel} marks={retailLanding.trustMarks} />
-          <RetailOperationsCarousel
+          <RetailFeatures copy={retailLanding.features} />
+          <RetailOperationalConfidence copy={retailLanding.operationalConfidence} />
+          <RetailBuiltForStore copy={retailLanding.builtForStore} />
+          <RetailCertifiedHardware
             locale={locale}
-            copy={retailLanding.operationsCarousel}
+            copy={retailLanding.certifiedHardware}
           />
+          <RetailFinalCta locale={locale} copy={retailLanding.finalCta} />
         </>
       ) : isRestaurant ? (
         <RestaurantLanding
@@ -111,6 +119,8 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
         </>
       )}
 
+      {!isRetail && (
+        <>
       {/* 2. Industry problem */}
       <Section className="bg-surface">
         <SectionHeader eyebrow={p.problem.eyebrow} title={p.problem.title} intro={p.problem.body} />
@@ -379,6 +389,8 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
           </div>
         </div>
       </section>
+        </>
+      )}
     </>
   );
 }

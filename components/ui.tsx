@@ -54,7 +54,7 @@ export function Button({
   className,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-[0.9375rem] font-medium tracking-tight transition-all duration-150 select-none active:scale-[0.98]";
+    "inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full text-[0.9375rem] font-medium tracking-tight transition-all duration-150 select-none active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink";
 
   const styles: Record<string, string> = {
     primary: "bg-ink text-bg hover:bg-ink/85",

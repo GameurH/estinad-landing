@@ -49,10 +49,11 @@ export type PrimaryNavItem = {
 };
 
 export function primaryNavItems(d: Dictionary): PrimaryNavItem[] {
+  // Solutions remains in the dictionary, routes, and mega-menu components.
+  // Temporarily omit it from the visible primary navigation.
   return [
     { label: d.nav.products, href: PRODUCTS_HUB_HREF, kind: "products" },
-    { label: d.nav.solutions, href: "/solutions", kind: "solutions" },
-    { label: d.nav.hardware, href: "/hardware", kind: "hardware" },
+    { label: d.nav.hardware, href: "/hardware/catalog", kind: "hardware" },
     { label: d.nav.resources, href: "/resources", kind: "resources" },
     { label: d.nav.company, href: "/company", kind: "company" },
   ];

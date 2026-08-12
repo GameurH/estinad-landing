@@ -23,6 +23,7 @@ export type ProductsMegaLabels = {
   >;
   requestQuote: string;
   viewPricing: string;
+  currentLabel: string;
   viewAllProducts: string;
   highlights: ProductsMegaHighlight[];
   helpTitle: string;
@@ -35,6 +36,7 @@ type Props = {
   available: ProductCard[];
   comingSoon: ProductCard[];
   labels: ProductsMegaLabels;
+  currentSlug?: string | null;
   onNavigate: () => void;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
@@ -45,6 +47,7 @@ export function ProductsMegaMenu({
   available,
   comingSoon: portfolio,
   labels,
+  currentSlug = null,
   onNavigate,
   onMouseEnter,
   onMouseLeave,
@@ -89,6 +92,7 @@ export function ProductsMegaMenu({
                 locale={locale}
                 labels={labels}
                 variant="featured"
+                current={currentSlug === featured.slug}
                 onNavigate={onNavigate}
                 style={
                   reduceMotion
@@ -139,6 +143,7 @@ export function ProductsMegaMenu({
                   locale={locale}
                   labels={labels}
                   variant="compact"
+                  current={currentSlug === product.slug}
                   onNavigate={onNavigate}
                   style={
                     reduceMotion

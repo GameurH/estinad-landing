@@ -91,7 +91,27 @@ const arRaw = {
     "softwareProducts": "المنتجات البرمجية",
     "certifiedHardware": "أجهزة معتمدة",
     "compareSolutions": "قارن الحلول",
-    "megaHardwareIntro": "أجهزة مختارة ومختبرة، وجاهزة للعمل مع ESTINAD.",
+    "megaHardwareIntro": "مختارة ومختبرة — جاهزة لـ ESTINAD.",
+    "megaHardware": {
+      "eyebrow": "أجهزة معتمدة",
+      "title": "أجهزة تستحق مكانها.",
+      "body": "اختيار موجّه لنشرات ESTINAD — لا كتالوج لا ينتهي داخل القائمة.",
+      "categoriesLabel": "الفئات الأساسية",
+      "featuredLabel": "مختارات",
+      "viewCatalog": "عرض الكتالوج الكامل",
+      "catalogHref": "/hardware/catalog",
+      "requestQuote": "اطلب عرض سعر",
+      "quoteHref": "/hardware/quote",
+      "checkCompatibility": "تحقق من التوافق",
+      "compatibilityHref": "/hardware/compatibility",
+      "emptyHint": "افتح كتالوج الأجهزة الكامل لتصفّح كل المنتجات المتوفرة.",
+      "kitCategories": {
+        "retail-counter-kit": "أجهزة الدفع",
+        "restaurant-counter-kit": "أجهزة الخدمة",
+        "inventory-kit": "أجهزة المخزون",
+        "multi-site-rollout": "أجهزة النشر"
+      }
+    },
     "megaGroupRetail": "عمليات التجزئة",
     "megaGroupRestaurant": "عمليات المطاعم",
     "megaGroupAdmin": "الإدارة",
@@ -102,7 +122,7 @@ const arRaw = {
     "megaPlatformIntro": "بنية هجينة محلية أولًا.",
     "megaPartnersIntro": "بع ESTINAD أو انشره أو ادعمه أو ادمجه.",
     "megaCaseIntro": "أعمال عملاء حقيقية، بحسب القطاع والنتيجة.",
-    "hardware": "الأجهزة",
+    "hardware": "الكتالوج",
     "requestQuote": "اطلب عرض سعر",
     "megaResourcesIntro": "أدلة وتوثيق وإجابات."
   },
@@ -244,12 +264,16 @@ const arRaw = {
     ],
     "hardwareLinks": [
       {
+        "label": "الكتالوج",
+        "href": "/hardware/catalog"
+      },
+      {
         "label": "أجهزة معتمدة",
         "href": "/hardware"
       },
       {
         "label": "اطلب عرض سعر",
-        "href": "/quote"
+        "href": "/hardware/quote"
       },
       {
         "label": "تحقق من التوافق",
@@ -3895,81 +3919,166 @@ const arRaw = {
     },
     "hero": {
       "eyebrow": "ESTINAD / أجهزة معتمدة",
-      "title": "أجهزة مختارة لتشغيل يُعتمد عليه.",
-      "body": "حزم تجهيز معتمدة ومهيأة للعمل مع منتجات ESTINAD — من أول نقطة بيع إلى تجهيز الفروع المتعددة.",
-      "primaryCta": "اطلب عرضاً",
-      "secondaryCta": "تحقق من التوافق",
-      "supporting": "تجهيزات مختبرة · إعداد مسبق · نطاق دعم واضح"
+      "title": "أجهزة تعمل مع ESTINAD.",
+      "body": "أجهزة مختارة ومختبرة لنشرات ESTINAD الموثوقة — من محطات الدفع إلى عمليات التجزئة اليومية.",
+      "primaryCta": "تسوّق الأجهزة",
+      "secondaryCta": "اطلب عرض سعر",
+      "supporting": "البرمجيات أولًا. والأجهزة حين تفيد."
     },
-    "certified": {
-      "eyebrow": "معتمدة بالتصميم",
-      "title": "الأجهزة جزء من معيار التنفيذ.",
-      "body": "كل حزمة معتمدة تُختار وتُختبر وتُجهّز وفق طريقة نشر منتجات ESTINAD. هذا يقلل تعقيد الإعداد ويمنح فريقك مساراً أوضح من التركيب إلى التشغيل اليومي.",
-      "principles": [
-        {
-          "title": "مختبرة مع منتجات ESTINAD",
-          "body": "تجهيزات تُراجع وفق البرمجيات التي ستشغّلها."
+    "catalog": {
+      "meta": {
+        "title": "كتالوج الأجهزة",
+        "description": "تصفّح حزم وأطقم أجهزة ESTINAD المعتمدة — أسعار واضحة وتوافق ومقارنة بسيطة."
+      },
+      "eyebrow": "الكتالوج",
+      "title": "الأجهزة",
+      "intro": "أجهزة احترافية لنقطة البيع لديك.",
+      "searchLabel": "البحث في الكتالوج",
+      "searchPlaceholder": "ابحث بالجهاز أو الموديل أو العلامة…",
+      "searchEmpty": "لا توجد منتجات تطابق عوامل التصفية.",
+      "clearSearch": "مسح البحث",
+      "storeLabel": "متجر مباشر",
+      "storeUnavailable": "كتالوج المتجر غير متصل. عيّن NEXT_PUBLIC_SUPABASE_URL و NEXT_PUBLIC_SUPABASE_ANON_KEY.",
+      "storeError": "تعذّر تحميل منتجات المتجر. حاول مجددًا قريبًا.",
+      "productsHeading": "المنتجات",
+      "productsIntro": "مخزون مباشر من متجر أجهزة ESTINAD — الاسم والوصف والسعر والتفاصيل الأساسية.",
+      "productsCountLabel": "منتجات",
+      "productsCountExact": "{count} منتج",
+      "categoryFilterLabel": "الفئات",
+      "availabilityFilterLabel": "التوفر",
+      "filtersHeading": "عوامل التصفية",
+      "filtersReset": "إعادة ضبط الكل",
+      "filtersAllProducts": "كل الأجهزة",
+      "filtersAvailable": "متوفر",
+      "filtersUnavailable": "متاح للطلب",
+      "priceFilterLabel": "نطاق السعر",
+      "priceUnder10k": "أقل من 10,000 دج",
+      "price10to30": "10,000 – 30,000 دج",
+      "price30to80": "30,000 – 80,000 دج",
+      "price80to150": "80,000 – 150,000 دج",
+      "priceOver150": "أكثر من 150,000 دج",
+      "readyBadge": "جاهز لـ ESTINAD",
+      "inStock": "متوفر",
+      "quoteOnlyStatus": "متاح للطلب",
+      "skuLabel": "SKU",
+      "brandLabel": "العلامة",
+      "barcodeLabel": "الباركود",
+      "uncategorized": "عام",
+      "quoteProduct": "اطلب عرض سعر",
+      "quoteCta": "اطلب عرض سعر",
+      "compareCta": "قارن",
+      "viewDetails": "عرض المنتج",
+      "addToCart": "أضف إلى السلة",
+      "addedToCart": "تمت الإضافة",
+      "sortLabel": "ترتيب حسب",
+      "sortFeatured": "موصى به",
+      "sortPriceAsc": "السعر · من الأقل",
+      "sortPriceDesc": "السعر · من الأعلى",
+      "sortNameAsc": "الاسم · أ–ي",
+      "activeFilterReady": "المتوفّر فقط",
+      "kitsHeading": "الحزم",
+      "kitsIntro": "تجهيزات معتمدة فردية يمكنك شراؤها أو طلب عرض سعر لها.",
+      "bundlesHeading": "الأطقم",
+      "bundlesIntro": "إعدادات مجمّعة لمسار أوضح من الأجهزة إلى البرمجيات.",
+      "compareLabel": "قارن",
+      "includesLabel": "يشمل",
+      "hardwareTotal": "إجمالي الأجهزة",
+      "deliveryEstimate": "التسليم (تقديري)",
+      "softwareLabel": "البرمجيات",
+      "retailIncluded": "ESTINAD Retail · فرع واحد",
+      "retailCadence": "/ شهر · لكل فرع",
+      "oneTime": "مرة واحدة",
+      "monthly": "شهري",
+      "viewKit": "عرض الحزمة",
+      "buyBundle": "أضف الحزم إلى السلة",
+      "quoteBundle": "اطلب عرض سعر",
+      "exploreRetail": "استكشف ESTINAD Retail",
+      "filtersAll": "كل الحزم",
+      "filtersBuyNow": "شراء الآن",
+      "filtersQuote": "عرض سعر فقط",
+      "resultCount": "{count} نتيجة",
+      "bundles": {
+        "all-kits": {
+          "name": "كل الحزم",
+          "tagline": "كل الحزم المعتمدة القياسية في باقة واحدة.",
+          "body": "حزم عداد التجزئة وعداد المطعم والمخزون — مشتراة معًا كأساس أجهزة كامل.",
+          "badge": "باقة أجهزة"
         },
-        {
-          "title": "مهيأة للتنفيذ",
-          "body": "حزم تُعدّ للتركيب، لا تُجمع في اللحظة الأخيرة."
-        },
-        {
-          "title": "إرشاد توافق واضح",
-          "body": "توجيه مباشر حول ما هو مدعوم وما يحتاج مراجعة."
-        },
-        {
-          "title": "مسار تنفيذ منسّق واحد",
-          "body": "أجهزة متوافقة مع إعداد البرمجيات والتدريب والإطلاق."
+        "all-kits-retail": {
+          "name": "كل الحزم + ESTINAD Retail",
+          "tagline": "باقة أجهزة مع برمجيات ESTINAD Retail.",
+          "body": "مجموعة الحزم القياسية كاملة بالإضافة إلى ESTINAD Retail لفرع واحد — الأجهزة لمرة واحدة، والبرمجيات تُفوتر شهريًا.",
+          "badge": "أجهزة + برمجيات"
         }
-      ]
+      }
     },
-    "model": {
-      "eyebrow": "النموذج التجاري",
-      "title": "أربعة عناصر. والبرمجيات تبقى الأولوية.",
-      "body": "الأجهزة حزمة معتمدة اختيارية لضمان نشر موثوق — وليست إلزاماً لكل عميل ESTINAD.",
+    "shopBySetup": {
+      "eyebrow": "تسوّق حسب التجهيز",
+      "title": "مصمّمة لطريقة تشغيلك.",
+      "intro": "ابدأ من العملية، لا من قائمة منتجات طويلة. كل تجهيز يقابل إعداد ESTINAD مختارًا.",
       "items": [
         {
-          "title": "اشتراك أو ترخيص البرمجيات",
-          "body": "الإيراد الاستراتيجي الأساسي والمنتج الذي تعمل عليه."
+          "slug": "retail-counter-kit",
+          "title": "عداد التجزئة",
+          "body": "كل ما يلزم لمحطة دفع قياسية."
         },
         {
-          "title": "التنفيذ والإعداد",
-          "body": "التركيب والتهيئة والترحيل والتدريب والإطلاق."
+          "slug": "restaurant-counter-kit",
+          "title": "عداد الخدمة",
+          "body": "عداد مُعدّ لنقاط خدمة الضيافة."
         },
         {
-          "title": "حزمة الأجهزة المعتمدة",
-          "body": "شراء لمرة واحدة، يُعرض أو يُباع كحزمة تجهيز."
+          "slug": "inventory-kit",
+          "title": "الباركود والمخزون",
+          "body": "أجهزة للمسح والوسم وعمليات المخزون."
         },
         {
-          "title": "خطة الدعم",
-          "body": "دعم تشغيلي اختياري متكرر ضمن نطاق واضح."
+          "slug": "multi-site-rollout",
+          "title": "نشر متعدد المواقع",
+          "body": "معيار أجهزة واحد منسّق عبر المواقع."
         }
       ]
     },
+    "featured": {
+      "eyebrow": "تجهيز مميّز",
+      "title": "ESTINAD Retail Counter Kit",
+      "body": "إعداد دفع كامل مصمّم حول ESTINAD Retail — تجهيز واحد، ومكونات متوافقة، ونشر أبسط.",
+      "note": "الأسعار المعروضة تجريبية للمعاينة. استبدلها بشروط تجارية موثّقة قبل الإنتاج.",
+      "primaryCta": "عرض التجهيز",
+      "secondaryCta": "اطلب عرض سعر",
+      "componentsLabel": "مكونات مرجعية"
+    },
     "kitsSection": {
-      "eyebrow": "ESTINAD Axis",
-      "title": "اختر حزمة مصممة لطريقة عملك.",
+      "eyebrow": "كتالوج الأجهزة",
+      "title": "تجهيزات مختارة لنشرات ESTINAD.",
       "configuredLabel": "تُهيأ وفق متطلباتك",
-      "viewDetails": "عرض تفاصيل الحزمة",
-      "requestQuote": "اطلب عرضاً",
+      "viewDetails": "عرض التفاصيل",
+      "requestQuote": "اطلب عرض سعر",
+      "buyNow": "اشترِ الآن",
       "talkToTeam": "تحدث إلى فريقنا",
       "backToHardware": "العودة إلى الأجهزة المعتمدة",
       "includesLabel": "ما يشمله التجهيز",
-      "includesIntro": "مجموعة تجهيز مُعدّة مسبقاً — مختارة لـ ESTINAD وتُؤكَّد أثناء عرض السعر.",
-      "useCaseLabel": "الملاءمة التشغيلية",
+      "includesIntro": "مجموعة تجهيز مُعدّة مسبقاً — مختارة لـ ESTINAD وتُؤكَّد أثناء التهيئة.",
+      "useCaseLabel": "الاستخدام الرئيسي",
       "galleryLabel": "صور مرجعية",
       "galleryIntro": "مراجع استوديو ونشر توضيحية. يُؤكَّد التجهيز النهائي مع عرض السعر.",
-      "specsLabel": "مواصفات مرجعية",
-      "worksWithLabel": "يعمل مع ESTINAD",
-      "worksWithIntro": "تُعدّ كل حزمة Axis حول منتج ESTINAD الذي تدعمه.",
-      "scopeNote": "المواصفات تجهيزات مرجعية توضيحية. يُؤكَّد التجهيز النهائي أثناء عرض السعر ومراجعة التوافق."
+      "specsLabel": "مواصفات أساسية",
+      "worksWithLabel": "متوافق مع",
+      "worksWithIntro": "تُعدّ كل تجهيزة حول منتج ESTINAD الذي تدعمه.",
+      "compatibilityVerified": "يُتحقق من التوافق أثناء التهيئة",
+      "availabilityLabel": "التوفر",
+      "priceLabel": "السعر",
+      "contactAvailability": "تواصل معنا لمعرفة التوفر",
+      "requestQuoteAvailability": "متاح عند طلب عرض السعر",
+      "availableLabel": "متاح",
+      "inStockLabel": "متوفر في المخزون",
+      "scopeNote": "المواصفات تجهيزات مرجعية. يُؤكَّد التجهيز النهائي أثناء عرض السعر ومراجعة التوافق."
     },
     "kits": {
       "retail-counter-kit": {
-        "name": "ESTINAD Axis Counter",
-        "shortName": "Axis Counter",
-        "tagline": "نقطة دفع كاملة، مُعدّة قبل أن تصل إلى العداد.",
+        "name": "ESTINAD Retail Counter Kit",
+        "shortName": "Retail Counter Kit",
+        "tagline": "نقطة دفع كاملة لـ ESTINAD Retail.",
         "useCase": "محلات التجزئة ونقاط الدفع الثابتة.",
         "detailIntro": "تجهيز عداد ثابت لبيع التجزئة — مختار لتقليل عدم اليقين عند التركيب والتشغيل اليومي.",
         "operationalFit": "مخصص لفرق التجزئة ذات الموقع الواحد أو المتعددة التي تحتاج نقطة عداد موثوقة دون ارتجال الملحقات عند الإطلاق.",
@@ -4047,27 +4156,27 @@ const arRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "تجهيز استوديو ESTINAD Axis Counter على عداد حجر فاتح"
+            "alt": "تجهيز استوديو ESTINAD Retail Counter Kit على عداد حجر فاتح"
           },
           "detail": {
-            "alt": "لقطة مقربة لماسح وطابعة Axis Counter",
+            "alt": "لقطة مقربة لماسح وطابعة Retail Counter Kit",
             "caption": "ماسح وطابعة موضوعة لمسار عداد تجزئة منسّق."
           },
           "deployment": {
-            "alt": "نشر توضيحي لـ Axis Counter في محل تجزئة هادئ",
+            "alt": "نشر توضيحي لـ Retail Counter Kit في محل تجزئة هادئ",
             "caption": "مرجع نشر توضيحي — وليس تركيباً لعميل فعلي."
           },
           "included": {
-            "alt": "مكونات Axis Counter المشمولة مرتبة كلوحة تقنية",
+            "alt": "مكونات Retail Counter Kit المشمولة مرتبة كلوحة تقنية",
             "caption": "مجموعة مكونات مرجعية لعرض السعر والإعداد."
           }
         },
         "cta": "اطلب عرضاً"
       },
       "restaurant-counter-kit": {
-        "name": "ESTINAD Axis Service",
-        "shortName": "Axis Service",
-        "tagline": "نظام عداد جاهز لإيقاع خدمات الضيافة.",
+        "name": "ESTINAD Restaurant Counter Kit",
+        "shortName": "Restaurant Counter Kit",
+        "tagline": "عداد خدمة جاهز لـ ESTINAD Restaurant.",
         "useCase": "المطاعم والمقاهي وعدّادات خدمات الطعام.",
         "detailIntro": "تجهيز عداد لنقاط خدمة الطعام — متوافق مع ممارسات نشر ESTINAD للمطاعم.",
         "operationalFit": "مصمم للمطاعم والمقاهي التي تحتاج عداد خدمة مُعدّاً مسبقاً مع مسار إيصالات واضح وتنظيم كابلات مرتّب.",
@@ -4145,26 +4254,26 @@ const arRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "نظام عداد ضيافة ESTINAD Axis Service بإضاءة استوديو"
+            "alt": "نظام عداد ضيافة ESTINAD Restaurant Counter Kit بإضاءة استوديو"
           },
           "detail": {
-            "alt": "لقطة مقربة لطابعة Axis Service ومسار تنظيم الكابلات",
+            "alt": "لقطة مقربة لطابعة Restaurant Counter Kit ومسار تنظيم الكابلات",
             "caption": "مسار الطباعة وتوجيه الكابلات مُعدّان لعداد خدمة."
           },
           "deployment": {
-            "alt": "عداد توضيحي لـ Axis Service في مقهى معاصر",
+            "alt": "عداد توضيحي لـ Restaurant Counter Kit في مقهى معاصر",
             "caption": "مرجع نشر ضيافة توضيحي قبل بدء الخدمة."
           },
           "included": {
-            "alt": "مكونات Axis Service المشمولة على لوحة تقنية",
+            "alt": "مكونات Restaurant Counter Kit المشمولة على لوحة تقنية",
             "caption": "مجموعة مرجعية لعرض سعر عداد الضيافة."
           }
         },
         "cta": "اطلب عرضاً"
       },
       "inventory-kit": {
-        "name": "ESTINAD Axis Inventory",
-        "shortName": "Axis Inventory",
+        "name": "ESTINAD Inventory Kit",
+        "shortName": "Inventory Kit",
         "tagline": "امسح ووسم وانقل المخزون بحزمة ميدانية مُعدّة.",
         "useCase": "تدفقات المخزون وعمليات التخزين والوسم.",
         "detailIntro": "حزمة موجهة للتنقل لجرد المخزون والاستلام والوسم — مرتبطة بتدفقات مخزون ESTINAD.",
@@ -4234,26 +4343,26 @@ const arRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "حزمة ESTINAD Axis Inventory المتنقلة مع ماسح وطابعة ملصقات وجهاز لوحي"
+            "alt": "حزمة ESTINAD Inventory Kit المتنقلة مع ماسح وطابعة ملصقات وجهاز لوحي"
           },
           "detail": {
-            "alt": "لقطة مقربة لماسح Axis Inventory المحمول وطابعة الملصقات",
+            "alt": "لقطة مقربة لماسح Inventory Kit المحمول وطابعة الملصقات",
             "caption": "ماسح ومسار ملصقات مُعدّان لتدفقات المخزن."
           },
           "deployment": {
-            "alt": "محطة توضيحية لـ Axis Inventory في مخزن منظم",
+            "alt": "محطة توضيحية لـ Inventory Kit في مخزن منظم",
             "caption": "مرجع نشر مخزون توضيحي — وليس موقعاً فعلياً."
           },
           "included": {
-            "alt": "مكونات Axis Inventory المشمولة مرتبة كلوحة تقنية",
+            "alt": "مكونات Inventory Kit المشمولة مرتبة كلوحة تقنية",
             "caption": "مكونات مرجعية للحزمة الميدانية لعرض السعر."
           }
         },
         "cta": "اطلب عرضاً"
       },
       "multi-site-rollout": {
-        "name": "ESTINAD Axis Fleet",
-        "shortName": "Axis Fleet",
+        "name": "ESTINAD Multi-site Kit",
+        "shortName": "Multi-site Kit",
         "tagline": "معيار أجهزة واحد، يُنشر بثبات عبر كل موقع.",
         "useCase": "مؤسسات توحّد الأجهزة عبر عدة مواقع.",
         "detailIntro": "نهج نشر منسّق للفرق التي توحّد التجهيزات المعتمدة عبر مواقع متعددة.",
@@ -4323,41 +4432,73 @@ const arRaw = {
         ],
         "media": {
           "hero": {
-            "alt": "تجهيزات عداد موحّدة ESTINAD Axis Fleet في الاستوديو"
+            "alt": "تجهيزات عداد موحّدة ESTINAD Multi-site Kit في الاستوديو"
           },
           "detail": {
-            "alt": "إعداد مسبق لتجهيزات Axis متطابقة قبل النشر",
+            "alt": "إعداد مسبق لتجهيزات معتمدة متطابقة قبل النشر",
             "caption": "مجموعات متطابقة مُعدّة قبل الإطلاق موقعًا بموقع."
           },
           "deployment": {
-            "alt": "مساحة تجهيز توضيحية لـ Axis Fleet بأنظمة متكررة",
+            "alt": "مساحة تجهيز توضيحية لـ Multi-site Kit بأنظمة متكررة",
             "caption": "مرجع تجهيز مواقع متعددة توضيحي — وليس مستودع عميل."
           },
           "included": {
-            "alt": "عناصر تنسيق Axis Fleet مرتبة كلوحة تقنية",
+            "alt": "عناصر تنسيق Multi-site Kit مرتبة كلوحة تقنية",
             "caption": "مجموعة تنسيق مرجعية لعرض سعر المواقع المتعددة."
           }
         },
         "cta": "تحدث إلى فريقنا"
       }
     },
-    "steps": {
-      "eyebrow": "كيف يعمل التجهيز",
-      "title": "ثلاث خطوات من الاحتياج إلى الإطلاق.",
+    "trust": {
+      "eyebrow": "لماذا الأجهزة المعتمدة",
+      "title": "مصمّمة لتعمل معًا.",
+      "body": "نختار الأجهزة ونختبرها حول نشرات ESTINAD الحقيقية، حتى تعمل برمجياتك ومعداتك التشغيلية معًا بأسئلة توافق أقل.",
       "items": [
         {
-          "title": "أخبرنا عن موقعك",
-          "body": "شارك نوع نشاطك، وعدد نقاط البيع، والمواقع، والأجهزة الحالية."
+          "title": "أجهزة مختارة",
+          "body": "كتالوج مركّز بدل سوق مزدحم يصعب التنقّل فيه."
         },
         {
-          "title": "احصل على التجهيز المناسب",
-          "body": "نراجع احتياجك ونوصي بحزمة معتمدة تناسب طريقة عملك."
+          "title": "إرشاد التوافق",
+          "body": "اعرف أي أجهزة تناسب تجهيز ESTINAD لديك."
         },
         {
-          "title": "نجهّز ونركّب ونطلق",
-          "body": "نُعد التجهيز المختار، ونركبه ضمن النطاق المتفق عليه، ثم نختبره قبل الإطلاق."
+          "title": "دعم النشر",
+          "body": "احصل على مساعدة في تهيئة الأجهزة عندما يتطلب النشر ذلك."
         }
       ]
+    },
+    "purchasePath": {
+      "eyebrow": "شراء بسيط",
+      "title": "اشترِ الحزم الموحّدة عندما يُؤكَّد السعر.",
+      "body": "يمكن طلب التجهيزات الموحّدة ذات السعر والتوفر الموثّقين بالدفع عند الاستلام. أما الإعدادات المعقّدة ونشر المواقع المتعددة والتجهيزات المخصّصة فتبقى عبر عرض السعر.",
+      "gatedNote": "أسعار تجريبية نشطة للحزم المعروضة للمعاينة. تبقى Multi-site Kit والتجهيزات المخصّصة عبر عرض السعر.",
+      "cartCta": "عرض السلة",
+      "quoteCta": "اطلب عرض سعر"
+    },
+    "storeChrome": {
+      "eyebrow": "الأجهزة",
+      "catalog": "الكتالوج",
+      "overview": "نظرة عامة",
+      "quote": "عرض سعر",
+      "cart": "السلة",
+      "cartAria": "سلة الأجهزة، {count} عنصر"
+    },
+    "productDetail": {
+      "backToCatalog": "العودة إلى الكتالوج",
+      "skuLabel": "SKU",
+      "brandLabel": "العلامة",
+      "barcodeLabel": "الباركود",
+      "categoryLabel": "الفئة",
+      "availabilityLabel": "التوفر",
+      "available": "متوفر",
+      "quoteOnly": "عرض سعر فقط",
+      "addToCart": "أضف إلى السلة",
+      "addedToCart": "تمت الإضافة",
+      "requestQuote": "اطلب عرض سعر",
+      "detailsHeading": "التفاصيل",
+      "relatedHeading": "المزيد في هذه الفئة"
     },
     "compatibility": {
       "eyebrow": "التوافق",
@@ -4376,23 +4517,106 @@ const arRaw = {
       ]
     },
     "finalCta": {
-      "title": "تجهّز موقعاً جديداً أو تطوّر تجهيزك الحالي؟",
-      "body": "أخبرنا كيف يعمل نشاطك، وسنوصي بحزمة تجهيز مناسبة لمنتج ESTINAD الذي تستخدمه.",
-      "cta": "اطلب عرض تجهيز"
+      "title": "تحتاج مساعدة لاختيار التجهيز المناسب؟",
+      "body": "أخبرنا بما تحتاجه لنشاطك، وسنساعدك على تحديد أجهزة ESTINAD المناسبة.",
+      "cta": "اطلب عرض سعر",
+      "secondaryCta": "استكشف ESTINAD Retail"
     },
     "quote": {
-      "metaTitle": "اطلب عرض تجهيز",
-      "metaDescription": "اطلب عرضاً لحزم أجهزة ESTINAD المعتمدة لمواقعك.",
-      "eyebrow": "اطلب عرضاً",
+      "metaTitle": "اطلب عرض سعر للأجهزة",
+      "metaDescription": "اطلب عرض سعر لتجهيزات أجهزة ESTINAD المعتمدة لمواقعك.",
+      "eyebrow": "اطلب عرض سعر",
       "title": "أخبرنا كيف يعمل نشاطك.",
-      "intro": "شارك مواقعك ونقاط البيع والحزمة المفضلة. سيراجع فريقنا متطلباتك ويتابعك بتجهيز موصى به.",
+      "intro": "شارك مواقعك ونقاط البيع والتجهيز المفضّل. سيراجع فريقنا متطلباتك ويتابعك بإعداد موصى به.",
       "asideTitle": "ما الذي يحدث بعد ذلك",
       "aside": [
         "نراجع نوع نشاطك وعدد المواقع",
-        "نوصي بحزمة معتمدة أو مسار توافق",
+        "نوصي بتجهيز معتمد أو مسار توافق",
         "نؤكد نطاق التركيب والتدريب عند الحاجة"
       ],
       "note": "الأجهزة اختيارية. يمكن للعملاء استخدام أجهزتهم الحالية إذا اجتازت التحقق من التوافق."
+    },
+    "cart": {
+      "metaTitle": "سلة الأجهزة",
+      "metaDescription": "راجع أجهزة ESTINAD المعتمدة المختارة قبل إتمام الطلب.",
+      "eyebrow": "السلة",
+      "title": "اختيارك من الأجهزة.",
+      "emptyTitle": "سلتك فارغة.",
+      "emptyBody": "الشراء عبر الإنترنت متاح فقط للتجهيزات ذات السعر والتوفر الموثّقين. تصفّح الكتالوج أو اطلب عرض سعر.",
+      "emptyCta": "تسوّق الأجهزة",
+      "quoteCta": "اطلب عرض سعر",
+      "quantity": "الكمية",
+      "remove": "إزالة",
+      "subtotal": "المجموع الفرعي",
+      "checkoutCta": "متابعة إلى الدفع",
+      "unavailableTitle": "الشراء غير متاح بعد.",
+      "unavailableBody": "لم تُنشر بعد بيانات تجارية موثّقة لهذه التجهيزات. اطلب عرض سعر وسنؤكد التسعير والتنفيذ."
+    },
+    "checkout": {
+      "metaTitle": "إتمام طلب الأجهزة",
+      "metaDescription": "أتمم طلب دفع عند الاستلام بسيطًا لأجهزة ESTINAD المعتمدة.",
+      "eyebrow": "إتمام الطلب",
+      "title": "بيانات العميل والتنفيذ.",
+      "intro": "الدفع عند الاستلام. نؤكد الطلب ثم نرتّب التسليم أو الاستلام.",
+      "sections": {
+        "contact": "معلومات العميل",
+        "fulfillment": "التسليم / الاستلام",
+        "review": "مراجعة الطلب",
+        "payment": "الدفع"
+      },
+      "fullName": "الاسم الكامل",
+      "companyName": "اسم الشركة",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "country": "البلد",
+      "city": "المدينة",
+      "address": "عنوان التسليم",
+      "addressPlaceholder": "الشارع والمبنى وأي ملاحظات للوصول",
+      "fulfillmentMethod": "طريقة التنفيذ",
+      "delivery": "توصيل",
+      "pickup": "استلام",
+      "notes": "ملاحظات الطلب",
+      "notesPlaceholder": "أي معلومة عن التوقيت أو الوصول إلى الموقع.",
+      "paymentMethod": "طريقة الدفع",
+      "paymentCod": "الدفع عند الاستلام",
+      "paymentCodNote": "ادفع عند تسليم طلبك أو استلامه. لا يوجد دفع بالبطاقة عبر الإنترنت في هذا المسار.",
+      "consent": "أوافق على سياسة الخصوصية وأفهم أن هذا طلب بالدفع عند الاستلام.",
+      "subtotal": "المجموع الفرعي",
+      "deliveryCost": "التسليم",
+      "total": "الإجمالي",
+      "placeOrder": "تأكيد طلب الدفع عند الاستلام",
+      "placing": "جارٍ تسجيل الطلب…",
+      "backToCart": "العودة إلى السلة",
+      "unavailableTitle": "إتمام الطلب غير متاح بعد.",
+      "unavailableBody": "يُفتح الدفع عبر الإنترنت عند نشر الأسعار والتوفر وقواعد التنفيذ الموثّقة. اطلب عرض سعر في هذه الأثناء.",
+      "quoteCta": "اطلب عرض سعر",
+      "errors": {
+        "required": "هذا الحقل مطلوب.",
+        "email": "أدخل بريداً إلكترونياً صالحاً.",
+        "empty": "سلتك فارغة.",
+        "notPurchasable": "عنصر واحد أو أكثر لا يمكن شراؤه عبر الإنترنت بعد.",
+        "invalidQuantity": "تحقق من الكمية لكل عنصر.",
+        "fulfillment": "اختر طريقة تنفيذ.",
+        "server": "تعذّر تسجيل الطلب. حاول مرة أخرى أو اطلب عرض سعر."
+      }
+    },
+    "confirmation": {
+      "metaTitle": "تأكيد الطلب",
+      "metaDescription": "تم تسجيل طلب أجهزة ESTINAD المعتمدة بالدفع عند الاستلام.",
+      "eyebrow": "التأكيد",
+      "title": "تم تسجيل الطلب.",
+      "body": "شكرًا لك. تم تسجيل طلبك بالدفع عند الاستلام. سيتابع فريقنا معك لتأكيد التنفيذ.",
+      "referenceLabel": "مرجع الطلب",
+      "nextTitle": "ما الذي يحدث بعد ذلك",
+      "next": [
+        "نراجع ونؤكد التوفر",
+        "نرتّب التسليم أو الاستلام",
+        "تدفع نقدًا عند التسليم أو الاستلام"
+      ],
+      "shopCta": "العودة إلى الأجهزة",
+      "quoteCta": "تحتاج تجهيزًا مخصّصًا؟ اطلب عرض سعر",
+      "missingTitle": "لم يُعثر على مرجع طلب.",
+      "missingBody": "إذا كنت قد أتممت طلبًا للتو، تحقق من بريد التأكيد أو تواصل مع فريقنا."
     },
     "form": {
       "sections": {

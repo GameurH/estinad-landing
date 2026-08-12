@@ -105,6 +105,44 @@ export function retailFeatureIcon(icon: string, className?: string) {
           <circle cx="17.5" cy="18.5" r="1.5" />
         </IconFrame>
       );
+    case "purchasing":
+      return (
+        <IconFrame className={className}>
+          <path d="M4 7h16l-1.5 11H5.5L4 7Z" />
+          <path d="M9 10v5M12 10v5M15 10v5" />
+          <path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7" />
+        </IconFrame>
+      );
+    case "count":
+      return (
+        <IconFrame className={className}>
+          <path d="M5 4h14v16H5z" />
+          <path d="M8 8h8M8 12h8M8 16h5" />
+        </IconFrame>
+      );
+    case "barcode":
+      return (
+        <IconFrame className={className}>
+          <path d="M4 6v12M7 6v12M9 6v12M12 6v12M14 6v12M17 6v12M20 6v12" />
+        </IconFrame>
+      );
+    case "offline":
+      return (
+        <IconFrame className={className}>
+          <path d="M4 12a8 8 0 0 1 13.5-5.8" />
+          <path d="M7.5 15a4.5 4.5 0 0 1 6.8-3.9" />
+          <path d="M12 18.5h.01" />
+          <path d="M5 5l14 14" />
+        </IconFrame>
+      );
+    case "backup":
+      return (
+        <IconFrame className={className}>
+          <path d="M12 4v10" />
+          <path d="M8.5 9.5 12 6l3.5 3.5" />
+          <path d="M5 16v2.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V16" />
+        </IconFrame>
+      );
     default:
       return (
         <IconFrame className={className}>

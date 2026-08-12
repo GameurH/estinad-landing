@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/lib/dictionaries/types";
-import type { HardwareKitDefinition } from "@/lib/hardware";
+import {
+  isPurchasable,
+  type HardwareKitDefinition,
+} from "@/lib/hardware";
+import { formatMoneyMinor } from "@/lib/hardware-commerce";
 import type { Locale } from "@/lib/i18n-config";
 import { lp } from "@/lib/i18n-config";
+import { AddToCartButton } from "@/components/hardware/AddToCartButton";
 
 type KitCardProps = {
   locale: Locale;
@@ -14,7 +19,24 @@ type KitCardProps = {
   heroAlt: string;
   cta: string;
   labels: Dictionary["hardware"]["kitsSection"];
+  productNames: Record<string, string>;
 };
+
+function availabilityLabel(
+  labels: Dictionary["hardware"]["kitsSection"],
+  availability: HardwareKitDefinition["commerce"]["availability"],
+) {
+  switch (availability) {
+    case "in_stock":
+      return labels.inStockLabel;
+    case "available":
+      return labels.availableLabel;
+    case "request_quote":
+      return labels.requestQuoteAvailability;
+    default:
+      return labels.contactAvailability;
+  }
+}
 
 export function HardwareKitCard({
   locale,
@@ -25,10 +47,15 @@ export function HardwareKitCard({
   heroAlt,
   cta,
   labels,
+  productNames,
 }: KitCardProps) {
   const L = (h: string) => lp(locale, h);
   const quoteHref = L(`/hardware/quote?kit=${kit.slug}`);
   const hero = kit.media.hero;
+  const purchasable = isPurchasable(kit.commerce);
+  const related = kit.relatedProducts
+    .map((slug) => productNames[slug])
+    .filter(Boolean);
 
   return (
     <article className="group flex flex-col bg-card min-w-0 overflow-hidden">
@@ -69,13 +96,56 @@ export function HardwareKitCard({
         </p>
         <p className="mt-3 text-sm text-ink-secondary leading-relaxed">{useCase}</p>
 
+        <dl className="mt-5 flex flex-col gap-2 text-sm">
+          <div className="flex flex-wrap gap-x-2 gap-y-1 min-w-0">
+            <dt className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted">
+              {labels.worksWithLabel}
+            </dt>
+            <dd className="text-ink">
+              {related.length > 0 ? related.join(" · ") : labels.compatibilityVerified}
+            </dd>
+          </div>
+          <div className="flex flex-wrap gap-x-2 gap-y-1 min-w-0">
+            <dt className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted">
+              {labels.availabilityLabel}
+            </dt>
+            <dd className="text-ink-secondary">
+              {availabilityLabel(labels, kit.commerce.availability)}
+            </dd>
+          </div>
+          {purchasable &&
+            kit.commerce.priceMinor !== null &&
+            kit.commerce.currency && (
+              <div className="flex flex-wrap gap-x-2 gap-y-1 min-w-0">
+                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted">
+                  {labels.priceLabel}
+                </dt>
+                <dd className="text-ink font-medium">
+                  {formatMoneyMinor(
+                    kit.commerce.priceMinor,
+                    kit.commerce.currency,
+                    locale,
+                  )}
+                </dd>
+              </div>
+            )}
+        </dl>
+
         <div className="mt-auto pt-6 hairline-t flex flex-col sm:flex-row gap-3 sm:items-center">
-          <Link
-            href={quoteHref}
-            className="inline-flex items-center justify-center min-h-11 h-11 px-5 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
-          >
-            {cta}
-          </Link>
+          {purchasable ? (
+            <AddToCartButton
+              slug={kit.slug}
+              label={labels.buyNow}
+              className="inline-flex items-center justify-center min-h-11 h-11 px-5 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
+            />
+          ) : (
+            <Link
+              href={quoteHref}
+              className="inline-flex items-center justify-center min-h-11 h-11 px-5 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
+            >
+              {cta}
+            </Link>
+          )}
           <Link
             href={L(`/hardware/${kit.slug}`)}
             className="inline-flex items-center justify-center min-h-11 h-11 px-5 rounded-full text-sm font-medium text-ink border border-line-strong hover:border-ink hover:bg-surface transition-colors"

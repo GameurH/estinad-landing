@@ -1,19 +1,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui";
 import { Reveal } from "@/components/motion/Reveal";
-import type { RetailOperationsCarouselCopy } from "@/components/retail/RetailOperationsCarousel";
 import { lp, type Locale } from "@/lib/i18n-config";
+import type { Dictionary } from "@/lib/dictionaries/types";
 
-export type RetailLandingCopy = {
-  badge: string;
-  benefits: string[];
-  trustLabel: string;
-  trustMarks: string[];
-  featuresTitle: string;
-  featuresIntro: string;
-  featureCards: { icon: string; title: string; body: string }[];
-  operationsCarousel: RetailOperationsCarouselCopy;
-};
+export type RetailLandingCopy = Dictionary["products"]["items"]["retail"]["landing"];
 
 type Props = {
   locale: Locale;
@@ -24,22 +15,6 @@ type Props = {
   viewPricingLabel: string;
 };
 
-function LockIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      aria-hidden
-    >
-      <rect x="3.5" y="7" width="9" height="6.5" rx="1.5" />
-      <path d="M5.5 7V5.25a2.5 2.5 0 0 1 5 0V7" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 export function RetailHero({
   locale,
   name,
@@ -49,10 +24,10 @@ export function RetailHero({
   viewPricingLabel,
 }: Props) {
   const L = (href: string) => lp(locale, href);
+  const quietPoints = landing.benefits.slice(0, 2);
 
   return (
     <section className="relative overflow-hidden">
-      {/* Restrained atmosphere — soft top light, no decorative objects */}
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-10%,var(--color-surface)_0%,transparent_60%)]"
         aria-hidden
@@ -65,14 +40,11 @@ export function RetailHero({
       <div className="relative shell pt-28 md:pt-32 lg:pt-36">
         <div className="mx-auto max-w-[720px] text-center">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1.5 text-[0.7rem] font-mono uppercase tracking-[0.14em] text-muted shadow-card">
-              <LockIcon className="h-3.5 w-3.5 text-ink" />
-              {landing.badge}
-            </span>
+            <p className="eyebrow mb-0">{landing.badge}</p>
           </Reveal>
 
           <Reveal delay={0.06}>
-            <h1 className="mt-6 text-[clamp(2.75rem,6vw,4.5rem)] leading-[1.02] tracking-[-0.04em] font-semibold text-ink [text-wrap:balance]">
+            <h1 className="mt-5 text-[clamp(2.75rem,6vw,4.5rem)] leading-[1.02] tracking-[-0.04em] font-semibold text-ink [text-wrap:balance]">
               {name}
             </h1>
           </Reveal>
@@ -92,31 +64,16 @@ export function RetailHero({
             </div>
           </Reveal>
 
-          <Reveal delay={0.24}>
-            <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5">
-              {landing.benefits.map((item) => (
-                <li key={item} className="inline-flex items-center gap-2 text-sm text-ink-secondary">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-surface-2 text-ink">
-                    <svg
-                      viewBox="0 0 12 12"
-                      className="h-3 w-3"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      aria-hidden
-                    >
-                      <path d="M2.5 6.2 4.8 8.5 9.5 3.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+          {quietPoints.length > 0 ? (
+            <Reveal delay={0.22}>
+              <p className="mx-auto mt-6 max-w-md text-sm text-muted">
+                {quietPoints.join(" · ")}
+              </p>
+            </Reveal>
+          ) : null}
         </div>
       </div>
 
-      {/* Product reveal — primary visual weight */}
       <div className="relative mt-12 md:mt-16 lg:mt-[4.5rem]">
         <div className="shell-wide">
           <Reveal delay={0.2}>
@@ -126,22 +83,21 @@ export function RetailHero({
                 aria-hidden
               />
 
-              <div className="relative overflow-hidden rounded-[8px] border border-line bg-card shadow-float md:rounded-[8px]">
+              <div className="relative overflow-hidden rounded-[8px] border border-line bg-card shadow-float">
                 <div
                   className="pointer-events-none absolute inset-0 z-[1] rounded-[inherit] ring-1 ring-inset ring-black/[0.035] dark:ring-white/[0.05]"
                   aria-hidden
                 />
 
-                {/* Clip from the top so IA + KPIs lead; lower widgets continue the reveal */}
                 <div className="relative max-h-[min(64vh,700px)] overflow-hidden sm:max-h-[min(66vh,760px)] lg:max-h-[min(70vh,820px)]">
                   <Image
                     src="/images/retail/hero.png"
-                    alt={`${name} — retail dashboard with inventory, catalog, POS, and store performance`}
+                    alt={`${name} — store performance, inventory, and point of sale in one system`}
                     width={1536}
-                    height={1024}
+                    height={864}
                     priority
                     sizes="(max-width: 768px) 100vw, (max-width: 1400px) 92vw, 1360px"
-                    className="relative h-auto w-full select-none"
+                    className="relative h-auto w-full select-none object-cover object-top"
                   />
                 </div>
               </div>

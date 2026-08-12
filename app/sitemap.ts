@@ -28,8 +28,11 @@ const staticRoutes = [
   "/demo",
   "/quote",
   "/hardware",
+  "/hardware/catalog",
   "/hardware/quote",
   "/hardware/compatibility",
+  "/hardware/cart",
+  "/hardware/checkout",
 ];
 
 const resourceRoutes = [
@@ -75,8 +78,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   staticRoutes.forEach((p) => {
     const priority =
       p === "/hardware" ||
+      p === "/hardware/catalog" ||
       p === "/hardware/quote" ||
       p === "/hardware/compatibility" ||
+      p === "/hardware/cart" ||
+      p === "/hardware/checkout" ||
       p === "/quote"
         ? 0.65
         : 0.8;

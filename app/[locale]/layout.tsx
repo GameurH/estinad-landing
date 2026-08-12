@@ -24,7 +24,7 @@ import {
   portfolioProductsList,
   solutionsList,
 } from "@/lib/nav";
-import { hardwareKitsList } from "@/lib/hardware";
+import { getHardwareMegaNav } from "@/lib/hardware-mega-nav";
 import { hreflangMeta } from "@/lib/seo";
 
 const geistSans = Geist({
@@ -109,6 +109,7 @@ export default async function LocaleLayout({ children, params }: Props & { child
 
   const companyItems = companyNav(d);
   const resourceItems = resourcesNav(d);
+  const hardwareMegaNav = await getHardwareMegaNav(l);
 
   const headerData: HeaderData = {
     locale: l,
@@ -118,16 +119,7 @@ export default async function LocaleLayout({ children, params }: Props & { child
     availableProducts: availableProductsList(d),
     comingSoonProducts: portfolioProductsList(d),
     solutions: solutionsList(d),
-    hardwareKits: hardwareKitsList(d).map((kit) => ({
-      slug: kit.slug,
-      glyph: kit.glyph,
-      name: kit.copy.name,
-      shortName: kit.copy.shortName,
-      tagline: kit.copy.tagline,
-      category: d.nav.megaHardware.kitCategories[kit.slug],
-      imageSrc: kit.media.hero.src,
-      imageAlt: kit.copy.media.hero.alt,
-    })),
+    hardwareMegaNav,
     resourcesLinks: resourceItems.map((item) => ({
       label: item.label,
       href: item.href,
@@ -147,6 +139,7 @@ export default async function LocaleLayout({ children, params }: Props & { child
       statuses: d.products.index.statuses,
       requestQuote: d.common.requestQuote,
       viewPricing: d.common.viewPricing,
+      currentLabel: d.nav.currentLabel,
       viewAllProducts: d.nav.megaProductsExploreAll,
       highlights: d.nav.megaProductsHighlights,
       helpTitle: d.nav.megaProductsHelpTitle,
@@ -174,26 +167,18 @@ export default async function LocaleLayout({ children, params }: Props & { child
     },
     hardwareMega: {
       intro: d.nav.megaHardwareIntro,
-      kitsLabel: d.nav.megaHardware.kitsLabel,
-      requestQuote: d.nav.megaHardware.requestQuote,
-      checkCompatibility: d.nav.megaHardware.checkCompatibility,
-      viewAll: d.nav.certifiedHardware,
-      quoteHref: d.nav.megaHardware.quoteHref,
-      compatibilityHref: d.nav.megaHardware.compatibilityHref,
       eyebrow: d.nav.megaHardware.eyebrow,
       title: d.nav.megaHardware.title,
       body: d.nav.megaHardware.body,
-      assuranceTitle: d.nav.megaHardware.assuranceTitle,
-      assuranceBody: d.nav.megaHardware.assuranceBody,
-      sideLinks: d.nav.megaHardware.sideLinks,
-      exploreLabel: d.nav.megaHardware.exploreLabel,
-      explore: d.nav.megaHardware.explore,
-      expertTitle: d.nav.megaHardware.expertTitle,
-      expertBody: d.nav.megaHardware.expertBody,
-      bannerTitle: d.nav.megaHardware.bannerTitle,
-      bannerBody: d.nav.megaHardware.bannerBody,
-      bannerCta: d.nav.megaHardware.bannerCta,
-      contactHref: d.nav.megaHardware.contactHref,
+      categoriesLabel: d.nav.megaHardware.categoriesLabel,
+      featuredLabel: d.nav.megaHardware.featuredLabel,
+      viewCatalog: d.nav.megaHardware.viewCatalog,
+      catalogHref: d.nav.megaHardware.catalogHref,
+      requestQuote: d.nav.megaHardware.requestQuote,
+      quoteHref: d.nav.megaHardware.quoteHref,
+      checkCompatibility: d.nav.megaHardware.checkCompatibility,
+      compatibilityHref: d.nav.megaHardware.compatibilityHref,
+      emptyHint: d.nav.megaHardware.emptyHint,
     },
     resourcesMega: {
       intro: d.nav.megaResourcesIntro,
