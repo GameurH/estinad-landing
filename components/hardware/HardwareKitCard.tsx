@@ -73,17 +73,17 @@ export function HardwareKitCard({
         />
       </Link>
 
-      <div className="flex flex-1 flex-col p-7 md:p-8">
-        <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-1 flex-col p-5 md:p-8">
+        <div className="flex items-start justify-between gap-3">
           <span className="font-mono text-xs text-muted tracking-[0.18em]">
             {kit.glyph}
           </span>
-          <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted border border-line rounded-full px-2.5 py-1">
+          <span className="max-w-[9.5rem] sm:max-w-none truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted border border-line rounded-full px-2.5 py-1">
             {labels.configuredLabel}
           </span>
         </div>
 
-        <h3 className="mt-5 text-xl md:text-2xl font-semibold text-ink tracking-tight [text-wrap:balance] min-w-0">
+        <h3 className="mt-4 md:mt-5 text-lg md:text-2xl font-semibold text-ink tracking-tight [text-wrap:balance] min-w-0">
           <Link
             href={L(`/hardware/${kit.slug}`)}
             className="hover:opacity-80 transition-opacity"
@@ -91,10 +91,12 @@ export function HardwareKitCard({
             {name}
           </Link>
         </h3>
-        <p className="mt-3 text-sm text-ink leading-relaxed [text-wrap:pretty]">
+        <p className="mt-2 md:mt-3 text-sm text-ink leading-relaxed [text-wrap:pretty]">
           {tagline}
         </p>
-        <p className="mt-3 text-sm text-ink-secondary leading-relaxed">{useCase}</p>
+        <p className="mt-2 md:mt-3 text-sm text-ink-secondary leading-relaxed line-clamp-3 md:line-clamp-none">
+          {useCase}
+        </p>
 
         <dl className="mt-5 flex flex-col gap-2 text-sm">
           <div className="flex flex-wrap gap-x-2 gap-y-1 min-w-0">

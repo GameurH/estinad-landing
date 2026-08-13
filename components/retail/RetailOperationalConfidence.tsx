@@ -55,7 +55,7 @@ export function RetailOperationalConfidence({ copy }: Props) {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <ol className="mx-auto mt-10 grid max-w-5xl gap-8 border-t border-line pt-10 sm:grid-cols-3 sm:gap-6 md:mt-12 md:gap-8 md:pt-12">
+          <ol className="mx-auto mt-10 grid max-w-5xl gap-8 border-t border-line pt-10 md:mt-12 md:grid-cols-3 md:gap-8 md:pt-12">
             {copy.principles.map((principle) => (
               <li key={principle.id} className="min-w-0">
                 <span className="font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted">

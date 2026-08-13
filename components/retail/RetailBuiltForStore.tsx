@@ -187,34 +187,40 @@ export function RetailBuiltForStore({ copy }: Props) {
             </figure>
 
             <div className="flex min-w-0 flex-col">
-              <div
-                role="tablist"
-                aria-label={copy.contextsNavLabel}
-                onKeyDown={onKeyDown}
-                className="flex gap-1 overflow-x-auto pb-1"
-              >
-                {copy.contexts.map((ctx, index) => {
-                  const selected = index === activeIndex;
-                  return (
-                    <button
-                      key={ctx.id}
-                      type="button"
-                      role="tab"
-                      id={`${baseId}-tab-${ctx.id}`}
-                      aria-selected={selected}
-                      aria-controls={`${baseId}-panel`}
-                      tabIndex={selected ? 0 : -1}
-                      onClick={() => select(index)}
-                      className={`shrink-0 rounded-full px-3.5 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${
-                        selected
-                          ? "bg-ink text-bg"
-                          : "bg-bg text-ink-secondary hover:text-ink border border-line"
-                      }`}
-                    >
-                      {ctx.label}
-                    </button>
-                  );
-                })}
+              <div className="relative">
+                <div
+                  role="tablist"
+                  aria-label={copy.contextsNavLabel}
+                  onKeyDown={onKeyDown}
+                  className="flex gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                >
+                  {copy.contexts.map((ctx, index) => {
+                    const selected = index === activeIndex;
+                    return (
+                      <button
+                        key={ctx.id}
+                        type="button"
+                        role="tab"
+                        id={`${baseId}-tab-${ctx.id}`}
+                        aria-selected={selected}
+                        aria-controls={`${baseId}-panel`}
+                        tabIndex={selected ? 0 : -1}
+                        onClick={() => select(index)}
+                        className={`shrink-0 inline-flex min-h-11 items-center rounded-full px-4 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${
+                          selected
+                            ? "bg-ink text-bg"
+                            : "bg-bg text-ink-secondary hover:text-ink border border-line"
+                        }`}
+                      >
+                        {ctx.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                <div
+                  className="pointer-events-none absolute inset-y-0 end-0 w-10 bg-gradient-to-l from-surface from-30% to-transparent"
+                  aria-hidden
+                />
               </div>
 
               <div

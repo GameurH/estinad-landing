@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Logo } from "./Monogram";
 import { ThemeToggle, type ThemeLabels } from "./ThemeToggle";
 import { ProductsMegaMenu, type ProductsMegaLabels } from "@/components/nav/ProductsMegaMenu";
@@ -72,8 +72,13 @@ export function Header({ data }: { data: HeaderData }) {
   const [langOpen, setLangOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
+  const hiddenRef = useRef(false);
+  const mobileOpenRef = useRef(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const headerRef = useRef<HTMLElement>(null);
+
+  hiddenRef.current = hidden;
+  mobileOpenRef.current = mobileOpen;
 
   const currentSlug = useMemo(
     () => productSlugFromPath(pathname, locale),
@@ -122,24 +127,41 @@ export function Header({ data }: { data: HeaderData }) {
       const y = window.scrollY;
       const dy = y - lastY.current;
       lastY.current = y;
-      if (y < 24) setHidden(false);
-      else if (dy > 4 && y > 96) setHidden(true);
-      else if (dy < -2) setHidden(false);
+      let nextHidden = hiddenRef.current;
+      if (y < 24) nextHidden = false;
+      else if (dy > 4 && y > 96) nextHidden = true;
+      else if (dy < -2) nextHidden = false;
+
+      if (nextHidden !== hiddenRef.current) {
+        hiddenRef.current = nextHidden;
+        setHidden(nextHidden);
+      }
+
+      // Same-frame signal for secondary chrome (CSS attribute selectors).
+      const collapsed = nextHidden && !mobileOpenRef.current;
+      document.documentElement.dataset.primaryNav = collapsed
+        ? "collapsed"
+        : "expanded";
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Publish hide state so nested chrome (e.g. hardware store bar) can track top offset.
-  useEffect(() => {
+  // Keep dataset in sync when mobile menu opens/closes (and on first paint).
+  // Do NOT delete the attribute in this effect's cleanup — that flashes
+  // "expanded" between dependency updates and desyncs the store bar.
+  useLayoutEffect(() => {
     const collapsed = hidden && !mobileOpen;
     document.documentElement.dataset.primaryNav = collapsed
       ? "collapsed"
       : "expanded";
+  }, [hidden, mobileOpen]);
+
+  useEffect(() => {
     return () => {
       delete document.documentElement.dataset.primaryNav;
     };
-  }, [hidden, mobileOpen]);
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -257,9 +279,10 @@ export function Header({ data }: { data: HeaderData }) {
   return (
     <header
       ref={headerRef}
-      className={`fixed top-3 md:top-4 start-3 end-3 md:start-4 md:end-4 z-50 transition-transform duration-200 ease-out ${
-        hidden && !mobileOpen ? "-translate-y-[130%]" : ""
+      className={`site-primary-nav fixed start-3 end-3 md:start-4 md:end-4 z-50 ${
+        hidden && !mobileOpen ? "is-collapsed" : ""
       }`}
+      style={{ top: "calc(var(--safe-top) + var(--nav-top-inset))" }}
     >
       <div className="mx-auto max-w-[1200px] relative">
         <div className="glass rounded-full shadow-float h-14 ps-4 pe-3 flex items-center justify-between relative z-50">

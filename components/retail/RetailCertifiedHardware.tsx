@@ -29,8 +29,8 @@ export function RetailCertifiedHardware({ locale, copy }: Props) {
   return (
     <section className="hairline-b bg-bg" aria-labelledby="retail-hardware-title">
       <div className="shell py-16 md:py-24">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 lg:items-start">
-          <Reveal>
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16 lg:items-start">
+          <Reveal className="order-2 lg:order-1">
             <div className="max-w-xl">
               <Eyebrow>{copy.eyebrow}</Eyebrow>
               <h2
@@ -52,7 +52,7 @@ export function RetailCertifiedHardware({ locale, copy }: Props) {
               <ol className="mt-8 flex flex-col gap-3">
                 {categories.map((cat, index) => (
                   <li key={cat.id} className="flex items-center gap-3 text-sm text-ink">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line font-mono text-[0.7rem] text-muted">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line font-mono text-[0.7rem] text-muted">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     {cat.label}
@@ -62,7 +62,7 @@ export function RetailCertifiedHardware({ locale, copy }: Props) {
 
               <p className="mt-6 text-xs leading-relaxed text-muted">{copy.scopeNote}</p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3 [&_a]:w-full sm:[&_a]:w-auto">
                 <Button href={L("/hardware")}>{copy.primaryCta}</Button>
                 <Button
                   href={L("/hardware/quote?kit=retail-counter-kit")}
@@ -74,10 +74,11 @@ export function RetailCertifiedHardware({ locale, copy }: Props) {
             </div>
           </Reveal>
 
-          <Reveal delay={0.08}>
+          <Reveal delay={0.08} className="order-1 lg:order-2">
             {/*
               Pin coordinates are LTR image geometry — always use physical left/top
               so pins stay on the photographed components in RTL locales.
+              Diagram first on mobile for clearer hierarchy.
             */}
             <figure
               className="relative min-w-0 overflow-hidden rounded-2xl border border-line bg-surface aspect-video"
@@ -100,7 +101,7 @@ export function RetailCertifiedHardware({ locale, copy }: Props) {
                     return (
                       <span
                         key={cat.id}
-                        className="pointer-events-none absolute z-10 flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-ink/20 bg-bg/95 text-[0.7rem] font-mono text-ink shadow-sm"
+                        className="pointer-events-none absolute z-10 hidden sm:flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-ink/20 bg-bg/95 text-[0.7rem] font-mono text-ink shadow-sm"
                         style={{ left: `${pin.x}%`, top: `${pin.y}%` }}
                         aria-hidden
                       >

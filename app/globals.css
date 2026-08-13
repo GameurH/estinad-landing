@@ -65,6 +65,67 @@
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* --- Site chrome (primary pill + hardware store bar) --- */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --nav-top-inset: 0.75rem; /* top-3 */
+  --nav-bar-h: 3.5rem; /* h-14 */
+  --store-bar-h: 3rem; /* h-12 */
+  --primary-chrome-h: calc(
+    var(--safe-top) + var(--nav-top-inset) + var(--nav-bar-h)
+  );
+  --chrome-ease: cubic-bezier(0, 0, 0.2, 1);
+  --chrome-duration: 200ms;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-top-inset: 1rem; /* top-4 */
+  }
+}
+
+/* Primary floating pill */
+.site-primary-nav {
+  z-index: 50;
+  transition: transform var(--chrome-duration) var(--chrome-ease);
+}
+
+.site-primary-nav.is-collapsed {
+  transform: translateY(calc(-100% - var(--nav-top-inset) - var(--safe-top)));
+}
+
+/*
+ * Hardware secondary bar — explicit top (not transform) so it never slides
+ * up over the primary pill. Portaled to body; z-index below primary.
+ */
+.hardware-store-bar {
+  top: var(--primary-chrome-h);
+  z-index: 40;
+  transform: none;
+  transition: top var(--chrome-duration) var(--chrome-ease);
+}
+
+.hardware-store-spacer {
+  height: calc(var(--primary-chrome-h) + var(--store-bar-h));
+  transition: height var(--chrome-duration) var(--chrome-ease);
+}
+
+html[data-primary-nav="collapsed"] .hardware-store-bar {
+  top: var(--safe-top);
+}
+
+html[data-primary-nav="collapsed"] .hardware-store-spacer {
+  height: calc(var(--safe-top) + var(--store-bar-h));
+}
+
+/* Sticky panels under dual chrome */
+.sticky-under-store-chrome {
+  top: calc(var(--primary-chrome-h) + var(--store-bar-h) + 1rem);
+  transition: top var(--chrome-duration) var(--chrome-ease);
+}
+
+html[data-primary-nav="collapsed"] .sticky-under-store-chrome {
+  top: calc(var(--safe-top) + var(--store-bar-h) + 1rem);
 }
 
 /* ============================================================

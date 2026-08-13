@@ -20,7 +20,7 @@ export function RetailFinalCta({ locale, copy }: Props) {
       aria-labelledby="retail-final-cta-title"
     >
       <div className="absolute inset-0 soft-light opacity-70" aria-hidden />
-      <div className="shell relative py-24 md:py-32 lg:py-36">
+      <div className="shell relative py-16 md:py-32 lg:py-36">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <Eyebrow>{copy.eyebrow}</Eyebrow>

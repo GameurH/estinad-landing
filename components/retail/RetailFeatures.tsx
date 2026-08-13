@@ -80,44 +80,50 @@ function StageNav({
 
   if (orientation === "horizontal") {
     return (
-      <div
-        role="tablist"
-        aria-label={label}
-        aria-orientation="horizontal"
-        onKeyDown={onKeyDown}
-        className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-      >
-        {stages.map((stage, i) => {
-          const active = i === activeIndex;
-          return (
-            <button
-              key={stage.id}
-              type="button"
-              role="tab"
-              id={`${baseId}-tab-${stage.id}`}
-              aria-selected={active}
-              aria-controls={`${baseId}-panel`}
-              tabIndex={active ? 0 : -1}
-              onClick={() => onSelect(i)}
-              className={`shrink-0 rounded-[10px] border px-3 py-2 text-start transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${
-                active
-                  ? "border-ink/20 bg-ink text-bg"
-                  : "border-line bg-card text-ink-secondary hover:border-line-strong hover:text-ink"
-              }`}
-            >
-              <span
-                className={`block font-mono text-[0.65rem] tabular-nums ${
-                  active ? "text-bg/70" : "text-muted"
+      <div className="relative">
+        <div
+          role="tablist"
+          aria-label={label}
+          aria-orientation="horizontal"
+          onKeyDown={onKeyDown}
+          className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {stages.map((stage, i) => {
+            const active = i === activeIndex;
+            return (
+              <button
+                key={stage.id}
+                type="button"
+                role="tab"
+                id={`${baseId}-tab-${stage.id}`}
+                aria-selected={active}
+                aria-controls={`${baseId}-panel`}
+                tabIndex={active ? 0 : -1}
+                onClick={() => onSelect(i)}
+                className={`shrink-0 inline-flex min-h-11 flex-col justify-center rounded-[10px] border px-3.5 py-2 text-start transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${
+                  active
+                    ? "border-ink/20 bg-ink text-bg"
+                    : "border-line bg-card text-ink-secondary hover:border-line-strong hover:text-ink"
                 }`}
               >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span className="mt-0.5 block whitespace-nowrap text-sm font-medium leading-snug">
-                {stage.navLabel}
-              </span>
-            </button>
-          );
-        })}
+                <span
+                  className={`block font-mono text-[0.65rem] tabular-nums ${
+                    active ? "text-bg/70" : "text-muted"
+                  }`}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="mt-0.5 block whitespace-nowrap text-sm font-medium leading-snug">
+                  {stage.navLabel}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        <div
+          className="pointer-events-none absolute inset-y-0 end-0 w-8 bg-gradient-to-l from-surface to-transparent"
+          aria-hidden
+        />
       </div>
     );
   }
@@ -269,7 +275,10 @@ export function RetailFeatures({ copy }: Props) {
         {/* Sticky story on wide viewports; sequential stages below xl / reduced motion */}
         {stickyStory ? (
           <div className="mt-14 grid grid-cols-[160px_minmax(0,1.45fr)_minmax(240px,0.75fr)] items-start gap-10 xl:gap-12">
-            <div className="sticky top-28">
+            <div
+              className="sticky"
+              style={{ top: "calc(var(--primary-chrome-h) + 1rem)" }}
+            >
               <StageNav
                 stages={stages}
                 activeIndex={activeIndex}
@@ -284,7 +293,8 @@ export function RetailFeatures({ copy }: Props) {
               id={`${baseId}-panel`}
               role="tabpanel"
               aria-labelledby={`${baseId}-tab-${activeStage.id}`}
-              className="sticky top-28"
+              className="sticky"
+              style={{ top: "calc(var(--primary-chrome-h) + 1rem)" }}
             >
               <RetailWorkflowVisual
                 stage={isStageId(activeStage.id) ? activeStage.id : "purchase"}
@@ -327,7 +337,7 @@ export function RetailFeatures({ copy }: Props) {
             </div>
           </div>
         ) : (
-          <div className="mt-10 flex flex-col gap-10 md:gap-12">
+          <div className="mt-10 flex flex-col gap-6 md:gap-8">
             <StageNav
               stages={stages}
               activeIndex={activeIndex}
@@ -337,63 +347,36 @@ export function RetailFeatures({ copy }: Props) {
               orientation="horizontal"
             />
 
-            <div className="flex flex-col gap-10 md:gap-14">
-              {stages.map((stage, i) => {
-                const selected = i === activeIndex;
-                return (
-                  <article
-                    key={stage.id}
-                    id={`${baseId}-scene-${stage.id}`}
-                    className={`grid gap-5 border-t border-line pt-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8 md:pt-10 ${
-                      selected ? "" : "opacity-90"
-                    }`}
-                  >
-                    <div>
-                      <button
-                        type="button"
-                        role="tab"
-                        id={`${baseId}-tab-seq-${stage.id}`}
-                        aria-selected={selected}
-                        onClick={() => selectStage(i)}
-                        className="w-full text-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink rounded-sm"
-                      >
-                        <p className="font-mono text-[0.7rem] tabular-nums text-muted">
-                          {String(i + 1).padStart(2, "0")}
-                        </p>
-                        <h3 className="mt-2 text-[clamp(1.35rem,3vw,1.75rem)] font-semibold tracking-tight text-ink [text-wrap:balance]">
-                          {stage.title}
-                        </h3>
-                        <p className="mt-3 max-w-md text-[0.975rem] leading-relaxed text-ink-secondary [text-wrap:pretty]">
-                          {stage.body}
-                        </p>
-                      </button>
-                    </div>
-                    <div
-                      id={selected ? `${baseId}-panel` : undefined}
-                      role={selected ? "tabpanel" : undefined}
-                      aria-labelledby={
-                        selected ? `${baseId}-tab-${stage.id}` : undefined
-                      }
-                      className={selected ? undefined : "pointer-events-none"}
-                      aria-hidden={!selected}
-                    >
-                      {selected || reduce ? (
-                        <RetailWorkflowVisual
-                          stage={isStageId(stage.id) ? stage.id : "purchase"}
-                          ui={copy.ui}
-                          compact
-                        />
-                      ) : (
-                        <div
-                          className="min-h-[200px] rounded-[12px] border border-dashed border-line bg-card/40"
-                          aria-hidden
-                        />
-                      )}
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
+            {/* Single active stage on mobile / reduced-motion — quality over length */}
+            <article
+              id={`${baseId}-scene-${activeStage.id}`}
+              className="grid gap-5 border-t border-line pt-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-8 md:pt-10"
+            >
+              <div>
+                <p className="font-mono text-[0.7rem] tabular-nums text-muted">
+                  {String(activeIndex + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-2 text-[clamp(1.35rem,3vw,1.75rem)] font-semibold tracking-tight text-ink [text-wrap:balance]">
+                  {activeStage.title}
+                </h3>
+                <p className="mt-3 max-w-md text-[0.975rem] leading-relaxed text-ink-secondary [text-wrap:pretty]">
+                  {activeStage.body}
+                </p>
+              </div>
+              <div
+                id={`${baseId}-panel`}
+                role="tabpanel"
+                aria-labelledby={`${baseId}-tab-${activeStage.id}`}
+              >
+                <RetailWorkflowVisual
+                  stage={
+                    isStageId(activeStage.id) ? activeStage.id : "purchase"
+                  }
+                  ui={copy.ui}
+                  compact
+                />
+              </div>
+            </article>
           </div>
         )}
 

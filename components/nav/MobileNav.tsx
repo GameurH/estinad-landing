@@ -191,7 +191,10 @@ export function MobileNav({
       aria-modal="true"
       aria-label="Menu"
     >
-      <div className="flex h-full flex-col pt-[4.75rem]">
+      <div
+        className="flex h-full flex-col"
+        style={{ paddingTop: "calc(var(--primary-chrome-h) + 0.5rem)" }}
+      >
         <div className="flex-1 overflow-y-auto overscroll-contain px-4 pb-40">
           <div className="mx-auto max-w-lg flex flex-col gap-2.5">
             {sections.map((section) => {

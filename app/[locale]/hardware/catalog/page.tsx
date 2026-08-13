@@ -33,7 +33,7 @@ export default async function HardwareCatalogPage({
     typeof category === "string" && category.trim() ? category.trim() : "all";
 
   return (
-    <section className="shell py-8 md:py-12">
+    <section className="shell py-6 md:py-12">
       <HardwareCatalogClient
         locale={l}
         dictionary={d}

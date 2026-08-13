@@ -111,7 +111,9 @@ function Shell({
   return (
     <div
       className={`relative overflow-hidden rounded-[12px] border border-line bg-card shadow-card ${
-        compact ? "min-h-[360px]" : "min-h-[440px] xl:min-h-[560px]"
+        compact
+          ? "min-h-[280px] sm:min-h-[320px] md:min-h-[360px]"
+          : "min-h-[440px] xl:min-h-[560px]"
       }`}
     >
       <div className={`flex h-full ${compact ? "flex-col" : "flex-col sm:flex-row"}`}>

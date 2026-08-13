@@ -29,7 +29,7 @@ export function Section({
       id={id}
       className={`${bordered ? "hairline-b" : ""} ${className ?? ""}`}
     >
-      <div className="shell py-20 md:py-32">{children}</div>
+      <div className="shell py-14 md:py-32">{children}</div>
     </section>
   );
 }
@@ -90,7 +90,7 @@ export function SectionHeader({
         {title}
       </h2>
       {intro && (
-        <p className="mt-6 text-lg leading-relaxed text-ink-secondary">
+        <p className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-ink-secondary">
           {intro}
         </p>
       )}

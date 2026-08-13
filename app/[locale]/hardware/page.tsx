@@ -44,23 +44,23 @@ export default async function HardwarePage({ params }: Props) {
       {/* 01 — Hero */}
       <section className="relative overflow-hidden hairline-b">
         <div className="absolute inset-0 grid-backdrop opacity-30" aria-hidden />
-        <div className="shell relative py-20 md:py-28">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="shell relative py-12 md:py-28">
+          <div className="grid gap-8 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="min-w-0 max-w-xl rise">
-              <p className="eyebrow mb-5">{h.hero.eyebrow}</p>
-              <h1 className="text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.08] tracking-[-0.03em] text-ink font-semibold [text-wrap:balance] [overflow-wrap:anywhere]">
+              <p className="eyebrow mb-4 md:mb-5">{h.hero.eyebrow}</p>
+              <h1 className="text-[clamp(1.85rem,6vw,3.75rem)] leading-[1.08] tracking-[-0.03em] text-ink font-semibold [text-wrap:balance] [overflow-wrap:anywhere]">
                 {h.hero.title}
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-ink-secondary">
+              <p className="mt-4 md:mt-6 text-base md:text-lg leading-relaxed text-ink-secondary">
                 {h.hero.body}
               </p>
-              <div className="mt-9 flex flex-wrap gap-3">
+              <div className="mt-7 md:mt-9 flex flex-col sm:flex-row flex-wrap gap-3 [&_a]:w-full sm:[&_a]:w-auto">
                 <Button href={L("/hardware/catalog")}>{h.hero.primaryCta}</Button>
                 <Button href={L("/hardware/quote")} variant="secondary">
                   {h.hero.secondaryCta}
                 </Button>
               </div>
-              <p className="mt-8 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted leading-relaxed">
+              <p className="mt-6 md:mt-8 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted leading-relaxed">
                 {h.hero.supporting}
               </p>
             </div>
@@ -81,7 +81,7 @@ export default async function HardwarePage({ params }: Props) {
             <Link
               key={item.slug}
               href={L(`/hardware/${item.slug}`)}
-              className="group bg-bg p-7 md:p-8 min-w-0 transition-colors hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ink"
+              className="group bg-bg p-5 md:p-8 min-w-0 transition-colors hover:bg-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-ink"
             >
               <span className="font-mono text-xs text-muted tracking-[0.18em]">
                 {String(i + 1).padStart(2, "0")}
@@ -133,7 +133,7 @@ export default async function HardwarePage({ params }: Props) {
                   </li>
                 ))}
               </ul>
-              <div className="mt-9 flex flex-wrap gap-3">
+              <div className="mt-8 md:mt-9 flex flex-col sm:flex-row flex-wrap gap-3 [&_a]:w-full sm:[&_a]:w-auto">
                 <Button href={L("/hardware/retail-counter-kit")}>
                   {h.featured.primaryCta}
                 </Button>
@@ -194,11 +194,11 @@ export default async function HardwarePage({ params }: Props) {
         />
         <div className="mt-14 grid gap-px md:grid-cols-3 hairline bg-line">
           {h.trust.items.map((item, i) => (
-            <div key={item.title} className="bg-surface p-7 md:p-8 min-w-0">
+            <div key={item.title} className="bg-surface p-5 md:p-8 min-w-0">
               <span className="font-mono text-xs text-muted tracking-[0.18em]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-5 text-xl font-semibold text-ink tracking-tight [text-wrap:balance]">
+              <h3 className="mt-4 md:mt-5 text-lg md:text-xl font-semibold text-ink tracking-tight [text-wrap:balance]">
                 {item.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
@@ -236,15 +236,15 @@ export default async function HardwarePage({ params }: Props) {
 
       {/* 07 — Need help? */}
       <section className="hairline-b">
-        <div className="shell py-20 md:py-28">
+        <div className="shell py-14 md:py-28">
           <div className="max-w-3xl">
-            <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-semibold text-ink leading-[1.1] tracking-[-0.02em] [text-wrap:balance]">
+            <h2 className="text-[clamp(1.65rem,5vw,2.75rem)] font-semibold text-ink leading-[1.1] tracking-[-0.02em] [text-wrap:balance]">
               {h.finalCta.title}
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-ink-secondary">
+            <p className="mt-4 md:mt-5 text-base md:text-lg leading-relaxed text-ink-secondary">
               {h.finalCta.body}
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-7 md:mt-9 flex flex-col sm:flex-row flex-wrap gap-3 [&_a]:w-full sm:[&_a]:w-auto">
               <Button href={L("/hardware/quote")}>{h.finalCta.cta}</Button>
               <Button href={L(productHref("retail"))} variant="secondary">
                 {h.finalCta.secondaryCta}

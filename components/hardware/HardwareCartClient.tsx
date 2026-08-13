@@ -177,7 +177,7 @@ export function HardwareCartClient({
         ))}
       </ul>
 
-      <aside className="hairline rounded-card bg-surface p-7 h-fit sticky top-28">
+      <aside className="hairline rounded-card bg-surface p-7 h-fit sticky sticky-under-store-chrome">
         <div className="flex items-center justify-between gap-4 text-sm">
           <span className="text-ink-secondary">{c.subtotal}</span>
           <span className="font-medium text-ink">

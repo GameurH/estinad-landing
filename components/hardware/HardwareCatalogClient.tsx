@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 import { AddStoreToCartButton } from "@/components/hardware/AddStoreToCartButton";
-import { Button } from "@/components/ui";
 import type { Dictionary } from "@/lib/dictionaries/types";
 import { formatMoneyMinor } from "@/lib/hardware-commerce";
 import type {
@@ -189,7 +188,7 @@ export function HardwareCatalogClient({
   }
 
   const chip = (active: boolean) =>
-    `inline-flex items-center gap-2 justify-center min-h-10 h-10 px-3.5 rounded-full text-sm font-medium border transition-colors ${
+    `inline-flex items-center gap-1.5 sm:gap-2 justify-center min-h-11 px-3.5 rounded-full text-sm font-medium border transition-colors whitespace-nowrap ${
       active
         ? "bg-ink text-bg border-ink"
         : "bg-transparent text-ink-secondary border-transparent hover:bg-surface hover:text-ink"
@@ -207,12 +206,18 @@ export function HardwareCatalogClient({
     ...activeCategories,
   ];
 
+  const hasActiveFilters =
+    query.trim().length > 0 ||
+    categoryId !== "all" ||
+    selectedCategories.length > 0 ||
+    pricePreset !== "any";
+
   return (
-    <div className="flex flex-col gap-8 md:gap-10">
-      {/* Top toolbar — Attachment 2 */}
-      <div className="flex flex-col gap-5 xl:flex-row xl:items-end xl:justify-between">
+    <div className="flex flex-col gap-6 md:gap-10">
+      {/* Top toolbar */}
+      <div className="flex flex-col gap-4 xl:flex-row xl:items-end xl:justify-between">
         <div className="min-w-0 max-w-md">
-          <h1 className="text-[clamp(2rem,3.5vw,2.75rem)] font-semibold tracking-tight text-ink leading-none">
+          <h1 className="text-[clamp(1.75rem,5vw,2.75rem)] font-semibold tracking-tight text-ink leading-[1.05]">
             {c.title}
           </h1>
           <p className="mt-2 text-sm md:text-base text-ink-secondary leading-relaxed">
@@ -220,103 +225,122 @@ export function HardwareCatalogClient({
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 w-full xl:w-auto xl:max-w-3xl xl:flex-1 xl:justify-end">
-          <label className="relative block w-full sm:max-w-md min-w-0">
-            <span className="sr-only">{c.searchLabel}</span>
-            <span className="pointer-events-none absolute inset-y-0 start-3.5 flex items-center text-muted" aria-hidden>
-              <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <circle cx="8.5" cy="8.5" r="5" />
-                <path d="M12.5 12.5 16 16" strokeLinecap="round" />
-              </svg>
-            </span>
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={c.searchPlaceholder}
-              autoComplete="off"
-              className="w-full min-h-11 h-11 ps-10 pe-4 bg-surface hairline rounded-full text-sm text-ink placeholder:text-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
-            />
-          </label>
-          <div className="flex gap-2 shrink-0">
-            <Link
-              href={L("/hardware/cart")}
-              className="inline-flex items-center justify-center min-h-11 h-11 px-4 rounded-full text-sm font-medium text-ink border border-line-strong hover:border-ink hover:bg-surface transition-colors"
-            >
-              {c.compareCta}
-            </Link>
-            <Button href={L("/hardware/quote")}>{c.quoteCta}</Button>
-          </div>
-        </div>
+        <label className="relative block w-full xl:max-w-md min-w-0 xl:ms-auto">
+          <span className="sr-only">{c.searchLabel}</span>
+          <span className="pointer-events-none absolute inset-y-0 start-3.5 flex items-center text-muted" aria-hidden>
+            <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="8.5" cy="8.5" r="5" />
+              <path d="M12.5 12.5 16 16" strokeLinecap="round" />
+            </svg>
+          </span>
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder={c.searchPlaceholder}
+            autoComplete="off"
+            className="w-full min-h-11 h-11 ps-10 pe-4 bg-surface hairline rounded-full text-sm text-ink placeholder:text-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
+          />
+        </label>
       </div>
 
-      {/* Category strip */}
-      <div
-        className="flex gap-1 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden hairline-b"
-        role="tablist"
-        aria-label={c.categoryFilterLabel}
-      >
-        {navCategories.map((cat) => {
-          const id = cat.id;
-          const active =
-            id === "all" ? categoryId === "all" && selectedCategories.length === 0 : categoryId === id;
-          return (
-            <button
-              key={id}
-              type="button"
-              role="tab"
-              aria-selected={active}
-              onClick={() => {
-                setCategoryId(id);
-                setSelectedCategories([]);
-              }}
-              className={`${chip(active)} shrink-0 mb-2`}
-            >
-              {categoryIcon("pbId" in cat ? cat.pbId : null)}
-              <span>{cat.name}</span>
-            </button>
-          );
-        })}
+      {/* Category strip — primary category control on mobile */}
+      <div className="relative hairline-b">
+        <div
+          className="flex gap-1 overflow-x-auto pb-2 pe-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          role="tablist"
+          aria-label={c.categoryFilterLabel}
+        >
+          {navCategories.map((cat) => {
+            const id = cat.id;
+            const active =
+              id === "all"
+                ? categoryId === "all" && selectedCategories.length === 0
+                : categoryId === id;
+            return (
+              <button
+                key={id}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                onClick={() => {
+                  setCategoryId(id);
+                  setSelectedCategories([]);
+                }}
+                className={`${chip(active)} shrink-0`}
+              >
+                <span className="hidden sm:inline">
+                  {categoryIcon("pbId" in cat ? cat.pbId : null)}
+                </span>
+                <span>{cat.name}</span>
+              </button>
+            );
+          })}
+        </div>
+        <div
+          className="pointer-events-none absolute inset-y-0 end-0 w-10 bg-gradient-to-l from-bg to-transparent"
+          aria-hidden
+        />
       </div>
 
       {!store.configured && (
         <p className="text-sm text-ink-secondary">{c.storeUnavailable}</p>
       )}
       {store.configured && store.error && (
-        <p className="text-sm text-ink-secondary" role="alert">
-          {c.storeError}
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3" role="alert">
+          <p className="text-sm text-ink-secondary">{c.storeError}</p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="inline-flex items-center justify-center min-h-11 px-4 rounded-full text-sm font-medium border border-line-strong text-ink"
+          >
+            {c.filtersReset}
+          </button>
+        </div>
       )}
 
-      <div className="lg:hidden">
+      <div className="lg:hidden flex items-center justify-between gap-3">
         <button
           type="button"
           onClick={() => setFiltersOpen((v) => !v)}
           className="inline-flex items-center min-h-11 px-4 rounded-full text-sm font-medium border border-line-strong text-ink"
+          aria-expanded={filtersOpen}
         >
           {c.filtersHeading}
+          {pricePreset !== "any" ? (
+            <span className="ms-2 size-1.5 rounded-full bg-ink" aria-hidden />
+          ) : null}
         </button>
+        {filtersOpen ? (
+          <button
+            type="button"
+            onClick={() => setFiltersOpen(false)}
+            className="text-sm text-ink-secondary underline underline-offset-2 min-h-11 px-2"
+          >
+            {c.showLess}
+          </button>
+        ) : null}
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[240px_minmax(0,1fr)] xl:grid-cols-[260px_minmax(0,1fr)]">
-        {/* Sidebar filters */}
+      <div className="grid gap-6 lg:gap-8 lg:grid-cols-[240px_minmax(0,1fr)] xl:grid-cols-[260px_minmax(0,1fr)]">
+        {/* Sidebar: price on all; categories only at lg+ (chips own mobile) */}
         <aside
           className={`${
             filtersOpen ? "block" : "hidden"
-          } lg:block min-w-0 space-y-8`}
+          } lg:block min-w-0 space-y-6 rounded-[14px] border border-line bg-surface/40 p-4 lg:border-0 lg:bg-transparent lg:p-0 lg:space-y-8`}
         >
           <div className="flex items-center justify-between gap-3">
             <h2 className="text-sm font-semibold text-ink">{c.filtersHeading}</h2>
             <button
               type="button"
               onClick={resetFilters}
-              className="text-xs text-ink-secondary hover:text-ink underline underline-offset-2 min-h-9"
+              className="text-xs text-ink-secondary hover:text-ink underline underline-offset-2 min-h-11 px-1"
             >
               {c.filtersReset}
             </button>
           </div>
 
-          <fieldset>
+          <fieldset className="hidden lg:block">
             <legend className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-muted mb-3">
               {c.categoryFilterLabel}
             </legend>
@@ -325,7 +349,7 @@ export function HardwareCatalogClient({
                 const checked = selectedCategories.includes(cat.id);
                 return (
                   <li key={cat.id}>
-                    <label className="flex items-center gap-2.5 min-h-10 px-1 rounded-lg hover:bg-surface cursor-pointer text-sm text-ink">
+                    <label className="flex items-center gap-2.5 min-h-11 px-1 rounded-lg hover:bg-surface cursor-pointer text-sm text-ink">
                       <input
                         type="checkbox"
                         checked={checked}
@@ -360,7 +384,7 @@ export function HardwareCatalogClient({
                   key={value}
                   type="button"
                   onClick={() => setPricePreset(value)}
-                  className={`text-start text-sm min-h-10 px-3 rounded-full border transition-colors ${
+                  className={`text-start text-sm min-h-11 px-3 rounded-full border transition-colors ${
                     pricePreset === value
                       ? "border-ink bg-ink text-bg"
                       : "border-line text-ink-secondary hover:border-ink hover:text-ink"
@@ -373,25 +397,22 @@ export function HardwareCatalogClient({
           </fieldset>
         </aside>
 
-        {/* Grid */}
         <div className="min-w-0">
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-            <div className="flex flex-wrap items-center gap-2">
-              <p className="text-sm text-ink-secondary">
-                {c.productsCountExact.replace(
-                  "{count}",
-                  String(filteredProducts.length),
-                )}
-              </p>
-            </div>
-            <label className="inline-flex items-center gap-2 text-sm text-ink-secondary">
-              <span className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted">
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-4 md:mb-5">
+            <p className="text-sm text-ink-secondary">
+              {c.productsCountExact.replace(
+                "{count}",
+                String(filteredProducts.length),
+              )}
+            </p>
+            <label className="inline-flex items-center gap-2 text-sm text-ink-secondary min-w-0">
+              <span className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted shrink-0">
                 {c.sortLabel}
               </span>
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortMode)}
-                className="min-h-10 h-10 px-3 bg-surface hairline rounded-full text-sm text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
+                className="min-h-11 h-11 max-w-[10.5rem] px-3 bg-surface hairline rounded-full text-sm text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-ink/40"
               >
                 <option value="featured">{c.sortFeatured}</option>
                 <option value="price-asc">{c.sortPriceAsc}</option>
@@ -402,11 +423,20 @@ export function HardwareCatalogClient({
           </div>
 
           {filteredProducts.length === 0 ? (
-            <p className="text-sm text-ink-secondary py-16" role="status">
-              {c.searchEmpty}
-            </p>
+            <div className="py-14 md:py-16 text-center" role="status">
+              <p className="text-sm text-ink-secondary">{c.searchEmpty}</p>
+              {hasActiveFilters ? (
+                <button
+                  type="button"
+                  onClick={resetFilters}
+                  className="mt-5 inline-flex items-center justify-center min-h-11 px-5 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
+                >
+                  {c.clearSearch}
+                </button>
+              ) : null}
+            </div>
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+            <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
               {filteredProducts.map((product) => {
                 const imageSrc = product.images[0] ?? null;
                 const purchasable = isStoreProductPurchasable(product);
@@ -470,7 +500,7 @@ export function HardwareCatalogClient({
                       <div className="mt-auto pt-4 flex gap-2">
                         <Link
                           href={L(`/hardware/products/${product.id}`)}
-                          className="flex-1 inline-flex items-center justify-center min-h-10 h-10 px-3 rounded-full text-sm font-medium text-ink border border-line-strong hover:border-ink hover:bg-surface transition-colors"
+                          className="flex-1 inline-flex items-center justify-center min-h-11 h-11 px-3 rounded-full text-sm font-medium text-ink border border-line-strong hover:border-ink hover:bg-surface transition-colors"
                         >
                           {c.viewDetails}
                         </Link>
@@ -479,7 +509,7 @@ export function HardwareCatalogClient({
                             product={product}
                             label={c.addToCart}
                             addedLabel={c.addedToCart}
-                            className="inline-flex items-center justify-center min-h-10 h-10 w-10 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
+                            className="inline-flex items-center justify-center min-h-11 h-11 w-11 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
                             iconOnly
                           />
                         ) : (
@@ -487,10 +517,13 @@ export function HardwareCatalogClient({
                             href={L(
                               `/hardware/quote?product=${encodeURIComponent(product.id)}`,
                             )}
-                            className="inline-flex items-center justify-center min-h-10 h-10 w-10 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
+                            className="inline-flex items-center justify-center min-h-11 h-11 w-11 rounded-full text-sm font-medium bg-ink text-bg hover:bg-ink/85 transition-colors"
                             aria-label={c.quoteProduct}
+                            title={c.quoteProduct}
                           >
-                            ?
+                            <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                              <path d="M4 5.5h12v7H9l-3 2.5V12.5H4z" strokeLinejoin="round" />
+                            </svg>
                           </Link>
                         )}
                       </div>

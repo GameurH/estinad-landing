@@ -209,6 +209,7 @@ export default async function LocaleLayout({ children, params }: Props & { child
     <html
       lang={meta.htmlLang}
       dir={meta.dir}
+      data-primary-nav="expanded"
       className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} ${l === "ar" ? `${cairo.className} locale-ar` : ""} h-full antialiased`}
       suppressHydrationWarning
     >
@@ -216,8 +217,9 @@ export default async function LocaleLayout({ children, params }: Props & { child
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
+        {/* Header outside Lenis so position:fixed / z-index stay viewport-rooted. */}
+        <Header data={headerData} />
         <SmoothScroll>
-          <Header data={headerData} />
           <main className="flex-1">{children}</main>
           <Footer data={footerData} />
         </SmoothScroll>
