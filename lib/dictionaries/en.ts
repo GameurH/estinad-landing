@@ -747,6 +747,8 @@ export const en = {
         landing: {
           badge: "Available now",
           benefits: ["Local-first operations", "Unified store ledger"],
+          heroImageAlt:
+            "ESTINAD Retail — store performance, inventory, and point of sale in one system",
           trustLabel: "Built for Algerian retail operations — clothing and multi-category stores.",
           trustMarks: [],
           features: {
@@ -943,16 +945,14 @@ export const en = {
               hardware: "Certified hardware",
               support: "Implementation support",
             },
-            categories: [
-              { id: "terminal", label: "POS terminal" },
-              { id: "scanner", label: "Barcode scanner" },
-              { id: "printer", label: "Receipt printer" },
-              { id: "drawer", label: "Cash drawer" },
-            ],
-            imageAlt:
-              "Reference Retail Counter Kit component set prepared for ESTINAD Retail—terminal, scanner, printer, and cash drawer.",
+            productsLabel: "Latest from the catalog",
+            loadingLabel: "Loading certified hardware…",
+            emptyTitle: "Catalog updating",
+            emptyBody:
+              "Open the full hardware catalog to browse every available product, or request a quote for a guided setup.",
+            viewProduct: "View product",
             scopeNote:
-              "Specifications are illustrative reference configurations. Final equipment is confirmed during quoting and compatibility review. Hardware is optional—existing equipment may be used when it passes compatibility verification.",
+              "Live products from the ESTINAD hardware catalog. Final equipment is confirmed during quoting and compatibility review. Hardware is optional—existing equipment may be used when it passes compatibility verification.",
             primaryCta: "Explore certified hardware",
             secondaryCta: "Request a quote",
           },

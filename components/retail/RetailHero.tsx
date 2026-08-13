@@ -93,7 +93,7 @@ export function RetailHero({
                 <div className="relative max-h-[min(52vh,420px)] overflow-hidden sm:max-h-[min(60vh,640px)] lg:max-h-[min(70vh,820px)]">
                   <Image
                     src="/images/retail/hero.png"
-                    alt={`${name} — store performance, inventory, and point of sale in one system`}
+                    alt={landing.heroImageAlt}
                     width={1536}
                     height={864}
                     priority

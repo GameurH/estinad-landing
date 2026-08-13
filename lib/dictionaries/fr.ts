@@ -776,6 +776,8 @@ const frRaw = {
             "Opérations local-first",
             "Registre magasin unifié"
           ],
+          "heroImageAlt":
+            "ESTINAD Retail — performance magasin, inventaire et point de vente dans un seul système",
           "trustLabel": "Conçu pour le retail algérien — mode et magasins multi-catégories.",
           "trustMarks": [],
           "features": {
@@ -967,14 +969,12 @@ const frRaw = {
               "hardware": "Matériel certifié",
               "support": "Accompagnement à la mise en œuvre"
             },
-            "categories": [
-              { "id": "terminal", "label": "Terminal POS" },
-              { "id": "scanner", "label": "Scanner code-barres" },
-              { "id": "printer", "label": "Imprimante de tickets" },
-              { "id": "drawer", "label": "Tiroir-caisse" }
-            ],
-            "imageAlt": "Ensemble de référence Retail Counter Kit préparé pour ESTINAD Retail — terminal, scanner, imprimante et tiroir-caisse.",
-            "scopeNote": "Les spécifications sont des configurations de référence illustratives. L’équipement final est confirmé lors du devis et de la revue de compatibilité. Le matériel est optionnel — l’équipement existant peut être utilisé s’il passe la vérification de compatibilité.",
+            "productsLabel": "Derniers produits du catalogue",
+            "loadingLabel": "Chargement du matériel certifié…",
+            "emptyTitle": "Catalogue en cours de mise à jour",
+            "emptyBody": "Ouvrez le catalogue matériel complet pour parcourir tous les produits disponibles, ou demandez un devis pour un accompagnement.",
+            "viewProduct": "Voir le produit",
+            "scopeNote": "Produits en direct du catalogue matériel ESTINAD. L’équipement final est confirmé lors du devis et de la revue de compatibilité. Le matériel est optionnel — l’équipement existant peut être utilisé s’il passe la vérification de compatibilité.",
             "primaryCta": "Explorer le matériel certifié",
             "secondaryCta": "Demander un devis"
           },

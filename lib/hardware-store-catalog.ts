@@ -48,10 +48,13 @@ export type HardwareStoreProduct = {
   images: string[];
   categoryId: string | null;
   categoryName: string | null;
+  /** Stable RMS category key (e.g. cat_pos_terminals). */
+  categoryPbId: string | null;
   isOnline: boolean;
   isAvailable: boolean;
   visibility: string | null;
   type: string | null;
+  updatedAt: string | null;
 };
 
 export type HardwareStoreCatalog = {
@@ -84,6 +87,7 @@ type ProductMediaRow = {
 type CategoryJoin = {
   id: string;
   name: string;
+  pb_id?: string | null;
   category_translations?: TranslationRow[] | null;
 };
 
@@ -103,6 +107,7 @@ type ProductRow = {
   visibility: string | null;
   type: string | null;
   category_id: string | null;
+  updated_at?: string | null;
   categories?: CategoryJoin | CategoryJoin[] | null;
   product_media?: ProductMediaRow[] | null;
   product_translations?: TranslationRow[] | null;
@@ -243,10 +248,12 @@ function normalizeProduct(
           category.name,
         )
       : null,
+    categoryPbId: category?.pb_id ?? null,
     isOnline: row.is_online,
     isAvailable: row.is_available,
     visibility: row.visibility,
     type: row.type,
+    updatedAt: row.updated_at ?? null,
   };
 }
 
@@ -290,6 +297,7 @@ const PRODUCT_SELECT = `
   visibility,
   type,
   category_id,
+  updated_at,
   product_media (
     storage_bucket,
     storage_path,
@@ -308,6 +316,7 @@ const PRODUCT_SELECT = `
   categories!products_category_id_fkey (
     id,
     name,
+    pb_id,
     category_translations (
       language_code,
       name,

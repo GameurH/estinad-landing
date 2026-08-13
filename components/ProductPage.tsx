@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { PageHero } from "@/components/PageHero";
 import { Section, SectionHeader, Eyebrow, Button, Tag, NodeDivider } from "@/components/ui";
 import { Monogram } from "@/components/Monogram";
@@ -7,7 +8,10 @@ import { RetailTrust } from "@/components/retail/RetailTrust";
 import { RetailFeatures } from "@/components/retail/RetailFeatures";
 import { RetailOperationalConfidence } from "@/components/retail/RetailOperationalConfidence";
 import { RetailBuiltForStore } from "@/components/retail/RetailBuiltForStore";
-import { RetailCertifiedHardware } from "@/components/retail/RetailCertifiedHardware";
+import {
+  RetailCertifiedHardwareFallback,
+  RetailCertifiedHardwareSection,
+} from "@/components/retail/RetailCertifiedHardwareSection";
 import { RetailFinalCta } from "@/components/retail/RetailFinalCta";
 import {
   RestaurantLanding,
@@ -70,10 +74,18 @@ export function ProductPageView({ data }: { data: ProductPageData }) {
           <RetailFeatures copy={retailLanding.features} />
           <RetailOperationalConfidence copy={retailLanding.operationalConfidence} />
           <RetailBuiltForStore copy={retailLanding.builtForStore} />
-          <RetailCertifiedHardware
-            locale={locale}
-            copy={retailLanding.certifiedHardware}
-          />
+          <Suspense
+            fallback={
+              <RetailCertifiedHardwareFallback
+                copy={retailLanding.certifiedHardware}
+              />
+            }
+          >
+            <RetailCertifiedHardwareSection
+              locale={locale}
+              copy={retailLanding.certifiedHardware}
+            />
+          </Suspense>
           <RetailFinalCta locale={locale} copy={retailLanding.finalCta} />
         </>
       ) : isRestaurant ? (
